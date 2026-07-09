@@ -175,6 +175,20 @@
   .age-list li b{font-family:var(--en);font-weight:800;font-size:28px;line-height:1}
   .age-list li b small{font-family:var(--jp);font-size:.42em;font-weight:700;margin-left:3px}
 
+  /* ---------- events (集約) ---------- */
+  #events{background:var(--black);color:var(--white)}
+  #events .sec-head .jp{color:rgba(255,255,255,.6)}
+  .event-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  a.event-card{display:block;border:1px solid rgba(255,255,255,.16);transition:.3s}
+  a.event-card:hover{border-color:var(--white)}
+  .event-photo{aspect-ratio:4/3;background:linear-gradient(135deg,#1c1c1c,#2a2a2a);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.3em;color:rgba(255,255,255,.3);background-size:cover;background-position:center}
+  .event-body{padding:18px 20px}
+  .event-body .ev-co{font-family:var(--en);font-size:9px;font-weight:700;letter-spacing:.22em;color:rgba(255,255,255,.45)}
+  .event-body .date{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--accent);margin-top:4px}
+  .event-body h4{font-size:14px;font-weight:700;margin-top:6px;letter-spacing:.04em}
+  .events-note{margin-top:36px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
+  @media(max-width:840px){.event-list{grid-template-columns:1fr}}
+
   /* ---------- company ---------- */
   #company{background:var(--gray)}
   .company-table{width:100%;border-collapse:collapse;background:var(--white)}
@@ -514,6 +528,18 @@
   </div>
 </section>
 
+<!-- ============ EVENTS (各社ページから自動集約) ============ -->
+<section id="events" style="display:none">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en" style="color:#fff">EVENTS<span>.</span></div>
+      <div class="jp">イベントアーカイブ</div>
+    </div>
+    <div class="event-list fade" id="omtEventList"></div>
+    <p class="events-note fade">グループ各社の最新イベントを掲載しています。過去のアーカイブは各社ページをご覧ください。</p>
+  </div>
+</section>
+
 <!-- ============ COMPANY ============ -->
 <section id="company">
   <div class="wrap">
@@ -638,6 +664,58 @@
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // EVENTS集約: 各社ページのイベントカードを読み込み、日付の新しい順に最新3件を表示
+  (function(){
+    var SOURCES = [
+      { path: 'overture/index.html', link: 'overture/', label: 'OVERTURE' },
+      { path: 'maniajapan/index.html', link: 'maniajapan/', label: 'MANIA JAPAN' },
+      { path: 'tomorrowark/index.html', link: 'tomorrowark/', label: 'TOMORROW ARK' }
+    ];
+    function sortKey(dateText){
+      // "2024.09.01 - 2025.10.31" のような文字列から最大の日付を数値化
+      var best = 0;
+      var m = dateText.match(/\d{4}\.\d{1,2}(\.\d{1,2})?/g) || [];
+      m.forEach(function(t){
+        var p = t.split('.');
+        var v = parseInt(p[0],10)*10000 + parseInt(p[1],10)*100 + (p[2] ? parseInt(p[2],10) : 0);
+        if (v > best) best = v;
+      });
+      return best;
+    }
+    Promise.all(SOURCES.map(function(s){
+      return fetch(s.path).then(function(r){ return r.text(); }).then(function(html){
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        return Array.from(doc.querySelectorAll('.event-card')).map(function(card){
+          var d = card.querySelector('.date');
+          var h = card.querySelector('h4');
+          var ph = card.querySelector('.event-photo');
+          if (!d || !h) return null;
+          return {
+            date: d.textContent.trim(),
+            title: h.innerHTML,
+            photoStyle: ph ? (ph.getAttribute('style') || '') : '',
+            label: s.label,
+            link: s.link + '#events',
+            key: sortKey(d.textContent)
+          };
+        }).filter(Boolean);
+      }).catch(function(){ return []; });
+    })).then(function(results){
+      var all = [].concat.apply([], results).sort(function(a,b){ return b.key - a.key; }).slice(0, 3);
+      if (!all.length) return;
+      var list = document.getElementById('omtEventList');
+      all.forEach(function(ev){
+        var a = document.createElement('a');
+        a.className = 'event-card';
+        a.href = ev.link;
+        a.innerHTML = '<div class="event-photo"' + (ev.photoStyle ? ' style="' + ev.photoStyle + '"' : '') + '>PHOTO</div>'
+          + '<div class="event-body"><div class="ev-co">' + ev.label + '</div><div class="date">' + ev.date + '</div><h4>' + ev.title + '</h4></div>';
+        list.appendChild(a);
+      });
+      document.getElementById('events').style.display = '';
+    });
+  })();
 
   // DATAセクション: ドーナツチャート描画(data-segmentsのJSONを編集すれば自動反映)
   var DONUT_COLORS = ['#c8102e', '#1a1a1a', '#9a9a94', '#d9d9d4', '#6b6b6b'];
