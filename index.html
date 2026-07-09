@@ -48,7 +48,11 @@
   /* ---------- hero ---------- */
   .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:var(--black);color:var(--white);position:relative;overflow:hidden}
   .hero-media{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-  #heroVideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;filter:saturate(.85)}
+  .hero-videos{position:absolute;inset:0;display:flex}
+  .hero-videos video{width:50%;height:100%;object-fit:cover;opacity:.42;filter:saturate(.85)}
+  .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.45),rgba(10,10,10,.72))}
+  .hero-mark{z-index:1}
+  .hero-inner{position:relative;z-index:2}
   .hero-mark{position:absolute;right:-3%;bottom:-7%;display:flex;font-family:var(--en);font-weight:800;font-size:min(34vw,420px);line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.13);perspective:800px}
   .hero-mark span{display:inline-block;animation:markFloat 7s ease-in-out infinite, markFill 9s linear infinite}
   .hero-mark span:nth-child(2){animation-delay:1.4s, 3s}
@@ -284,7 +288,10 @@
 <!-- ============ HERO ============ -->
 <div class="hero" id="top">
   <div class="hero-media" aria-hidden="true">
-    <!-- 動画素材が届いたら: <video id="heroVideo" src="assets/hero.mp4" autoplay muted loop playsinline></video> を有効化 -->
+    <div class="hero-videos">
+      <video src="assets/hero-1.mp4" autoplay muted loop playsinline></video>
+      <video src="assets/hero-2.mp4" autoplay muted loop playsinline></video>
+    </div>
     <div class="hero-mark"><span>O</span><span>M</span><span>T</span></div>
   </div>
   <div class="hero-inner">
