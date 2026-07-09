@@ -109,20 +109,6 @@
   .marquee span::after{content:'/';margin-left:72px;color:rgba(255,255,255,.25)}
   @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  /* ---------- brands grid ---------- */
-  #brands{background:var(--black);color:var(--white)}
-  #brands .sec-head .jp{color:rgba(255,255,255,.6)}
-  .brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}
-  .brand-tile{position:relative;background:var(--black);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:24px;transition:.3s}
-  .brand-tile img{max-width:62%;max-height:34%;width:auto;height:auto;filter:brightness(0) invert(1);opacity:.92;transition:.3s}
-  .brand-tile img.tall{max-height:52%}
-  .brand-tile .tile-type{font-family:var(--en);font-weight:800;font-size:clamp(15px,1.9vw,22px);letter-spacing:.1em;text-align:center;line-height:1.3;transition:.3s}
-  .brand-tile .tile-cat{position:absolute;left:16px;bottom:12px;font-family:var(--en);font-size:9px;font-weight:600;letter-spacing:.24em;color:rgba(255,255,255,.4);transition:.3s}
-  .brand-tile:hover{background:var(--white)}
-  .brand-tile:hover img{filter:brightness(0);opacity:1}
-  .brand-tile:hover .tile-type{color:var(--black)}
-  .brand-tile:hover .tile-cat{color:rgba(0,0,0,.5)}
-
   /* ---------- group ---------- */
   #group{background:var(--white)}
   .co-card{border:1px solid var(--gray-2);margin-bottom:28px;display:grid;grid-template-columns:280px 1fr;overflow:hidden;transition:.3s}
@@ -212,8 +198,6 @@
     .rec-grid{grid-template-columns:1fr}
     .client-grid{grid-template-columns:1fr 1fr}
     .client-grid li:last-child{grid-column:span 2}
-    .brand-grid{grid-template-columns:1fr 1fr}
-    .brand-tile:last-child{grid-column:span 2;aspect-ratio:8/3}
   }
 </style>
 </head>
@@ -226,7 +210,6 @@
     <nav class="gnav">
       <a href="#about">ABOUT</a>
       <a href="#business">BUSINESS</a>
-      <a href="#brands">BRANDS</a>
       <a href="#group">GROUP</a>
       <a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
@@ -347,54 +330,6 @@
     <span><img src="assets/logo-oldorder.svg" alt="OLD ORDER"></span><span><img src="assets/logo-rouge.png" alt="ROUGE by POMME d'amour"></span><span>LOVE KILLER</span><span>OCAI</span><span>BBIMP</span><span><img src="assets/logo-overture.png" alt="OVERTURE WEB SHOP"></span><span><img src="assets/logo-alude.png" alt="ALUDE"></span><span>PLANET STUDIO</span><span>NEW PRIME</span>
   </div>
 </div>
-
-<!-- ============ BRANDS ============ -->
-<section id="brands">
-  <div class="wrap">
-    <div class="sec-head fade">
-      <div class="en" style="color:#fff">BRANDS<span>.</span></div>
-      <div class="jp">ブランド一覧</div>
-    </div>
-    <div class="brand-grid fade">
-      <a class="brand-tile" href="https://rouge-pomme.jp" target="_blank" rel="noopener">
-        <b class="tile-type">POMME d'amour</b>
-        <span class="tile-cat">LADIES</span>
-      </a>
-      <a class="brand-tile" href="https://rouge-pomme.jp" target="_blank" rel="noopener">
-        <img src="assets/logo-rouge.png" alt="ROUGE by POMME d'amour">
-        <span class="tile-cat">LADIES SELECT</span>
-      </a>
-      <a class="brand-tile" href="https://www.over-ture.com" target="_blank" rel="noopener">
-        <b class="tile-type">LOVE KILLER</b>
-        <span class="tile-cat">STREET</span>
-      </a>
-      <a class="brand-tile" href="https://oldorder.jp" target="_blank" rel="noopener">
-        <img src="assets/logo-oldorder.svg" alt="OLD ORDER">
-        <span class="tile-cat">SNEAKERS</span>
-      </a>
-      <a class="brand-tile" href="https://alude.official.ec" target="_blank" rel="noopener">
-        <img src="assets/logo-alude.png" alt="ALUDE" class="tall">
-        <span class="tile-cat">MENS</span>
-      </a>
-      <a class="brand-tile" href="https://oldorder.jp" target="_blank" rel="noopener">
-        <b class="tile-type">OCAI</b>
-        <span class="tile-cat">STREET</span>
-      </a>
-      <a class="brand-tile" href="https://oldorder.jp" target="_blank" rel="noopener">
-        <b class="tile-type">BBIMP</b>
-        <span class="tile-cat">STREET</span>
-      </a>
-      <a class="brand-tile" href="https://www.over-ture.com" target="_blank" rel="noopener">
-        <img src="assets/logo-overture.png" alt="OVERTURE WEB SHOP" class="tall">
-        <span class="tile-cat">STREET SELECT</span>
-      </a>
-      <a class="brand-tile" href="https://www.over-ture.com" target="_blank" rel="noopener">
-        <b class="tile-type">PLANET STUDIO</b>
-        <span class="tile-cat">SHOWROOM</span>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- ============ GROUP ============ -->
 <section id="group">
@@ -586,7 +521,6 @@
     <nav class="foot-nav">
       <a href="#about">ABOUT</a>
       <a href="#business">BUSINESS</a>
-      <a href="#brands">BRANDS</a>
       <a href="#group">GROUP</a>
       <a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
