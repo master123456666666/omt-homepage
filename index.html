@@ -152,8 +152,8 @@
   .clients{margin-top:40px}
   .clients-label{font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.2em;margin-bottom:14px}
   .clients-label span{font-family:var(--jp);font-weight:500;font-size:11px;letter-spacing:.08em;color:var(--text-sub);margin-left:12px}
-  .client-band{background:var(--black);color:var(--white);padding:22px 0;overflow:hidden}
-  .marquee.mq-slow{animation-duration:40s}
+  .client-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-2);border:1px solid var(--gray-2)}
+  .client-grid li{background:var(--white);padding:18px 16px;font-size:13px;font-weight:500;text-align:center;letter-spacing:.04em}
 
   /* ---------- contact ---------- */
   #contact{background:var(--white)}
@@ -196,6 +196,8 @@
     .co-side{padding:28px}
     .co-main{padding:28px}
     .rec-grid{grid-template-columns:1fr}
+    .client-grid{grid-template-columns:1fr 1fr}
+    .client-grid li:last-child{grid-column:span 2}
   }
 </style>
 </head>
@@ -449,12 +451,17 @@
     </table>
     <div class="clients fade">
       <div class="clients-label">MAJOR CLIENTS <span>主要取引先(敬称略・順不同)</span></div>
-      <div class="client-band">
-        <div class="marquee mq-slow">
-          <span>株式会社アダストリア</span><span>株式会社TSIホールディングス</span><span>株式会社パルコ</span><span>株式会社三越伊勢丹</span><span>株式会社阪急阪神百貨店</span><span>ウォルト・ディズニー・ジャパン株式会社</span><span>株式会社サンリオ</span><span>株式会社PRESSING</span><span>株式会社パワーボム</span>
-          <span>株式会社アダストリア</span><span>株式会社TSIホールディングス</span><span>株式会社パルコ</span><span>株式会社三越伊勢丹</span><span>株式会社阪急阪神百貨店</span><span>ウォルト・ディズニー・ジャパン株式会社</span><span>株式会社サンリオ</span><span>株式会社PRESSING</span><span>株式会社パワーボム</span>
-        </div>
-      </div>
+      <ul class="client-grid">
+        <li>株式会社アダストリア</li>
+        <li>株式会社TSIホールディングス</li>
+        <li>株式会社パルコ</li>
+        <li>株式会社三越伊勢丹</li>
+        <li>株式会社阪急阪神百貨店</li>
+        <li>ウォルト・ディズニー・ジャパン株式会社</li>
+        <li>株式会社サンリオ</li>
+        <li>株式会社PRESSING</li>
+        <li>株式会社パワーボム</li>
+      </ul>
     </div>
   </div>
 </section>
