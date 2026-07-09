@@ -146,6 +146,13 @@
   .company-table th{width:200px;background:#fafaf8;font-weight:700;letter-spacing:.08em}
   .company-table td small{color:var(--text-sub)}
 
+  /* ---------- clients marquee ---------- */
+  .clients{margin-top:40px}
+  .clients-label{font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.2em;margin-bottom:14px}
+  .clients-label span{font-family:var(--jp);font-weight:500;font-size:11px;letter-spacing:.08em;color:var(--text-sub);margin-left:12px}
+  .client-band{background:var(--black);color:var(--white);padding:22px 0;overflow:hidden}
+  .marquee.mq-slow{animation-duration:40s}
+
   /* ---------- contact ---------- */
   #contact{background:var(--white)}
   .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px}
@@ -437,8 +444,16 @@
       <tr><th>拠点</th><td>大阪府大阪市西区南堀江1-11-1 三共四ツ橋ビル<br><small>東京オフィス: 東京都渋谷区神宮前1-1-6 IMビル 地下1階</small></td></tr>
       <tr><th>グループ会社</th><td>株式会社OverTure / 株式会社マニアジャパン / 合同会社tomorrow ark</td></tr>
       <tr><th>事業内容</th><td>アパレルブランドの企画・製造・販売 / EC事業 / リアルストア事業 / セールスエージェンシー事業 / PR・アパレル店舗支援事業</td></tr>
-      <tr><th>主要取引先</th><td>株式会社アダストリア / 株式会社TSIホールディングス / 株式会社パルコ / 株式会社三越伊勢丹 / 株式会社阪急阪神百貨店 / ウォルト・ディズニー・ジャパン株式会社 / 株式会社サンリオ / 株式会社PRESSING / 株式会社パワーボム<br><small>(敬称略・順不同)</small></td></tr>
     </table>
+    <div class="clients fade">
+      <div class="clients-label">MAJOR CLIENTS <span>主要取引先(敬称略・順不同)</span></div>
+      <div class="client-band">
+        <div class="marquee mq-slow">
+          <span>株式会社アダストリア</span><span>株式会社TSIホールディングス</span><span>株式会社パルコ</span><span>株式会社三越伊勢丹</span><span>株式会社阪急阪神百貨店</span><span>ウォルト・ディズニー・ジャパン株式会社</span><span>株式会社サンリオ</span><span>株式会社PRESSING</span><span>株式会社パワーボム</span>
+          <span>株式会社アダストリア</span><span>株式会社TSIホールディングス</span><span>株式会社パルコ</span><span>株式会社三越伊勢丹</span><span>株式会社阪急阪神百貨店</span><span>ウォルト・ディズニー・ジャパン株式会社</span><span>株式会社サンリオ</span><span>株式会社PRESSING</span><span>株式会社パワーボム</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
