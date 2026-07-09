@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社マニアジャパン | MANIA JAPAN Inc.</title>
+<meta name="description" content="株式会社マニアジャパンは、スニーカーブランド「OLD ORDER」の日本ライン、「OCAI」「BBIMP」を展開し、EC「OLD ORDER JAPAN」と全国の直営店でストリートカルチャーを発信するカンパニーです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0a;
+    --white:#ffffff;
+    --gray:#f4f4f2;
+    --gray-2:#e6e6e2;
+    --text:#1a1a1a;
+    --text-sub:#6b6b6b;
+    --accent:#c8102e;
+    --en:'Montserrat',sans-serif;
+    --jp:'Noto Sans JP',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--jp);color:var(--text);background:var(--white);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-2)}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--en);font-weight:800;font-size:18px;letter-spacing:.12em}
+  .logo span{color:var(--accent)}
+  nav.gnav{display:flex;gap:28px}
+  nav.gnav a{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.12em;position:relative;padding:4px 0}
+  nav.gnav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--black);transition:.25s}
+  nav.gnav a:hover::after{width:100%}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;width:40px;height:40px;position:relative}
+  .menu-btn span{position:absolute;left:8px;width:24px;height:2px;background:var(--black);transition:.3s}
+  .menu-btn span:nth-child(1){top:13px}
+  .menu-btn span:nth-child(2){top:20px}
+  .menu-btn span:nth-child(3){top:27px}
+  body.nav-open .menu-btn span:nth-child(1){top:20px;transform:rotate(45deg)}
+  body.nav-open .menu-btn span:nth-child(2){opacity:0}
+  body.nav-open .menu-btn span:nth-child(3){top:20px;transform:rotate(-45deg)}
+  .hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;background:var(--black);color:var(--white);position:relative;overflow:hidden}
+  .hero::before{content:'MANIA JAPAN';position:absolute;left:-2%;bottom:-6%;font-family:var(--en);font-weight:800;font-size:min(13vw,180px);line-height:1;color:rgba(255,255,255,.05);letter-spacing:-.02em;pointer-events:none}
+  .hero-inner{max-width:1080px;margin:0 auto;padding:120px 24px 80px;width:100%}
+  .hero-label{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.3em;color:var(--accent);margin-bottom:24px}
+  .hero h1{font-size:clamp(30px,5.4vw,56px);font-weight:900;line-height:1.4;letter-spacing:.04em}
+  .hero p.sub{margin-top:24px;font-size:15px;color:rgba(255,255,255,.72);max-width:600px}
+  .scroll-hint{position:absolute;left:24px;bottom:28px;font-family:var(--en);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:12px}
+  .scroll-hint::after{content:'';width:48px;height:1px;background:rgba(255,255,255,.4)}
+  section{padding:104px 0}
+  .sec-head{margin-bottom:56px}
+  .sec-head .en{font-family:var(--en);font-size:clamp(28px,4.4vw,44px);font-weight:800;letter-spacing:.06em;line-height:1.1}
+  .sec-head .en span{color:var(--accent)}
+  .sec-head .jp{margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--text-sub);display:flex;align-items:center;gap:14px}
+  .sec-head .jp::before{content:'';width:32px;height:2px;background:var(--accent)}
+  .fade{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .fade.show{opacity:1;transform:none}
+  .about-copy{max-width:720px}
+  .about-copy h3{font-size:clamp(20px,2.6vw,26px);font-weight:900;line-height:1.7;margin-bottom:24px;letter-spacing:.04em}
+  .about-copy p{color:var(--text-sub);font-size:14.5px;margin-bottom:16px}
+  #brands{background:var(--gray)}
+  .brand-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .brand-card{background:var(--white);padding:40px 36px;border-top:3px solid var(--black);transition:.3s;display:flex;flex-direction:column}
+  .brand-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+  .brand-card .bl{height:44px;display:flex;align-items:center;margin-bottom:18px}
+  .brand-card .bl img{max-height:40px;width:auto}
+  .brand-card h3{font-size:17px;font-weight:900;letter-spacing:.04em;margin-bottom:4px}
+  .brand-card .cat{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.22em;color:var(--accent);margin-bottom:12px}
+  .brand-card p{font-size:13px;color:var(--text-sub);flex:1}
+  .brand-card .bc-link{margin-top:18px;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.1em;border:1.5px solid var(--black);padding:8px 18px;align-self:flex-start;transition:.25s}
+  .brand-card .bc-link::after{content:' ↗'}
+  .brand-card .bc-link:hover{background:var(--black);color:var(--white)}
+  .shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .shop-card{border:1px solid var(--gray-2);overflow:hidden;transition:.3s}
+  .shop-card:hover{box-shadow:0 16px 40px rgba(0,0,0,.07)}
+  .shop-photo{aspect-ratio:16/10;background:linear-gradient(135deg,#ececea,#dcdcd8);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.3em;color:#a5a5a0;background-size:cover;background-position:center}
+  .shop-body{padding:26px 28px}
+  .shop-body .sc-cat{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.22em;color:var(--accent)}
+  .shop-body h3{font-size:17px;font-weight:900;margin:8px 0 12px;letter-spacing:.04em}
+  .shop-info{font-size:12.5px;color:var(--text-sub)}
+  .shop-info div{display:flex;gap:10px;padding:3px 0}
+  .shop-info b{flex:0 0 64px;color:var(--text);font-weight:700}
+  .shop-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+  .shop-links a{font-family:var(--en);font-size:10.5px;font-weight:700;letter-spacing:.08em;border:1.5px solid var(--black);padding:7px 14px;transition:.25s}
+  .shop-links a:hover{background:var(--black);color:var(--white)}
+  .shops-note{margin-top:32px;font-size:12.5px;color:var(--text-sub);text-align:center}
+  #events{background:var(--black);color:var(--white)}
+  #events .sec-head .jp{color:rgba(255,255,255,.6)}
+  .events-note{text-align:center;font-size:13.5px;color:rgba(255,255,255,.6)}
+  #company{background:var(--gray)}
+  .company-table{width:100%;border-collapse:collapse;background:var(--white)}
+  .company-table th,.company-table td{border:1px solid var(--gray-2);padding:18px 24px;font-size:13.5px;text-align:left;vertical-align:top}
+  .company-table th{width:200px;background:#fafaf8;font-weight:700;letter-spacing:.08em}
+  footer{background:var(--black);color:var(--white);padding:56px 0 32px}
+  .foot-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+  .foot-logo{font-family:var(--en);font-weight:800;font-size:22px;letter-spacing:.12em}
+  .foot-logo span{color:var(--accent)}
+  .foot-sub{margin-top:14px;font-size:11.5px;color:rgba(255,255,255,.55);line-height:2}
+  .foot-nav{display:flex;gap:24px;flex-wrap:wrap}
+  .foot-nav a{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.7)}
+  .foot-nav a:hover{color:var(--white)}
+  .copyright{margin-top:48px;text-align:center;font-family:var(--en);font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.4)}
+  @media(max-width:840px){
+    nav.gnav{position:fixed;inset:64px 0 auto 0;background:var(--white);flex-direction:column;gap:0;padding:8px 0 20px;border-bottom:1px solid var(--gray-2);transform:translateY(-130%);transition:.35s;z-index:99}
+    body.nav-open nav.gnav{transform:none}
+    nav.gnav a{padding:14px 28px;font-size:13px}
+    nav.gnav a::after{display:none}
+    .menu-btn{display:block}
+    section{padding:72px 0}
+    .brand-cards,.shop-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#top">MANIA JAPAN<span>.</span></a>
+    <button class="menu-btn" aria-label="menu"><span></span><span></span><span></span></button>
+    <nav class="gnav">
+      <a href="#about">ABOUT</a>
+      <a href="#brands">BRANDS</a>
+      <a href="#shops">SHOPS</a>
+      <a href="#company">COMPANY</a>
+      <a href="https://omt-inc.com">OMT GROUP</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-label">MANIA JAPAN INC. — TOKYO / OSAKA / NAGOYA</div>
+    <h1>一足から、<br>カルチャーを。</h1>
+    <p class="sub">株式会社マニアジャパンは、スニーカーブランド「OLD ORDER」の日本ライン、「OCAI」「BBIMP」を展開し、EC「OLD ORDER JAPAN」と全国の直営店でストリートカルチャーを発信するカンパニーです。</p>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">ABOUT<span>.</span></div>
+      <div class="jp">マニアジャパンについて</div>
+    </div>
+    <div class="about-copy fade">
+      <h3>世界のスニーカーカルチャーを、<br>日本のスタンダードに。</h3>
+      <p>株式会社マニアジャパンは2024年に設立された、スニーカー・ストリートファッションのカンパニーです。世界で支持を集めるスニーカーブランド「OLD ORDER」の日本ラインをはじめ、「OCAI」「BBIMP」の3ブランドを取り扱っています。</p>
+      <p>公式EC「OLD ORDER JAPAN」と、原宿・明治通り・大阪・名古屋の直営店を両輪に、輸入・販売から店舗体験まで一貫して手がけ、ストリートカルチャーを全国へ届けています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANDS ============ -->
+<section id="brands">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">BRANDS<span>.</span></div>
+      <div class="jp">取扱ブランド</div>
+    </div>
+    <div class="brand-cards">
+      <div class="brand-card fade">
+        <div class="bl"><img src="../assets/logo-oldorder.svg" alt="OLD ORDER"></div>
+        <div class="cat">SNEAKERS</div>
+        <p>世界のストリートシーンで支持を集めるスニーカーブランド。マニアジャパンが日本ラインを展開しています。</p>
+        <a class="bc-link" href="https://oldorder.jp" target="_blank" rel="noopener">ONLINE STORE</a>
+      </div>
+      <div class="brand-card fade">
+        <div class="bl"><img src="../assets/logo-ocai.png" alt="Ocai"></div>
+        <div class="cat">SNEAKERS / STREET</div>
+        <p>独自のシルエットで存在感を放つスニーカーブランド。X-Runnerシリーズをはじめ個性派モデルを展開しています。</p>
+        <a class="bc-link" href="https://oldorder.jp" target="_blank" rel="noopener">ONLINE STORE</a>
+      </div>
+      <div class="brand-card fade">
+        <div class="bl"><img src="../assets/logo-bbimp.png" alt="BBIMP"></div>
+        <div class="cat">STREET</div>
+        <p>コウモリのアイコンが目印のストリートブランド。遊び心のあるグラフィックでシーンを盛り上げています。</p>
+        <a class="bc-link" href="https://oldorder.jp" target="_blank" rel="noopener">ONLINE STORE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOPS ============ -->
+<section id="shops">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">SHOPS<span>.</span></div>
+      <div class="jp">直営店舗</div>
+    </div>
+    <div class="shop-grid">
+      <div class="shop-card fade">
+        <div class="shop-photo">PHOTO</div>
+        <div class="shop-body">
+          <div class="sc-cat">CONCEPT STORE</div>
+          <h3>OLD ORDER 原宿</h3>
+          <div class="shop-info">
+            <div><b>住所</b><span>東京都渋谷区神宮前3-20-6 1F</span></div>
+            <div><b>営業時間</b><span>準備中</span></div>
+          </div>
+          <div class="shop-links"><a href="https://oldorder.jp" target="_blank" rel="noopener">ONLINE STORE</a></div>
+        </div>
+      </div>
+      <div class="shop-card fade">
+        <div class="shop-photo">PHOTO</div>
+        <div class="shop-body">
+          <div class="sc-cat">TOKYO</div>
+          <h3>OLD ORDER 東京 明治通り店</h3>
+          <div class="shop-info">
+            <div><b>住所</b><span>準備中</span></div>
+            <div><b>営業時間</b><span>準備中</span></div>
+          </div>
+          <div class="shop-links"><a href="https://oldorder.jp" target="_blank" rel="noopener">ONLINE STORE</a></div>
+        </div>
+      </div>
+      <div class="shop-card fade">
+        <div class="shop-photo">PHOTO</div>
+        <div class="shop-body">
+          <div class="sc-cat">OSAKA</div>
+          <h3>OLD ORDER 大阪</h3>
+          <div class="shop-info">
+            <div><b>住所</b><span>準備中</span></div>
+            <div><b>営業時間</b><span>準備中</span></div>
+          </div>
+          <div class="shop-links"><a href="https://oldorder.jp" target="_blank" rel="noopener">ONLINE STORE</a></div>
+        </div>
+      </div>
+      <div class="shop-card fade">
+        <div class="shop-photo">PHOTO</div>
+        <div class="shop-body">
+          <div class="sc-cat">NAGOYA</div>
+          <h3>OLD ORDER 名古屋</h3>
+          <div class="shop-info">
+            <div><b>住所</b><span>準備中</span></div>
+            <div><b>営業時間</b><span>準備中</span></div>
+          </div>
+          <div class="shop-links"><a href="https://oldorder.jp" target="_blank" rel="noopener">ONLINE STORE</a></div>
+        </div>
+      </div>
+    </div>
+    <p class="shops-note">※店舗の詳細情報・写真は順次掲載していきます。</p>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section id="events">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en" style="color:#fff">EVENTS<span>.</span></div>
+      <div class="jp">イベントアーカイブ</div>
+    </div>
+    <p class="events-note fade">ポップアップ・発売イベント・コラボの記録を、ここに蓄積していきます。</p>
+  </div>
+</section>
+
+<!-- ============ COMPANY ============ -->
+<section id="company">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">COMPANY<span>.</span></div>
+      <div class="jp">会社概要</div>
+    </div>
+    <table class="company-table fade">
+      <tr><th>商号</th><td>株式会社マニアジャパン(MANIA JAPAN Inc.)</td></tr>
+      <tr><th>代表取締役</th><td>津田 陽翔</td></tr>
+      <tr><th>設立</th><td>2024年5月10日</td></tr>
+      <tr><th>資本金</th><td>990万円</td></tr>
+      <tr><th>所在地</th><td>本店: 〒150-0001 東京都渋谷区神宮前3-20-6 1F<br>大阪オフィス: 大阪府大阪市西区南堀江1-11-1<br>東京オフィス: 東京都渋谷区神宮前1-1-6 IMビル 地下1階</td></tr>
+      <tr><th>TEL</th><td>06-4394-7965</td></tr>
+      <tr><th>事業内容</th><td>スニーカー・アパレルの輸入・販売 / EC運営 / 直営店舗運営</td></tr>
+      <tr><th>公式EC</th><td><a href="https://oldorder.jp" target="_blank" rel="noopener" style="text-decoration:underline">OLD ORDER JAPAN(oldorder.jp)</a></td></tr>
+      <tr><th>グループ</th><td><a href="https://omt-inc.com" target="_blank" rel="noopener" style="text-decoration:underline">OMTグループ</a>(株式会社OverTure / 株式会社マニアジャパン / 合同会社tomorrow ark)</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-logo">MANIA JAPAN<span>.</span></div>
+      <div class="foot-sub">
+        株式会社マニアジャパン<br>
+        東京都渋谷区神宮前3-20-6 1F
+      </div>
+    </div>
+    <nav class="foot-nav">
+      <a href="#about">ABOUT</a>
+      <a href="#brands">BRANDS</a>
+      <a href="#shops">SHOPS</a>
+      <a href="#company">COMPANY</a>
+      <a href="https://omt-inc.com">OMT GROUP</a>
+    </nav>
+  </div>
+  <div class="copyright">&copy; <span id="year">2026</span> MANIA JAPAN Inc. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+  document.querySelector('.menu-btn').addEventListener('click',function(){ document.body.classList.toggle('nav-open'); });
+  document.querySelectorAll('nav.gnav a').forEach(function(a){ a.addEventListener('click',function(){ document.body.classList.remove('nav-open'); }); });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
