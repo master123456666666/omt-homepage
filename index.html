@@ -141,6 +141,30 @@
   .btn{display:inline-block;font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.16em;padding:16px 56px;border:2px solid var(--white);transition:.3s;cursor:pointer;background:none;color:var(--white)}
   .btn:hover{background:var(--white);color:var(--black)}
 
+  /* ---------- data ---------- */
+  #data{background:var(--white)}
+  .data-hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:56px}
+  .data-big{border:1px solid var(--gray-2);padding:36px 24px;text-align:center}
+  .data-big .label{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--text-sub);margin-bottom:10px}
+  .data-big .num{font-family:var(--en);font-weight:800;font-size:clamp(44px,6vw,64px);line-height:1;color:var(--black)}
+  .data-big .num small{font-family:var(--jp);font-size:.32em;font-weight:700;margin-left:4px}
+  .data-charts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .donut-card{border:1px solid var(--gray-2);padding:32px 24px;text-align:center}
+  .donut-card h4{font-size:15px;font-weight:900;letter-spacing:.1em;margin-bottom:24px}
+  .donut{width:180px;height:180px;border-radius:50%;margin:0 auto;position:relative}
+  .donut::after{content:'';position:absolute;inset:22%;background:var(--white);border-radius:50%}
+  .donut-legend{list-style:none;margin-top:24px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px}
+  .donut-legend li{font-size:12px;font-weight:700;display:flex;align-items:center;gap:7px}
+  .donut-legend li i{width:12px;height:12px;border-radius:3px;flex:none}
+  .donut-legend li small{font-family:var(--en);font-weight:600;color:var(--text-sub);margin-left:2px}
+  .data-note{margin-top:28px;font-size:12px;color:var(--text-sub);text-align:center}
+  .age-list{list-style:none;text-align:left;margin-top:8px}
+  .age-list li{display:flex;align-items:center;justify-content:space-between;padding:20px 4px;border-bottom:1px solid var(--gray-2)}
+  .age-list li:last-child{border-bottom:none}
+  .age-list li span{font-size:13.5px;font-weight:700}
+  .age-list li b{font-family:var(--en);font-weight:800;font-size:28px;line-height:1}
+  .age-list li b small{font-family:var(--jp);font-size:.42em;font-weight:700;margin-left:3px}
+
   /* ---------- company ---------- */
   #company{background:var(--gray)}
   .company-table{width:100%;border-collapse:collapse;background:var(--white)}
@@ -196,6 +220,7 @@
     .co-side{padding:28px}
     .co-main{padding:28px}
     .rec-grid{grid-template-columns:1fr}
+    .data-hero,.data-charts{grid-template-columns:1fr}
     .client-grid{grid-template-columns:1fr 1fr}
     .client-grid li:last-child{grid-column:span 2}
   }
@@ -435,6 +460,42 @@
   </div>
 </section>
 
+<!-- ============ DATA ============ -->
+<section id="data">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">DATA<span>.</span></div>
+      <div class="jp">数字で見るOMT</div>
+    </div>
+    <div class="data-hero fade">
+      <div class="data-big">
+        <div class="label">全従業員数</div>
+        <div class="num">83<small>名</small></div>
+      </div>
+      <div class="data-big">
+        <div class="label">全社平均年齢</div>
+        <div class="num">25.1<small>歳</small></div>
+      </div>
+    </div>
+    <div class="data-charts fade">
+      <div class="donut-card">
+        <h4>会社別 従業員数</h4>
+        <div class="donut" data-segments='[{"label":"マニアジャパン(38名)","v":45.8},{"label":"tomorrow ark(26名)","v":31.3},{"label":"OverTure(19名)","v":22.9}]'></div>
+        <ul class="donut-legend"></ul>
+      </div>
+      <div class="donut-card">
+        <h4>会社別 平均年齢</h4>
+        <ul class="age-list">
+          <li><span>株式会社マニアジャパン</span><b>24.2<small>歳</small></b></li>
+          <li><span>株式会社OverTure</span><b>24.8<small>歳</small></b></li>
+          <li><span>合同会社tomorrow ark</span><b>26.5<small>歳</small></b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="data-note fade">※2026年7月時点。20代の若くて優秀なメンバーが活躍しています。</p>
+  </div>
+</section>
+
 <!-- ============ COMPANY ============ -->
 <section id="company">
   <div class="wrap">
@@ -558,6 +619,33 @@
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // DATAセクション: ドーナツチャート描画(data-segmentsのJSONを編集すれば自動反映)
+  var DONUT_COLORS = ['#c8102e', '#1a1a1a', '#9a9a94', '#d9d9d4', '#6b6b6b'];
+  document.querySelectorAll('.donut').forEach(function(el){
+    var segs = JSON.parse(el.getAttribute('data-segments'));
+    var stops = [], acc = 0;
+    segs.forEach(function(s, i){
+      var c = DONUT_COLORS[i % DONUT_COLORS.length];
+      stops.push(c + ' ' + acc + '% ' + (acc + s.v) + '%');
+      acc += s.v;
+    });
+    el.style.background = 'conic-gradient(' + stops.join(',') + ')';
+    var legend = el.parentElement.querySelector('.donut-legend');
+    if (legend) {
+      segs.forEach(function(s, i){
+        var li = document.createElement('li');
+        var sw = document.createElement('i');
+        sw.style.background = DONUT_COLORS[i % DONUT_COLORS.length];
+        li.appendChild(sw);
+        li.appendChild(document.createTextNode(s.label));
+        var pct = document.createElement('small');
+        pct.textContent = s.v.toFixed(1) + '%';
+        li.appendChild(pct);
+        legend.appendChild(li);
+      });
+    }
+  });
 </script>
 </body>
 </html>
