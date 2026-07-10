@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWS &amp; EVENTS | OMTグループ</title>
+<meta name="description" content="OMTグループ各社(株式会社OverTure・株式会社マニアジャパン・合同会社tomorrow ark)のニュース・イベント一覧です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png">
+<link rel="apple-touch-icon" href="../assets/favicon-180.png">
+<style>
+  :root{
+    --black:#0a0a0a;
+    --white:#ffffff;
+    --gray:#f4f4f2;
+    --gray-2:#e6e6e2;
+    --text:#1a1a1a;
+    --text-sub:#6b6b6b;
+    --accent:#c8102e;
+    --en:'Montserrat',sans-serif;
+    --jp:'Noto Sans JP',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--jp);color:var(--white);background:var(--black);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-2);color:var(--text)}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--en);font-weight:800;font-size:22px;letter-spacing:.14em}
+  .logo span{color:var(--accent)}
+  .back{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;border:1.5px solid var(--black);padding:8px 18px;transition:.25s}
+  .back:hover{background:var(--black);color:var(--white)}
+  main{max-width:1080px;margin:0 auto;padding:150px 24px 110px;min-height:100vh}
+  .sec-head{margin-bottom:56px}
+  .sec-head .en{font-family:var(--en);font-size:clamp(28px,4.4vw,44px);font-weight:800;letter-spacing:.06em;line-height:1.1}
+  .sec-head .en span{color:var(--accent)}
+  .sec-head .jp{margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:14px}
+  .sec-head .jp::before{content:'';width:32px;height:2px;background:var(--accent)}
+  .event-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  a.event-card{display:block;border:1px solid rgba(255,255,255,.16);transition:.3s}
+  a.event-card:hover{border-color:var(--white)}
+  .event-photo{aspect-ratio:4/3;background:linear-gradient(135deg,#1c1c1c,#2a2a2a);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.3em;color:rgba(255,255,255,.3);background-size:cover;background-position:center}
+  .event-body{padding:18px 20px}
+  .event-body .ev-co{font-family:var(--en);font-size:9px;font-weight:700;letter-spacing:.22em;color:rgba(255,255,255,.45)}
+  .event-body .date{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--accent);margin-top:4px}
+  .event-body h4{font-size:14px;font-weight:700;margin-top:6px;letter-spacing:.04em}
+  .list-note{margin-top:48px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
+  footer{background:var(--black);color:var(--white);padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
+  footer .copyright{font-family:var(--en);font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.4)}
+  @media(max-width:840px){.event-list{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="../">OMT<span>.</span></a>
+    <a class="back" href="../#events">← TOP</a>
+  </div>
+</header>
+
+<main>
+  <div class="sec-head">
+    <div class="en">NEWS &amp; EVENTS<span>.</span></div>
+    <div class="jp">ニュース・イベント 一覧</div>
+  </div>
+  <div class="event-list" id="omtEventList"></div>
+  <p class="list-note">グループ各社のお知らせ・イベントを新しい順に掲載しています。詳細は各カードから各社ページへ。</p>
+</main>
+
+<footer>
+  <div class="copyright">&copy; 2026 OMT GROUP. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<script>
+  (function(){
+    var SOURCES = [
+      { path: '../overture/index.html', link: '../overture/', label: 'OVERTURE' },
+      { path: '../maniajapan/index.html', link: '../maniajapan/', label: 'MANIA JAPAN' },
+      { path: '../tomorrowark/index.html', link: '../tomorrowark/', label: 'TOMORROW ARK' }
+    ];
+    function sortKey(dateText){
+      var best = 0;
+      var m = dateText.match(/\d{4}\.\d{1,2}(\.\d{1,2})?/g) || [];
+      m.forEach(function(t){
+        var p = t.split('.');
+        var v = parseInt(p[0],10)*10000 + parseInt(p[1],10)*100 + (p[2] ? parseInt(p[2],10) : 0);
+        if (v > best) best = v;
+      });
+      return best;
+    }
+    Promise.all(SOURCES.map(function(s){
+      return fetch(s.path).then(function(r){ return r.text(); }).then(function(html){
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        return Array.from(doc.querySelectorAll('.event-card')).map(function(card){
+          var d = card.querySelector('.date');
+          var h = card.querySelector('h4');
+          var ph = card.querySelector('.event-photo');
+          if (!d || !h) return null;
+          var tag = card.querySelector('.tag');
+          if (tag && tag.textContent.trim().toUpperCase() === 'NEWS') return null;
+          if (!ph) return null;
+          // 記事リンクがあれば記事へ、なければ各社ページへ
+          var href = card.getAttribute('href');
+          var link = href ? s.link + href : s.link + '#events';
+          return {
+            date: d.textContent.trim(),
+            title: h.innerHTML,
+            photoStyle: ph.getAttribute('style') || '',
+            label: s.label,
+            link: link,
+            key: sortKey(d.textContent)
+          };
+        }).filter(Boolean);
+      }).catch(function(){ return []; });
+    })).then(function(results){
+      var all = [].concat.apply([], results).sort(function(a,b){ return b.key - a.key; });
+      var list = document.getElementById('omtEventList');
+      all.forEach(function(ev){
+        var a = document.createElement('a');
+        a.className = 'event-card';
+        a.href = ev.link;
+        a.innerHTML = '<div class="event-photo"' + (ev.photoStyle ? ' style="' + ev.photoStyle + '"' : '') + '>PHOTO</div>'
+          + '<div class="event-body"><div class="ev-co">' + ev.label + '</div><div class="date">' + ev.date + '</div><h4>' + ev.title + '</h4></div>';
+        list.appendChild(a);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

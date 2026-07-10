@@ -237,9 +237,21 @@
   .event-body h4{font-size:14px;font-weight:700;margin-top:6px;letter-spacing:.04em}
   .events-note{margin-top:36px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
   #events .sec-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px}
-  .ev-more{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.16em;border:1.5px solid var(--white);background:none;color:var(--white);padding:11px 30px;cursor:pointer;transition:.25s}
+  .ev-more{display:inline-block;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.16em;border:1.5px solid var(--white);background:none;color:var(--white);padding:11px 30px;cursor:pointer;transition:.25s}
   .ev-more:hover{background:var(--white);color:var(--black)}
   @media(max-width:840px){.event-list{grid-template-columns:1fr}}
+
+  /* ---------- shops (集約) ---------- */
+  #shops{background:var(--white)}
+  .shop-agg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  a.shopagg-card{display:block;border:1px solid var(--gray-2);transition:.3s}
+  a.shopagg-card:hover{box-shadow:0 16px 40px rgba(0,0,0,.07);transform:translateY(-3px)}
+  .shopagg-photo{aspect-ratio:16/10;background-size:cover;background-position:center;background-color:var(--gray)}
+  .shopagg-body{padding:16px 18px}
+  .shopagg-body .co{font-family:var(--en);font-size:9px;font-weight:700;letter-spacing:.2em;color:var(--accent)}
+  .shopagg-body h4{font-size:14px;font-weight:700;margin-top:6px;letter-spacing:.04em}
+  .shops-agg-note{margin-top:32px;text-align:center;font-size:12.5px;color:var(--text-sub)}
+  @media(max-width:840px){.shop-agg{grid-template-columns:1fr}}
 
   /* ---------- company ---------- */
   #company{background:var(--gray)}
@@ -318,6 +330,7 @@
       <a href="philosophy/">PHILOSOPHY</a>
       <a href="#business">BUSINESS</a>
       <a href="#group">GROUP</a>
+      <a href="#shops">SHOPS</a>
       <a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
       <a href="#contact">CONTACT</a>
@@ -612,10 +625,22 @@
         <div class="en" style="color:#fff">NEWS &amp; EVENTS<span>.</span></div>
         <div class="jp">ニュース・イベント</div>
       </div>
-      <button id="evMore" class="ev-more" style="display:none">VIEW MORE</button>
+      <a id="evMore" class="ev-more" href="news/" style="display:none">VIEW MORE</a>
     </div>
     <div class="event-list fade" id="omtEventList"></div>
     <p class="events-note fade">グループ各社の最新のお知らせ・イベントを掲載しています。詳細は各社ページをご覧ください。</p>
+  </div>
+</section>
+
+<!-- ============ SHOPS (各社ページから自動集約) ============ -->
+<section id="shops" style="display:none">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">SHOPS<span>.</span></div>
+      <div class="jp">直営店・ショールーム</div>
+    </div>
+    <div class="shop-agg fade" id="omtShopList"></div>
+    <p class="shops-agg-note fade">全国12拠点の直営店・ショールームを展開しています。住所・営業時間などの詳細は各社ページをご覧ください。店舗写真は順次追加していきます。</p>
   </div>
 </section>
 
@@ -708,6 +733,7 @@
       <a href="philosophy/">PHILOSOPHY</a>
       <a href="#business">BUSINESS</a>
       <a href="#group">GROUP</a>
+      <a href="#shops">SHOPS</a>
       <a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
       <a href="#contact">CONTACT</a>
@@ -795,7 +821,7 @@
     Promise.all(SOURCES.map(function(s){
       return fetch(s.path).then(function(r){ return r.text(); }).then(function(html){
         var doc = new DOMParser().parseFromString(html, 'text/html');
-        return Array.from(doc.querySelectorAll('.event-card')).map(function(card){
+        var events = Array.from(doc.querySelectorAll('.event-card')).map(function(card){
           var d = card.querySelector('.date');
           var h = card.querySelector('h4');
           var ph = card.querySelector('.event-photo');
@@ -812,13 +838,28 @@
             key: sortKey(d.textContent)
           };
         }).filter(Boolean);
-      }).catch(function(){ return []; });
+        var shops = Array.from(doc.querySelectorAll('.shop-card')).map(function(card){
+          var ph = card.querySelector('.shop-photo');
+          var h = card.querySelector('h3');
+          var cat = card.querySelector('.sc-cat');
+          if (!ph || !h) return null;
+          var style = ph.getAttribute('style') || '';
+          if (style.indexOf('background-image') === -1) return null; // 写真のある店舗のみ表示
+          return {
+            name: h.textContent.trim(),
+            cat: cat ? cat.textContent.trim() : '',
+            photoStyle: style,
+            label: s.label,
+            link: s.link + '#shops'
+          };
+        }).filter(Boolean);
+        return { events: events, shops: shops };
+      }).catch(function(){ return { events: [], shops: [] }; });
     })).then(function(results){
-      var all = [].concat.apply([], results).sort(function(a,b){ return b.key - a.key; });
-      if (!all.length) return;
-      var list = document.getElementById('omtEventList');
-      function render(items){
-        items.forEach(function(ev){
+      var allEvents = [].concat.apply([], results.map(function(r){ return r.events; })).sort(function(a,b){ return b.key - a.key; });
+      if (allEvents.length) {
+        var list = document.getElementById('omtEventList');
+        allEvents.slice(0, 3).forEach(function(ev){
           var a = document.createElement('a');
           a.className = 'event-card';
           a.href = ev.link;
@@ -826,18 +867,22 @@
             + '<div class="event-body"><div class="ev-co">' + ev.label + '</div><div class="date">' + ev.date + '</div><h4>' + ev.title + '</h4></div>';
           list.appendChild(a);
         });
+        if (allEvents.length > 3) document.getElementById('evMore').style.display = '';
+        document.getElementById('events').style.display = '';
       }
-      render(all.slice(0, 3));
-      var rest = all.slice(3);
-      var btn = document.getElementById('evMore');
-      if (rest.length) {
-        btn.style.display = '';
-        btn.addEventListener('click', function(){
-          render(rest);
-          btn.style.display = 'none';
+      var allShops = [].concat.apply([], results.map(function(r){ return r.shops; }));
+      if (allShops.length) {
+        var sl = document.getElementById('omtShopList');
+        allShops.forEach(function(sp){
+          var a = document.createElement('a');
+          a.className = 'shopagg-card';
+          a.href = sp.link;
+          a.innerHTML = '<div class="shopagg-photo" style="' + sp.photoStyle + '"></div>'
+            + '<div class="shopagg-body"><div class="co">' + sp.label + (sp.cat ? ' — ' + sp.cat : '') + '</div><h4>' + sp.name + '</h4></div>';
+          sl.appendChild(a);
         });
+        document.getElementById('shops').style.display = '';
       }
-      document.getElementById('events').style.display = '';
     });
   })();
 
