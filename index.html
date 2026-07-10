@@ -794,6 +794,9 @@
           var h = card.querySelector('h4');
           var ph = card.querySelector('.event-photo');
           if (!d || !h) return null;
+          var tag = card.querySelector('.tag');
+          if (tag && tag.textContent.trim().toUpperCase() === 'NEWS') return null; // お知らせ系はトップに出さない
+          if (!ph) return null; // 写真なしのイベントもトップには出さない
           return {
             date: d.textContent.trim(),
             title: h.innerHTML,
