@@ -93,6 +93,18 @@
   .shop-links a{font-family:var(--en);font-size:10.5px;font-weight:700;letter-spacing:.08em;border:1.5px solid var(--black);padding:7px 14px;transition:.25s}
   .shop-links a:hover{background:var(--black);color:var(--white)}
   .shops-note{margin-top:32px;font-size:12.5px;color:var(--text-sub);text-align:center}
+  #events{background:var(--black);color:var(--white)}
+  #events .sec-head .en{color:#fff}
+  #events .sec-head .jp{color:rgba(255,255,255,.6)}
+  .news-list{border-top:1px solid rgba(255,255,255,.16)}
+  .event-card.news-row{display:flex;align-items:baseline;gap:20px;padding:20px 6px;border-bottom:1px solid rgba(255,255,255,.16);transition:.25s}
+  a.event-card.news-row:hover{background:rgba(255,255,255,.05)}
+  .news-row .date{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--accent);flex:0 0 150px}
+  .news-row .tag{font-style:normal;font-family:var(--en);font-size:9px;font-weight:700;letter-spacing:.2em;border:1px solid rgba(255,255,255,.4);padding:3px 10px;color:rgba(255,255,255,.75);flex:none}
+  .news-row h4{font-size:14px;font-weight:700;letter-spacing:.04em;flex:1;line-height:1.6}
+  .news-row .arw{font-family:var(--en);color:rgba(255,255,255,.5)}
+  .news-row .event-photo{display:none}
+  .events-note{margin-top:32px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
   #company{background:var(--gray)}
   .company-table{width:100%;border-collapse:collapse;background:var(--white)}
   .company-table th,.company-table td{border:1px solid var(--gray-2);padding:18px 24px;font-size:13.5px;text-align:left;vertical-align:top}
@@ -114,6 +126,9 @@
     .menu-btn{display:block}
     section{padding:72px 0}
     .biz-cards,.shop-grid{grid-template-columns:1fr}
+    .event-card.news-row{flex-wrap:wrap;gap:10px 14px}
+    .news-row .date{flex:0 0 auto}
+    .news-row h4{flex:1 1 100%}
   }
 </style>
 </head>
@@ -127,6 +142,7 @@
       <a href="#about">ABOUT</a>
       <a href="#business">BUSINESS</a>
       <a href="#shops">SHOPS</a>
+      <a href="#events">EVENTS</a>
       <a href="#company">COMPANY</a>
       <a href="https://omt-inc.com">OMT GROUP</a>
     </nav>
@@ -261,6 +277,25 @@
   </div>
 </section>
 
+<!-- ============ EVENTS ============ -->
+<section id="events">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">NEWS &amp; EVENTS<span>.</span></div>
+      <div class="jp">ニュース・イベント</div>
+    </div>
+    <div class="news-list fade">
+      <a class="event-card news-row" href="news/20250309-alude-nagoya-parco.html">
+        <span class="date">2025.03.09 - 08.31</span><i class="tag">EVENT</i>
+        <h4>ALUDE POP UP SHOP @名古屋PARCO</h4>
+        <span class="arw">→</span>
+        <i class="event-photo" style="background-image:url('../assets/event-alude-nagoya.jpg')"></i>
+      </a>
+    </div>
+    <p class="events-note">お知らせ・ポップアップ・イベントレポートをここに蓄積していきます。</p>
+  </div>
+</section>
+
 <!-- ============ COMPANY ============ -->
 <section id="company">
   <div class="wrap">
@@ -294,6 +329,7 @@
       <a href="#about">ABOUT</a>
       <a href="#business">BUSINESS</a>
       <a href="#shops">SHOPS</a>
+      <a href="#events">EVENTS</a>
       <a href="#company">COMPANY</a>
       <a href="https://omt-inc.com">OMT GROUP</a>
     </nav>
