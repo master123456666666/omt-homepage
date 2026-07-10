@@ -236,6 +236,9 @@
   .event-body .date{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--accent);margin-top:4px}
   .event-body h4{font-size:14px;font-weight:700;margin-top:6px;letter-spacing:.04em}
   .events-note{margin-top:36px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
+  #events .sec-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px}
+  .ev-more{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.16em;border:1.5px solid var(--white);background:none;color:var(--white);padding:11px 30px;cursor:pointer;transition:.25s}
+  .ev-more:hover{background:var(--white);color:var(--black)}
   @media(max-width:840px){.event-list{grid-template-columns:1fr}}
 
   /* ---------- company ---------- */
@@ -605,8 +608,11 @@
 <section id="events" style="display:none">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="en" style="color:#fff">NEWS &amp; EVENTS<span>.</span></div>
-      <div class="jp">ニュース・イベント</div>
+      <div>
+        <div class="en" style="color:#fff">NEWS &amp; EVENTS<span>.</span></div>
+        <div class="jp">ニュース・イベント</div>
+      </div>
+      <button id="evMore" class="ev-more" style="display:none">VIEW MORE</button>
     </div>
     <div class="event-list fade" id="omtEventList"></div>
     <p class="events-note fade">グループ各社の最新のお知らせ・イベントを掲載しています。詳細は各社ページをご覧ください。</p>
@@ -808,17 +814,29 @@
         }).filter(Boolean);
       }).catch(function(){ return []; });
     })).then(function(results){
-      var all = [].concat.apply([], results).sort(function(a,b){ return b.key - a.key; }).slice(0, 3);
+      var all = [].concat.apply([], results).sort(function(a,b){ return b.key - a.key; });
       if (!all.length) return;
       var list = document.getElementById('omtEventList');
-      all.forEach(function(ev){
-        var a = document.createElement('a');
-        a.className = 'event-card';
-        a.href = ev.link;
-        a.innerHTML = '<div class="event-photo"' + (ev.photoStyle ? ' style="' + ev.photoStyle + '"' : '') + '>PHOTO</div>'
-          + '<div class="event-body"><div class="ev-co">' + ev.label + '</div><div class="date">' + ev.date + '</div><h4>' + ev.title + '</h4></div>';
-        list.appendChild(a);
-      });
+      function render(items){
+        items.forEach(function(ev){
+          var a = document.createElement('a');
+          a.className = 'event-card';
+          a.href = ev.link;
+          a.innerHTML = '<div class="event-photo"' + (ev.photoStyle ? ' style="' + ev.photoStyle + '"' : '') + '>PHOTO</div>'
+            + '<div class="event-body"><div class="ev-co">' + ev.label + '</div><div class="date">' + ev.date + '</div><h4>' + ev.title + '</h4></div>';
+          list.appendChild(a);
+        });
+      }
+      render(all.slice(0, 3));
+      var rest = all.slice(3);
+      var btn = document.getElementById('evMore');
+      if (rest.length) {
+        btn.style.display = '';
+        btn.addEventListener('click', function(){
+          render(rest);
+          btn.style.display = 'none';
+        });
+      }
       document.getElementById('events').style.display = '';
     });
   })();
