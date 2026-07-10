@@ -77,6 +77,8 @@
   .biz-card .bc-link{margin-top:18px;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.1em;border:1.5px solid var(--black);padding:8px 18px;align-self:flex-start;transition:.25s}
   .biz-card .bc-link::after{content:' ↗'}
   .biz-card .bc-link:hover{background:var(--black);color:var(--white)}
+  .biz-card .bc-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .biz-card .bc-row .bc-link{margin-top:0}
   .shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
   .shop-card{border:1px solid var(--gray-2);overflow:hidden;transition:.3s}
   .shop-card:hover{box-shadow:0 16px 40px rgba(0,0,0,.07)}
@@ -168,7 +170,10 @@
         <div class="bl"><img src="../assets/logo-alude.png" alt="ALUDE"></div>
         <div class="cat">MENS APPAREL</div>
         <p>キレイめをテーマにしたメンズブランド。トレンドを押さえたミニマルなアイテムを、東京・大阪・名古屋・札幌の直営店と公式ECで展開しています。</p>
-        <a class="bc-link" href="https://alude.official.ec" target="_blank" rel="noopener">ALUDE ONLINE</a>
+        <div class="bc-row">
+          <a class="bc-link" href="https://alude.official.ec" target="_blank" rel="noopener">ALUDE ONLINE</a>
+          <a class="bc-link" href="https://www.instagram.com/alude_ec/" target="_blank" rel="noopener">EC INSTAGRAM</a>
+        </div>
       </div>
       <div class="biz-card fade">
         <div class="bl"><b>NEW PRIME</b></div>
