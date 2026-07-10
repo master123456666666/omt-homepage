@@ -126,6 +126,15 @@
   .stat .num small{font-size:.5em;font-weight:700;margin-left:2px}
   .stat .label{margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--text-sub)}
 
+  /* ---------- philosophy teaser ---------- */
+  #philosophy{background:var(--black);color:var(--white);padding:88px 0}
+  .ph-teaser{text-align:center}
+  .pt-label{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.3em;color:var(--accent);margin-bottom:22px}
+  .pt-statement{font-size:clamp(20px,3.2vw,30px);font-weight:900;line-height:1.9;letter-spacing:.04em}
+  .pt-sub{margin-top:18px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:34px}
+  #philosophy .btn-dark{border-color:var(--white);background:none;color:var(--white)}
+  #philosophy .btn-dark:hover{background:var(--white);color:var(--black)}
+
   /* ---------- business ---------- */
   #business{background:var(--gray)}
   .biz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
@@ -303,6 +312,7 @@
     <button class="menu-btn" aria-label="menu"><span></span><span></span><span></span></button>
     <nav class="gnav">
       <a href="#about">ABOUT</a>
+      <a href="philosophy/">PHILOSOPHY</a>
       <a href="#business">BUSINESS</a>
       <a href="#group">GROUP</a>
       <a href="#recruit">RECRUIT</a>
@@ -323,7 +333,7 @@
   </div>
   <div class="hero-inner">
     <div class="hero-label">OMT GROUP — FROM OSAKA TO THE WORLD</div>
-    <h1>カルチャーを、<br>事業にする。</h1>
+    <h1>まだない熱狂を、<br>つくる。</h1>
     <p class="sub">ストリート、スニーカー、メンズ・レディースファッション、そしてセールス。OMTグループは、それぞれのストーリーや愛を起点にしたブランドとビジネスを、大阪から全国へ届けます。そして、世界へ。</p>
     <div class="hero-companies">
       <div><b>O</b>verTure</div>
@@ -370,6 +380,16 @@
       <div class="stat"><div class="num">12<small>拠点</small></div><div class="label">直営店・ショールーム</div></div>
       <div class="stat"><div class="num">50<small>万+</small></div><div class="label">SNS総フォロワー</div></div>
     </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY teaser ============ -->
+<section id="philosophy">
+  <div class="wrap ph-teaser fade">
+    <div class="pt-label">PHILOSOPHY — 企業理念</div>
+    <p class="pt-statement">人の心を動かし、<br>新しい価値が生まれる場所をつくる。</p>
+    <p class="pt-sub">PURPOSE・MISSION・VISION・6つのVALUES — OMTの考え方のすべて。</p>
+    <a class="btn-dark" href="philosophy/">READ PHILOSOPHY</a>
   </div>
 </section>
 
@@ -679,6 +699,7 @@
     </div>
     <nav class="foot-nav">
       <a href="#about">ABOUT</a>
+      <a href="philosophy/">PHILOSOPHY</a>
       <a href="#business">BUSINESS</a>
       <a href="#group">GROUP</a>
       <a href="#recruit">RECRUIT</a>

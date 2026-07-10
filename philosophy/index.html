@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHILOSOPHY | OMTグループ</title>
+<meta name="description" content="まだない熱狂を、つくる。OMTグループの企業理念 — PURPOSE・MISSION・VISION・VALUES。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png">
+<link rel="apple-touch-icon" href="../assets/favicon-180.png">
+<style>
+  :root{
+    --black:#0a0a0a;
+    --white:#ffffff;
+    --gray:#f4f4f2;
+    --gray-2:#e6e6e2;
+    --text:#1a1a1a;
+    --text-sub:#6b6b6b;
+    --accent:#c8102e;
+    --en:'Montserrat',sans-serif;
+    --jp:'Noto Sans JP',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--jp);color:var(--text);background:var(--white);line-height:2;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-2)}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--en);font-weight:800;font-size:20px;letter-spacing:.14em}
+  .logo span{color:var(--accent)}
+  .back{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;border:1.5px solid var(--black);padding:8px 18px;transition:.25s}
+  .back:hover{background:var(--black);color:var(--white)}
+
+  .ph-hero{min-height:72svh;display:flex;flex-direction:column;justify-content:center;background:var(--black);color:var(--white);position:relative;overflow:hidden;padding:140px 0 90px}
+  .ph-hero::before{content:'PHILOSOPHY';position:absolute;left:-1%;bottom:-4%;font-family:var(--en);font-weight:800;font-size:min(13vw,150px);line-height:1;color:rgba(255,255,255,.05);letter-spacing:-.02em;pointer-events:none}
+  .ph-label{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.3em;color:var(--accent);margin-bottom:26px}
+  .ph-hero h1{font-size:clamp(32px,6vw,58px);font-weight:900;line-height:1.5;letter-spacing:.04em}
+  .ph-hero .sub{margin-top:22px;font-size:13px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.55)}
+
+  section{padding:100px 0}
+  .sec-label{display:flex;align-items:baseline;gap:16px;margin-bottom:44px}
+  .sec-label .en{font-family:var(--en);font-size:clamp(24px,3.6vw,36px);font-weight:800;letter-spacing:.06em}
+  .sec-label .en i{font-style:normal;color:var(--accent)}
+  .sec-label .jp{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-sub)}
+  .statement{font-size:clamp(19px,2.8vw,26px);font-weight:900;line-height:1.9;letter-spacing:.04em;margin-bottom:36px}
+  .prose p{font-size:15px;color:var(--text-sub);margin-bottom:24px}
+  .poem{font-size:16px;font-weight:700;line-height:2.3;margin:32px 0;padding-left:24px;border-left:3px solid var(--accent)}
+
+  #purpose{background:var(--white)}
+  #mission{background:var(--gray)}
+  #vision{background:var(--black);color:var(--white)}
+  #vision .prose p{color:rgba(255,255,255,.72)}
+  #vision .sec-label .jp{color:rgba(255,255,255,.55)}
+  #vision .poem{border-left-color:var(--accent)}
+
+  #values{background:var(--white)}
+  .value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .value-card{border:1px solid var(--gray-2);border-top:3px solid var(--black);padding:36px 32px;transition:.3s}
+  .value-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+  .value-card .num{font-family:var(--en);font-weight:800;font-size:12px;letter-spacing:.2em;color:var(--accent)}
+  .value-card .ven{font-family:var(--en);font-weight:800;font-size:20px;letter-spacing:.08em;margin:10px 0 4px}
+  .value-card .vjp{font-size:15px;font-weight:900;margin-bottom:14px}
+  .value-card p{font-size:13.5px;color:var(--text-sub);line-height:2}
+
+  #goal{background:var(--black);color:var(--white)}
+  #goal .lines{font-size:clamp(17px,2.4vw,22px);font-weight:900;line-height:2.4;letter-spacing:.04em}
+  #goal .lines em{font-style:normal;color:var(--accent)}
+  #goal .prose{margin-top:40px}
+  #goal .prose p{color:rgba(255,255,255,.72)}
+  #goal .final{margin-top:56px;font-size:clamp(24px,4vw,38px);font-weight:900;letter-spacing:.04em}
+  #goal .final small{display:block;margin-top:18px;font-size:14px;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.08em}
+
+  .fade{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .fade.show{opacity:1;transform:none}
+
+  footer{background:var(--black);color:var(--white);padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
+  footer .copyright{font-family:var(--en);font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.4)}
+
+  @media(max-width:840px){
+    section{padding:72px 0}
+    .value-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="../">OMT<span>.</span></a>
+    <a class="back" href="../">← TOP</a>
+  </div>
+</header>
+
+<!-- ============ TAGLINE ============ -->
+<div class="ph-hero">
+  <div class="wrap">
+    <div class="ph-label">PHILOSOPHY — OMT GROUP</div>
+    <h1>まだない熱狂を、<br>つくる。</h1>
+    <div class="sub">TAGLINE｜企業スローガン</div>
+  </div>
+</div>
+
+<!-- ============ PURPOSE ============ -->
+<section id="purpose">
+  <div class="wrap">
+    <div class="sec-label fade"><span class="en">PURPOSE<i>.</i></span><span class="jp">存在意義</span></div>
+    <p class="statement fade">人の心を動かし、<br>新しい価値が生まれる場所をつくる。</p>
+    <div class="prose fade">
+      <p>私たちは、ただ商品を売る会社ではない。</p>
+      <div class="poem">ブランドをつくり、<br>店舗をつくり、<br>空間をつくり、<br>人を育て、<br>そこに集まる人々の心が動く瞬間をつくる。</div>
+      <p>一つのアイデアから始まったものが、人を集め、文化となり、やがて新しい市場を生み出していく。</p>
+      <p>私たちは、事業を通じて人の心を動かし、まだ世の中に存在しない価値を生み出し続ける。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION ============ -->
+<section id="mission">
+  <div class="wrap">
+    <div class="sec-label fade"><span class="en">MISSION<i>.</i></span><span class="jp">使命</span></div>
+    <p class="statement fade">アイデアを事業に変え、<br>事業をカルチャーに変える。</p>
+    <div class="prose fade">
+      <p>誰かがつくった市場で競争するだけではなく、自分たちの感覚を信じ、新しい価値を生み出す。</p>
+      <div class="poem">小さなアイデアを形にし、<br>ブランドへ育て、<br>事業へ成長させ、<br>やがて多くの人を巻き込むカルチャーへ変えていく。</div>
+      <p>OMTは、新しい事業を生み出し続ける企業である。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION ============ -->
+<section id="vision">
+  <div class="wrap">
+    <div class="sec-label fade"><span class="en" style="color:#fff">VISION<i>.</i></span><span class="jp">目指す未来</span></div>
+    <p class="statement fade">世界に影響を与える<br>企業グループになる。</p>
+    <div class="prose fade">
+      <p>日本から生まれたブランド、店舗、サービス、カルチャーを世界へ。</p>
+      <div class="poem">ファッションという領域から始まり、<br>EC、空間、エンターテインメント、テクノロジー、<br>そしてこれから生まれる新しい事業へ。</div>
+      <p>一つの成功に留まることなく、挑戦する人と事業が次々と生まれる企業グループをつくる。</p>
+      <p>OMTから生まれた企業やブランドが、世界中の人々の生活や価値観に影響を与える未来を目指す。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section id="values">
+  <div class="wrap">
+    <div class="sec-label fade"><span class="en">VALUES<i>.</i></span><span class="jp">私たちが大切にする価値観</span></div>
+    <div class="value-grid">
+      <div class="value-card fade">
+        <div class="num">01</div>
+        <div class="ven">CREATE THE NEW</div>
+        <div class="vjp">まだないものをつくる。</div>
+        <p>常識や過去の成功に縛られない。自分たちの感覚を信じ、新しい価値を生み出す。</p>
+      </div>
+      <div class="value-card fade">
+        <div class="num">02</div>
+        <div class="ven">MOVE FAST</div>
+        <div class="vjp">まず動く。</div>
+        <p>完璧を待たない。挑戦し、失敗し、改善する。行動の速さが未来をつくる。</p>
+      </div>
+      <div class="value-card fade">
+        <div class="num">03</div>
+        <div class="ven">OWN IT</div>
+        <div class="vjp">自分の仕事に責任を持つ。</div>
+        <p>会社の問題を誰かの問題にしない。一人ひとりが経営者の視点を持ち、自ら考え、行動する。</p>
+      </div>
+      <div class="value-card fade">
+        <div class="num">04</div>
+        <div class="ven">GROW PEOPLE</div>
+        <div class="vjp">人の可能性を信じる。</div>
+        <p>会社の成長は、人の成長から生まれる。挑戦する機会をつくり、次のリーダーを育てる。</p>
+      </div>
+      <div class="value-card fade">
+        <div class="num">05</div>
+        <div class="ven">CREATE EXCITEMENT</div>
+        <div class="vjp">人の心を動かす。</div>
+        <p>売上だけでは終わらない。商品、店舗、サービス、すべての仕事を通じて、人の記憶に残る体験をつくる。</p>
+      </div>
+      <div class="value-card fade">
+        <div class="num">06</div>
+        <div class="ven">GO BEYOND</div>
+        <div class="vjp">現状を超え続ける。</div>
+        <p>昨日の成功に満足しない。会社も、人も、ブランドも、常に次のステージを目指す。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GOAL ============ -->
+<section id="goal">
+  <div class="wrap">
+    <div class="sec-label fade"><span class="en" style="color:#fff">OMTが目指す会社</span></div>
+    <div class="lines fade">
+      事業をつくる会社。<br>
+      ブランドを育てる会社。<br>
+      人を経営者に育てる会社。<br>
+      そして、<br>
+      <em>新しいカルチャーを生み出し続ける会社。</em>
+    </div>
+    <div class="prose fade">
+      <p>OMTは、一つの会社を大きくするだけではない。</p>
+      <p>新しい事業を生み出し、新しいブランドを育て、新しい経営者を生み出し、それぞれの挑戦が次の挑戦を生む企業グループをつくる。</p>
+    </div>
+    <div class="final fade">
+      まだない熱狂を、つくる。
+      <small>それが、OMTの存在理由である。</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="copyright">&copy; 2026 OMT GROUP. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
