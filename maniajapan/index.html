@@ -104,13 +104,13 @@
   #events .sec-head .jp{color:rgba(255,255,255,.6)}
   .events-note{margin-top:32px;text-align:center;font-size:13.5px;color:rgba(255,255,255,.6)}
   .news-list{border-top:1px solid rgba(255,255,255,.16)}
-  .event-card.news-row{display:flex;align-items:baseline;gap:20px;padding:20px 6px;border-bottom:1px solid rgba(255,255,255,.16);transition:.25s}
+  .event-card.news-row{display:flex;align-items:center;gap:20px;padding:20px 6px;border-bottom:1px solid rgba(255,255,255,.16);transition:.25s}
   a.event-card.news-row:hover{background:rgba(255,255,255,.05)}
   .news-row .date{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--accent);flex:0 0 150px}
   .news-row .tag{font-style:normal;font-family:var(--en);font-size:9px;font-weight:700;letter-spacing:.2em;border:1px solid rgba(255,255,255,.4);padding:3px 10px;color:rgba(255,255,255,.75);flex:none}
   .news-row h4{font-size:14px;font-weight:700;letter-spacing:.04em;flex:1;line-height:1.6}
   .news-row .arw{font-family:var(--en);color:rgba(255,255,255,.5)}
-  .news-row .event-photo{display:none}
+  .news-row .event-photo{display:block;width:132px;aspect-ratio:16/10;background-size:cover;background-position:center;background-color:#1c1c1c;flex:none;border-radius:2px}
   #company{background:var(--gray)}
   .company-table{width:100%;border-collapse:collapse;background:var(--white)}
   .company-table th,.company-table td{border:1px solid var(--gray-2);padding:18px 24px;font-size:13.5px;text-align:left;vertical-align:top}
@@ -135,6 +135,7 @@
     .event-card.news-row{flex-wrap:wrap;gap:10px 14px}
     .news-row .date{flex:0 0 auto}
     .news-row h4{flex:1 1 100%}
+    .news-row .event-photo{width:100%;order:-1}
   }
 </style>
 </head>

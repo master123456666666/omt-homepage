@@ -838,12 +838,13 @@
           var tag = card.querySelector('.tag');
           if (tag && tag.textContent.trim().toUpperCase() === 'NEWS') return null; // お知らせ系はトップに出さない
           if (!ph) return null; // 写真なしのイベントもトップには出さない
+          var href = card.getAttribute('href'); // 記事があれば記事へ直行
           return {
             date: d.textContent.trim(),
             title: h.innerHTML,
             photoStyle: ph ? (ph.getAttribute('style') || '') : '',
             label: s.label,
-            link: s.link + '#events',
+            link: href ? s.link + href : s.link + '#events',
             key: sortKey(d.textContent)
           };
         }).filter(Boolean);
