@@ -441,6 +441,10 @@
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
   },{threshold:.12});
   document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+  if (location.search.indexOf('debugshot') !== -1) {
+    document.querySelectorAll('.fade').forEach(function(el){ el.classList.add('show'); });
+    var hv = document.querySelector('.hero'); if (hv) hv.style.display = 'none';
+  }
   document.querySelector('.menu-btn').addEventListener('click',function(){ document.body.classList.toggle('nav-open'); });
   document.querySelectorAll('nav.gnav a').forEach(function(a){ a.addEventListener('click',function(){ document.body.classList.remove('nav-open'); }); });
   document.getElementById('year').textContent = new Date().getFullYear();
