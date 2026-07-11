@@ -109,7 +109,7 @@
           if (!d || !h) return null;
           var tag = card.querySelector('.tag');
           if (tag && tag.textContent.trim().toUpperCase() === 'NEWS') return null;
-          if (!ph) return null;
+          if (!ph || (ph.getAttribute('style') || '').indexOf('background-image') === -1) return null;
           // 記事リンクがあれば記事へ、なければ各社ページへ
           var href = card.getAttribute('href');
           var link = href ? s.link + href : s.link + '#events';

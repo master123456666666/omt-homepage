@@ -837,7 +837,7 @@
           if (!d || !h) return null;
           var tag = card.querySelector('.tag');
           if (tag && tag.textContent.trim().toUpperCase() === 'NEWS') return null; // お知らせ系はトップに出さない
-          if (!ph) return null; // 写真なしのイベントもトップには出さない
+          if (!ph || (ph.getAttribute('style') || '').indexOf('background-image') === -1) return null; // 写真なしのイベントもトップには出さない
           var href = card.getAttribute('href'); // 記事があれば記事へ直行
           return {
             date: d.textContent.trim(),

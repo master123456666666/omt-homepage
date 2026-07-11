@@ -116,16 +116,16 @@
   /* ---------- events ---------- */
   #events{background:var(--black);color:var(--white)}
   #events .sec-head .jp{color:rgba(255,255,255,.6)}
-  .news-list{border-top:1px solid rgba(255,255,255,.16)}
-  .event-card.news-row{display:flex;align-items:center;gap:20px;padding:20px 6px;border-bottom:1px solid rgba(255,255,255,.16);transition:.25s}
-  a.event-card.news-row:hover{background:rgba(255,255,255,.05)}
-  .news-row .date{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--accent);flex:0 0 150px}
-  .news-row .tag{font-style:normal;font-family:var(--en);font-size:9px;font-weight:700;letter-spacing:.2em;border:1px solid rgba(255,255,255,.4);padding:3px 10px;color:rgba(255,255,255,.75);flex:none}
-  .news-row h4{font-size:14px;font-weight:700;letter-spacing:.04em;flex:1;line-height:1.6}
-  .news-row .arw{font-family:var(--en);color:rgba(255,255,255,.5)}
-  .news-row .event-photo{display:block;width:132px;aspect-ratio:16/10;background-size:cover;background-position:center;background-color:#1c1c1c;flex:none;border-radius:2px}
+  .event-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .event-card{border:1px solid rgba(255,255,255,.16);display:block}
+  a.event-card{transition:.3s}
+  a.event-card:hover{border-color:var(--white)}
+  .event-photo{aspect-ratio:4/3;background:linear-gradient(135deg,#1c1c1c,#2a2a2a);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:13px;font-weight:800;letter-spacing:.3em;color:rgba(255,255,255,.3)}
+  .event-body{padding:18px 20px}
+  .event-body .date{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--accent)}
+  .event-body h4{font-size:14px;font-weight:700;margin-top:6px;letter-spacing:.04em;line-height:1.6}
   .events-note{margin-top:32px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
-  @media(max-width:840px){.event-card.news-row{flex-wrap:wrap;gap:10px 14px}.news-row .date{flex:0 0 auto}.news-row h4{flex:1 1 100%}.news-row .event-photo{width:100%;order:-1}}
+  @media(max-width:840px){.event-list{grid-template-columns:1fr}}
 
   /* ---------- history ---------- */
   .timeline{list-style:none;max-width:760px}
@@ -344,34 +344,26 @@
       <div class="en" style="color:#fff">NEWS &amp; EVENTS<span>.</span></div>
       <div class="jp">ニュース・イベント</div>
     </div>
-    <div class="news-list fade">
-      <a class="event-card news-row" href="news/20250807-rouge-shibuya109.html">
-        <span class="date">2025.08.07 - 08.12</span><i class="tag">EVENT</i>
-        <h4>ROUGE by POMME d'amour POP UP SHOP @渋谷109</h4>
-        <span class="arw">→</span>
-        <i class="event-photo" style="background-image:url('../assets/event-rouge-shibuya109.jpg')"></i>
+    <div class="event-list fade">
+      <a class="event-card" href="news/20250807-rouge-shibuya109.html">
+        <div class="event-photo" style="background-image:url('../assets/event-rouge-shibuya109.jpg')"></div>
+        <div class="event-body"><div class="date">2025.08.07 - 08.12</div><h4>ROUGE by POMME d'amour POP UP SHOP @渋谷109</h4></div>
       </a>
-      <a class="event-card news-row" href="news/20250730-rouge-nagoya-parco.html">
-        <span class="date">2025.07.30 - 08.03</span><i class="tag">EVENT</i>
-        <h4>ROUGE by POMME d'amour POP UP SHOP @名古屋PARCO</h4>
-        <span class="arw">→</span>
-        <i class="event-photo" style="background-image:url('../assets/event-rouge-nagoya-2025.jpg')"></i>
+      <a class="event-card" href="news/20250730-rouge-nagoya-parco.html">
+        <div class="event-photo" style="background-image:url('../assets/event-rouge-nagoya-2025.jpg')"></div>
+        <div class="event-body"><div class="date">2025.07.30 - 08.03</div><h4>ROUGE by POMME d'amour POP UP SHOP @名古屋PARCO</h4></div>
       </a>
-      <a class="event-card news-row" href="news/20241115-rouge-nagoya-parco.html">
-        <span class="date">2024.11.15 - 11.24</span><i class="tag">EVENT</i>
-        <h4>ROUGE by POMME d'amour POP UP SHOP @名古屋PARCO</h4>
-        <span class="arw">→</span>
-        <i class="event-photo" style="background-image:url('../assets/event-rouge-nagoya.jpg')"></i>
+      <a class="event-card" href="news/20241115-rouge-nagoya-parco.html">
+        <div class="event-photo" style="background-image:url('../assets/event-rouge-nagoya.jpg')"></div>
+        <div class="event-body"><div class="date">2024.11.15 - 11.24</div><h4>ROUGE by POMME d'amour POP UP SHOP @名古屋PARCO</h4></div>
       </a>
-      <a class="event-card news-row" href="news/20240901-rouge-hepfive.html">
-        <span class="date">2024.09.01 - 10.31</span><i class="tag">EVENT</i>
-        <h4>ROUGE by POMME d'amour POP UP SHOP @大阪 HEP FIVE</h4>
-        <span class="arw">→</span>
-        <i class="event-photo" style="background-image:url('../assets/event-rouge-hepfive.jpg')"></i>
+      <a class="event-card" href="news/20240901-rouge-hepfive.html">
+        <div class="event-photo" style="background-image:url('../assets/event-rouge-hepfive.jpg')"></div>
+        <div class="event-body"><div class="date">2024.09.01 - 10.31</div><h4>ROUGE by POMME d'amour POP UP SHOP @大阪 HEP FIVE</h4></div>
       </a>
-      <div class="event-card news-row">
-        <span class="date">2023.06.01</span><i class="tag">EVENT</i>
-        <h4>PLANET STUDIO / ROUGE by POMME d'amour 大阪堀江店 GRAND OPEN</h4>
+      <div class="event-card">
+        <div class="event-photo">OVERTURE</div>
+        <div class="event-body"><div class="date">2023.06.01</div><h4>PLANET STUDIO / ROUGE by POMME d'amour 大阪堀江店 GRAND OPEN</h4></div>
       </div>
     </div>
     <p class="events-note">お知らせ・ポップアップ・イベントレポートをここに蓄積していきます。</p>
