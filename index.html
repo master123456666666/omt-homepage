@@ -80,8 +80,15 @@
   @keyframes heroIn{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion: reduce){.hero-inner>*{animation:none;opacity:1;transform:none}.hero-mark span{animation:none}}
 
-  /* ---------- intro (ページ1画面目のロゴスクリーン) ---------- */
-  #intro{position:relative;height:100svh;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;perspective:900px;overflow:hidden;cursor:pointer}
+  /* ---------- intro (ロゴスクリーン: タップでロゴがヘッダーへ飛んで着地) ---------- */
+  #intro{position:fixed;inset:0;background:var(--black);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;perspective:900px;overflow:hidden;cursor:pointer;transition:opacity .7s ease,visibility .7s ease}
+  #intro.done{opacity:0;visibility:hidden}
+  body.intro-active{overflow:hidden}
+  .intro-mark.fly{animation:none;letter-spacing:.14em;will-change:transform}
+  .intro-mark.fly span{animation:none;opacity:1;transform:none;background:none;color:var(--white);transition:color .95s ease}
+  .intro-mark.fly i{animation:none;opacity:1;transform:none;background:none;color:var(--accent)}
+  .intro-mark.fly.fly-dark span{color:var(--text)}
+  .intro-scroll{transition:opacity .3s ease}
   .intro-scroll{position:absolute;left:50%;transform:translateX(-50%);bottom:24px;font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.34em;color:rgba(255,255,255,.55);display:flex;flex-direction:column;align-items:center;gap:12px}
   .intro-scroll::after{content:'';width:1px;height:46px;background:rgba(255,255,255,.55);animation:scrollDrop 1.8s ease-in-out infinite}
   @keyframes scrollDrop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -328,7 +335,7 @@
 </head>
 <body>
 
-<div id="intro" aria-label="OMT">
+<div id="intro" role="button" tabindex="0" aria-label="サイトに入る">
   <div class="intro-mark"><span>O</span><span>M</span><span>T</span><i>.</i></div>
   <div class="intro-scroll">TAP TO ENTER</div>
 </div>
@@ -792,27 +799,47 @@
     }, 2500);
   }
   (function(){
-    var hero = document.querySelector('.hero');
-    if (!hero) { document.body.classList.add('intro-done'); return; }
-    var hio = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting) {
-          document.body.classList.add('intro-done');
-          ensureHeroVisible();
-          hio.disconnect();
-        }
-      });
-    },{threshold:.3});
-    hio.observe(hero);
-    // ロゴ画面を押したら本編へスクロール遷移(スワイプでも入れる)
     var intro = document.getElementById('intro');
-    if (intro) {
-      intro.addEventListener('click', function(){
-        hero.scrollIntoView({ behavior: 'smooth' });
-      });
+    if (!intro) { document.body.classList.add('intro-done'); ensureHeroVisible(); return; }
+    document.body.classList.add('intro-active');
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var entered = false;
+    function enter(){
+      if (entered) return;
+      entered = true;
+      document.body.classList.remove('intro-active');
+      document.body.classList.add('intro-done');
+      ensureHeroVisible();
+      var mark = intro.querySelector('.intro-mark');
+      var target = document.querySelector('header .logo');
+      var hint = intro.querySelector('.intro-scroll');
+      if (hint) hint.style.opacity = '0';
+      if (!reduced && mark && target) {
+        // ロゴをヘッダーの OMT. の位置へ飛ばして着地させる
+        mark.classList.add('fly');
+        var m = mark.getBoundingClientRect();
+        var t = target.getBoundingClientRect();
+        var s = t.width / m.width;
+        var dx = (t.left + t.width / 2) - (m.left + m.width / 2);
+        var dy = (t.top + t.height / 2) - (m.top + m.height / 2);
+        intro.style.pointerEvents = 'none';
+        intro.style.transition = 'background-color .8s ease';
+        intro.style.backgroundColor = 'rgba(10,10,10,0)';
+        mark.style.transition = 'transform .95s cubic-bezier(.76,0,.24,1)';
+        requestAnimationFrame(function(){
+          mark.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')';
+          mark.classList.add('fly-dark');
+        });
+        setTimeout(function(){ if (intro.parentNode) intro.parentNode.removeChild(intro); }, 1000);
+      } else {
+        intro.classList.add('done');
+        setTimeout(function(){ if (intro.parentNode) intro.parentNode.removeChild(intro); }, 800);
+      }
     }
-    // フォールバック: 万一Observerが動かない環境でもHEROが出るように
-    setTimeout(function(){ document.body.classList.add('intro-done'); ensureHeroVisible(); }, 6000);
+    intro.addEventListener('click', enter);
+    intro.addEventListener('wheel', enter, { passive: true });
+    intro.addEventListener('touchmove', enter, { passive: true });
+    intro.addEventListener('keydown', function(ev){ if (ev.key === 'Enter' || ev.key === ' ') enter(); });
   })();
 
   // EVENTS集約: 各社ページのイベントカードを読み込み、日付の新しい順に最新3件を表示
