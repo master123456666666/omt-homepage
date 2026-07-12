@@ -81,7 +81,7 @@
   @media (prefers-reduced-motion: reduce){.hero-inner>*{animation:none;opacity:1;transform:none}.hero-mark span{animation:none}}
 
   /* ---------- intro (ページ1画面目のロゴスクリーン) ---------- */
-  #intro{position:relative;height:100svh;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;perspective:900px;overflow:hidden}
+  #intro{position:relative;height:100svh;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;perspective:900px;overflow:hidden;cursor:pointer}
   .intro-scroll{position:absolute;left:50%;transform:translateX(-50%);bottom:24px;font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.34em;color:rgba(255,255,255,.55);display:flex;flex-direction:column;align-items:center;gap:12px}
   .intro-scroll::after{content:'';width:1px;height:46px;background:rgba(255,255,255,.55);animation:scrollDrop 1.8s ease-in-out infinite}
   @keyframes scrollDrop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -330,7 +330,7 @@
 
 <div id="intro" aria-label="OMT">
   <div class="intro-mark"><span>O</span><span>M</span><span>T</span><i>.</i></div>
-  <div class="intro-scroll">SCROLL</div>
+  <div class="intro-scroll">TAP TO ENTER</div>
 </div>
 
 <header>
@@ -804,6 +804,13 @@
       });
     },{threshold:.3});
     hio.observe(hero);
+    // ロゴ画面を押したら本編へスクロール遷移(スワイプでも入れる)
+    var intro = document.getElementById('intro');
+    if (intro) {
+      intro.addEventListener('click', function(){
+        hero.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
     // フォールバック: 万一Observerが動かない環境でもHEROが出るように
     setTimeout(function(){ document.body.classList.add('intro-done'); ensureHeroVisible(); }, 6000);
   })();
