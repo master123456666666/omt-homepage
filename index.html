@@ -81,22 +81,24 @@
   @media (prefers-reduced-motion: reduce){.hero-inner>*{animation:none;opacity:1;transform:none}.hero-mark span{animation:none}}
 
   /* ---------- intro gate ---------- */
-  #intro{position:fixed;inset:0;background:var(--black);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;cursor:pointer;transition:opacity .7s ease,visibility .7s ease}
+  #intro{position:fixed;inset:0;background:var(--black);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;cursor:pointer;transition:opacity .7s ease,visibility .7s ease;perspective:900px}
   #intro.done{opacity:0;visibility:hidden}
   body.intro-active{overflow:hidden}
-  .intro-mark{display:flex;align-items:baseline;font-family:var(--en);font-weight:800;font-size:clamp(64px,16vw,150px);line-height:1;color:var(--white);letter-spacing:.08em}
+  .intro-mark{display:flex;align-items:baseline;font-family:var(--en);font-weight:800;font-size:clamp(64px,16vw,150px);line-height:1;letter-spacing:.08em;transform-style:preserve-3d;animation:introWobble 3.6s ease-in-out 1s infinite}
+  @keyframes introWobble{0%,100%{transform:rotateY(-16deg) rotateX(7deg)}50%{transform:rotateY(16deg) rotateX(-7deg)}}
   .intro-mark span,.intro-mark i{display:inline-block;opacity:0;transform:translateY(46px)}
-  .intro-mark span{animation:introLetter .7s cubic-bezier(.2,.7,.3,1) forwards}
-  .intro-mark span:nth-child(1){animation-delay:.15s}
-  .intro-mark span:nth-child(2){animation-delay:.3s}
-  .intro-mark span:nth-child(3){animation-delay:.45s}
-  .intro-mark i{font-style:normal;color:var(--accent);animation:introDot .5s cubic-bezier(.2,1.6,.4,1) .75s forwards}
+  .intro-mark span{background:linear-gradient(155deg,#ffffff 0%,#d9d9d9 22%,#8f8f8f 44%,#f2f2f2 62%,#9e9e9e 82%,#e6e6e6 100%);background-size:250% 250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:introLetter .7s cubic-bezier(.2,.7,.3,1) forwards, introShine 3.6s linear 1s infinite}
+  @keyframes introShine{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
+  .intro-mark span:nth-child(1){animation-delay:.15s,1s}
+  .intro-mark span:nth-child(2){animation-delay:.3s,1.2s}
+  .intro-mark span:nth-child(3){animation-delay:.45s,1.4s}
+  .intro-mark i{font-style:normal;background:linear-gradient(150deg,#ff5a6e 0%,#c8102e 45%,#8c0a20 75%,#e8455c 100%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:introDot .5s cubic-bezier(.2,1.6,.4,1) .75s forwards}
   @keyframes introLetter{to{opacity:1;transform:none}}
   @keyframes introDot{0%{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
   .intro-enter{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.42em;color:rgba(255,255,255,.55);opacity:0;animation:introEnterIn .8s ease 1.3s forwards,introPulse 1.8s ease-in-out 2.3s infinite}
   @keyframes introEnterIn{to{opacity:1}}
   @keyframes introPulse{0%,100%{opacity:1}50%{opacity:.35}}
-  @media (prefers-reduced-motion: reduce){.intro-mark span,.intro-mark i{animation:none;opacity:1;transform:none}.intro-enter{animation:none;opacity:1}}
+  @media (prefers-reduced-motion: reduce){.intro-mark{animation:none}.intro-mark span,.intro-mark i{animation:none;opacity:1;transform:none;color:var(--white);background:none}.intro-mark i{color:var(--accent)}.intro-enter{animation:none;opacity:1}}
   .hero-inner{max-width:1080px;margin:0 auto;padding:120px 24px 80px;width:100%}
   .hero-label{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.3em;color:var(--accent);margin-bottom:24px}
   .hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;line-height:1.35;letter-spacing:.04em}
@@ -327,7 +329,6 @@
 
 <div id="intro" role="button" aria-label="サイトに入る">
   <div class="intro-mark"><span>O</span><span>M</span><span>T</span><i>.</i></div>
-  <div class="intro-enter">TAP TO ENTER</div>
 </div>
 
 <header>
@@ -799,14 +800,20 @@
       return;
     }
     document.body.classList.add('intro-active');
-    intro.addEventListener('click', function(){
+    var entered = false;
+    function enter(){
+      if (entered) return;
+      entered = true;
       try { sessionStorage.setItem('omtIntroSeen', '1'); } catch(e){}
       intro.classList.add('done');
       document.body.classList.remove('intro-active');
       document.body.classList.add('intro-done');
       ensureHeroVisible();
       setTimeout(function(){ if (intro.parentNode) intro.parentNode.removeChild(intro); }, 800);
-    });
+    }
+    intro.addEventListener('click', enter);
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(enter, reduced ? 700 : 3400);
   })();
 
   // EVENTS集約: 各社ページのイベントカードを読み込み、日付の新しい順に最新3件を表示
