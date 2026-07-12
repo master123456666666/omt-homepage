@@ -133,6 +133,12 @@
   .mj-popup .venues{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
   .mj-popup .venues i{font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.06em;background:var(--white);border:1px solid var(--gray-2);padding:8px 18px}
   .mj-data-note{margin-top:22px;text-align:center;font-size:11.5px;color:var(--text-sub)}
+  #history{background:var(--gray)}
+  .timeline{list-style:none;max-width:760px}
+  .timeline li{display:flex;gap:28px;padding:18px 4px;border-bottom:1px solid var(--gray-2);align-items:baseline}
+  .timeline li:last-child{border-bottom:none}
+  .timeline li b{font-family:var(--en);font-weight:800;font-size:15px;letter-spacing:.08em;color:var(--accent);flex:0 0 96px}
+  .timeline li span{font-size:14px;font-weight:500}
   .brand-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .brand-card{background:var(--white);padding:40px 36px;border-top:3px solid var(--black);transition:.3s;display:flex;flex-direction:column}
   .brand-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
@@ -421,6 +427,26 @@
       </a>
     </div>
     <p class="events-note fade">ポップアップ・発売イベント・コラボの記録を、ここに蓄積していきます。</p>
+  </div>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section id="history">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">HISTORY<span>.</span></div>
+      <div class="jp">沿革</div>
+    </div>
+    <ul class="timeline fade">
+      <li><b>2024.05</b><span>株式会社マニアジャパン 設立</span></li>
+      <li><b>2024.11</b><span>OLD ORDER 東京 裏原コンセプト本店 GRAND OPEN</span></li>
+      <li><b>2025.06</b><span>OLD ORDER 大阪 堀江店 GRAND OPEN</span></li>
+      <li><b>2025.10</b><span>大阪オフィス 開設</span></li>
+      <li><b>2025.11</b><span>OLD ORDER 名古屋 PARCO店 GRAND OPEN</span></li>
+      <li><b>2025.12</b><span>東京 北参道オフィス兼倉庫 開設</span></li>
+      <li><b>2026.01</b><span>OLD ORDER 東京 明治通り フラッグシップショップ GRAND OPEN / 日本限定ラインをリリース</span></li>
+      <li><b>2026.03</b><span>OLD ORDER JAPAN 公式EC 開設</span></li>
+    </ul>
   </div>
 </section>
 
