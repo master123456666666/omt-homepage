@@ -70,10 +70,10 @@
   .hero-photo{animation:mjPhoto 2.4s ease forwards}
   @keyframes mjPhoto{from{transform:scale(1.07)}to{transform:scale(1)}}
   @media (prefers-reduced-motion: reduce){.hero-inner>*,.hero-photo,.hero-script{animation:none;opacity:1;transform:none}.hero-script{opacity:.45;transform:rotate(-6deg)}.mj-marquee{animation:none}}
-  .mj-band{background:var(--accent);color:#fff;padding:13px 0;overflow:hidden}
+  .mj-band{background:#141414;color:#fff;padding:15px 0;overflow:hidden}
   .mj-marquee{display:flex;width:max-content;animation:mjmq 26s linear infinite}
-  .mj-marquee span{font-family:var(--en);font-weight:800;font-size:14px;letter-spacing:.24em;padding:0 26px;white-space:nowrap}
-  .mj-marquee span::after{content:'/';margin-left:52px;color:rgba(255,255,255,.5)}
+  .mj-marquee span{font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.26em;padding:0 26px;white-space:nowrap;color:rgba(255,255,255,.88)}
+  .mj-marquee span::after{content:'/';margin-left:52px;color:var(--accent)}
   @keyframes mjmq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .hero-inner{max-width:1080px;margin:0 auto;padding:120px 24px 80px;width:100%}
   .hero-label{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.3em;color:var(--accent);margin-bottom:24px}
@@ -118,16 +118,20 @@
   .mj-legend li{font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px}
   .mj-legend li i{width:11px;height:11px;border-radius:3px;flex:none}
   .mj-legend li small{font-family:var(--en);font-weight:600;color:var(--text-sub)}
-  .mj-gender{display:flex;height:150px;border-radius:4px;overflow:hidden;margin-top:14px}
-  .mj-gender div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:var(--en);font-weight:800;font-size:30px}
-  .mj-gender div small{font-size:11px;font-weight:700;letter-spacing:.2em;margin-top:4px}
-  .mj-gender .m{background:var(--accent)}
-  .mj-gender .f{background:var(--oo-pink)}
+  .mj-gender2{margin-top:30px}
+  .mg-row{display:flex;align-items:baseline;justify-content:center;gap:20px;font-family:var(--en);font-weight:800;font-size:46px;line-height:1}
+  .mg-num small{font-size:.4em;font-weight:700;margin-left:2px;color:var(--text-sub)}
+  .mg-vs{color:var(--gray-2);font-weight:600;font-size:32px}
+  .mg-labels{display:flex;justify-content:center;gap:70px;margin-top:10px;font-family:var(--en);font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--text-sub)}
+  .mg-labels span{display:inline-flex;align-items:center;gap:7px}
+  .mg-labels i{width:8px;height:8px;border-radius:50%;display:inline-block}
+  .mg-bar{height:7px;border-radius:4px;overflow:hidden;display:flex;margin-top:24px}
+  .mg-bar i{display:block;height:100%}
   .chart-card p.cap{margin-top:16px;font-size:12.5px;color:var(--text-sub)}
   .mj-popup{margin-top:40px;border:1px solid var(--gray-2);padding:26px 24px;text-align:center}
   .mj-popup .label{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.24em;color:var(--accent);margin-bottom:14px}
   .mj-popup .venues{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-  .mj-popup .venues i{font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.06em;background:var(--gray);padding:8px 18px}
+  .mj-popup .venues i{font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.06em;background:var(--white);border:1px solid var(--gray-2);padding:8px 18px}
   .mj-data-note{margin-top:22px;text-align:center;font-size:11.5px;color:var(--text-sub)}
   .brand-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .brand-card{background:var(--white);padding:40px 36px;border-top:3px solid var(--black);transition:.3s;display:flex;flex-direction:column}
@@ -375,9 +379,10 @@
       </div>
       <div class="chart-card">
         <h4>会員の男女比</h4>
-        <div class="mj-gender">
-          <div class="m">50<small>MEN</small></div>
-          <div class="f">50<small>WOMEN</small></div>
+        <div class="mj-gender2">
+          <div class="mg-row"><span class="mg-num">50<small>%</small></span><span class="mg-vs">/</span><span class="mg-num">50<small>%</small></span></div>
+          <div class="mg-labels"><span><i style="background:var(--accent)"></i>MEN</span><span><i style="background:var(--oo-pink)"></i>WOMEN</span></div>
+          <div class="mg-bar"><i style="width:50%;background:var(--accent)"></i><i style="width:50%;background:var(--oo-pink)"></i></div>
         </div>
         <p class="cap">男女比はほぼ半々。性別を問わずユニセックスに支持されています。</p>
       </div>
