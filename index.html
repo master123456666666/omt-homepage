@@ -82,6 +82,8 @@
 
   /* ---------- intro (ロゴスクリーン: タップでロゴがヘッダーへ飛んで着地) ---------- */
   #intro{position:fixed;inset:0;background:var(--black);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;perspective:900px;overflow:hidden;cursor:pointer;transition:opacity .7s ease,visibility .7s ease}
+  html.debugshot #intro,html.debugshot .hero{display:none}
+  html.debugshot .fade{opacity:1;transform:none;transition:none}
   #intro.done{opacity:0;visibility:hidden}
   body.intro-active{overflow:hidden}
   .intro-mark.fly{animation:none;letter-spacing:.14em;will-change:transform}
@@ -766,6 +768,8 @@
   // ▼ 公開前に要設定: お問い合わせの送信先メールアドレス
   //   現状は「メールソフトが立ち上がる方式(mailto)」。公開時は FormSubmit / Google Form 等への差し替えを推奨。
   var CONTACT_EMAIL = 'master@omt-inc.com';
+
+  if (location.search.indexOf('debugshot') > -1) document.documentElement.classList.add('debugshot');
 
   // フェードイン
   var io = new IntersectionObserver(function(entries){
