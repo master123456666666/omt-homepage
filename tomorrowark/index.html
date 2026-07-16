@@ -147,7 +147,7 @@
   .ta-num .num{font-family:var(--en);font-weight:800;font-size:clamp(34px,4.6vw,48px);line-height:1.1;margin-top:8px}
   .ta-num .num small{font-family:var(--jp);font-size:.4em;font-weight:700;margin-left:3px}
   .ta-num .sub{margin-top:6px;font-size:11.5px;color:var(--text-sub)}
-  .ta-num.hl{background:#dedede;border-color:#dedede}
+  .ta-num.hl{background:#f1f1ef;border-color:#e3e3e1}
   .ta-charts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .ta-chart-card{border:1px solid var(--gray-2);padding:30px 24px;text-align:center}
   .ta-chart-card h4{font-size:14.5px;font-weight:900;letter-spacing:.1em;margin-bottom:22px}
@@ -361,12 +361,12 @@
     <div class="ta-charts fade">
       <div class="ta-chart-card">
         <h4>会員の年齢構成</h4>
-        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#d4d4d4 0% 9.3%, #2e2e2e 9.3% 86.9%, #9e9e9e 86.9% 96.9%, #6b6b6b 96.9% 100%)"></div>
+        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#e6e6e4 0% 9.3%, #b3b3b1 9.3% 86.9%, #d2d2d0 86.9% 96.9%, #8a8a88 96.9% 100%)"></div>
         <ul class="ta-legend">
-          <li><i style="background:#d4d4d4"></i>10代<small>9.3%</small></li>
-          <li><i style="background:#2e2e2e"></i>20代<small>77.6%</small></li>
-          <li><i style="background:#9e9e9e"></i>30代<small>10.0%</small></li>
-          <li><i style="background:#6b6b6b"></i>40代以上<small>3.1%</small></li>
+          <li><i style="background:#e6e6e4"></i>10代<small>9.3%</small></li>
+          <li><i style="background:#b3b3b1"></i>20代<small>77.6%</small></li>
+          <li><i style="background:#d2d2d0"></i>30代<small>10.0%</small></li>
+          <li><i style="background:#8a8a88"></i>40代以上<small>3.1%</small></li>
         </ul>
         <p class="cap">会員の8割超が10〜20代。若い世代に選ばれています。</p>
       </div>
@@ -374,8 +374,8 @@
         <h4>会員の男女比</h4>
         <div class="ta-gender">
           <div class="tg-row"><span class="tg-num">94<small>%</small></span><span class="tg-vs">/</span><span class="tg-num">6<small>%</small></span></div>
-          <div class="tg-labels"><span><i style="background:#2e2e2e"></i>MEN</span><span><i style="background:#c9c9c9"></i>WOMEN</span></div>
-          <div class="tg-bar"><i style="width:94%;background:#2e2e2e"></i><i style="width:6%;background:#c9c9c9"></i></div>
+          <div class="tg-labels"><span><i style="background:#a9a9a7"></i>MEN</span><span><i style="background:#e0e0de"></i>WOMEN</span></div>
+          <div class="tg-bar"><i style="width:94%;background:#a9a9a7"></i><i style="width:6%;background:#e0e0de"></i></div>
         </div>
         <p class="cap">会員の9割以上が男性。メンズブランドとして支持されています。</p>
       </div>
@@ -475,7 +475,7 @@
       requestAnimationFrame(step);
     }
     var donut = document.getElementById('taDonut');
-    var SEGS = [[9.3,'#d4d4d4'],[86.9,'#2e2e2e'],[96.9,'#9e9e9e'],[100,'#6b6b6b']];
+    var SEGS = [[9.3,'#e6e6e4'],[86.9,'#b3b3b1'],[96.9,'#d2d2d0'],[100,'#8a8a88']];
     function paintDonut(t){
       var stops = [], prev = 0;
       for (var i = 0; i < SEGS.length; i++) {
