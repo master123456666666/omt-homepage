@@ -61,26 +61,28 @@
   body.nav-open .menu-btn span:nth-child(3){top:20px;transform:rotate(-45deg)}
 
   /* ---------- hero ---------- */
-  .hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(165deg,#f7f8fa 0%,#e9ebef 55%,#dde0e5 100%);color:var(--text);position:relative;overflow:hidden}
-  .hero::before{content:'OVERTURE';position:absolute;left:-2%;bottom:-4%;font-family:var(--en);font-weight:800;font-size:min(16vw,220px);line-height:1;letter-spacing:-.02em;pointer-events:none;background:var(--chrome);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ovShine 5.5s linear infinite;opacity:0;animation-name:ovShine,ovMarkIn;animation-duration:5.5s,1.4s;animation-timing-function:linear,ease;animation-delay:.6s,.6s;animation-iteration-count:infinite,1;animation-fill-mode:none,forwards}
+  .hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;background:#0c0d0f;background-image:radial-gradient(ellipse 90% 60% at 70% -10%,rgba(150,158,170,.22),transparent 60%);color:var(--white);position:relative;overflow:hidden;perspective:900px}
+  .hero-mark{position:absolute;left:0;right:0;bottom:3%;text-align:center;font-family:var(--en);font-weight:800;font-size:min(13.5vw,185px);line-height:1;letter-spacing:-.01em;pointer-events:none;background:var(--chrome);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;will-change:transform;animation:ovMarkIn 1.3s ease .5s both,ovShine 5.5s linear 1.8s infinite,ovFloat 7s ease-in-out 1.8s infinite}
+  .hero-mark b{font-weight:800;background:none;-webkit-text-fill-color:var(--omt-red);color:var(--omt-red)}
   @keyframes ovShine{from{background-position:0% 0}to{background-position:220% 0}}
-  @keyframes ovMarkIn{from{opacity:0;transform:translateY(24px)}to{opacity:.9;transform:none}}
-  .hero-inner{max-width:1080px;margin:0 auto;padding:120px 24px 80px;width:100%;position:relative;z-index:2}
+  @keyframes ovMarkIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+  @keyframes ovFloat{0%,100%{transform:rotateY(0deg)}50%{transform:rotateY(7deg)}}
+  .hero-inner{max-width:1080px;margin:0 auto;padding:120px 24px 200px;width:100%;position:relative;z-index:2}
   .hero-inner>*{opacity:0;transform:translateY(22px);animation:ovIn .8s cubic-bezier(.2,.7,.3,1) forwards}
   .hero-inner .hero-label{animation-delay:.15s}
   .hero-inner h1{animation-delay:.3s}
   .hero-inner p.sub{animation-delay:.5s}
   @keyframes ovIn{to{opacity:1;transform:none}}
-  .hero-label{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.3em;color:var(--accent);margin-bottom:24px}
+  .hero-label{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.3em;color:#9aa0a8;margin-bottom:24px}
   .hero h1{font-size:clamp(30px,5.4vw,56px);font-weight:900;line-height:1.4;letter-spacing:.04em}
-  .hero p.sub{margin-top:24px;font-size:15px;color:var(--text-sub);max-width:600px}
-  .scroll-hint{position:absolute;left:24px;bottom:28px;font-family:var(--en);font-size:10px;letter-spacing:.3em;color:#9aa0a8;display:flex;align-items:center;gap:12px;z-index:2}
-  .scroll-hint::after{content:'';width:48px;height:1px;background:#b8bdc4}
+  .hero p.sub{margin-top:24px;font-size:15px;color:rgba(255,255,255,.7);max-width:600px}
+  .scroll-hint{position:absolute;left:24px;bottom:28px;font-family:var(--en);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:12px;z-index:2}
+  .scroll-hint::after{content:'';width:48px;height:1px;background:rgba(255,255,255,.35)}
 
   /* ---------- silver band ---------- */
-  .ov-band{background:linear-gradient(90deg,#d7dade,#f2f3f5 30%,#c9cdd3 60%,#e8eaee);border-top:1px solid #cdd1d7;border-bottom:1px solid #cdd1d7;overflow:hidden;padding:13px 0}
-  .ov-band-track{display:flex;gap:56px;white-space:nowrap;font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.3em;color:#565c64;animation:ovBand 26s linear infinite;width:max-content}
-  .ov-band-track span i{font-style:normal;color:#9aa0a8;margin-left:56px}
+  .ov-band{background:#131417;border-top:1px solid #26282d;border-bottom:1px solid #26282d;overflow:hidden;padding:13px 0}
+  .ov-band-track{display:flex;gap:56px;white-space:nowrap;font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.3em;color:#b9bec6;animation:ovBand 26s linear infinite;width:max-content}
+  .ov-band-track span i{font-style:normal;color:#565c64;margin-left:56px}
   @keyframes ovBand{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ---------- section common ---------- */
@@ -133,17 +135,19 @@
   .shop-links a:hover{background:var(--black);color:var(--white)}
 
   /* ---------- events ---------- */
-  #events{background:var(--white)}
+  #events{background:#0e0f11;color:var(--white)}
+  #events .sec-head .en{color:var(--white)}
+  #events .sec-head .jp{color:rgba(255,255,255,.55)}
   .event-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .event-card{border:1px solid var(--silver-2);background:var(--white);display:block;overflow:hidden}
+  .event-card{border:1px solid rgba(200,204,210,.22);display:block;overflow:hidden}
   a.event-card{transition:.3s}
-  a.event-card:hover{border-color:#9aa0a8;box-shadow:0 12px 32px rgba(70,76,86,.12)}
-  .event-photo{aspect-ratio:4/3;background:linear-gradient(135deg,#eceef1,#dfe2e7);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:13px;font-weight:800;letter-spacing:.3em;color:#a5aab1;transition:transform .6s ease}
+  a.event-card:hover{border-color:#c8ccd2;box-shadow:0 12px 32px rgba(0,0,0,.4)}
+  .event-photo{aspect-ratio:4/3;background:linear-gradient(135deg,#1a1b1e,#26282d);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:13px;font-weight:800;letter-spacing:.3em;color:rgba(200,204,210,.35);transition:transform .6s ease}
   a.event-card:hover .event-photo{transform:scale(1.05)}
   .event-body{padding:18px 20px}
-  .event-body .date{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--accent)}
+  .event-body .date{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.2em;color:#9aa0a8}
   .event-body h4{font-size:14px;font-weight:700;margin-top:6px;letter-spacing:.04em;line-height:1.6}
-  .events-note{margin-top:32px;text-align:center;font-size:12.5px;color:var(--text-sub)}
+  .events-note{margin-top:32px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
   @media(max-width:840px){.event-list{grid-template-columns:1fr}}
 
   /* ---------- history ---------- */
@@ -182,7 +186,7 @@
     .event-list{grid-template-columns:1fr}
   }
   @media(prefers-reduced-motion:reduce){
-    .hero-inner>*,.hero::before{animation:none!important;opacity:1;transform:none}
+    .hero-inner>*,.hero-mark{animation:none!important;opacity:1;transform:none}
     .ov-band-track{animation:none}
     .fade{opacity:1;transform:none;transition:none}
   }
@@ -214,6 +218,7 @@
     <h1>愛とストーリーを縫い込んで、<br>世界へ。</h1>
     <p class="sub">レディースからストリートまで。株式会社OverTureは、ブランドの企画・製造から直営店・ECでの販売まで、ファッションのすべてを自分たちの手でつくるアパレルカンパニーです。</p>
   </div>
+  <div class="hero-mark" aria-hidden="true">OVERTURE<b>.</b></div>
   <div class="scroll-hint">SCROLL</div>
 </div>
 
