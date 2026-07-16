@@ -108,7 +108,9 @@
   /* ---------- brands ---------- */
   #brands{background:var(--silver)}
   .brand-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .brand-card{background:var(--white);padding:40px 36px;position:relative;border:1px solid var(--silver-2);transition:.25s;display:flex;flex-direction:column}
+  .brand-card{background:var(--white);padding:40px 36px;position:relative;border:1px solid var(--silver-2);transition:.25s;display:flex;flex-direction:column;overflow:hidden}
+  .brand-photo{margin:-40px -36px 26px;aspect-ratio:3/2;background-size:cover;background-position:center;border-bottom:1px solid var(--silver-2);transition:transform .6s ease}
+  .brand-card:hover .brand-photo{transform:scale(1.04)}
   .brand-card .idx{position:absolute;top:16px;right:20px;font-family:var(--en);font-weight:700;font-size:11px;letter-spacing:.1em;line-height:1;color:var(--accent);pointer-events:none}
   .brand-card .idx::before{content:'( '}
   .brand-card .idx::after{content:' )'}
