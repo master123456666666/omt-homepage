@@ -72,6 +72,18 @@
   @keyframes oviBlink{0%,100%{opacity:.35}50%{opacity:1}}
   .ovi-dd{position:absolute;pointer-events:none;transition:transform .95s cubic-bezier(.55,.05,.35,1),opacity .95s ease;animation:ddFloat 3.4s ease-in-out infinite;will-change:transform}
   html.debugshot #ovIntro{display:none}
+  @media(max-width:840px){
+    #ovIntro .ovi-mark{font-size:8.6vw}
+    #ovIntro .ovi-dd{width:32px!important}
+    #ovIntro .ovi-dd:nth-of-type(1){top:calc(50% - 160px)!important;left:calc(50% - 140px)!important;right:auto!important}
+    #ovIntro .ovi-dd:nth-of-type(2){top:calc(50% - 185px)!important;left:auto!important;right:calc(50% - 120px)!important}
+    #ovIntro .ovi-dd:nth-of-type(3){top:calc(50% + 95px)!important;left:calc(50% - 160px)!important;right:auto!important}
+    #ovIntro .ovi-dd:nth-of-type(4){top:calc(50% - 115px)!important;left:auto!important;right:calc(50% - 150px)!important}
+    #ovIntro .ovi-dd:nth-of-type(5){top:calc(50% + 140px)!important;left:auto!important;right:calc(50% - 130px)!important}
+    #ovIntro .ovi-dd:nth-of-type(6){top:calc(50% + 175px)!important;left:calc(50% - 85px)!important;right:auto!important}
+    #ovIntro .ovi-dd:nth-of-type(7){top:calc(50% - 205px)!important;left:calc(50% - 25px)!important;right:auto!important}
+    #ovIntro .ovi-dd:nth-of-type(8){top:calc(50% + 85px)!important;left:auto!important;right:calc(50% - 70px)!important}
+  }
   @media(prefers-reduced-motion:reduce){#ovIntro{display:none}}
 
   /* ---------- hero ---------- */
@@ -553,10 +565,6 @@
         <div class="event-photo" style="background-image:url('../assets/event-rouge-hepfive.jpg')"></div>
         <div class="event-body"><div class="date">2024.09.01 - 10.31</div><h4>ROUGE by POMME d'amour POP UP SHOP @大阪 HEP FIVE</h4></div>
       </a>
-      <div class="event-card">
-        <div class="event-photo">OVERTURE</div>
-        <div class="event-body"><div class="date">2023.06.01</div><h4>PLANET STUDIO / ROUGE by POMME d'amour 大阪堀江店 GRAND OPEN</h4></div>
-      </div>
     </div>
     <p class="events-note">お知らせ・ポップアップ・イベントレポートをここに蓄積していきます。</p>
   </div>
