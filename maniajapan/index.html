@@ -83,7 +83,7 @@
     .scroll-hint::after{content:'';width:48px;height:1px;background:rgba(255,255,255,.4)}
 
   /* ---------- 散らばり商品スニーカー ---------- */
-  #about,#brands,#shops,#data,#events,#history,#company{position:relative;overflow:hidden}
+  #about,#brands,#shops,#data,#events,#history,#company,#recruit{position:relative;overflow:hidden}
   .dd{position:absolute;pointer-events:none;z-index:2;animation:ddFloat 3.4s ease-in-out infinite}
   img.dd{height:auto}
   .dd.o2{animation-delay:.8s}
@@ -93,6 +93,21 @@
   @media(max-width:1240px){img.dd{width:68px!important}}
     @media(max-width:840px){img.dd{width:50px!important}img.dd.dd-h{display:none}svg.dd{width:24px!important}}
 
+  /* ---------- recruit ---------- */
+  #recruit{background:var(--gray);position:relative;overflow:hidden}
+  .rec-list{list-style:none;border-top:1px solid #d8d8d4}
+  .rec-list li a{display:grid;grid-template-columns:1fr 110px 170px 210px;gap:18px;align-items:center;padding:18px 8px;border-bottom:1px solid #d8d8d4;transition:.25s;background:none}
+  .rec-list li a:hover{background:#fff}
+  .rec-list .t{font-size:14.5px;font-weight:700;letter-spacing:.02em}
+  .rec-list .f{font-family:var(--jp);font-size:11px;font-weight:700;letter-spacing:.06em;text-align:center;padding:5px 0;border:1.5px solid var(--text);border-radius:999px}
+  .rec-list .f.al{border-color:var(--accent);color:var(--accent)}
+  .rec-list .l{font-size:12.5px;color:var(--text-sub)}
+  .rec-list .s{font-family:var(--en);font-size:12.5px;font-weight:600;color:var(--text-sub);text-align:right}
+  .rec-cta{margin-top:34px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .rec-btn{display:inline-block;font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;background:var(--text);color:#fff;padding:15px 40px;transition:.25s}
+  .rec-btn:hover{background:var(--accent)}
+  .rec-note{font-size:12px;color:var(--text-sub)}
+  @media(max-width:840px){.rec-list li a{grid-template-columns:1fr 92px;gap:8px}.rec-list .l,.rec-list .s{display:none}}
   /* ---------- 入場アニメ ---------- */
   #mjIntro{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:#ffffff;background-image:radial-gradient(ellipse 80% 60% at 70% 15%,rgba(0,174,199,.12),transparent 60%);overflow:hidden}
   #mjIntro.out{opacity:0;pointer-events:none;transition:opacity .55s ease}
@@ -261,7 +276,7 @@
       <a href="#brands">BRANDS</a>
       <a href="#shops">SHOPS</a>
       <a href="#data">DATA</a>
-      <a href="#events">EVENTS</a>
+      <a href="#events">EVENTS</a><a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
       <a href="https://omt-inc.com">OMT GROUP</a>
     </nav>
@@ -496,6 +511,30 @@
   </div>
 </section>
 
+
+<!-- ============ RECRUIT ============ -->
+<section id="recruit"><img class="dd o2 dd-h" style="top:52px;left:44%;width:96px;--rot:10deg" src="../assets/oldorder-snk-17.png" alt="" aria-hidden="true"><img class="dd" style="top:40%;right:0.6%;width:100px;--rot:-11deg" src="../assets/oldorder-snk-33.png" alt="" aria-hidden="true"><img class="dd o3" style="bottom:20px;left:10%;width:88px;--rot:8deg" src="../assets/oldorder-snk-45.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="en">RECRUIT<span>.</span></div>
+      <div class="jp">採用情報</div>
+    </div>
+    <ul class="rec-list fade">
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">販売スタッフ / 店長候補(原宿)</span><span class="f">中途</span><span class="l">東京・原宿</span><span class="s">年収 350万〜450万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員</span><span class="f">正社員</span><span class="l">東京・大阪・名古屋</span><span class="s">月給 23万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">東京・大阪・名古屋</span><span class="s">時給 1,140円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">EC運営スタッフ(OLD ORDER JAPAN)</span><span class="f">正社員</span><span class="l">大阪・南堀江</span><span class="s">月給 23万〜28万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">EC運営スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,300円〜1,800円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">SNS運用スタッフ</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,300円〜2,000円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">経理・総務スタッフ</span><span class="f">正社員</span><span class="l">大阪・南堀江</span><span class="s">月給 25万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener"><span class="t">総務・事務 / 経理アシスタント</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,177円〜2,000円</span></a></li>
+    </ul>
+    <div class="rec-cta fade">
+      <a class="rec-btn" href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener">READY TO FASHIONで応募する</a>
+      <p class="rec-note">「好き」を仕事に。学生・未経験のご応募も歓迎の職種があります。最新の募集状況は掲載ページをご確認ください。</p>
+    </div>
+  </div>
+</section>
 <!-- ============ COMPANY ============ -->
 <section id="company"><img class="dd o4 dd-h" style="top:53px;left:40%;width:106px;--rot:9deg" src="../assets/oldorder-snk-7.png" alt="" aria-hidden="true"><img class="dd dd-h" style="top:66px;left:58%;width:82px;--rot:-8deg" src="../assets/oldorder-snk-8.png" alt="" aria-hidden="true"><img class="dd o2 dd-h" style="top:49px;left:76%;width:112px;--rot:12deg" src="../assets/oldorder-snk-9.png" alt="" aria-hidden="true"><img class="dd o3" style="bottom:18px;left:9%;width:82px;--rot:-8deg" src="../assets/oldorder-snk-10.png" alt="" aria-hidden="true"><img class="dd o4" style="bottom:29px;left:33%;width:112px;--rot:12deg" src="../assets/oldorder-snk-11.png" alt="" aria-hidden="true"><img class="dd" style="bottom:20px;left:55%;width:88px;--rot:-6deg" src="../assets/oldorder-snk-12.png" alt="" aria-hidden="true"><img class="dd" style="top:45%;left:0.6%;width:82px;--rot:-8deg" src="../assets/oldorder-snk-13.png" alt="" aria-hidden="true"><img class="dd o4" style="top:59%;right:0.6%;width:98px;--rot:7deg" src="../assets/oldorder-snk-14.png" alt="" aria-hidden="true">
   <div class="wrap">
@@ -532,7 +571,7 @@
       <a href="#brands">BRANDS</a>
       <a href="#shops">SHOPS</a>
       <a href="#data">DATA</a>
-      <a href="#events">EVENTS</a>
+      <a href="#events">EVENTS</a><a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
       <a href="https://omt-inc.com">OMT GROUP</a>
     </nav>
