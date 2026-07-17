@@ -234,6 +234,10 @@
   .data-big .num{font-family:var(--en);font-weight:800;font-size:clamp(44px,6vw,64px);line-height:1;color:var(--black)}
   .data-big .num small{font-family:var(--jp);font-size:.32em;font-weight:700;margin-left:4px}
   .data-charts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .data-sub{margin:72px 0 28px;display:flex;align-items:center;gap:14px;font-size:14.5px;font-weight:900;letter-spacing:.12em}
+  .data-sub::before{content:'';width:32px;height:2px;background:var(--accent)}
+  .data-sub small{font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.24em;color:var(--text-sub)}
+  .data-hero.three{grid-template-columns:repeat(3,1fr)}
   .donut-card{border:1px solid var(--gray-2);padding:32px 24px;text-align:center}
   .donut-card h4{font-size:15px;font-weight:900;letter-spacing:.1em;margin-bottom:24px}
   .donut{width:180px;height:180px;border-radius:50%;margin:0 auto;position:relative}
@@ -333,7 +337,7 @@
     .co-side{padding:28px}
     .co-main{padding:28px}
     .rec-grid{grid-template-columns:1fr}
-    .data-hero,.data-charts{grid-template-columns:1fr}
+    .data-hero,.data-hero.three,.data-charts{grid-template-columns:1fr}
     .client-grid{grid-template-columns:1fr 1fr}
     .client-grid li:last-child{grid-column:span 2}
   }
@@ -640,6 +644,29 @@
       </div>
     </div>
     <p class="data-note fade">※2026年7月時点。20代の若くて優秀なメンバーが活躍しています。</p>
+
+    <div class="data-sub fade">店舗会員データ<small>STORE MEMBERS</small></div>
+    <div class="data-hero three fade">
+      <div class="data-big"><div class="label">店舗会員数</div><div class="num">1.6<small>万人+</small></div></div>
+      <div class="data-big"><div class="label">10代・20代の割合</div><div class="num">85<small>%</small></div></div>
+      <div class="data-big"><div class="label">女性会員の割合</div><div class="num">55<small>%</small></div></div>
+    </div>
+    <div class="data-charts fade">
+      <div class="donut-card">
+        <h4>会員の年齢構成</h4>
+        <div class="donut" data-segments='[{"label":"10代","v":11.3},{"label":"20代","v":73.7},{"label":"30代","v":10.2},{"label":"40代以上","v":4.8}]'></div>
+        <ul class="donut-legend"></ul>
+      </div>
+      <div class="donut-card">
+        <h4>会社別 店舗会員数</h4>
+        <ul class="age-list">
+          <li><span>株式会社マニアジャパン</span><b>8,600<small>人+</small></b></li>
+          <li><span>株式会社OverTure</span><b>6,000<small>人+</small></b></li>
+          <li><span>合同会社tomorrow ark</span><b>2,200<small>人+</small></b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="data-note fade" style="margin-top:20px">※2026年7月時点。店舗会員数は3社の直営店会員の合計。年齢・性別は判明分の比率で算出しています。</p>
   </div>
 </section>
 
