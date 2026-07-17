@@ -84,6 +84,8 @@
   #intro{position:fixed;inset:0;background:var(--black);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;perspective:900px;overflow:hidden;cursor:pointer;transition:opacity .7s ease,visibility .7s ease}
   html.debugshot #intro,html.debugshot .hero{display:none}
   html.debugshot .fade{opacity:1;transform:none;transition:none}
+  html.debugshot .stat{opacity:1;transform:none;transition:none}
+  html.debugshot .stat::before{transform:scaleX(1);transition:none}
   #intro.done{opacity:0;visibility:hidden}
   body.intro-active{overflow:hidden}
   .intro-mark.fly{animation:none;letter-spacing:.14em;will-change:transform}
@@ -142,7 +144,15 @@
   .omt-derive .name small{display:block;font-family:var(--jp);font-weight:500;color:var(--text-sub);font-size:11.5px;letter-spacing:.06em;margin-top:2px}
 
   .stats{margin-top:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:44px 56px}
-  .stat{padding-top:20px;border-top:2px solid var(--black);text-align:left}
+  .stat{padding-top:20px;text-align:left;position:relative;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--black);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.3,1)}
+  .stats.show .stat{opacity:1;transform:none}
+  .stats.show .stat::before{transform:scaleX(1)}
+  .stat:nth-child(2),.stat:nth-child(2)::before{transition-delay:.12s}
+  .stat:nth-child(3),.stat:nth-child(3)::before{transition-delay:.24s}
+  .stat:nth-child(4),.stat:nth-child(4)::before{transition-delay:.36s}
+  .stat:nth-child(5),.stat:nth-child(5)::before{transition-delay:.48s}
+  .stat:nth-child(6),.stat:nth-child(6)::before{transition-delay:.6s}
   .stat .num{font-family:var(--en);font-weight:800;font-size:clamp(42px,4.8vw,60px);line-height:1;letter-spacing:-.01em}
   .stat .num small{font-size:.4em;font-weight:800;margin-left:5px;color:var(--accent)}
   .stat .label{margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.08em}
@@ -172,18 +182,12 @@
   .biz-card .tags a i:hover{background:var(--black);color:var(--white)}
 
   /* ---------- brands marquee ---------- */
-  .brand-band{background:var(--black);color:var(--white);padding:26px 0;overflow:hidden}
-  .marquee{display:flex;align-items:center;width:max-content;animation:mq 28s linear infinite}
-  .marquee span img{height:30px;width:auto;display:inline-block;vertical-align:middle;filter:brightness(0) invert(1);opacity:.9}
-  .marquee span img[alt="Ocai"],.marquee span img[alt="BBIMP"]{height:42px}
-  .marquee span img[alt="LOVE KILLER"]{height:46px}
-  .marquee span img[alt="OVERTURE WEB SHOP"]{height:36px}
-  .marquee span img[alt="PLANET STUDIO"]{height:38px}
-  .marquee span img[alt="OMT PROJECT"]{height:21px}
-  .marquee span img[alt="ALUDE"]{height:24px}
-  .marquee span.mq-text{font-size:21px;font-weight:800;letter-spacing:.14em}
-  .marquee span{font-family:var(--en);font-weight:700;font-size:14px;letter-spacing:.22em;padding:0 36px;white-space:nowrap;color:rgba(255,255,255,.85)}
-  .marquee span::after{content:'/';margin-left:72px;color:rgba(255,255,255,.25)}
+  .brand-band{background:#f7f7f7;padding:48px 0;overflow:hidden}
+  .marquee{display:flex;align-items:center;gap:18px;width:max-content;animation:mq 30s linear infinite}
+  .marquee span img{max-height:56px;max-width:100%;width:auto;height:auto;filter:none;opacity:1}
+  .marquee span.mq-text{font-size:16px;font-weight:800;letter-spacing:.1em;color:var(--text)}
+  .marquee span{font-family:var(--en);width:150px;height:150px;background:var(--white);border-radius:21px;display:flex;align-items:center;justify-content:center;padding:26px;flex:none;white-space:nowrap}
+  .marquee span::after{content:none}
   @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ---------- group ---------- */
@@ -806,7 +810,7 @@
     if(reduced || debugshot){ statsEl.querySelectorAll('.st-cnt').forEach(setFinal); return; }
     var sio = new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ run(); sio.disconnect(); } });
-    },{threshold:.4});
+    },{threshold:.2});
     sio.observe(statsEl);
   })();
 
