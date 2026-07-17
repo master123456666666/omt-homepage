@@ -89,6 +89,18 @@
   .rec-btn:hover{background:var(--accent)}
   .rec-note{font-size:12px;color:var(--text-sub)}
   @media(max-width:840px){.rec-list li a{grid-template-columns:1fr 92px;gap:8px}.rec-list .l,.rec-list .s{display:none}}
+  /* ---------- 入場アニメ(OMT式) ---------- */
+  #taIntro{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background-color:#161718;transition:background-color .8s ease;perspective:900px;overflow:hidden}
+  .tai-mark{font-family:var(--en);font-weight:800;font-size:min(8vw,94px);letter-spacing:.02em;line-height:1;background:linear-gradient(120deg,#fdfdfd 0%,#c9c9c6 28%,#8e8e8e 50%,#ececea 72%,#b5b5b2 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:taiShine 5.5s linear infinite,taiWobble 3.6s ease-in-out 1s infinite;will-change:transform;position:relative;z-index:2}
+  .tai-mark b{font-weight:800;background:none;-webkit-text-fill-color:var(--accent);color:var(--accent)}
+  @keyframes taiShine{from{background-position:0% 0}to{background-position:220% 0}}
+  @keyframes taiWobble{0%,100%{transform:rotateY(0deg)}50%{transform:rotateY(7deg)}}
+  .tai-mark.fly{animation:none;background:none;-webkit-text-fill-color:currentColor;color:#fff;transition:color .95s ease,transform .95s cubic-bezier(.55,.05,.35,1);will-change:transform}
+  .tai-mark.fly.fly-dark{color:var(--text)}
+  .tai-mark.fly b{-webkit-text-fill-color:var(--accent);color:var(--accent);transition:none}
+  .tai-hint{margin-top:30px;font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.3em;color:rgba(255,255,255,.5);animation:taiBlink 1.8s ease-in-out infinite;position:relative;z-index:2}
+  @keyframes taiBlink{0%,100%{opacity:.35}50%{opacity:1}}
+  @media(prefers-reduced-motion:reduce){#taIntro{display:none}}
   section{padding:104px 0}
   .sec-head{margin-bottom:56px}
   .sec-head .en{font-family:var(--en);font-size:clamp(28px,4.4vw,44px);font-weight:800;letter-spacing:.06em;line-height:1.1}
@@ -216,6 +228,10 @@
 </head>
 <body>
 
+<div id="taIntro" aria-hidden="true">
+  <div class="tai-mark">TOMORROW ARK<b>.</b></div>
+  <div class="tai-hint">TAP TO ENTER</div>
+</div>
 <header>
   <div class="header-inner">
     <a class="logo" href="#top">TOMORROW ARK<span>.</span></a>
@@ -485,6 +501,42 @@
   document.querySelector('.menu-btn').addEventListener('click',function(){ document.body.classList.toggle('nav-open'); });
   document.querySelectorAll('nav.gnav a').forEach(function(a){ a.addEventListener('click',function(){ document.body.classList.remove('nav-open'); }); });
   document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){
+    var intro = document.getElementById('taIntro');
+    if (!intro) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var debug = location.search.indexOf('debugshot') !== -1;
+    if (reduced || debug) { intro.parentNode.removeChild(intro); return; }
+    document.body.style.overflow = 'hidden';
+    var done = false;
+    function enter(){
+      if (done) return; done = true;
+      var mark = intro.querySelector('.tai-mark');
+      var logo = document.querySelector('header .logo');
+      if (mark && logo) {
+        var lr = logo.getBoundingClientRect(); var mr = mark.getBoundingClientRect();
+        var s = lr.width / mr.width;
+        var dx = (lr.left + lr.width/2) - (mr.left + mr.width/2);
+        var dy = (lr.top + lr.height/2) - (mr.top + mr.height/2);
+        mark.classList.add('fly');
+        requestAnimationFrame(function(){
+          mark.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')';
+          mark.classList.add('fly-dark');
+        });
+      }
+      intro.style.backgroundColor = 'transparent';
+      var hint = intro.querySelector('.tai-hint');
+      if (hint) { hint.style.transition = 'opacity .3s'; hint.style.opacity = '0'; }
+      document.body.style.overflow = '';
+      setTimeout(function(){ if (intro.parentNode) intro.parentNode.removeChild(intro); }, 1000);
+    }
+    intro.addEventListener('click', enter);
+    window.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') enter(); });
+    setTimeout(function(){
+      window.addEventListener('wheel', enter, {passive:true});
+      window.addEventListener('touchmove', enter, {passive:true});
+    }, 700);
+  })();
 
   if (location.search.indexOf('debugshot') !== -1) {
     document.querySelectorAll('.fade').forEach(function(el){ el.classList.add('show'); });
