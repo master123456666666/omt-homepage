@@ -63,6 +63,21 @@
   body.nav-open .menu-btn span:nth-child(3){top:20px;transform:rotate(-45deg)}
   #pbar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--holo);z-index:200;pointer-events:none}
 
+  /* ---------- recruit ---------- */
+  .rec-list{list-style:none;border-top:1px solid var(--gray-2)}
+  .rec-list li a{display:grid;grid-template-columns:1fr 110px 170px 210px;gap:18px;align-items:center;padding:18px 8px;border-bottom:1px solid var(--gray-2);transition:.25s}
+  .rec-list li a:hover{background:var(--silver)}
+  .rec-list .t{font-size:14.5px;font-weight:700;letter-spacing:.02em}
+  .rec-list .f{font-family:var(--jp);font-size:11px;font-weight:700;letter-spacing:.06em;text-align:center;padding:5px 0;border:1.5px solid var(--text);border-radius:999px}
+  .rec-list .f.al{border-color:var(--omt-red);color:var(--omt-red)}
+  .rec-list .l{font-size:12.5px;color:var(--text-sub)}
+  .rec-list .s{font-family:var(--en);font-size:12.5px;font-weight:600;color:var(--text-sub);text-align:right}
+  .rec-cta{margin-top:34px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .rec-btn{display:inline-block;font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;background:var(--black);color:#fff;padding:15px 40px;transition:.25s}
+  .rec-btn:hover{background:var(--omt-red)}
+  .rec-note{font-size:12px;color:var(--text-sub)}
+  @media(max-width:840px){.rec-list li a{grid-template-columns:1fr 92px;gap:8px}.rec-list .l,.rec-list .s{display:none}}
+
   /* ---------- 入場アニメ ---------- */
   #ovIntro{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:#17191d;background-image:repeating-linear-gradient(100deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px),radial-gradient(ellipse 90% 60% at 70% -10%,rgba(170,178,190,.3),transparent 60%),linear-gradient(160deg,#24272c 0%,#111316 42%,#282b31 72%,#141619 100%);overflow:hidden}
   #ovIntro.out{opacity:0;pointer-events:none;transition:opacity .55s ease}
@@ -128,7 +143,7 @@
   @keyframes ovBand{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ---------- 散らばりモチーフ(リボン・ハート・剣・クマ) ---------- */
-  #about,#brands,#shops,#data,#events,#company{position:relative}
+  #about,#brands,#shops,#data,#events,#company,#recruit{position:relative}
   .dd{position:absolute;pointer-events:none;z-index:2;animation:ddFloat 3.4s ease-in-out infinite}
   .dd.o2{animation-delay:.8s}
   .dd.o3{animation-delay:1.7s}
@@ -317,7 +332,7 @@
       <a href="#brands">BRANDS</a>
       <a href="#shops">SHOPS</a>
       <a href="#data">DATA</a>
-      <a href="#events">EVENTS</a>
+      <a href="#events">EVENTS</a><a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
       <a href="https://omt-inc.com" target="_blank" rel="noopener">OMT GROUP</a>
     </nav>
@@ -590,10 +605,32 @@
   </div>
 </section>
 
+
+<!-- ============ RECRUIT ============ -->
+<section id="recruit"><svg class="dd o2" style="top:80px;right:9%;width:34px;color:#f26daa;--rot:12deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg><svg class="dd o4" style="bottom:100px;left:4%;width:38px;color:#8a5cff;--rot:-10deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg>
+  <div class="wrap">
+    <div class="sec-head fade" data-num="07">
+      <div class="en">RECRUIT<span>.</span></div>
+      <div class="jp">採用情報</div>
+    </div>
+    <ul class="rec-list fade">
+      <li><a href="https://www.readytofashion.jp/companies/1162989337/recruitments" target="_blank" rel="noopener"><span class="t">販売スタッフ / 店長候補(ROUGE)</span><span class="f">中途</span><span class="l">大阪・心斎橋</span><span class="s">月給 26万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/companies/1162989337/recruitments" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員(ROUGE)</span><span class="f">正社員</span><span class="l">大阪・心斎橋</span><span class="s">月給 23万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/companies/1162989337/recruitments" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト(ROUGE)</span><span class="f al">アルバイト</span><span class="l">大阪・心斎橋</span><span class="s">時給 1,200円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/companies/1162989337/recruitments" target="_blank" rel="noopener"><span class="t">事務スタッフ / 正社員</span><span class="f">正社員</span><span class="l">大阪・南堀江</span><span class="s">月給 23万〜30万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/companies/1162989337/recruitments" target="_blank" rel="noopener"><span class="t">営業事務 / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,200円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/companies/1162989337/recruitments" target="_blank" rel="noopener"><span class="t">事務スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,200円〜1,500円</span></a></li>
+    </ul>
+    <div class="rec-cta fade">
+      <a class="rec-btn" href="https://www.readytofashion.jp/companies/1162989337/recruitments" target="_blank" rel="noopener">READY TO FASHIONで応募する</a>
+      <p class="rec-note">未経験・学生歓迎の職種もあります。最新の募集状況は掲載ページをご確認ください。</p>
+    </div>
+  </div>
+</section>
 <!-- ============ COMPANY ============ -->
 <section id="company"><svg class="dd o2" style="top:110px;right:6%;width:40px;color:#f26daa;--rot:10deg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="11.5" r="1" fill="currentColor"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><ellipse cx="12" cy="15.4" rx="3" ry="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="14.6" r=".9" fill="currentColor"/></svg><svg class="dd" style="bottom:130px;left:5%;width:44px;color:#8a5cff;--rot:-12deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg>
   <div class="wrap">
-    <div class="sec-head fade" data-num="07">
+    <div class="sec-head fade" data-num="08">
       <div class="en">COMPANY<span>.</span></div>
       <div class="jp">会社概要</div>
     </div>
@@ -627,7 +664,7 @@
       <a href="#brands">BRANDS</a>
       <a href="#shops">SHOPS</a>
       <a href="#data">DATA</a>
-      <a href="#events">EVENTS</a>
+      <a href="#events">EVENTS</a><a href="#recruit">RECRUIT</a>
       <a href="#company">COMPANY</a>
       <a href="https://omt-inc.com" target="_blank" rel="noopener">OMT GROUP</a>
     </nav>
