@@ -141,11 +141,12 @@
   .omt-derive .name{font-family:var(--en);font-weight:700;font-size:14px;letter-spacing:.08em;flex:1;min-width:0}
   .omt-derive .name small{display:block;font-family:var(--jp);font-weight:500;color:var(--text-sub);font-size:11.5px;letter-spacing:.06em;margin-top:2px}
 
-  .stats{margin-top:72px;display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--gray-2);border:1px solid var(--gray-2)}
-  .stat{background:var(--white);padding:32px 12px;text-align:center}
-  .stat .num{font-family:var(--en);font-weight:800;font-size:clamp(26px,3.4vw,38px);line-height:1}
-  .stat .num small{font-size:.5em;font-weight:700;margin-left:2px}
-  .stat .label{margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--text-sub)}
+  .stats{margin-top:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:44px 56px}
+  .stat{padding-top:20px;border-top:2px solid var(--black);text-align:left}
+  .stat .num{font-family:var(--en);font-weight:800;font-size:clamp(42px,4.8vw,60px);line-height:1;letter-spacing:-.01em}
+  .stat .num small{font-size:.4em;font-weight:800;margin-left:5px;color:var(--accent)}
+  .stat .label{margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.08em}
+  .stat .label span{display:block;font-family:var(--en);font-size:9.5px;font-weight:600;letter-spacing:.24em;color:#9b9b9b;margin-top:3px}
 
   /* ---------- philosophy teaser ---------- */
   #philosophy{background:var(--black);color:var(--white);padding:88px 0}
@@ -322,7 +323,7 @@
     .menu-btn{display:block}
     section{padding:72px 0}
     .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
-    .stats{grid-template-columns:repeat(2,1fr)}
+    .stats{grid-template-columns:repeat(2,1fr);gap:32px 24px}
     .biz-grid{grid-template-columns:1fr}
     .co-card{grid-template-columns:1fr}
     .co-side{padding:28px}
@@ -410,12 +411,12 @@
       </div>
     </div>
     <div class="stats fade">
-      <div class="stat"><div class="num">3<small>社</small></div><div class="label">グループ会社</div></div>
-      <div class="stat"><div class="num">5<small>店</small></div><div class="label">自社ECサイト</div></div>
-      <div class="stat"><div class="num">9<small>ブランド</small></div><div class="label">自社ブランド</div></div>
-      <div class="stat"><div class="num">12<small>拠点</small></div><div class="label">直営店・ショールーム</div></div>
-      <div class="stat"><div class="num">1.6<small>万人+</small></div><div class="label">店舗会員数</div></div>
-      <div class="stat"><div class="num">50<small>万+</small></div><div class="label">SNS総フォロワー</div></div>
+      <div class="stat"><div class="num"><span class="st-cnt" data-count="3">0</span><small>社</small></div><div class="label">グループ会社<span>GROUP COMPANIES</span></div></div>
+      <div class="stat"><div class="num"><span class="st-cnt" data-count="5">0</span><small>店</small></div><div class="label">自社ECサイト<span>EC STORES</span></div></div>
+      <div class="stat"><div class="num"><span class="st-cnt" data-count="9">0</span><small>ブランド</small></div><div class="label">自社ブランド<span>ORIGINAL BRANDS</span></div></div>
+      <div class="stat"><div class="num"><span class="st-cnt" data-count="12">0</span><small>拠点</small></div><div class="label">直営店・ショールーム<span>STORES &amp; SHOWROOMS</span></div></div>
+      <div class="stat"><div class="num"><span class="st-cnt" data-count="1.6" data-dec="1">0</span><small>万人+</small></div><div class="label">店舗会員数<span>STORE MEMBERS</span></div></div>
+      <div class="stat"><div class="num"><span class="st-cnt" data-count="50">0</span><small>万+</small></div><div class="label">SNS総フォロワー<span>SNS FOLLOWERS</span></div></div>
     </div>
   </div>
 </section>
@@ -775,6 +776,39 @@
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
   },{threshold:.12});
   document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+
+  // 実績カウントアップ
+  (function(){
+    var statsEl = document.querySelector('.stats');
+    if(!statsEl) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var debugshot = document.documentElement.classList.contains('debugshot');
+    function setFinal(el){
+      var t = parseFloat(el.getAttribute('data-count'));
+      var dec = +(el.getAttribute('data-dec') || 0);
+      el.textContent = t.toFixed(dec);
+    }
+    function run(){
+      statsEl.querySelectorAll('.st-cnt').forEach(function(el){
+        var t = parseFloat(el.getAttribute('data-count'));
+        var dec = +(el.getAttribute('data-dec') || 0);
+        var dur = 1100, start = null;
+        function step(ts){
+          if(!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (t * eased).toFixed(dec);
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+    if(reduced || debugshot){ statsEl.querySelectorAll('.st-cnt').forEach(setFinal); return; }
+    var sio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ run(); sio.disconnect(); } });
+    },{threshold:.4});
+    sio.observe(statsEl);
+  })();
 
   // モバイルメニュー
   document.querySelector('.menu-btn').addEventListener('click',function(){ document.body.classList.toggle('nav-open'); });
