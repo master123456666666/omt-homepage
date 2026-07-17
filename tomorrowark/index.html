@@ -77,7 +77,7 @@
   /* ---------- recruit ---------- */
   #recruit{background:var(--gray)}
   .rec-list{list-style:none;border-top:1px solid #d9d9d5}
-  .rec-list li a{display:grid;grid-template-columns:1fr 110px 170px 210px;gap:18px;align-items:center;padding:18px 8px;border-bottom:1px solid #d9d9d5;transition:.25s}
+  .rec-list li a{display:grid;grid-template-columns:1fr 110px 170px;gap:18px;align-items:center;padding:18px 8px;border-bottom:1px solid #d9d9d5;transition:.25s}
   .rec-list li a:hover{background:var(--white)}
   .rec-list .t{font-size:14.5px;font-weight:700;letter-spacing:.02em}
   .rec-list .f{font-family:var(--jp);font-size:11px;font-weight:700;letter-spacing:.06em;text-align:center;padding:5px 0;border:1.5px solid var(--text);border-radius:999px}
@@ -88,7 +88,7 @@
   .rec-btn{display:inline-block;font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;background:var(--text);color:#fff;padding:15px 40px;transition:.25s}
   .rec-btn:hover{background:var(--accent)}
   .rec-note{font-size:12px;color:var(--text-sub)}
-  @media(max-width:840px){.rec-list li a{grid-template-columns:1fr 92px;gap:8px}.rec-list .l,.rec-list .s{display:none}}
+  @media(max-width:840px){.rec-list li a{grid-template-columns:1fr 92px;gap:8px}.rec-list .l{display:none}}
   /* ---------- 入場アニメ(OMT式) ---------- */
   #taIntro{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background-color:#161718;transition:background-color .8s ease;perspective:900px;overflow:hidden}
   .tai-mark{font-family:var(--en);font-weight:800;font-size:min(8vw,94px);letter-spacing:.02em;line-height:1;background:linear-gradient(120deg,#fdfdfd 0%,#c9c9c6 28%,#8e8e8e 50%,#ececea 72%,#b5b5b2 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:taiShine 5.5s linear infinite,taiWobble 3.6s ease-in-out 1s infinite;will-change:transform;position:relative;z-index:2}
@@ -450,9 +450,9 @@
       <div class="jp">採用情報</div>
     </div>
     <ul class="rec-list fade">
-      <li><a href="https://jp.indeed.com/viewjob?jk=5a4ae2e86bc9437d" target="_blank" rel="noopener"><span class="t">販売スタッフ(ALUDE 大阪心斎橋本店)</span><span class="f al">アルバイト</span><span class="l">大阪・東心斎橋</span><span class="s">時給 1,200円〜</span></a></li>
-      <li><a href="https://jp.indeed.com/viewjob?jk=7407561ad863ea46" target="_blank" rel="noopener"><span class="t">販売スタッフ(ALUDE 札幌すすきの店)</span><span class="f al">アルバイト</span><span class="l">札幌・南7条西</span><span class="s">時給 1,200円〜1,300円</span></a></li>
-      <li><a href="https://jp.indeed.com/viewjob?jk=91ca338e9528b471" target="_blank" rel="noopener"><span class="t">販売スタッフ(ALUDE 札幌すすきの店)</span><span class="f">契約社員</span><span class="l">札幌・南7条西</span><span class="s">月給 21万円〜</span></a></li>
+      <li><a href="https://jp.indeed.com/viewjob?jk=5a4ae2e86bc9437d" target="_blank" rel="noopener"><span class="t">販売スタッフ(ALUDE 大阪心斎橋本店)</span><span class="f al">アルバイト</span><span class="l">大阪・東心斎橋</span></a></li>
+      <li><a href="https://jp.indeed.com/viewjob?jk=7407561ad863ea46" target="_blank" rel="noopener"><span class="t">販売スタッフ(ALUDE 札幌すすきの店)</span><span class="f al">アルバイト</span><span class="l">札幌・南7条西</span></a></li>
+      <li><a href="https://jp.indeed.com/viewjob?jk=91ca338e9528b471" target="_blank" rel="noopener"><span class="t">販売スタッフ(ALUDE 札幌すすきの店)</span><span class="f">契約社員</span><span class="l">札幌・南7条西</span></a></li>
     </ul>
     <div class="rec-cta fade">
       <a class="rec-btn" href="https://jp.indeed.com/cmp/%E5%90%88%E5%90%8C%E4%BC%9A%E7%A4%BEtomorrowark/jobs?clearPrefilter=1" target="_blank" rel="noopener">Indeedで応募する</a>

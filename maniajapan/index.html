@@ -96,7 +96,7 @@
   /* ---------- recruit ---------- */
   #recruit{background:var(--gray);position:relative;overflow:hidden}
   .rec-list{list-style:none;border-top:1px solid #d8d8d4}
-  .rec-list li a{display:grid;grid-template-columns:1fr 110px 170px 210px;gap:18px;align-items:center;padding:18px 8px;border-bottom:1px solid #d8d8d4;transition:.25s;background:none}
+  .rec-list li a{display:grid;grid-template-columns:1fr 110px 170px;gap:18px;align-items:center;padding:18px 8px;border-bottom:1px solid #d8d8d4;transition:.25s;background:none}
   .rec-list li a:hover{background:#fff}
   .rec-list .t{font-size:14.5px;font-weight:700;letter-spacing:.02em}
   .rec-list .f{font-family:var(--jp);font-size:11px;font-weight:700;letter-spacing:.06em;text-align:center;padding:5px 0;border:1.5px solid var(--text);border-radius:999px}
@@ -107,7 +107,7 @@
   .rec-btn{display:inline-block;font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;background:var(--text);color:#fff;padding:15px 40px;transition:.25s}
   .rec-btn:hover{background:var(--accent)}
   .rec-note{font-size:12px;color:var(--text-sub)}
-  @media(max-width:840px){.rec-list li a{grid-template-columns:1fr 92px;gap:8px}.rec-list .l,.rec-list .s{display:none}}
+  @media(max-width:840px){.rec-list li a{grid-template-columns:1fr 92px;gap:8px}.rec-list .l{display:none}}
   /* ---------- 入場アニメ ---------- */
   #mjIntro{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:#ffffff;background-image:radial-gradient(ellipse 80% 60% at 70% 15%,rgba(0,174,199,.12),transparent 60%);overflow:hidden}
   #mjIntro.out{opacity:0;pointer-events:none;transition:opacity .55s ease}
@@ -524,19 +524,19 @@
       <div class="jp">採用情報</div>
     </div>
     <ul class="rec-list fade">
-      <li><a href="https://www.readytofashion.jp/recruitments/1701271101" target="_blank" rel="noopener"><span class="t">販売スタッフ / 店長候補(原宿)</span><span class="f">中途</span><span class="l">東京・原宿</span><span class="s">年収 350万〜450万円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1892709453" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員(東京)</span><span class="f">正社員</span><span class="l">東京・渋谷</span><span class="s">月給 23万〜35万円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/220800784" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員(大阪)</span><span class="f">正社員</span><span class="l">大阪・南堀江</span><span class="s">月給 23万〜35万円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1097933036" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員(名古屋)</span><span class="f">正社員</span><span class="l">名古屋・栄</span><span class="s">月給 23万〜35万円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1407853962" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト(東京)</span><span class="f al">アルバイト</span><span class="l">東京・渋谷</span><span class="s">時給 1,226円〜1,500円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/304424617" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト(大阪)</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,177円〜1,500円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1704305446" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト(名古屋)</span><span class="f al">アルバイト</span><span class="l">名古屋・栄</span><span class="s">時給 1,140円〜1,500円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1485166802" target="_blank" rel="noopener"><span class="t">EC運営スタッフ(OLD ORDER JAPAN)</span><span class="f">正社員</span><span class="l">大阪・南堀江</span><span class="s">月給 23万〜28万円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1062519206" target="_blank" rel="noopener"><span class="t">EC運営スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,300円〜1,800円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/670509353" target="_blank" rel="noopener"><span class="t">SNS運用スタッフ</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,300円〜2,000円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/56347642" target="_blank" rel="noopener"><span class="t">経理・総務スタッフ</span><span class="f">正社員</span><span class="l">大阪・南堀江</span><span class="s">月給 25万〜35万円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1715362792" target="_blank" rel="noopener"><span class="t">経理・総務スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,400円〜2,000円</span></a></li>
-      <li><a href="https://www.readytofashion.jp/recruitments/1593765294" target="_blank" rel="noopener"><span class="t">総務・事務スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span><span class="s">時給 1,177円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1701271101" target="_blank" rel="noopener"><span class="t">販売スタッフ / 店長候補(原宿)</span><span class="f">中途</span><span class="l">東京・原宿</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1892709453" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員(東京)</span><span class="f">正社員</span><span class="l">東京・渋谷</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/220800784" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員(大阪)</span><span class="f">正社員</span><span class="l">大阪・南堀江</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1097933036" target="_blank" rel="noopener"><span class="t">販売スタッフ / 正社員(名古屋)</span><span class="f">正社員</span><span class="l">名古屋・栄</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1407853962" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト(東京)</span><span class="f al">アルバイト</span><span class="l">東京・渋谷</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/304424617" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト(大阪)</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1704305446" target="_blank" rel="noopener"><span class="t">販売スタッフ / アルバイト(名古屋)</span><span class="f al">アルバイト</span><span class="l">名古屋・栄</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1485166802" target="_blank" rel="noopener"><span class="t">EC運営スタッフ(OLD ORDER JAPAN)</span><span class="f">正社員</span><span class="l">大阪・南堀江</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1062519206" target="_blank" rel="noopener"><span class="t">EC運営スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/670509353" target="_blank" rel="noopener"><span class="t">SNS運用スタッフ</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/56347642" target="_blank" rel="noopener"><span class="t">経理・総務スタッフ</span><span class="f">正社員</span><span class="l">大阪・南堀江</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1715362792" target="_blank" rel="noopener"><span class="t">経理・総務スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1593765294" target="_blank" rel="noopener"><span class="t">総務・事務スタッフ / アルバイト</span><span class="f al">アルバイト</span><span class="l">大阪・南堀江</span></a></li>
     </ul>    <div class="rec-cta fade">
       <a class="rec-btn" href="https://www.readytofashion.jp/brands/6601" target="_blank" rel="noopener">READY TO FASHIONで応募する</a>
       <p class="rec-note">「好き」を仕事に。学生・未経験のご応募も歓迎の職種があります。最新の募集状況は掲載ページをご確認ください。</p>
