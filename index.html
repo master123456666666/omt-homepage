@@ -226,6 +226,23 @@
   .btn{display:inline-block;font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.16em;padding:16px 56px;border:2px solid var(--white);transition:.3s;cursor:pointer;background:none;color:var(--white)}
   .btn:hover{background:var(--white);color:var(--black)}
 
+  /* ---------- recruit 職業別リスト ---------- */
+  .recjob-group{margin-bottom:46px}
+  .recjob-group .gen{font-family:var(--en);font-size:10px;color:var(--accent);letter-spacing:.24em;font-weight:600}
+  .recjob-group h3{font-size:16.5px;font-weight:900;letter-spacing:.08em;margin-top:4px}
+  .recjob-list{list-style:none;border-top:1px solid rgba(255,255,255,.16);margin-top:14px}
+  .recjob-list li a{display:grid;grid-template-columns:1fr 130px 105px 190px;gap:16px;align-items:center;padding:13px 6px;border-bottom:1px solid rgba(255,255,255,.16);transition:.25s}
+  .recjob-list li a:hover{background:rgba(255,255,255,.07)}
+  .recjob-list .t{font-size:13.5px;font-weight:700;letter-spacing:.02em}
+  .recjob-list .co{font-family:var(--en);font-size:10px;font-weight:700;letter-spacing:.12em}
+  .recjob-list .co.ov{color:#ff6b81}
+  .recjob-list .co.mj{color:#00AEC7}
+  .recjob-list .co.ta{color:#b5b5b2}
+  .recjob-list .f{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-align:center;padding:3px 0;border:1.2px solid rgba(255,255,255,.75);border-radius:999px;color:#fff}
+  .recjob-list .f.al{border-color:#ff6b81;color:#ff6b81}
+  .recjob-list .s{font-family:var(--en);font-size:12px;font-weight:600;color:rgba(255,255,255,.65);text-align:right}
+  @media(max-width:840px){.recjob-list li a{grid-template-columns:1fr 92px;gap:8px}.recjob-list .co,.recjob-list .s{display:none}}
+
   /* ---------- data ---------- */
   #data{background:var(--white)}
   .data-hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:56px}
@@ -591,28 +608,50 @@
       <div class="en" style="color:#fff">RECRUIT<span>.</span></div>
       <div class="jp">採用情報</div>
     </div>
-    <div class="rec-grid">
-      <div class="rec-card fade">
-        <div class="en">SALES STAFF</div>
-        <h3>販売スタッフ</h3>
-        <p>東京・大阪・名古屋・札幌の直営店での接客・販売。ファッションが好きな方、ストリートカルチャーに触れていたい方を歓迎します。</p>
-      </div>
-      <div class="rec-card fade">
-        <div class="en">EC OPERATION</div>
-        <h3>EC運営スタッフ</h3>
-        <p>自社EC5ストアの商品登録・受注管理・SNS運用など。ECの実務を幅広く経験できるポジションです。</p>
-      </div>
-      <div class="rec-card fade">
-        <div class="en">SALES REP</div>
-        <h3>営業職(NEW PRIME)</h3>
-        <p>大手通信会社のWiFiサービスを扱う反響営業。未経験からのスタートを教育チームがサポートします。</p>
-      </div>
+    <div class="recjob-group fade">
+      <div class="gen">SALES STAFF</div>
+      <h3>販売スタッフ</h3>
+      <ul class="recjob-list">
+      <li><a href="https://www.readytofashion.jp/recruitments/1701271101" target="_blank" rel="noopener"><span class="t">店長候補 / OLD ORDER 原宿</span><span class="co mj">MANIA JAPAN</span><span class="f">中途</span><span class="s">年収 350万〜450万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1892709453" target="_blank" rel="noopener"><span class="t">販売 / OLD ORDER 東京</span><span class="co mj">MANIA JAPAN</span><span class="f">正社員</span><span class="s">月給 23万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/220800784" target="_blank" rel="noopener"><span class="t">販売 / OLD ORDER 大阪</span><span class="co mj">MANIA JAPAN</span><span class="f">正社員</span><span class="s">月給 23万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1097933036" target="_blank" rel="noopener"><span class="t">販売 / OLD ORDER 名古屋</span><span class="co mj">MANIA JAPAN</span><span class="f">正社員</span><span class="s">月給 23万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1407853962" target="_blank" rel="noopener"><span class="t">販売 / OLD ORDER 東京</span><span class="co mj">MANIA JAPAN</span><span class="f al">アルバイト</span><span class="s">時給 1,226円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/304424617" target="_blank" rel="noopener"><span class="t">販売 / OLD ORDER 大阪</span><span class="co mj">MANIA JAPAN</span><span class="f al">アルバイト</span><span class="s">時給 1,177円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1704305446" target="_blank" rel="noopener"><span class="t">販売 / OLD ORDER 名古屋</span><span class="co mj">MANIA JAPAN</span><span class="f al">アルバイト</span><span class="s">時給 1,140円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1148870781" target="_blank" rel="noopener"><span class="t">店長候補 / ROUGE 心斎橋</span><span class="co ov">OVERTURE</span><span class="f">中途</span><span class="s">月給 26万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1088656162" target="_blank" rel="noopener"><span class="t">販売 / ROUGE 心斎橋</span><span class="co ov">OVERTURE</span><span class="f">正社員</span><span class="s">月給 23万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/539087664" target="_blank" rel="noopener"><span class="t">販売 / ROUGE 心斎橋</span><span class="co ov">OVERTURE</span><span class="f al">アルバイト</span><span class="s">時給 1,200円〜1,500円</span></a></li>
+      <li><a href="https://jp.indeed.com/viewjob?jk=5a4ae2e86bc9437d" target="_blank" rel="noopener"><span class="t">販売 / ALUDE 大阪心斎橋本店</span><span class="co ta">TOMORROW ARK</span><span class="f al">アルバイト</span><span class="s">時給 1,200円〜</span></a></li>
+      <li><a href="https://jp.indeed.com/viewjob?jk=7407561ad863ea46" target="_blank" rel="noopener"><span class="t">販売 / ALUDE 札幌すすきの店</span><span class="co ta">TOMORROW ARK</span><span class="f al">アルバイト</span><span class="s">時給 1,200円〜1,300円</span></a></li>
+      <li><a href="https://jp.indeed.com/viewjob?jk=91ca338e9528b471" target="_blank" rel="noopener"><span class="t">販売 / ALUDE 札幌すすきの店</span><span class="co ta">TOMORROW ARK</span><span class="f">契約社員</span><span class="s">月給 21万円〜</span></a></li>
+      </ul>
+    </div>
+    <div class="recjob-group fade">
+      <div class="gen">EC / DIGITAL</div>
+      <h3>EC運営・SNS</h3>
+      <ul class="recjob-list">
+      <li><a href="https://www.readytofashion.jp/recruitments/1485166802" target="_blank" rel="noopener"><span class="t">EC運営 / OLD ORDER JAPAN</span><span class="co mj">MANIA JAPAN</span><span class="f">正社員</span><span class="s">月給 23万〜28万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1062519206" target="_blank" rel="noopener"><span class="t">EC運営 / OLD ORDER JAPAN</span><span class="co mj">MANIA JAPAN</span><span class="f al">アルバイト</span><span class="s">時給 1,300円〜1,800円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/670509353" target="_blank" rel="noopener"><span class="t">SNS運用 / OLD ORDER</span><span class="co mj">MANIA JAPAN</span><span class="f al">アルバイト</span><span class="s">時給 1,300円〜2,000円</span></a></li>
+      </ul>
+    </div>
+    <div class="recjob-group fade">
+      <div class="gen">BACK OFFICE</div>
+      <h3>事務・経理・総務</h3>
+      <ul class="recjob-list">
+      <li><a href="https://www.readytofashion.jp/recruitments/56347642" target="_blank" rel="noopener"><span class="t">経理・総務</span><span class="co mj">MANIA JAPAN</span><span class="f">正社員</span><span class="s">月給 25万〜35万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1715362792" target="_blank" rel="noopener"><span class="t">経理・総務</span><span class="co mj">MANIA JAPAN</span><span class="f al">アルバイト</span><span class="s">時給 1,400円〜2,000円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1593765294" target="_blank" rel="noopener"><span class="t">総務・事務</span><span class="co mj">MANIA JAPAN</span><span class="f al">アルバイト</span><span class="s">時給 1,177円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1343478748" target="_blank" rel="noopener"><span class="t">事務</span><span class="co ov">OVERTURE</span><span class="f">正社員</span><span class="s">月給 23万〜30万円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/2103184434" target="_blank" rel="noopener"><span class="t">営業事務</span><span class="co ov">OVERTURE</span><span class="f al">アルバイト</span><span class="s">時給 1,200円〜1,500円</span></a></li>
+      <li><a href="https://www.readytofashion.jp/recruitments/1999812661" target="_blank" rel="noopener"><span class="t">事務</span><span class="co ov">OVERTURE</span><span class="f al">アルバイト</span><span class="s">時給 1,200円〜1,500円</span></a></li>
+      </ul>
     </div>
     <div class="rec-cta fade">
-      <p>募集状況の詳細は、お問い合わせフォームよりお気軽にご連絡ください。</p>
+      <p>営業職(NEW PRIME)ほか、掲載外のポジションはお問い合わせフォームよりご連絡ください。各求人の詳細・応募は行をタップ。</p>
       <a class="btn" href="#contact">CONTACT US</a>
-    </div>
-  </div>
+    </div>  </div>
 </section>
 
 <!-- ============ DATA ============ -->
