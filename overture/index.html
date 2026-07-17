@@ -63,7 +63,7 @@
   #pbar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--holo);z-index:200;pointer-events:none}
 
   /* ---------- hero ---------- */
-  .hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;background:#0c0d0f;background-image:radial-gradient(ellipse 90% 60% at 70% -10%,rgba(150,158,170,.22),transparent 60%);color:var(--white);position:relative;overflow:hidden;perspective:900px}
+  .hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;background:#17191d;background-image:repeating-linear-gradient(100deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px),radial-gradient(ellipse 90% 60% at 70% -10%,rgba(170,178,190,.3),transparent 60%),linear-gradient(160deg,#24272c 0%,#111316 42%,#282b31 72%,#141619 100%);color:var(--white);position:relative;overflow:hidden;perspective:900px}
   .hero-mark{position:absolute;left:0;right:0;bottom:3%;text-align:center;font-family:var(--en);font-weight:800;font-size:min(13.5vw,185px);line-height:1;letter-spacing:-.01em;pointer-events:none;background:var(--holo);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;will-change:transform;animation:ovMarkIn 1.3s ease .5s both,ovShine 5.5s linear 1.8s infinite,ovFloat 7s ease-in-out 1.8s infinite}
   .hero-mark b{font-weight:800;background:none;-webkit-text-fill-color:var(--omt-red);color:var(--omt-red);animation:ovPulse 2.8s ease-in-out 2.2s infinite}
   @keyframes ovPulse{0%,100%{text-shadow:0 0 0 rgba(200,16,46,0)}50%{text-shadow:0 0 34px rgba(200,16,46,.95)}}
@@ -104,13 +104,13 @@
   @keyframes ovBand{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ---------- 散らばりモチーフ(リボン・ハート・剣・クマ) ---------- */
-  #about,#brands,#shops,#data,#events{position:relative}
-  .dd{position:absolute;pointer-events:none;z-index:2;animation:ddFloat 7s ease-in-out infinite}
-  .dd.o2{animation-delay:1.6s}
-  .dd.o3{animation-delay:3.2s}
-  .dd.o4{animation-delay:4.8s}
-  @keyframes ddFloat{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-10px) rotate(calc(var(--rot,0deg) + 5deg))}}
-  @media(max-width:840px){.dd{display:none}}
+  #about,#brands,#shops,#data,#events,#company{position:relative}
+  .dd{position:absolute;pointer-events:none;z-index:2;animation:ddFloat 3.4s ease-in-out infinite}
+  .dd.o2{animation-delay:.8s}
+  .dd.o3{animation-delay:1.7s}
+  .dd.o4{animation-delay:2.5s}
+  @keyframes ddFloat{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-18px) rotate(calc(var(--rot,0deg) + 9deg))}}
+  @media(max-width:840px){.dd{width:26px!important}}
 
   /* ---------- section common ---------- */
   section{padding:104px 0}
@@ -205,7 +205,7 @@
   .shop-links a:hover{background:var(--black);color:var(--white)}
 
   /* ---------- events ---------- */
-  #events{background:#0e0f11;color:var(--white)}
+  #events{background:#141518;background-image:repeating-linear-gradient(100deg,rgba(255,255,255,.03) 0 1px,transparent 1px 4px),linear-gradient(165deg,#1f2226 0%,#101214 45%,#22252a 78%,#121417 100%);color:var(--white)}
   #events .sec-head .en{-webkit-text-stroke-color:var(--white)}
   #events .sec-head::before{-webkit-text-stroke-color:rgba(200,204,210,.28)}
   #events .sec-head .jp{color:rgba(255,255,255,.55)}
@@ -302,6 +302,7 @@
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-tags" aria-hidden="true">LADIES / STREET / ONE-OF-A-KIND</div>
   <svg class="dd o2" style="top:17%;left:6%;width:26px;color:rgba(255,255,255,.65);--rot:8deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0 C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0 Z"/></svg><svg class="dd" style="top:22%;right:11%;width:42px;color:#f26daa;--rot:14deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg><svg class="dd o3" style="top:58%;left:7%;width:44px;color:#c9cdd2;--rot:-24deg" viewBox="0 0 24 26" aria-hidden="true"><path fill="currentColor" d="M12 1 L14.6 4.4 L13.6 15 L10.4 15 L9.4 4.4 Z"/><rect fill="currentColor" x="6" y="15.4" width="12" height="2.2" rx="1.1"/><rect fill="currentColor" x="10.9" y="17.8" width="2.2" height="5.4" rx="1"/><circle fill="currentColor" cx="12" cy="24.4" r="1.5"/></svg>
+  <svg class="dd o4" style="top:38%;right:5%;width:34px;color:#ffc6e3;--rot:-10deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg><svg class="dd o3" style="bottom:30%;left:15%;width:24px;color:#8a5cff;--rot:-16deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg>
   <div class="scroll-hint">SCROLL</div>
 </div>
 
@@ -314,7 +315,7 @@
 </div>
 
 <!-- ============ ABOUT ============ -->
-<section id="about"><svg class="dd" style="top:80px;right:8%;width:54px;color:#f26daa;--rot:10deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg><svg class="dd o2" style="bottom:70px;left:4%;width:46px;color:#c9964f;--rot:-9deg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="11.5" r="1" fill="currentColor"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><ellipse cx="12" cy="15.4" rx="3" ry="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="14.6" r=".9" fill="currentColor"/></svg>
+<section id="about"><svg class="dd o4" style="top:36px;left:38%;width:22px;color:#e0245e;--rot:0deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0 C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0 Z"/></svg><svg class="dd" style="top:80px;right:8%;width:54px;color:#f26daa;--rot:10deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg><svg class="dd o2" style="bottom:70px;left:4%;width:46px;color:#c9964f;--rot:-9deg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="11.5" r="1" fill="currentColor"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><ellipse cx="12" cy="15.4" rx="3" ry="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="14.6" r=".9" fill="currentColor"/></svg>
   <div class="wrap">
     <div class="sec-head fade" data-num="01">
       <div class="en">ABOUT<span>.</span></div>
@@ -329,7 +330,7 @@
 </section>
 
 <!-- ============ BRANDS ============ -->
-<section id="brands"><svg class="dd o3" style="top:96px;left:34%;width:28px;color:#e0245e;--rot:-12deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg><svg class="dd" style="top:330px;right:5%;width:34px;color:#8a5cff;--rot:0deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0 C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0 Z"/></svg>
+<section id="brands"><svg class="dd o2" style="bottom:130px;left:3%;width:40px;color:#f26daa;--rot:12deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg><svg class="dd" style="top:540px;right:3%;width:38px;color:#8a5cff;--rot:-8deg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="11.5" r="1" fill="currentColor"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><ellipse cx="12" cy="15.4" rx="3" ry="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="14.6" r=".9" fill="currentColor"/></svg><svg class="dd o4" style="bottom:420px;right:12%;width:22px;color:#00b89c;--rot:14deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg><svg class="dd o3" style="top:96px;left:34%;width:28px;color:#e0245e;--rot:-12deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg><svg class="dd" style="top:330px;right:5%;width:34px;color:#8a5cff;--rot:0deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0 C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0 Z"/></svg>
   <div class="wrap">
     <div class="sec-head fade" data-num="02">
       <div class="en">BRANDS<span>.</span></div>
@@ -411,7 +412,7 @@
 </section>
 
 <!-- ============ SHOPS ============ -->
-<section id="shops"><svg class="dd o4" style="top:90px;right:9%;width:44px;color:#4f7dff;--rot:-14deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg><svg class="dd o2" style="bottom:130px;right:3.5%;width:40px;color:#8a5cff;--rot:18deg" viewBox="0 0 24 26" aria-hidden="true"><path fill="currentColor" d="M12 1 L14.6 4.4 L13.6 15 L10.4 15 L9.4 4.4 Z"/><rect fill="currentColor" x="6" y="15.4" width="12" height="2.2" rx="1.1"/><rect fill="currentColor" x="10.9" y="17.8" width="2.2" height="5.4" rx="1"/><circle fill="currentColor" cx="12" cy="24.4" r="1.5"/></svg>
+<section id="shops"><svg class="dd o3" style="top:420px;left:3%;width:26px;color:#e0245e;--rot:-12deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg><svg class="dd" style="bottom:90px;left:42%;width:26px;color:#f26daa;--rot:0deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0 C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0 Z"/></svg><svg class="dd o4" style="top:90px;right:9%;width:44px;color:#4f7dff;--rot:-14deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg><svg class="dd o2" style="bottom:130px;right:3.5%;width:40px;color:#8a5cff;--rot:18deg" viewBox="0 0 24 26" aria-hidden="true"><path fill="currentColor" d="M12 1 L14.6 4.4 L13.6 15 L10.4 15 L9.4 4.4 Z"/><rect fill="currentColor" x="6" y="15.4" width="12" height="2.2" rx="1.1"/><rect fill="currentColor" x="10.9" y="17.8" width="2.2" height="5.4" rx="1"/><circle fill="currentColor" cx="12" cy="24.4" r="1.5"/></svg>
   <div class="wrap">
     <div class="sec-head fade" data-num="03">
       <div class="en">SHOPS<span>.</span></div>
@@ -467,7 +468,7 @@
 </section>
 
 <!-- ============ DATA ============ -->
-<section id="data"><svg class="dd o2" style="top:96px;right:13%;width:34px;color:#f26daa;--rot:12deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg>
+<section id="data"><svg class="dd o3" style="bottom:90px;left:6%;width:40px;color:#c9964f;--rot:-10deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg><svg class="dd o2" style="top:96px;right:13%;width:34px;color:#f26daa;--rot:12deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg>
   <div class="wrap">
     <div class="sec-head fade" data-num="04">
       <div class="en">DATA<span>.</span></div>
@@ -505,7 +506,7 @@
 </section>
 
 <!-- ============ EVENTS ============ -->
-<section id="events"><svg class="dd" style="top:120px;right:7%;width:30px;color:rgba(255,255,255,.8);--rot:0deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0 C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0 Z"/></svg><svg class="dd o3" style="bottom:90px;left:4.5%;width:44px;color:rgba(255,255,255,.75);--rot:8deg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="11.5" r="1" fill="currentColor"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><ellipse cx="12" cy="15.4" rx="3" ry="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="14.6" r=".9" fill="currentColor"/></svg>
+<section id="events"><svg class="dd o2" style="top:320px;left:5%;width:36px;color:rgba(255,255,255,.7);--rot:20deg" viewBox="0 0 24 26" aria-hidden="true"><path fill="currentColor" d="M12 1 L14.6 4.4 L13.6 15 L10.4 15 L9.4 4.4 Z"/><rect fill="currentColor" x="6" y="15.4" width="12" height="2.2" rx="1.1"/><rect fill="currentColor" x="10.9" y="17.8" width="2.2" height="5.4" rx="1"/><circle fill="currentColor" cx="12" cy="24.4" r="1.5"/></svg><svg class="dd o4" style="bottom:210px;right:11%;width:30px;color:#f26daa;--rot:12deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.4 8.9 1.7 5 5.2 4.3 7.4 3.9 9.5 5 12 7.6 14.5 5 16.6 3.9 18.8 4.3c3.5.7 4.8 4.6 3.2 7.5C19.5 16.1 12 21 12 21z"/></svg><svg class="dd" style="top:120px;right:7%;width:30px;color:rgba(255,255,255,.8);--rot:0deg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0 C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0 Z"/></svg><svg class="dd o3" style="bottom:90px;left:4.5%;width:44px;color:rgba(255,255,255,.75);--rot:8deg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="11.5" r="1" fill="currentColor"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><ellipse cx="12" cy="15.4" rx="3" ry="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="14.6" r=".9" fill="currentColor"/></svg>
   <div class="wrap">
     <div class="sec-head fade" data-num="05">
       <div class="en">NEWS &amp; EVENTS<span>.</span></div>
@@ -558,7 +559,7 @@
 </section>
 
 <!-- ============ COMPANY ============ -->
-<section id="company">
+<section id="company"><svg class="dd o2" style="top:110px;right:6%;width:40px;color:#f26daa;--rot:10deg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="5.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="11.5" r="1" fill="currentColor"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><ellipse cx="12" cy="15.4" rx="3" ry="2.1" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="14.6" r=".9" fill="currentColor"/></svg><svg class="dd" style="bottom:130px;left:5%;width:44px;color:#8a5cff;--rot:-12deg" viewBox="0 0 32 22" aria-hidden="true"><path fill="currentColor" d="M14 10 L3 3.5 C1 8 1 13 3 17.5 Z M18 10 L29 3.5 C31 8 31 13 29 17.5 Z"/><circle fill="currentColor" cx="16" cy="10.5" r="3.4"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" d="M14 13.5 L11 20 M18 13.5 L21 20"/></svg>
   <div class="wrap">
     <div class="sec-head fade" data-num="07">
       <div class="en">COMPANY<span>.</span></div>
