@@ -92,6 +92,15 @@
     section{padding:72px 0}
     .value-grid{grid-template-columns:1fr}
   }
+  /* ---------- カスタムカーソル / 遷移フェード ---------- */
+  @media(hover:hover) and (pointer:fine){
+    body,a,button{cursor:none}
+    #curDot{position:fixed;left:0;top:0;width:10px;height:10px;border-radius:50%;background:#c8102e;pointer-events:none;z-index:10000;transition:width .25s ease,height .25s ease,opacity .25s ease;will-change:transform}
+    #curDot.grow{width:46px;height:46px;opacity:.45}
+  }
+  @media(hover:none){#curDot{display:none}}
+  #pageFade{position:fixed;inset:0;background:#101112;opacity:0;pointer-events:none;transition:opacity .35s ease;z-index:9998}
+  #pageFade.show{opacity:1}
 </style>
 </head>
 <body>
@@ -230,5 +239,30 @@
   },{threshold:.12});
   document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
 </script>
-</body>
+<div id="curDot" aria-hidden="true"></div><div id="pageFade" aria-hidden="true"></div>
+<script>
+  (function(){
+    var dot = document.getElementById('curDot');
+    if (dot && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      var x = innerWidth/2, y = innerHeight/2, tx = x, ty = y;
+      window.addEventListener('mousemove', function(e){ tx = e.clientX; ty = e.clientY; }, {passive:true});
+      (function loop(){ x += (tx - x) * .22; y += (ty - y) * .22; dot.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%)'; requestAnimationFrame(loop); })();
+      document.addEventListener('mouseover', function(e){ if (e.target.closest && e.target.closest('a,button')) dot.classList.add('grow'); });
+      document.addEventListener('mouseout', function(e){ if (e.target.closest && e.target.closest('a,button')) dot.classList.remove('grow'); });
+    } else if (dot) { dot.style.display = 'none'; }
+    var fade = document.getElementById('pageFade');
+    if (fade) {
+      document.addEventListener('click', function(e){
+        var a = e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (a.target === '_blank' || href.charAt(0) === '#' || href.indexOf('mailto:') === 0 || href === '') return;
+        e.preventDefault();
+        fade.classList.add('show');
+        setTimeout(function(){ location.href = a.href; }, 360);
+      });
+      window.addEventListener('pageshow', function(){ fade.classList.remove('show'); });
+    }
+  })();
+</script</body>
 </html>
