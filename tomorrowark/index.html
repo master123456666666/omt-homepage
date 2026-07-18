@@ -224,13 +224,8 @@
     .ta-data{grid-template-columns:1fr}
     .ta-charts{grid-template-columns:1fr}
   }
-  /* ---------- カスタムカーソル / 遷移フェード ---------- */
-  @media(hover:hover) and (pointer:fine){
-    body,a,button{cursor:none}
-    #curDot{position:fixed;left:0;top:0;width:10px;height:10px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:10000;transition:width .25s ease,height .25s ease,opacity .25s ease;will-change:transform}
-    #curDot.grow{width:46px;height:46px}
-  }
-  @media(hover:none){#curDot{display:none}}
+  /* ---------- 遷移フェード ---------- */
+  
   #pageFade{position:fixed;inset:0;background:#101112;opacity:0;pointer-events:none;transition:opacity .35s ease;z-index:9998}
   #pageFade.show{opacity:1}
 </style>
@@ -610,7 +605,7 @@
     if (location.search.indexOf('debugshot') !== -1) { fired = true; counters.forEach(function(el){ el.textContent = parseInt(el.getAttribute('data-count'),10).toLocaleString(); }); }
   })();
 </script>
-<div id="curDot" aria-hidden="true"></div><div id="pageFade" aria-hidden="true"></div>
+<div id="pageFade" aria-hidden="true"></div>
 <script>
   (function(){
     var dot = document.getElementById('curDot');
