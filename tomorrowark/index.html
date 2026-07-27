@@ -388,11 +388,11 @@
     <div class="ta-charts fade">
       <div class="ta-chart-card">
         <h4>会員の年齢構成</h4>
-        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#e6e6e4 0% 9.3%, #b3b3b1 9.3% 86.9%, #d2d2d0 86.9% 96.9%, #8a8a88 96.9% 100%)"></div>
+        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#e6e6e4 0% 8.5%, #b3b3b1 8.5% 86.6%, #d2d2d0 86.6% 96.9%, #8a8a88 96.9% 100%)"></div>
         <ul class="ta-legend">
-          <li><i style="background:#e6e6e4"></i>10代<small>9.3%</small></li>
-          <li><i style="background:#b3b3b1"></i>20代<small>77.6%</small></li>
-          <li><i style="background:#d2d2d0"></i>30代<small>10.0%</small></li>
+          <li><i style="background:#e6e6e4"></i>10代<small>8.5%</small></li>
+          <li><i style="background:#b3b3b1"></i>20代<small>78.1%</small></li>
+          <li><i style="background:#d2d2d0"></i>30代<small>10.3%</small></li>
           <li><i style="background:#8a8a88"></i>40代以上<small>3.1%</small></li>
         </ul>
         <p class="cap">会員の8割超が10〜20代。若い世代に選ばれています。</p>
@@ -557,7 +557,7 @@
       requestAnimationFrame(step);
     }
     var donut = document.getElementById('taDonut');
-    var SEGS = [[9.3,'#e6e6e4'],[86.9,'#b3b3b1'],[96.9,'#d2d2d0'],[100,'#8a8a88']];
+    var SEGS = [[8.5,'#e6e6e4'],[86.6,'#b3b3b1'],[96.9,'#d2d2d0'],[100,'#8a8a88']];
     function paintDonut(t){
       var stops = [], prev = 0;
       for (var i = 0; i < SEGS.length; i++) {
