@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ALUDE 社員旅行 2026 熱海のしおり</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127878;</text></svg>">
+</head>
+<body>
+<style>
+  :root{
+    --sand:#F4EEE1;
+    --paper:#FCF9F2;
+    --ink:#243640;
+    --ink-soft:#5C6E78;
+    --sea:#155A78;
+    --aqua:#1E8FA8;
+    --coral:#E4553B;
+    --night:#12293B;
+    --night-paper:#1A3550;
+    --line:#D8CFBC;
+    --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS PMincho",serif;
+    --sans:"Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic",Meiryo,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --sand:#0F2233;
+      --paper:#16304A;
+      --ink:#EAF1F4;
+      --ink-soft:#9FB4C0;
+      --sea:#7FC4D8;
+      --aqua:#5BB8CE;
+      --coral:#F0785F;
+      --night:#0B1B2B;
+      --night-paper:#122c44;
+      --line:#2C4A63;
+    }
+  }
+  :root[data-theme="dark"]{
+    --sand:#0F2233;
+    --paper:#16304A;
+    --ink:#EAF1F4;
+    --ink-soft:#9FB4C0;
+    --sea:#7FC4D8;
+    --aqua:#5BB8CE;
+    --coral:#F0785F;
+    --night:#0B1B2B;
+    --night-paper:#122c44;
+    --line:#2C4A63;
+  }
+  :root[data-theme="light"]{
+    --sand:#F4EEE1;
+    --paper:#FCF9F2;
+    --ink:#243640;
+    --ink-soft:#5C6E78;
+    --sea:#155A78;
+    --aqua:#1E8FA8;
+    --coral:#E4553B;
+    --night:#12293B;
+    --night-paper:#1A3550;
+    --line:#D8CFBC;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 72px;}
+
+  /* ---------- cover ---------- */
+  .cover{
+    text-align:center;
+    padding:64px 16px 0;
+  }
+  .cover .eyebrow{
+    font-size:12px;
+    letter-spacing:.35em;
+    text-indent:.35em;
+    color:var(--aqua);
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:var(--serif);
+    font-size:clamp(34px,8vw,56px);
+    font-weight:600;
+    letter-spacing:.12em;
+    margin:.35em 0 .15em;
+    line-height:1.3;
+    text-wrap:balance;
+    color:var(--sea);
+  }
+  .cover .dates{
+    font-family:var(--serif);
+    font-size:18px;
+    letter-spacing:.2em;
+    color:var(--ink);
+  }
+  .cover .sub{
+    margin-top:14px;
+    color:var(--ink-soft);
+    font-size:14px;
+    letter-spacing:.08em;
+  }
+  .wave{display:block;width:100%;height:70px;margin-top:28px;}
+
+  /* ---------- day header ---------- */
+  .day{
+    margin-top:56px;
+  }
+  .day-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    border-bottom:2px solid var(--sea);
+    padding-bottom:10px;
+  }
+  .day-head .n{
+    font-family:var(--serif);
+    font-size:15px;
+    letter-spacing:.25em;
+    color:var(--aqua);
+    white-space:nowrap;
+  }
+  .day-head h2{
+    font-family:var(--serif);
+    font-size:clamp(20px,4.5vw,26px);
+    font-weight:600;
+    letter-spacing:.08em;
+    margin:0;
+  }
+  .day-head .date{
+    margin-left:auto;
+    font-size:13px;
+    color:var(--ink-soft);
+    letter-spacing:.1em;
+    white-space:nowrap;
+  }
+
+  /* ---------- timeline ---------- */
+  .tl{margin-top:24px;display:flex;flex-direction:column;}
+  .item{
+    display:grid;
+    grid-template-columns:86px 14px 1fr;
+    gap:0 14px;
+    position:relative;
+  }
+  .item .time{
+    font-variant-numeric:tabular-nums;
+    font-size:14px;
+    font-weight:700;
+    color:var(--sea);
+    text-align:right;
+    padding-top:2px;
+    letter-spacing:.02em;
+    white-space:nowrap;
+  }
+  .item .rail{position:relative;}
+  .item .rail::before{
+    content:"";
+    position:absolute;left:50%;top:10px;bottom:-10px;
+    width:2px;margin-left:-1px;
+    background:var(--line);
+  }
+  .item:last-child .rail::before{bottom:auto;height:0;}
+  .item .rail::after{
+    content:"";
+    position:absolute;left:50%;top:6px;
+    width:10px;height:10px;margin-left:-5px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2.5px solid var(--aqua);
+  }
+  .item.big .rail::after{
+    background:var(--coral);
+    border-color:var(--coral);
+    width:12px;height:12px;margin-left:-6px;top:5px;
+  }
+  .item .body{padding:0 0 26px;}
+  .item .t{
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.04em;
+  }
+  .item .t .em{color:var(--coral);}
+  .item .d{
+    margin-top:2px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.12em;
+    color:var(--aqua);
+    border:1px solid var(--aqua);
+    border-radius:999px;
+    padding:1px 10px;
+    margin-left:8px;
+    vertical-align:2px;
+    white-space:nowrap;
+  }
+  .tag.work{color:var(--sea);border-color:var(--sea);}
+  .tag.rest{color:var(--coral);border-color:var(--coral);}
+
+  /* ---------- weather branch ---------- */
+  .branch{
+    margin-top:8px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  @media (max-width:600px){.branch{grid-template-columns:1fr;}}
+  .plan{
+    border-radius:10px;
+    padding:22px 20px 14px;
+    background:var(--paper);
+    border:1px solid var(--line);
+  }
+  .plan.night{
+    background:var(--night);
+    border-color:var(--night);
+    color:#EAF1F4;
+    position:relative;
+    overflow:hidden;
+  }
+  .plan.night .plan-title{color:#FFD9A8;}
+  .plan.night .mini .time{color:#8FD0E4;}
+  .plan.night .mini .d{color:#B9C9D6;}
+  .plan.rain{
+    background:var(--night-paper);
+    border-color:var(--night-paper);
+    color:#EAF1F4;
+  }
+  .plan.rain .plan-title{color:#A8D8E8;}
+  .plan.rain .mini .time{color:#8FD0E4;}
+  .plan.rain .mini .d{color:#B9C9D6;}
+  .plan-title{
+    font-family:var(--serif);
+    font-size:17px;
+    font-weight:600;
+    letter-spacing:.1em;
+    margin:0 0 4px;
+  }
+  .plan-note{font-size:12.5px;opacity:.85;margin:0 0 14px;}
+  .mini{display:flex;flex-direction:column;gap:12px;padding:0;margin:0;list-style:none;}
+  .mini li{display:grid;grid-template-columns:78px 1fr;gap:10px;font-size:13.5px;}
+  .mini .time{
+    font-variant-numeric:tabular-nums;
+    font-weight:700;
+    text-align:right;
+    white-space:nowrap;
+  }
+  .mini .t{font-weight:700;}
+  .mini .d{font-size:12.5px;margin-top:1px;}
+  .fw{
+    position:absolute;right:-10px;top:-14px;width:120px;height:120px;opacity:.9;
+    pointer-events:none;
+  }
+
+  /* ---------- notes ---------- */
+  .memo{
+    margin-top:56px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:24px 24px 18px;
+  }
+  .memo h3{
+    font-family:var(--serif);
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:.15em;
+    margin:0 0 10px;
+    color:var(--sea);
+  }
+  .memo ul{margin:0;padding-left:1.3em;font-size:13.5px;color:var(--ink-soft);}
+  .memo li{margin-bottom:6px;}
+  .memo li strong{color:var(--ink);}
+
+  footer{
+    margin-top:48px;
+    text-align:center;
+    font-family:var(--serif);
+    font-size:13px;
+    letter-spacing:.25em;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- group tabs ---------- */
+  .tabs{
+    position:sticky;top:0;z-index:10;
+    display:flex;gap:10px;justify-content:center;
+    padding:16px 0 14px;
+    background:linear-gradient(var(--sand) 70%, transparent);
+  }
+  .tab-btn{
+    font-family:var(--sans);
+    font-size:13.5px;font-weight:700;letter-spacing:.06em;
+    color:var(--sea);
+    background:var(--paper);
+    border:1.5px solid var(--sea);
+    border-radius:999px;
+    padding:8px 22px;
+    cursor:pointer;
+  }
+  .tab-btn.on{background:var(--sea);color:var(--sand);}
+  .tab-btn:focus-visible{outline:2px solid var(--coral);outline-offset:2px;}
+  .wrap[data-grp="tokyo"] .g-car{display:none;}
+  .wrap[data-grp="car"] .g-tokyo{display:none;}
+  .wrap[data-grp="tokyo"] .end-tokyo .rail::before{display:none;}
+
+  @media print{
+    body{background:#fff;}
+    .plan.night,.plan.rain{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .day{break-inside:avoid-page;}
+    .tabs{display:none;}
+    .wrap .g-car,.wrap .g-tokyo{display:grid !important;}
+  }
+</style>
+
+<div class="wrap" data-grp="car">
+
+  <header class="cover">
+    <div class="eyebrow">ALUDE COMPANY TRIP 2026</div>
+    <h1>熱海のしおり</h1>
+    <div class="dates">8月5日（水）— 8月6日（木）　一泊二日</div>
+    <p class="sub">海で遊び、浜辺で働き、花火を見上げて、大楠に祈る。<br>宿は「熱海Moonlight宴」——温泉つきヴィラです。</p>
+    <svg class="wave" viewBox="0 0 720 70" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C60,20 120,20 180,40 S300,60 360,40 S480,20 540,40 S660,60 720,40 L720,70 L0,70 Z" fill="var(--aqua)" opacity="0.25"/>
+      <path d="M0,50 C60,32 120,32 180,50 S300,68 360,50 S480,32 540,50 S660,68 720,50 L720,70 L0,70 Z" fill="var(--sea)" opacity="0.5"/>
+    </svg>
+  </header>
+
+  <nav class="tabs" aria-label="組別の行程切り替え">
+    <button type="button" class="tab-btn on" data-grp="car">🚙 大阪・名古屋組</button>
+    <button type="button" class="tab-btn" data-grp="tokyo">🚄 東京組</button>
+  </nav>
+
+  <!-- ================= DAY 1 ================= -->
+  <section class="day">
+    <div class="day-head">
+      <span class="n">DAY 1</span>
+      <h2>移動・海遊び・ビーチMTG・花火</h2>
+      <span class="date">8/5（水）</span>
+    </div>
+
+    <div class="tl">
+      <div class="item g-car">
+        <div class="time">06:00</div><div class="rail"></div>
+        <div class="body"><div class="t">大阪（難波周辺）出発 🚙<span class="tag">車組</span></div></div>
+      </div>
+      <div class="item g-car">
+        <div class="time">08:00</div><div class="rail"></div>
+        <div class="body"><div class="t">名古屋駅で合流<span class="tag">車組</span></div>
+        <div class="d">往路休憩1回目。08:15に再出発します。</div></div>
+      </div>
+      <div class="item g-car">
+        <div class="time">10:30</div><div class="rail"></div>
+        <div class="body"><div class="t">駿河湾沼津SAで休憩（30分）<span class="tag">車組</span></div>
+        <div class="d">往路休憩2回目。駿河湾を一望できるSAです。</div></div>
+      </div>
+      <div class="item g-tokyo">
+        <div class="time">11:27</div><div class="rail"></div>
+        <div class="body"><div class="t">東京駅発・こだま821号 🚄<span class="tag rest">東京組</span></div>
+        <div class="d">熱海 12:10 着（43分）。花火当日は混み合うので指定席の事前予約がおすすめ。</div></div>
+      </div>
+      <div class="item">
+        <div class="time">12:15</div><div class="rail"></div>
+        <div class="body"><div class="t">熱海駅到着・全員合流 📍</div></div>
+      </div>
+      <div class="item">
+        <div class="time">12:30</div><div class="rail"></div>
+        <div class="body"><div class="t">熱海駅周辺で海鮮ランチ 🐟</div>
+        <div class="d">食後は水着に着替えてビーチへ。</div></div>
+      </div>
+      <div class="item big">
+        <div class="time">14:00</div><div class="rail"></div>
+        <div class="body"><div class="t"><span class="em">海遊びタイム！</span>熱海サンビーチ<span class="tag rest">たっぷり2時間</span></div>
+        <div class="d">泳ぐ・ビーチバレー・砂浜でまったり。夏の熱海の海を全員で全力で遊び尽くします。</div></div>
+      </div>
+      <div class="item">
+        <div class="time">16:00</div><div class="rail"></div>
+        <div class="body"><div class="t">青空ワーケーション：ビーチMTG 💻<span class="tag work">水曜定例・1時間</span></div>
+        <div class="d">海風を感じながら、砂浜やビーチ近くのカフェテラスで定例ミーティング。</div></div>
+      </div>
+      <div class="item">
+        <div class="time">17:00</div><div class="rail"></div>
+        <div class="body"><div class="t">BBQの買い出し 🛒</div>
+        <div class="d">マックスバリュ熱海店などで夜の食材とお酒を調達。</div></div>
+      </div>
+      <div class="item">
+        <div class="time">17:45</div><div class="rail"></div>
+        <div class="body"><div class="t">「熱海Moonlight宴」チェックイン 🏡</div>
+        <div class="d">海遊びの砂や汗をヴィラの温泉でサッと流して、全員すっきりリフレッシュ。</div></div>
+      </div>
+    </div>
+
+    <div class="branch">
+      <div class="plan night">
+        <svg class="fw" viewBox="0 0 120 120" aria-hidden="true">
+          <g stroke="#FFD9A8" stroke-width="1.6" stroke-linecap="round">
+            <line x1="60" y1="60" x2="60" y2="22"/><line x1="60" y1="60" x2="60" y2="98"/>
+            <line x1="60" y1="60" x2="22" y2="60"/><line x1="60" y1="60" x2="98" y2="60"/>
+            <line x1="60" y1="60" x2="34" y2="34"/><line x1="60" y1="60" x2="86" y2="86"/>
+            <line x1="60" y1="60" x2="34" y2="86"/><line x1="60" y1="60" x2="86" y2="34"/>
+          </g>
+          <g fill="#F0785F">
+            <circle cx="60" cy="18" r="2.4"/><circle cx="60" cy="102" r="2.4"/>
+            <circle cx="18" cy="60" r="2.4"/><circle cx="102" cy="60" r="2.4"/>
+            <circle cx="31" cy="31" r="2.4"/><circle cx="89" cy="89" r="2.4"/>
+            <circle cx="31" cy="89" r="2.4"/><circle cx="89" cy="31" r="2.4"/>
+          </g>
+        </svg>
+        <h3 class="plan-title">☀️ 晴れの夜 — ビーチで花火</h3>
+        <p class="plan-note">砂浜の特等席から、大迫力の打ち上げ花火。</p>
+        <ul class="mini">
+          <li><span class="time">19:15</span><span><span class="t">車で熱海サンビーチへ</span><span class="d">夜の駐車場確保のため早めに出発。</span></span></li>
+          <li><span class="time">20:15</span><span><span class="t">花火観賞（〜20:40）🎆</span><span class="d">砂浜から全員で観賞。</span></span></li>
+          <li><span class="time">21:00</span><span><span class="t">混雑を避けてヴィラへ帰還</span></span></li>
+          <li><span class="time">21:30</span><span><span class="t">ウッドデッキで遅めのBBQ＆大宴会 🥩</span><span class="d">兼・完全自由時間。</span></span></li>
+        </ul>
+      </div>
+      <div class="plan rain">
+        <h3 class="plan-title">☔ 雨の夜 — ヴィラで花火</h3>
+        <p class="plan-note">昼の海遊びが中止の場合は、15:30に前倒しチェックイン。室内MTGとサウナ自由時間を長めに。</p>
+        <ul class="mini">
+          <li><span class="time">15:30</span><span><span class="t">前倒しチェックイン</span><span class="d">室内ミーティング＆サウナ自由時間。</span></span></li>
+          <li><span class="time">20:15</span><span><span class="t">花火観賞（〜20:40）🎆</span><span class="d">雨を避けて、リビングやテラスの特等席から。</span></span></li>
+          <li><span class="time">21:00</span><span><span class="t">ウッドデッキでBBQ＆大宴会 🥩</span><span class="d">兼・完全自由時間。</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DAY 2 ================= -->
+  <section class="day">
+    <div class="day-head">
+      <span class="n">DAY 2</span>
+      <h2>朝MTG・參拝・メインランチ・解散</h2>
+      <span class="date">8/6（木）</span>
+    </div>
+
+    <div class="tl">
+      <div class="item">
+        <div class="time">09:00</div><div class="rail"></div>
+        <div class="body"><div class="t">木曜朝のラップアップMTG 💻<span class="tag work">1時間</span></div></div>
+      </div>
+      <div class="item">
+        <div class="time">11:00</div><div class="rail"></div>
+        <div class="body"><div class="t">ヴィラをチェックアウト 🏡</div></div>
+      </div>
+      <div class="item">
+        <div class="time">11:15</div><div class="rail"></div>
+        <div class="body"><div class="t">來宮神社へ参拝 ⛩️</div>
+        <div class="d">樹齢2100年の大楠パワースポットで、会社の運気アップ祈願。</div></div>
+      </div>
+      <div class="item big">
+        <div class="time">12:30</div><div class="rail"></div>
+        <div class="body"><div class="t"><span class="em">全員集合！</span>熱海で一番のメインランチ 🍴<span class="tag rest">お疲れ様会</span></div></div>
+      </div>
+      <div class="item">
+        <div class="time">14:00</div><div class="rail"></div>
+        <div class="body"><div class="t">熱海駅前で一旦解散 → お土産＆観光フリータイム 🕒<span class="tag rest">たっぷり3時間</span></div>
+        <div class="d">手荷物は車組のトランクに全部預けて、手ぶらで身軽に食べ歩き＆買い物へ。</div></div>
+      </div>
+      <div class="item g-car">
+        <div class="time">17:00</div><div class="rail"></div>
+        <div class="body"><div class="t">熱海駅で東京組を見送り 🚄<span class="tag">車組</span></div>
+        <div class="d">見送り後、17:15に大阪へ向けて熱海を出発。</div></div>
+      </div>
+      <div class="item g-tokyo">
+        <div class="time">17:32</div><div class="rail"></div>
+        <div class="body"><div class="t">熱海駅発・こだま834号 🚄<span class="tag rest">東京組</span></div>
+        <div class="d">みんなに見送られて出発。指定席の事前予約がおすすめ。</div></div>
+      </div>
+      <div class="item g-tokyo end-tokyo">
+        <div class="time">18:18</div><div class="rail"></div>
+        <div class="body"><div class="t">東京駅到着・解散<span class="tag rest">東京組</span></div>
+        <div class="d">お疲れ様でした！</div></div>
+      </div>
+      <div class="item g-car">
+        <div class="time">20:00</div><div class="rail"></div>
+        <div class="body"><div class="t">刈谷ハイウェイオアシスで休憩（45分）🍔<span class="tag">車組</span></div>
+        <div class="d">復路休憩。夜ご飯＆給油。</div></div>
+      </div>
+      <div class="item g-car">
+        <div class="time">21:15</div><div class="rail"></div>
+        <div class="body"><div class="t">名古屋駅で名古屋組を降車<span class="tag">車組</span></div></div>
+      </div>
+      <div class="item g-car">
+        <div class="time">23:00</div><div class="rail"></div>
+        <div class="body"><div class="t">大阪（難波周辺）到着・解散 🚙<span class="tag">車組</span></div>
+        <div class="d">お疲れ様でした！</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= memo ================= -->
+  <section class="memo">
+    <h3>し お り メ モ</h3>
+    <ul>
+      <li><strong>持ち物：</strong>水着・タオル（初日ランチ後すぐビーチへ）、MTG用のPC、花火の夜は羽織りものがあると安心。</li>
+      <li><strong>新幹線（東京組）：</strong>往路はこだま821号（東京 11:27 発 → 熱海 12:10 着）、復路はこだま834号（熱海 17:32 発 → 東京 18:18 着）。指定席 4,270円／自由席 3,740円。花火当日は指定席の早め予約を。</li>
+      <li><strong>お仕事は2コマだけ：</strong>水曜のビーチMTG（16:00〜）と木曜朝のラップアップ（9:00〜）。あとは全力で遊ぶ。</li>
+      <li><strong>2日目の荷物：</strong>チェックアウト後の手荷物は車組のトランクへ。フリータイムは手ぶらでOK。</li>
+    </ul>
+  </section>
+
+  <footer>ALUDE — 夏の熱海、一泊二日。</footer>
+
+</div>
+
+<script>
+  const wrap = document.querySelector('.wrap');
+  const btns = document.querySelectorAll('.tab-btn');
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    wrap.dataset.grp = btn.dataset.grp;
+    btns.forEach(b => b.classList.toggle('on', b === btn));
+  }));
+</script>
+
+</body>
+</html>
