@@ -382,19 +382,19 @@
       <div class="jp">数字で見るtomorrow ark</div>
     </div>
     <div class="ta-data fade">
-      <div class="ta-num hl"><div class="label">店舗会員数</div><div class="num"><span class="cnt" data-count="2300">0</span><small>人+</small></div><div class="sub">ALUDE直営店の会員</div><div class="sub dsub">前日比 <span class="delta">+2人</span></div></div>
+      <div class="ta-num hl"><div class="label">店舗会員数</div><div class="num"><span class="cnt" data-count="2400">0</span><small>人+</small></div><div class="sub">ALUDE直営店の会員</div><div class="sub dsub">前日比 <span class="delta">+9人</span></div></div>
       <div class="ta-num"><div class="label">直営店</div><div class="num"><span class="cnt" data-count="5">0</span><small>店</small></div><div class="sub">東京・大阪・名古屋・札幌の4都市</div></div>
       <div class="ta-num"><div class="label">従業員</div><div class="num"><span class="cnt" data-count="26">0</span><small>名</small></div><div class="sub">平均年齢 26.5歳</div></div>
     </div>
     <div class="ta-charts fade">
       <div class="ta-chart-card">
         <h4>会員の年齢構成</h4>
-        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#e6e6e4 0% 8.7%, #b3b3b1 8.7% 86.1%, #d2d2d0 86.1% 96.8%, #8a8a88 96.8% 100%)"></div>
+        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#e6e6e4 0% 8.8%, #b3b3b1 8.8% 86.2%, #d2d2d0 86.2% 96.9%, #8a8a88 96.9% 100%)"></div>
         <ul class="ta-legend">
-          <li><i style="background:#e6e6e4"></i>10代<small>8.7%</small></li>
+          <li><i style="background:#e6e6e4"></i>10代<small>8.8%</small></li>
           <li><i style="background:#b3b3b1"></i>20代<small>77.4%</small></li>
           <li><i style="background:#d2d2d0"></i>30代<small>10.7%</small></li>
-          <li><i style="background:#8a8a88"></i>40代以上<small>3.2%</small></li>
+          <li><i style="background:#8a8a88"></i>40代以上<small>3.1%</small></li>
         </ul>
         <p class="cap">会員の8割超が10〜20代。若い世代に選ばれています。</p>
       </div>
@@ -408,7 +408,7 @@
         <p class="cap">会員の9割以上が男性。メンズブランドとして支持されています。</p>
       </div>
     </div>
-    <p class="ta-data-note fade">※2026年8月18日時点。自社会員データより算出(年齢・性別は判明分の比率)しています。</p>
+    <p class="ta-data-note fade">※2026年8月19日時点。自社会員データより算出(年齢・性別は判明分の比率)しています。</p>
   </div>
 </section>
 
@@ -558,7 +558,7 @@
       requestAnimationFrame(step);
     }
     var donut = document.getElementById('taDonut');
-    var SEGS = [[8.7,'#e6e6e4'],[86.1,'#b3b3b1'],[96.8,'#d2d2d0'],[100,'#8a8a88']];
+    var SEGS = [[8.8,'#e6e6e4'],[86.2,'#b3b3b1'],[96.9,'#d2d2d0'],[100,'#8a8a88']];
     function paintDonut(t){
       var stops = [], prev = 0;
       for (var i = 0; i < SEGS.length; i++) {
