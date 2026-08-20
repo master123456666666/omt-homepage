@@ -433,19 +433,19 @@
       <div class="jp">数字で見るマニアジャパン</div>
     </div>
     <div class="mj-data fade">
-      <div class="mj-num hl"><div class="label">店舗会員数</div><div class="num"><span class="cnt" data-count="9200">0</span><small>人+</small></div><div class="sub">会員制度開始から約1年</div><div class="sub dsub">前日比 <span class="delta">+5人</span></div></div>
+      <div class="mj-num hl"><div class="label">店舗会員数</div><div class="num"><span class="cnt" data-count="9200">0</span><small>人+</small></div><div class="sub">会員制度開始から約1年</div><div class="sub dsub">前日比 <span class="delta">+11人</span></div></div>
       <div class="mj-num"><div class="label">直営店</div><div class="num"><span class="cnt" data-count="4">0</span><small>店</small></div><div class="sub">東京2・大阪・名古屋</div></div>
       <div class="mj-num"><div class="label">従業員</div><div class="num"><span class="cnt" data-count="38">0</span><small>名</small></div><div class="sub">平均年齢 24.2歳</div></div>
     </div>
     <div class="mj-charts fade">
       <div class="chart-card">
         <h4>会員の年齢構成</h4>
-        <div class="mj-donut" id="mjDonut" style="background:conic-gradient(#7fd4d4 0% 13.4%, #00AEC7 13.4% 84%, #ed7d2b 84% 94.1%, #494d4e 94.1% 100%)"></div>
+        <div class="mj-donut" id="mjDonut" style="background:conic-gradient(#7fd4d4 0% 13.3%, #00AEC7 13.3% 83.9%, #ed7d2b 83.9% 94%, #494d4e 94% 100%)"></div>
         <ul class="mj-legend">
-          <li><i style="background:#7fd4d4"></i>10代<small>13.4%</small></li>
+          <li><i style="background:#7fd4d4"></i>10代<small>13.3%</small></li>
           <li><i style="background:#00AEC7"></i>20代<small>70.6%</small></li>
           <li><i style="background:#ed7d2b"></i>30代<small>10.1%</small></li>
-          <li><i style="background:#494d4e"></i>40代以上<small>5.9%</small></li>
+          <li><i style="background:#494d4e"></i>40代以上<small>6.0%</small></li>
         </ul>
         <p class="cap">会員の8割超が10〜20代。Z世代に選ばれています。</p>
       </div>
@@ -463,7 +463,7 @@
       <div class="label">POP UP 出店実績</div>
       <div class="venues"><i>伊勢丹新宿店</i><i>梅田阪急</i><i>渋谷PARCO</i><i>心斎橋PARCO</i><i>名古屋PARCO</i></div>
     </div>
-    <p class="mj-data-note fade">※2026年8月19日時点。自社会員データより算出しています。</p>
+    <p class="mj-data-note fade">※2026年8月20日時点。自社会員データより算出しています。</p>
   </div>
 </section>
 
@@ -616,7 +616,7 @@
       requestAnimationFrame(step);
     }
     var donut = document.getElementById('mjDonut');
-    var SEGS = [[13.4,'#7fd4d4'],[84,'#00AEC7'],[94.1,'#ed7d2b'],[100,'#494d4e']];
+    var SEGS = [[13.3,'#7fd4d4'],[83.9,'#00AEC7'],[94,'#ed7d2b'],[100,'#494d4e']];
     function paintDonut(t){
       var stops = [], prev = 0;
       for (var i = 0; i < SEGS.length; i++) {
