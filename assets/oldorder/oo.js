@@ -159,6 +159,7 @@ var vis={};
 var items=host.querySelectorAll('.ooItem');
 for(var i=0;i<items.length;i++){
 var a=items[i].querySelector('a');var h=a?a.getAttribute('href'):'';
+h=h.replace(/^https?:\/\/[^\/]+/,'');
 var show=!allow||!!allow[h];
 items[i].style.display=show?'':'none';
 if(show&&h)vis[h]=1;
