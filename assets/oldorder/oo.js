@@ -323,3 +323,34 @@ s.textContent='#headNavwrap #baseMenu img,#headNavwrap .cartIcon img{filter:inve
 +'#baseMenu li.cart a::before{color:#fff!important}';
 document.head.appendChild(s);
 })();
+
+/* ==== HOVER: swap to 2nd product image ==== */
+(function(){
+function ready(f){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}}
+ready(function(){
+if(!document.body||document.body.id!=='TopPage')return;
+function boot(){
+var host=document.getElementById('ooSections');
+if(!host){setTimeout(boot,400);return;}
+fetch('https://omt-inc.com/assets/oldorder/sizes.json').then(function(r){return r.json();}).then(function(d){
+var map=d.img2||{};
+function rel(h){var k=h.indexOf('/items/');return k>-1?h.slice(k):h;}
+host.addEventListener('mouseover',function(e){
+var a=e.target&&e.target.closest?e.target.closest('.ooItem a'):null;
+if(!a)return;
+var img=a.querySelector('img');if(!img)return;
+var u=map[rel(a.getAttribute('href')||'')];if(!u)return;
+if(!img.getAttribute('data-oo1'))img.setAttribute('data-oo1',img.src);
+img.src=u;
+});
+host.addEventListener('mouseout',function(e){
+var a=e.target&&e.target.closest?e.target.closest('.ooItem a'):null;
+if(!a)return;
+var img=a.querySelector('img');if(!img)return;
+var o=img.getAttribute('data-oo1');if(o)img.src=o;
+});
+}).catch(function(){});
+}
+boot();
+});
+})();
