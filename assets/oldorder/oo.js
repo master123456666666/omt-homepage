@@ -75,7 +75,8 @@ var __TD={
 var __TC=[
 ['2019年より','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.'],
 ['全国一律','Flat-rate shipping \u00a51,100 \u2014 free shipping on orders over \u00a530,000.'],
-['お問い合わせありがとうございます','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.']
+['お問い合わせありがとうございます','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.'],
+['カート','CART']
 ];
 function __trAll(){
 var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);var n;
@@ -287,4 +288,15 @@ f.id='ooDrawerSearch';f.action='/search';f.method='get';f.setAttribute('role','s
 f.innerHTML='<input type="search" name="q" placeholder="Search"><button type="submit" aria-label="Search">⌕</button>';
 nav.parentNode.insertBefore(f,nav.nextSibling);
 });
+})();
+
+/* ==== HEADER NAV FIXUPS (menu chip / search icon overlap) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#headNavwrap .headCatNav,#headNavwrap .headCatNav .menu,#headNavwrap .navOpen,#headNavwrap .navOpen .filler{background:transparent!important;box-shadow:none!important}'
++'#headNavwrap .navOpen .filler{border:1px solid rgba(255,255,255,.6)!important;border-radius:2px!important;padding:9px 16px!important}'
++'#headNavwrap .navOpen span,#headNavwrap .navOpen span::before,#headNavwrap .navOpen span::after{background:#fff!important}'
++'#headNavwrap .searchbar input{padding-left:44px!important}'
++'#headNavwrap .searchbar .material-icons,#headNavwrap .searchbar svg{color:#fff!important;fill:#fff!important}';
+document.head.appendChild(s);
 })();
