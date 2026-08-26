@@ -70,17 +70,18 @@ var __TD={
 'LINE公式アカウント':'LINE Official','休業日':'Closed','本日':'Today',
 '人気キーワード':'POPULAR KEYWORDS','ギフトラッピングは対応しておりません。':'Gift wrapping is not available.',
 '商品カテゴリーから探す':'BROWSE BY CATEGORY','人気キーワードから探す':'POPULAR KEYWORDS',
-'出品されている商品がありません。':'No products found.','サンリオ':'Sanrio','キーワードで探すから探す':'SEARCH'
+'出品されている商品がありません。':'No products found.','ショップに質問する':'Chat with us','メッセージを入力する':'Type a message','送信':'Send','画像を送信':'Send image','サンリオ':'Sanrio','キーワードで探すから探す':'SEARCH'
 };
 var __TC=[
 ['2019年より','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.'],
-['全国一律','Flat-rate shipping \u00a51,100 \u2014 free shipping on orders over \u00a530,000.']
+['全国一律','Flat-rate shipping \u00a51,100 \u2014 free shipping on orders over \u00a530,000.'],
+['お問い合わせありがとうございます','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.']
 ];
 function __trAll(){
 var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);var n;
 while(n=w.nextNode()){var s=n.nodeValue;if(!s)continue;var t=s.trim();if(!t)continue;if(__TD[t]!==undefined){n.nodeValue=s.replace(t,__TD[t]);continue;}var __sr=t.match(/^(.+?)の検索結果$/);if(__sr){n.nodeValue='Search results for '+__sr[1];continue;}for(var __c=0;__c<__TC.length;__c++){if(t.indexOf(__TC[__c][0])>-1){n.nodeValue=__TC[__c][1];break;}}}
-var si=document.querySelectorAll('input[type="search"],input[type="text"]');
-for(var i=0;i<si.length;i++){var ph=si[i].getAttribute('placeholder')||'';if(ph.indexOf('キーワード')>-1)si[i].setAttribute('placeholder','Search');}
+var si=document.querySelectorAll('input[type="search"],input[type="text"],textarea');
+for(var i=0;i<si.length;i++){var ph=si[i].getAttribute('placeholder')||'';if(ph.indexOf('キーワード')>-1)si[i].setAttribute('placeholder','Search');else if(ph.indexOf('メッセージ')>-1)si[i].setAttribute('placeholder','Type a message');}
 var lg=document.querySelectorAll('p.legend');
 for(var j=0;j<lg.length;j++){var __h=lg[j].innerHTML;var __h2=__h.replace('：本日',' Today ').replace('：休業日',' Closed').replace(/　/g,' ');if(__h2!==__h)lg[j].innerHTML=__h2;}
 }
@@ -192,4 +193,41 @@ apply();
 }).catch(function(){});
 }
 boot();
+})();
+
+/* ==== EMAIL SIGNUP POPUP (¥500 OFF) ==== */
+(function(){
+function ready(f){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}}
+ready(function(){
+if(!document.body||document.body.id!=='TopPage')return;
+var KEY='ooPop_v1';var st='';
+try{st=localStorage.getItem(KEY)||'';}catch(e){}
+if(st==='sub'||st==='close2')return;
+if(st.indexOf('close1:')===0){var ts=parseInt(st.slice(7),10);if(Date.now()-ts<3*86400000)return;}
+var css=document.createElement('style');
+css.textContent='#ooPop{position:fixed;top:0;left:0;right:0;bottom:0;z-index:99990;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55)}#ooPop .card{display:flex;width:min(680px,92vw);max-height:88vh;background:#fff;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}#ooPop .side{flex:0 0 45%;background:#eee center 30%/cover no-repeat}#ooPop .bodyc{flex:1 1 auto;padding:36px 28px;display:flex;flex-direction:column;justify-content:center;text-align:center;position:relative}#ooPop h2{font-family:Jost,Montserrat,sans-serif;font-size:30px;font-weight:600;letter-spacing:.04em;color:#141312;margin:0 0 10px}#ooPop p{font-size:12.5px;line-height:1.7;color:#444;margin:0 0 16px}#ooPop input{border:1px solid #bbb;padding:12px;font-size:14px;width:100%;margin-bottom:10px;text-align:center;box-sizing:border-box}#ooPop .go{background:#141312;color:#fff;border:0;padding:13px;font-family:Jost,sans-serif;font-weight:600;letter-spacing:.18em;font-size:12px;cursor:pointer;width:100%}#ooPop .no{background:none;border:0;color:#999;font-size:11px;margin-top:12px;cursor:pointer;text-decoration:underline}#ooPop .x{position:absolute;top:8px;right:12px;background:none;border:0;font-size:24px;color:#666;cursor:pointer}#ooPop .code{border:2px dashed #141312;padding:12px;font-family:Jost,sans-serif;font-size:20px;font-weight:600;letter-spacing:.14em;margin:8px 0 12px;-webkit-user-select:all;user-select:all}@media(max-width:560px){#ooPop .side{display:none}}';
+document.head.appendChild(css);
+var w=document.createElement('div');w.id='ooPop';
+w.innerHTML='<div class="card"><div class="side" style="background-image:url(https://omt-inc.com/assets/oldorder/brunch-hero.jpg)"></div><div class="bodyc"><button type="button" class="x">×</button><h2>GET ¥500 OFF</h2><p>Sign up for our newsletter and get ¥500 off your first order.</p><input type="email" placeholder="Email"><button type="button" class="go">CONTINUE</button><button type="button" class="no">No thanks</button></div></div>';
+function shut(){try{var s=localStorage.getItem(KEY)||'';if(s.indexOf('close1:')===0){localStorage.setItem(KEY,'close2');}else{localStorage.setItem(KEY,'close1:'+Date.now());}}catch(e){}if(w.parentNode)w.parentNode.removeChild(w);}
+w.addEventListener('click',function(e){if(e.target===w)shut();});
+setTimeout(function(){
+document.body.appendChild(w);
+w.querySelector('.x').addEventListener('click',shut);
+w.querySelector('.no').addEventListener('click',shut);
+w.querySelector('.go').addEventListener('click',function(){
+var inp=w.querySelector('input');var em=inp.value.trim();
+if(!/^[^@]+@[^@]+[.][^@]+$/.test(em)){inp.style.borderColor='#c33';return;}
+try{
+var c=document.querySelector('.x_mailMagazineSubscribe');
+if(c){var fi=c.querySelector('input[type="email"],input[type="text"]');var fb=c.querySelector('button,input[type="submit"]');
+if(fi&&fb){fi.value=em;fi.dispatchEvent(new Event('input',{bubbles:true}));fb.click();}}
+}catch(e){}
+try{localStorage.setItem(KEY,'sub');}catch(e){}
+var b=w.querySelector('.bodyc');
+b.innerHTML='<h2>WELCOME!</h2><p>Use this code at checkout for ¥500 off your first order:</p><div class="code">oldorder001</div><p>A confirmation email is on its way — please confirm your subscription.</p><button type="button" class="go">DONE</button>';
+b.querySelector('.go').addEventListener('click',function(){if(w.parentNode)w.parentNode.removeChild(w);});
+});
+},2500);
+});
 })();
