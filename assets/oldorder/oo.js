@@ -312,3 +312,14 @@ s.textContent='#baseMenu li.cart a::before{content:"CART"!important}'
 +'#headNavwrap .navIcons a,#headNavwrap .cartIcon{white-space:nowrap}';
 document.head.appendChild(s);
 })();
+
+/* ==== HEADER ICON BRIGHTNESS (white icons on black bar) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#headNavwrap #baseMenu img,#headNavwrap .cartIcon img{filter:invert(1) brightness(1.6)!important}'
++'#headNavwrap .searchbar form div{color:#fff!important}'
++'#headNavwrap .searchbar form div::before,#headNavwrap .searchbar form::before,#headNavwrap .searchbar div::before{color:#fff!important;opacity:1!important}'
++'#headNavwrap .memberIcon a::before,#headNavwrap .memberIcon a::after,#headNavwrap .memberIcon a span::before{color:#fff!important;opacity:1!important}'
++'#baseMenu li.cart a::before{color:#fff!important}';
+document.head.appendChild(s);
+})();
