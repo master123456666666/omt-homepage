@@ -300,3 +300,15 @@ s.textContent='#headNavwrap .headCatNav,#headNavwrap .headCatNav .menu,#headNavw
 +'#headNavwrap .searchbar .material-icons,#headNavwrap .searchbar svg{color:#fff!important;fill:#fff!important}';
 document.head.appendChild(s);
 })();
+
+/* ==== HEADER NAV FIXUPS 2 (cart pseudo label / menu bars / spacing) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#baseMenu li.cart a::before{content:"CART"!important}'
++'#headNavwrap .navOpen span{display:none!important}'
++'#headNavwrap .navOpen .filler{padding:11px 22px!important}'
++'#headNavwrap .navOpen b{font-size:12px!important;letter-spacing:.2em!important}'
++'#headNavwrap .navIcons{display:flex!important;gap:24px!important;align-items:center!important}'
++'#headNavwrap .navIcons a,#headNavwrap .cartIcon{white-space:nowrap}';
+document.head.appendChild(s);
+})();
