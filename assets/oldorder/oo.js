@@ -271,3 +271,20 @@ s.textContent='#headNavwrap{background:#141312!important;padding:10px 16px!impor
 +'#headNavwrap #baseMenu a{color:#fff!important}';
 document.head.appendChild(s);
 })();
+
+/* ==== DRAWER SEARCH BAR ==== */
+(function(){
+function ready(f){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}}
+ready(function(){
+if(document.getElementById('ooDrawerSearch'))return;
+var nav=document.querySelector('.drawerWrapper .drawerIconNav');
+if(!nav)return;
+var s=document.createElement('style');
+s.textContent='#ooDrawerSearch{display:flex;margin:14px 10px 6px}#ooDrawerSearch input{flex:1 1 auto;border:1px solid #bbb;padding:11px 12px;font-size:14px;border-radius:2px 0 0 2px;min-width:0}#ooDrawerSearch button{flex:0 0 auto;background:#141312;color:#fff;border:0;padding:0 16px;font-size:16px;border-radius:0 2px 2px 0;cursor:pointer}';
+document.head.appendChild(s);
+var f=document.createElement('form');
+f.id='ooDrawerSearch';f.action='/search';f.method='get';f.setAttribute('role','search');
+f.innerHTML='<input type="search" name="q" placeholder="Search"><button type="submit" aria-label="Search">⌕</button>';
+nav.parentNode.insertBefore(f,nav.nextSibling);
+});
+})();
