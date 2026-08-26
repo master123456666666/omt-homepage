@@ -151,7 +151,7 @@ var any=false;
 d.sizes.forEach(function(s){if((d.instock[s]||[]).length)any=true;});
 var useMap=any?d.instock:d.exists;
 var st=document.createElement('style');
-st.textContent='#ooSizeBar{position:sticky;top:0;z-index:45;background:#141312;color:#fff;display:flex;align-items:center;gap:34px;padding:14px 30px;overflow-x:auto;scrollbar-width:none}#ooSizeBar::-webkit-scrollbar{display:none}#ooSizeBar .ooSB__head{flex:0 0 auto;line-height:1.4}#ooSizeBar .ooSB__head b{display:block;font-family:Jost,Montserrat,sans-serif;font-size:13px;font-weight:600;letter-spacing:.18em}#ooSBcount{font-size:12px;letter-spacing:.14em;color:#cfcfcf;font-family:Jost,sans-serif}.ooSB__sizes{display:flex;gap:6px;align-items:center;flex:1 1 auto}.ooSB__sizes button{background:none;border:2px solid transparent;color:#fff;font-family:Jost,Montserrat,sans-serif;font-weight:500;font-size:27px;min-width:54px;height:54px;border-radius:50%;cursor:pointer;flex:0 0 auto;padding:0 6px;letter-spacing:.01em}.ooSB__sizes button.on{border-color:#fff}.ooSB__x{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;flex:0 0 auto;padding:0 4px;line-height:1}#ooSizeFab{position:fixed;right:22px;bottom:90px;z-index:46;width:58px;height:58px;border-radius:50%;background:#141312;color:#fff;border:0;cursor:pointer;font-family:Jost,sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;display:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}#ooSizeFab .mag{display:block;font-size:17px;line-height:1;margin-bottom:2px}@media(max-width:760px){#ooSizeBar{gap:16px;padding:10px 14px}.ooSB__sizes button{font-size:19px;min-width:40px;height:40px}#ooSizeBar .ooSB__head b{font-size:10px}#ooSBcount{font-size:9px}#ooSizeFab{right:14px;bottom:76px;width:50px;height:50px}}';
+st.textContent='#ooSizeBar{position:relative;z-index:5;background:#141312;color:#fff;display:flex;align-items:center;gap:34px;padding:14px 30px;overflow-x:auto;scrollbar-width:none}#ooSizeBar::-webkit-scrollbar{display:none}#ooSizeBar .ooSB__head{flex:0 0 auto;line-height:1.4}#ooSizeBar .ooSB__head b{display:block;font-family:Jost,Montserrat,sans-serif;font-size:13px;font-weight:600;letter-spacing:.18em}#ooSBcount{font-size:12px;letter-spacing:.14em;color:#cfcfcf;font-family:Jost,sans-serif}.ooSB__sizes{display:flex;gap:6px;align-items:center;flex:1 1 auto}.ooSB__sizes button{background:none;border:2px solid transparent;color:#fff;font-family:Jost,Montserrat,sans-serif;font-weight:500;font-size:27px;min-width:54px;height:54px;border-radius:50%;cursor:pointer;flex:0 0 auto;padding:0 6px;letter-spacing:.01em}.ooSB__sizes button.on{border-color:#fff}.ooSB__x{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;flex:0 0 auto;padding:0 4px;line-height:1}#ooSizeFab{position:fixed;right:22px;bottom:90px;z-index:46;width:58px;height:58px;border-radius:50%;background:#141312;color:#fff;border:0;cursor:pointer;font-family:Jost,sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;box-shadow:0 4px 14px rgba(0,0,0,.25)}#ooSizeFab .mag{display:block;font-size:17px;line-height:1;margin-bottom:2px}@media(max-width:760px){#ooSizeBar{gap:16px;padding:10px 14px}.ooSB__sizes button{font-size:19px;min-width:40px;height:40px}#ooSizeBar .ooSB__head b{font-size:10px}#ooSBcount{font-size:9px}#ooSizeFab{right:14px;bottom:76px;width:50px;height:50px}}';
 document.head.appendChild(st);
 var bar=document.createElement('div');bar.id='ooSizeBar';
 bar.innerHTML='<div class="ooSB__head"><b>SELECT YOUR SIZE</b><span id="ooSBcount"></span></div><div class="ooSB__sizes">'+d.sizes.map(function(s){return '<button type="button" data-size="'+s+'">'+s+'</button>';}).join('')+'</div><button type="button" class="ooSB__x" aria-label="close">×</button>';
@@ -160,7 +160,7 @@ var fab=document.createElement('button');fab.id='ooSizeFab';fab.type='button';
 fab.innerHTML='<span class="mag">⌕</span>SIZE';
 document.body.appendChild(fab);
 bar.querySelector('.ooSB__x').addEventListener('click',function(){bar.style.display='none';fab.style.display='block';});
-fab.addEventListener('click',function(){bar.style.display='flex';fab.style.display='none';window.scrollTo({top:bar.offsetTop>140?bar.offsetTop-140:0,behavior:'smooth'});});
+fab.addEventListener('click',function(){bar.style.display='flex';window.scrollTo({top:bar.offsetTop>140?bar.offsetTop-140:0,behavior:'smooth'});});
 var sel={};
 function apply(){
 var act=Object.keys(sel).filter(function(k){return sel[k];});
@@ -229,5 +229,29 @@ b.innerHTML='<h2>WELCOME!</h2><p>Use this code at checkout for 5% off your first
 b.querySelector('.go').addEventListener('click',function(){if(w.parentNode)w.parentNode.removeChild(w);});
 });
 },2500);
+});
+})();
+
+/* ==== INSTAGRAM SECTION ==== */
+(function(){
+function ready(f){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}}
+ready(function(){
+if(!document.body||document.body.id!=='TopPage')return;
+function boot(){
+var host=document.getElementById('ooSections');
+if(!host){setTimeout(boot,400);return;}
+fetch('https://omt-inc.com/assets/oldorder/ig.json').then(function(r){return r.json();}).then(function(d){
+if(!d.posts||!d.posts.length)return;
+var css=document.createElement('style');
+css.textContent='.ooSecIG .ooSec__grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}.ooSecIG figure{aspect-ratio:1/1;overflow:hidden;margin:0;background:#f4f4f4}.ooSecIG img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}.ooSecIG a:hover img{transform:scale(1.05)}.ooIGfollow{display:flex;justify-content:center;margin:30px 0 6px}.ooIGfollow a{border:1px solid #1c1b1b;padding:11px 34px;font-family:Jost,Montserrat,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;color:#1c1b1b;text-transform:uppercase}.ooIGfollow a:hover{background:#1c1b1b;color:#fff}@media(max-width:760px){.ooSecIG .ooSec__grid{grid-template-columns:repeat(3,1fr);gap:6px}}';
+document.head.appendChild(css);
+var sec=document.createElement('section');sec.className='ooSec ooSecIG';
+var g='';
+d.posts.forEach(function(p){g+='<div class="ooItem"><a href="'+p.link+'" target="_blank" rel="noopener"><figure><img loading="lazy" src="'+p.img+'" alt="Instagram post"></figure></a></div>';});
+sec.innerHTML='<div class="ooSec__label">INSTAGRAM</div><div class="ooSec__num">'+d.posts.length+'</div><div class="ooSec__grid">'+g+'</div><div class="ooIGfollow"><a href="https://instagram.com/'+d.username+'" target="_blank" rel="noopener">FOLLOW @'+d.username+'</a></div>';
+host.appendChild(sec);
+}).catch(function(){});
+}
+boot();
 });
 })();
