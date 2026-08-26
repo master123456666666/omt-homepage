@@ -68,7 +68,9 @@ var __TD={
 '登録する':'SUBSCRIBE','登録':'SUBSCRIBE','検索':'Search',
 'キーワードで探す':'Search','税込':'tax incl.','(税込)':'(tax incl.)',
 'LINE公式アカウント':'LINE Official','休業日':'Closed','本日':'Today',
-'人気キーワード':'POPULAR KEYWORDS','ギフトラッピングは対応しておりません。':'Gift wrapping is not available.'
+'人気キーワード':'POPULAR KEYWORDS','ギフトラッピングは対応しておりません。':'Gift wrapping is not available.',
+'商品カテゴリーから探す':'BROWSE BY CATEGORY','人気キーワードから探す':'POPULAR KEYWORDS',
+'出品されている商品がありません。':'No products found.','サンリオ':'Sanrio','キーワードで探すから探す':'SEARCH'
 };
 var __TC=[
 ['2019年より','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.'],
@@ -76,8 +78,8 @@ var __TC=[
 ];
 function __trAll(){
 var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);var n;
-while(n=w.nextNode()){var s=n.nodeValue;if(!s)continue;var t=s.trim();if(!t)continue;if(__TD[t]!==undefined){n.nodeValue=s.replace(t,__TD[t]);continue;}for(var __c=0;__c<__TC.length;__c++){if(t.indexOf(__TC[__c][0])>-1){n.nodeValue=__TC[__c][1];break;}}}
-var si=document.querySelectorAll('input[type="search"]');
+while(n=w.nextNode()){var s=n.nodeValue;if(!s)continue;var t=s.trim();if(!t)continue;if(__TD[t]!==undefined){n.nodeValue=s.replace(t,__TD[t]);continue;}var __sr=t.match(/^(.+?)の検索結果$/);if(__sr){n.nodeValue='Search results for '+__sr[1];continue;}for(var __c=0;__c<__TC.length;__c++){if(t.indexOf(__TC[__c][0])>-1){n.nodeValue=__TC[__c][1];break;}}}
+var si=document.querySelectorAll('input[type="search"],input[type="text"]');
 for(var i=0;i<si.length;i++){var ph=si[i].getAttribute('placeholder')||'';if(ph.indexOf('キーワード')>-1)si[i].setAttribute('placeholder','Search');}
 var lg=document.querySelectorAll('p.legend');
 for(var j=0;j<lg.length;j++){var __h=lg[j].innerHTML;var __h2=__h.replace('：本日',' Today ').replace('：休業日',' Closed').replace(/　/g,' ');if(__h2!==__h)lg[j].innerHTML=__h2;}
