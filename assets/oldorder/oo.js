@@ -255,3 +255,19 @@ host.appendChild(sec);
 boot();
 });
 })();
+
+/* ==== HEADER NAV ROW RESTYLE (black, clear search) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#headNavwrap{background:#141312!important;padding:10px 16px!important}'
++'#headNavwrap .widthfix{align-items:center}'
++'#headNavwrap .headCatNav .navOpen .filler{background:transparent!important;border:1px solid rgba(255,255,255,.55);padding:9px 16px;border-radius:2px}'
++'#headNavwrap .navOpen span,#headNavwrap .navOpen span::before,#headNavwrap .navOpen span::after{background:#fff!important}'
++'#headNavwrap .navOpen b{color:#fff!important;font-family:Jost,Montserrat,sans-serif;letter-spacing:.14em}'
++'#headNavwrap .searchbar input{background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.45)!important;color:#fff!important;border-radius:2px!important;padding:10px 14px!important}'
++'#headNavwrap .searchbar input::placeholder{color:rgba(255,255,255,.75)!important}'
++'#headNavwrap .navIcons a,#headNavwrap .navIcons span,#headNavwrap .cartIcon,#headNavwrap .cartIcon a,#headNavwrap .memberIcon a,#headNavwrap .memberIcon a span{color:#fff!important}'
++'#headNavwrap .cartIcon::before,#headNavwrap .cartIcon a::before{color:#fff!important}'
++'#headNavwrap #baseMenu a{color:#fff!important}';
+document.head.appendChild(s);
+})();
