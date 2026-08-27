@@ -368,3 +368,15 @@ var s=document.createElement('style');
 s.textContent='#headNavwrap .navOpen .filler::before,#headNavwrap .navOpen .filler::after{display:none!important;content:none!important}';
 document.head.appendChild(s);
 })();
+
+/* ==== TABLET DRAWER ICON ROW ON DARK HEADER (white when closed) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#drawer:not(:checked)~.drawerWrapper .drawerIconNav .cartIcon img{filter:invert(1) brightness(1.6)!important}'
++'#drawer:not(:checked)~.drawerWrapper .drawerIconNav a,'
++'#drawer:not(:checked)~.drawerWrapper .drawerIconNav .material-symbols-outlined,'
++'#drawer:not(:checked)~.drawerWrapper .drawerIconNav .material-icons{color:#fff!important}'
++'#drawer:not(:checked)~.drawerWrapper .drawerIconNav li.cart a::before,'
++'#drawer:not(:checked)~.drawerWrapper .drawerIconNav #baseMenu li.cart a::before{color:#fff!important}';
+document.head.appendChild(s);
+})();
