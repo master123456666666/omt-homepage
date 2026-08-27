@@ -361,3 +361,10 @@ var s=document.createElement('style');
 s.textContent='.footerbar #baseMenu img{filter:none!important}';
 document.head.appendChild(s);
 })();
+
+/* ==== REMOVE MENU HAMBURGER BARS ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#headNavwrap .navOpen .filler::before,#headNavwrap .navOpen .filler::after{display:none!important;content:none!important}';
+document.head.appendChild(s);
+})();
