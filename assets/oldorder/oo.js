@@ -354,3 +354,10 @@ var o=img.getAttribute('data-oo1');if(o)img.src=o;
 boot();
 });
 })();
+
+/* ==== FOOTER CART FIX (white footer needs dark icon) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='.footerbar #baseMenu img{filter:none!important}';
+document.head.appendChild(s);
+})();
