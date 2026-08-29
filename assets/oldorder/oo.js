@@ -98,7 +98,7 @@ if(document.body.id!=='TopPage')return;
 var __cw=document.querySelector('.contentWrapper');
 if(__cw&&!document.getElementById('ooHero')){
 var __hh=document.createElement('div');__hh.id='ooHero';
-__hh.innerHTML='<img src="https://omt-inc.com/assets/oldorder/brunch-drop.webp" alt="BRUNCH for OLD ORDER"><div class="ooHeroCap"><p>BRUNCH for OLD ORDER \u2014 NOW AVAILABLE</p></div>';
+var __mob=window.innerWidth<=600;if(__mob)__hh.className='ooHeroMob';__hh.innerHTML='<img src="https://omt-inc.com/assets/oldorder/'+(__mob?'brunch-hero.jpg':'brunch-drop.webp')+'" alt="BRUNCH for OLD ORDER">';
 __cw.insertBefore(__hh,__cw.firstChild);
 }
 var anchor=document.getElementById('TopContentOrder');
@@ -399,5 +399,20 @@ s.textContent=''
 +'#trendTagHeader dt{color:#fff!important}'
 +'#trendTagHeader dl dd a{background:#000!important;color:#fff!important;border:1px solid #666!important;border-radius:4px!important;padding:4px 12px!important}'
 +'#trendTagHeader dd a:hover{border-color:#fff!important}';
+document.head.appendChild(s);
+})();
+
+/* ==== MOBILE POLISH (compact header / tall hero / no dup icon row) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='@media(max-width:600px){'
++'#ooHero.ooHeroMob{height:64vh;overflow:hidden}'
++'#ooHero.ooHeroMob img{width:100%;height:100%;object-fit:cover;object-position:center 30%}'
++'#headNavwrap{padding:6px 10px!important}'
++'#headNavwrap .navOpen .filler{line-height:38px!important;padding:0 14px 0 44px!important}'
++'#headNavwrap .navOpen b{font-size:11px!important}'
++'#headNavwrap .searchbar input{padding:10px 12px 10px 40px!important;font-size:13px!important}'
++'#drawer:not(:checked)~.drawerWrapper .drawerIconNav{display:none!important}'
++'}';
 document.head.appendChild(s);
 })();
