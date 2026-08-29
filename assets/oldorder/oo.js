@@ -380,3 +380,24 @@ s.textContent='#drawer:not(:checked)~.drawerWrapper .drawerIconNav .cartIcon img
 +'#drawer:not(:checked)~.drawerWrapper .drawerIconNav #baseMenu li.cart a::before{color:#fff!important}';
 document.head.appendChild(s);
 })();
+
+/* ==== OVERTURE-STYLE HEADER (final look) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent=''
++'#headNavwrap{background:#141312!important;padding:12px 16px!important}'
++'#headNavwrap .navOpen span{display:block!important}'
++'#headNavwrap .navOpen .filler::before,#headNavwrap .navOpen .filler::after{display:block!important;content:""!important}'
++'#headNavwrap .navOpen .filler{background:#2e2e2e!important;border:0!important;border-radius:.5em!important;padding:0 22px 0 55px!important;line-height:45px!important}'
++'#headNavwrap .navOpen b{color:#fff!important;font-size:13px!important;letter-spacing:.1em!important}'
++'#headNavwrap .searchbar input{background:#ececec!important;border:0!important;color:#222!important;border-radius:10px!important;padding:13px 16px 13px 46px!important}'
++'#headNavwrap .searchbar input::placeholder{color:#777!important}'
++'#headNavwrap .searchbar form div{color:#444!important}'
++'#headNavwrap .searchbar form div::before,#headNavwrap .searchbar form::before,#headNavwrap .searchbar div::before{color:#444!important;opacity:1!important}'
++'#trendTagHeader{background:#141312!important;border:0!important;padding:8px 0 14px!important}'
++'#trendTagHeader .filler{background:transparent!important}'
++'#trendTagHeader dt{color:#fff!important}'
++'#trendTagHeader dl dd a{background:#000!important;color:#fff!important;border:1px solid #666!important;border-radius:4px!important;padding:4px 12px!important}'
++'#trendTagHeader dd a:hover{border-color:#fff!important}';
+document.head.appendChild(s);
+})();
