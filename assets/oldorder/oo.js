@@ -437,3 +437,14 @@ s.textContent='#shoplogo #subNav a{color:#fff!important;border-color:#999!import
 +'}';
 document.head.appendChild(s);
 })();
+
+/* ==== PC ICON CRISPNESS (bold white bars / bright cart) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='@media(min-width:601px){'
++'#headNavwrap .navOpen span,#headNavwrap .navOpen .filler::before,#headNavwrap .navOpen .filler::after{background:#fff!important;height:3px!important;opacity:1!important;border-radius:2px!important}'
++'#headNavwrap .cartIcon img,#headNavwrap #baseMenu img{filter:invert(1) brightness(2)!important;opacity:1!important}'
++'#headNavwrap .memberIcon a::before,#headNavwrap .memberIcon a span::before{opacity:1!important}'
++'}';
+document.head.appendChild(s);
+})();
