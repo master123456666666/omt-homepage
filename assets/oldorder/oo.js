@@ -416,3 +416,24 @@ s.textContent='@media(max-width:600px){'
 +'}';
 document.head.appendChild(s);
 })();
+
+/* ==== MOBILE HEADER CLEAN (icon-only menu / no icon overlap / hide chip) ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#shoplogo #subNav a{color:#fff!important;border-color:#999!important;opacity:1!important}'
++'@media(max-width:600px){'
++'#shoplogo #subNav{display:none!important}'
++'#headNavwrap .widthfix{display:flex!important;align-items:center!important;gap:10px!important}'
++'#headNavwrap .headCatNav{flex:0 0 auto!important}'
++'#headNavwrap .navOpen .filler{width:44px!important;height:42px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;border-radius:8px!important;line-height:1!important}'
++'#headNavwrap .navOpen b{display:none!important}'
++'#headNavwrap .navOpen span{display:none!important}'
++'#headNavwrap .navOpen .filler::after{display:none!important;content:none!important}'
++'#headNavwrap .navOpen .filler::before{display:block!important;content:"☰"!important;position:static!important;width:auto!important;height:auto!important;background:none!important;font-size:20px!important;color:#fff!important}'
++'#headNavwrap .searchbar{flex:1 1 auto!important}'
++'#headNavwrap .searchbar input{width:100%!important;padding:11px 12px!important;font-size:13px!important}'
++'#headNavwrap .searchbar form div::before,#headNavwrap .searchbar form::before,#headNavwrap .searchbar div::before{display:none!important;content:none!important}'
++'#headNavwrap .navIcons{gap:14px!important;flex:0 0 auto!important}'
++'}';
+document.head.appendChild(s);
+})();
