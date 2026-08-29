@@ -448,3 +448,18 @@ s.textContent='@media(min-width:601px){'
 +'}';
 document.head.appendChild(s);
 })();
+
+/* ==== FINAL: deterministic white cart + fixed-size mobile search ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent=''
++'#headNavwrap .cartIcon img,#headNavwrap #baseMenu img{filter:brightness(0) invert(1)!important;opacity:1!important}'
++'#drawer:not(:checked)~.drawerWrapper .drawerIconNav .cartIcon img{filter:brightness(0) invert(1)!important}'
++'.footerbar #baseMenu img{filter:none!important}'
++'@media(max-width:600px){'
++'#headNavwrap .searchbar,#headNavwrap .searchbar form,#headNavwrap .searchbar form div{height:42px!important;padding:0!important;background:transparent!important;border:0!important}'
++'#headNavwrap .searchbar input{height:42px!important;line-height:42px!important;padding:0 12px!important;box-sizing:border-box!important;width:100%!important;font-size:13px!important;border-radius:8px!important}'
++'#headNavwrap .widthfix{gap:12px!important}'
++'}';
+document.head.appendChild(s);
+})();
