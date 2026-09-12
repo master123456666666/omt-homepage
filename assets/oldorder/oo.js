@@ -240,7 +240,8 @@ ready(function(){
 if(!document.body||document.body.id!=='TopPage')return;
 function boot(){
 var host=document.getElementById('ooSections');
-if(!host){setTimeout(boot,400);return;}
+if(!host||!host.querySelector('.ooSec')){setTimeout(boot,400);return;}
+if(document.querySelector('.ooSecIG'))return;
 fetch('https://omt-inc.com/assets/oldorder/ig.json').then(function(r){return r.json();}).then(function(d){
 if(!d.posts||!d.posts.length)return;
 var css=document.createElement('style');
