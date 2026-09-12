@@ -70,17 +70,21 @@ var __TD={
 'LINE公式アカウント':'LINE Official','休業日':'Closed','本日':'Today',
 '人気キーワード':'POPULAR KEYWORDS','ギフトラッピングは対応しておりません。':'Gift wrapping is not available.',
 '商品カテゴリーから探す':'BROWSE BY CATEGORY','人気キーワードから探す':'POPULAR KEYWORDS',
-'出品されている商品がありません。':'No products found.','ショップに質問する':'Chat with us','メッセージを入力する':'Type a message','送信':'Send','画像を送信':'Send image','サンリオ':'Sanrio','キーワードで探すから探す':'SEARCH'
+'出品されている商品がありません。':'No products found.','ショップに質問する':'Chat with us','メッセージを入力する':'Type a message','送信':'Send','画像を送信':'Send image','サンリオ':'Sanrio','キーワードで探すから探す':'SEARCH',
+'種類':'Size','数量':'Qty','通報する':'Report','ショップの評価':'Shop Reviews','すべて':'All',
+'海外送料を見る':'See international shipping rates','詳細を見る':'Details','※送料は':'Shipping: ','です。':''
 };
 var __TC=[
 ['2019年より','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.'],
 ['全国一律','Flat-rate shipping \u00a51,100 \u2014 free shipping on orders over \u00a530,000.'],
 ['お問い合わせありがとうございます','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.'],
+['海外配送できる','This item ships worldwide.'],
+['国内送料が無料','Free shipping within Japan on orders over ¥30,000.'],
 ['カート','CART']
 ];
 function __trAll(){
 var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);var n;
-while(n=w.nextNode()){var s=n.nodeValue;if(!s)continue;var t=s.trim();if(!t)continue;if(__TD[t]!==undefined){n.nodeValue=s.replace(t,__TD[t]);continue;}var __sr=t.match(/^(.+?)の検索結果$/);if(__sr){n.nodeValue='Search results for '+__sr[1];continue;}for(var __c=0;__c<__TC.length;__c++){if(t.indexOf(__TC[__c][0])>-1){n.nodeValue=__TC[__c][1];break;}}}
+while(n=w.nextNode()){var s=n.nodeValue;if(!s)continue;var t=s.trim();if(!t)continue;if(__TD[t]!==undefined){n.nodeValue=s.replace(t,__TD[t]);continue;}var __sr=t.match(/^(.+?)の検索結果$/);if(__sr){n.nodeValue='Search results for '+__sr[1];continue;}var __ym=t.match(/^([0-9]{4})年([0-9]{1,2})月$/);if(__ym){n.nodeValue=__ym[1]+'.'+__ym[2];continue;}for(var __c=0;__c<__TC.length;__c++){if(t.indexOf(__TC[__c][0])>-1){n.nodeValue=__TC[__c][1];break;}}}
 var si=document.querySelectorAll('input[type="search"],input[type="text"],textarea');
 for(var i=0;i<si.length;i++){var ph=si[i].getAttribute('placeholder')||'';if(ph.indexOf('キーワード')>-1)si[i].setAttribute('placeholder','Search');else if(ph.indexOf('メッセージ')>-1)si[i].setAttribute('placeholder','Type a message');}
 var lg=document.querySelectorAll('p.legend');
@@ -462,5 +466,12 @@ s.textContent=''
 +'#headNavwrap .searchbar input{height:42px!important;line-height:42px!important;padding:0 12px!important;box-sizing:border-box!important;width:100%!important;font-size:13px!important;border-radius:8px!important}'
 +'#headNavwrap .widthfix{gap:12px!important}'
 +'}';
+document.head.appendChild(s);
+})();
+
+/* ==== HIDE JP-ONLY BNPL BANNER (PAY ID) on overseas store ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='.bnplBanner{display:none!important}';
 document.head.appendChild(s);
 })();
