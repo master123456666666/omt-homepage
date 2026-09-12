@@ -99,12 +99,7 @@ __trT=setTimeout(function(){__trT=null;__trObs.disconnect();__trAll();__trObs.ob
 __trObs.observe(document.body,{childList:true,subtree:true,characterData:true});
 
 if(document.body.id!=='TopPage')return;
-var __cw=document.querySelector('.contentWrapper');
-if(__cw&&!document.getElementById('ooHero')){
-var __hh=document.createElement('div');__hh.id='ooHero';
-var __mob=window.innerWidth<=600;if(__mob)__hh.className='ooHeroMob';__hh.innerHTML='<img src="https://omt-inc.com/assets/oldorder/'+(__mob?'brunch-hero.jpg':'brunch-drop.webp')+'" alt="BRUNCH for OLD ORDER">';
-__cw.insertBefore(__hh,__cw.firstChild);
-}
+/* ヒーローのハードコードは2026-09-13に撤去。テーマ設定「メイン画像」駆動(OVERTURE式)に戻した */
 var anchor=document.getElementById('TopContentOrder');
 var main=document.querySelector('.mainArea-inner');
 if(!anchor&&!main)return;
@@ -473,5 +468,12 @@ document.head.appendChild(s);
 (function(){
 var s=document.createElement('style');
 s.textContent='.bnplBanner{display:none!important}';
+document.head.appendChild(s);
+})();
+
+/* ==== HERO: theme-setting driven (OVERTURE-style). テーマ側の非表示CSSを打ち消す ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='body#TopPage .splide.topMain{display:block!important}body#TopPage .singleImage{display:block!important}';
 document.head.appendChild(s);
 })();
