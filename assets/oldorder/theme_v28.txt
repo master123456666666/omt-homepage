@@ -1,0 +1,2196 @@
+{block:NotLoadItemsPage}<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>{PageTitle}{block:text-AdditionalTitle} {text:AdditionalTitle}{/block:text-AdditionalTitle}</title>
+{FaviconTag}
+<meta name="BASE-Theme-Name" content="RetailPro">
+<meta name="BASE-Theme-Version" content="1.18">
+{block:Hidden}
+<meta name="text:OoBar1" content="" label="◾【海外店設定】黒帯バー: メッセージ1(全部空欄=既定の4本を表示)" data-group="home">
+<meta name="text:OoBar2" content="" label="⌊ 黒帯バー: メッセージ2" data-group="home">
+<meta name="text:OoBar3" content="" label="⌊ 黒帯バー: メッセージ3" data-group="home">
+<meta name="text:OoBar4" content="" label="⌊ 黒帯バー: メッセージ4" data-group="home">
+<meta name="text:OoBar4Url" content="" label="⌊ メッセージ4のリンク先URL(任意)" data-group="home">
+<meta name="if:OoPopup" content="1" label="◾【海外店設定】メール登録ポップアップを表示" data-group="home">
+<meta name="text:OoPopupTitle" content="" label="⌊ ポップアップ見出し(空欄=GET 5% OFF)" data-group="home">
+<meta name="text:OoPopupText" content="" label="⌊ ポップアップ本文(空欄=既定の英文)" data-group="home">
+<meta name="text:OoPopupCode" content="" label="⌊ クーポンコード(空欄=Q9XTUMEK)" data-group="home">
+<meta name="image:OoPopupImg" content="" label="⌊ ポップアップ左側の画像(空欄=既定)" data-group="home">
+<meta name="text:OoSections" content="" label="◾【海外店設定】トップのセクション構成(書式: 名前:カテゴリID をカンマ区切り。例 POPULAR:7346651:tagall, TURBO GT:6372100 / 空欄=既定22個)" data-group="home">
+<meta name="select:OoGridPC" content="" title="自動(既定)" label="◾【海外店設定】商品グリッド列数(PC)" data-group="home">
+<meta name="select:OoGridPC" content="4" title="4列" label="◾【海外店設定】商品グリッド列数(PC)" data-group="home">
+<meta name="select:OoGridPC" content="5" title="5列" label="◾【海外店設定】商品グリッド列数(PC)" data-group="home">
+<meta name="select:OoGridPC" content="6" title="6列" label="◾【海外店設定】商品グリッド列数(PC)" data-group="home">
+<meta name="select:OoGridSP" content="" title="既定(4列)" label="⌊ 商品グリッド列数(スマホ)" data-group="home">
+<meta name="select:OoGridSP" content="3" title="3列" label="⌊ 商品グリッド列数(スマホ)" data-group="home">
+<meta name="select:OoGridSP" content="2" title="2列" label="⌊ 商品グリッド列数(スマホ)" data-group="home">
+<meta name="if:OoSizeFilter" content="1" label="◾【海外店設定】サイズ絞り込みバーを表示" data-group="home">
+<meta name="if:OoIgSection" content="1" label="◾【海外店設定】Instagramセクションを表示" data-group="home">
+<meta name="text:OoExtraDict" content="" label="◾【海外店設定】追加翻訳辞書(書式: 日本語=English | 日本語=English)" data-group="home">
+<meta name="if:OoShowCalendar" content="0" label="◾【海外店設定】フッターの営業日カレンダーを表示" data-group="home">
+<meta name="if:OoShowFooterBanner" content="0" label="⌊ フッターの画像バナーを表示" data-group="home">
+<meta name="color:AccentColor" content="#45afa2" label="アクセントカラー">
+<meta name="color:AccentColorText" content="#ffffff" label="⌊ アクセントカラー上のテキストカラー">
+<meta name="color:SaleColor" content="#ef4f5d" label="セール価格テキストカラー">
+<meta name="if:WhiteBg" content="0" label="コンテンツエリアに白背景を敷く">
+
+<meta name="color:HeaderBgColor" content="#c8e1de" label="ヘッダーカラー">
+<meta name="color:HeaderFontColor" content="#45494D" label="⌊ ヘッダー上のテキストカラー">
+<meta name="select:HeaderBgCont" content="ContNormal" title="標準" label="⌊ 配色コントラスト">
+<meta name="select:HeaderBgCont" content="ContHigh" title="色差を強く(ヘッダーカラーが薄い場合)" label="⌊ 配色コントラスト">
+<meta name="select:HeaderBgCont" content="ContLow" title="色差を弱く(ヘッダーカラーが濃い場合)" label="⌊ 配色コントラスト">
+<meta name="select:HeaderBgCont" content="Border" title="ヘッダーカラーが真白の場合" label="⌊ ヘッダー配色コントラスト">
+
+<meta name="select:logoLayout" content="logoCenter" title="ロゴ中央配置" label="◾ヘッダー: ロゴレイアウト">
+<meta name="select:logoLayout" content="logoLeft" title="ロゴ左配置" label="◾ヘッダー: ロゴレイアウト">
+
+<meta name="select:cartIconStyle" content="cartstyle" title="カート" label="⌊ カートアイコン">
+<meta name="select:cartIconStyle" content="bagstyle" title="バッグ" label="⌊ カートアイコン">
+<meta name="select:navText" content="navTextOn" title="タブレット/スマホでもテキスト表示" label="⌊ アイコンナビ テキストラベル">
+<meta name="select:navText" content="navTextOff" title="タブレット/スマホではアイコンのみ" label="⌊ アイコンナビ テキストラベル">
+
+<meta name="if:HeaderAboutNav" content="1" label="ヘッダーリンク: Aboutへのリンクを表示(ページ名変更対応)">
+<meta name="text:HeaderFreeNav" content="" label="⌊ ヘッダーリンク: フリー項目(空欄で非表示)">
+<meta name="text:HeaderFreeNav-url" content="" label="⌊ フリー項目リンクURL">
+<meta name="if:HeaderFreeNav-blank" content="1" label="⌊ フリー項目を別ウィンドウで開く">
+<meta name="select:HeaderNavType" content="text" title="シンプルリンク" label="⌊ ヘッダーリンクタイプ">
+<meta name="select:HeaderNavType" content="btn acolor" title="ボタンデザイン/アクセントカラー" label="⌊ ヘッダーリンクタイプ">
+<meta name="select:HeaderNavType" content="btn hcolor" title="ボタンデザイン/ヘッダーフォントカラー" label="⌊ ヘッダーリンクタイプ">
+
+<meta name="text:SearchText" content="キーワードで探す" label="ヘッダーオプション: 検索バーの案内テキスト">
+<meta name="if:TrendTags" content="0" label="ヘッダーオプション: 人気の検索ワード">
+<meta name="text:TrendTagsTitle" content="人気キーワード" label="⌊ タイトル">
+<meta name="text:TrendTag01" content="キーワード1" label="⌊ キーワード1">
+<meta name="text:TrendTag02" content="キーワード2" label="⌊ キーワード2">
+<meta name="text:TrendTag03" content="キーワード3" label="⌊ キーワード3">
+<meta name="text:TrendTag04" content="キーワード4" label="⌊ キーワード4">
+<meta name="select:TrendColor" content="mono" title="ヘッダーカラーに同調" label="⌊ カラー指定">
+<meta name="select:TrendColor" content="accent" title="アクセントカラーを使用" label="⌊ カラー指定">
+
+<meta name="select:sideAreaDisp" content="limit" title="トップ・カテゴリーページでのみ表示" label="サイドバー: 表示させるページ(PC表示時)">
+<meta name="select:sideAreaDisp" content="always" title="全てのページで表示" label="サイドバー: 表示させるページ(PC表示時)">
+<meta name="select:sideAreaDisp" content="none" title="全てのページで不要(ドロワーのみ)" label="サイドバー: 表示させるページ(PC表示時)">
+
+<meta name="select:sideAreaPosition" content="sidebarFixedBottom" title="下端までスクロールして停止" label="⌊ スクロールタイプ(PC表示時)">
+<meta name="select:sideAreaPosition" content="sidebarFixedTop" title="スクロールして上端で停止" label="⌊ スクロールタイプ(PC表示時)">
+<meta name="select:sideAreaPosition" content="sidebarScroll" title="通常スクロール" label="⌊ スクロールタイプ(PC表示時)">
+<meta name="text:CategoryNavHeader" content="商品カテゴリー" label="カテゴリーナビ: 見出し">
+<meta name="if:CategoryNavIcon" content="1" label="⌊ カテゴリーアイコン表示">
+<meta name="select:sideAreaNavSize" content="normal" title="通常" label="⌊ カテゴリーナビボリューム調整">
+<meta name="select:sideAreaNavSize" content="compact" title="コンパクト" label="⌊ カテゴリーナビボリューム調整">
+<meta name="select:sideAreaNavSize" content="large" title="ラージ" label="⌊ カテゴリーナビボリューム調整">
+<meta name="select:sideAreaNavWeight" content="boldweight" title="太字" label="⌊ カテゴリーナビ文字太さ">
+<meta name="select:sideAreaNavWeight" content="normalweight" title="通常" label="⌊ カテゴリーナビ文字太さ">
+<meta name="text:AboutNavHeader" content="ショップガイド" label="ショップ情報ナビ見出し">
+<meta name="text:FreeNav01" content="" label="⌊ ナビ項目追加: フリー1(Aboutの下)">
+<meta name="text:FreeNav01-url" content="" label="⌊ フリー1リンクURL">
+<meta name="text:FreeNav02" content="" label="⌊ ナビ項目追加: フリー2(Contactの上)">
+<meta name="text:FreeNav02-url" content="" label="⌊ フリー2 リンクURL">
+<meta name="select:AboutNavWeight" content="boldweight" title="太字" label="⌊ ショップ情報ナビ文字太さ">
+<meta name="select:AboutNavWeight" content="normalweight" title="通常" label="⌊ カテゴリーナビ文字調整">
+<meta name="image:sideAreaBanner01" content="" label="⌊ サイドバー画像バナー1">
+<meta name="text:sideAreaBanner01-url" content="" label="⌊ バナー1リンクURL">
+<meta name="text:sideAreaBannerOrder" content="2" label="⌊ 表示位置(0/2/4/10)">
+
+<meta name="if:drawerLogo" content="1" label="ドロワーナビにショップロゴ表示">
+
+<meta name="select:ItemThumbRacio" content="racio11" title="1:1(正方形)" label="商品一覧: サムネイル縦横比">
+<meta name="select:ItemThumbRacio" content="racio45" title="4:5(縦長)" label="商品一覧: サムネイル縦横比">
+<meta name="select:ItemThumbRacio" content="racio23" title="2:3(縦長)" label="商品一覧: サムネイル縦横比">
+<meta name="select:ItemThumbRacio" content="racio32" title="3:2(横長)" label="商品一覧: サムネイル縦横比">
+<meta name="select:ItemThumbRacio" content="racio00" title="画像そのまま" label="商品一覧: サムネイル縦横比">
+
+<meta name="select:ItemThumbClm" content="itemThumbClm4 spClm2" title="4つ並び(スマホ2)" label="⌊ サムネイル列数">	
+<meta name="select:ItemThumbClm" content="itemThumbClm4 spClm3" title="4つ並び(スマホ3)" label="⌊ サムネイル列数">	
+<meta name="select:ItemThumbClm" content="itemThumbClm5 spClm3" title="5つ並び(スマホ3)" label="⌊ サムネイル列数">	
+<meta name="select:ItemThumbClm" content="itemThumbClm3 spClm2" title="3つ並び(スマホ2)" label="⌊ サムネイル列数">
+<meta name="select:ItemThumbClm" content="itemThumbClm3 spClm3" title="3つ並び(スマホ3)" label="⌊ サムネイル列数">
+
+<meta name="select:CornerOptions" content="radius05" title="角丸5px" label="かどまるオプション(サイト全体を角丸に)">
+<meta name="select:CornerOptions" content="radius10" title="角丸10px" label="かどまるオプション(サイト全体を角丸に)">
+<meta name="select:CornerOptions" content="radius20" title="角丸20px" label="かどまるオプション(サイト全体を角丸に)">
+<meta name="select:CornerOptions" content="radius00" title="角丸なし" label="かどまるオプション(サイト全体を角丸に)">
+
+<meta name="select:BodyFontSize" content="16" title="初期サイズ" label="全体フォントサイズ調整">
+<meta name="select:BodyFontSize" content="15" title="-" label="全体フォントサイズ調整">
+<meta name="select:BodyFontSize" content="14" title="--" label="全体フォントサイズ調整">
+<meta name="select:BodyFontSize" content="17" title="+" label="全体フォントサイズ調整">
+<meta name="select:BodyFontSize" content="18" title="++" label="全体フォントサイズ調整">
+
+<meta name="select:LogoFontJP" content="gothic" title="ゴシック体" label="ロゴ: フォント">
+<meta name="select:LogoFontJP" content="mincho" title="明朝体" label="ロゴ: フォント">
+<meta name="select:LogoFontSize" content="fontsizeS" title="初期サイズ" label="⌊ フォントサイズ">
+<meta name="select:LogoFontSize" content="fontsizeSS" title="-" label="⌊ フォントサイズ">
+<meta name="select:LogoFontSize" content="fontsizeR" title="+" label="⌊ フォントサイズ">
+<meta name="select:LogoFontSize" content="fontsizeL" title="++" label="⌊ フォントサイズ">
+<meta name="select:LogoFontSize" content="fontsizeLL" title="+++" label="⌊ フォントサイズ">
+<meta name="select:LogoFontSize" content="fontsizeLLL" title="++++" label="⌊ フォントサイズ">
+<meta name="select:LogoFontSize" content="fontsizeLLLL" title="+++++" label="⌊ フォントサイズ">
+
+<meta name="select:LogoFontWeight" content="fontweightBold" title="太字" label="⌊ フォント太さ">
+<meta name="select:LogoFontWeight" content="fontweightNormal" title="普通" label="⌊ フォント太さ">
+
+<meta name="select:LogoFontSpace" content="letterspace1" title="+10%" label="⌊ フォント字間">
+<meta name="select:LogoFontSpace" content="letterspace2" title="+20%" label="⌊ フォント字間">
+<meta name="select:LogoFontSpace" content="letterspace0" title="なし" label="⌊ フォント字間">
+<meta name="select:LogoFontSpace" content="letterspace3" title="-5%" label="⌊ フォント字間">
+
+<meta name="select:shType" content="01" title="左寄せ/左ボーダー" label="見出し装飾(HOME見出し/About/Blogページタイトル)">
+<meta name="select:shType" content="02" title="左寄せ/下ワンポイントボーダー" label="見出し装飾(HOME見出し/固定ページタイトル)">
+<meta name="select:shType" content="03" title="中央寄せ/ワンポイントボーダー" label="見出し装飾(HOME見出し/固定ページタイトル)">
+<meta name="select:shType" content="04" title="左寄せ/オリジナル画像アイコン" label="見出し装飾(HOME見出し/固定ページタイトル)">
+<meta name="select:shType" content="04 border" title="左寄せ/オリジナル画像アイコン/下線あり" label="見出し装飾(HOME見出し/固定ページタイトル)">
+<meta name="select:shType" content="05" title="中央寄せ/オリジナル画像アイコン" label="見出し装飾(HOME見出し/固定ページタイトル)">
+<meta name="image:shIcon" content="" label="⌊ 見出し用アイコン画像(要サイズ指定↓)">
+<meta name="text:shIconWidth" content="50" label="⌊ アイコン幅ピクセルサイズ(半角数字 px不要)">
+<meta name="text:shIconHeight" content="50" label="⌊ アイコン高さピクセルサイズ(半角数字 px不要)">
+<meta name="select:shType" content="00" title="なし" label="見出し装飾(HOME見出し/固定ページタイトル)">
+
+<meta name="if:Utility" content="1" label="ウィジェットエリアを表示(全ページ下部)">
+<meta name="if:UtilityAbout" content="0" label="⌊ ショップ情報を表示">
+<meta name="if:UtilityPayment" content="1" label="⌊ 決済案内を表示">
+<meta name="if:UtilityPaymentLogo" content="0" label="　⌊ クレジットのみ画像">
+
+<meta name="if:UtilityShipping" content="1" label="⌊ 送料案内を表示">
+<meta name="text:UtilityShippingTagline" content="全国一律送料 500円" label="⌊ 送料案内キャッチ">
+<meta name="text:UtilityShippingText" content="お買い物5,000円以上で送料無料" label="⌊ 送料案内サブキャッチ">
+<meta name="select:UtilityShippingIconStyle" content="truck" title="トラック" label="⌊ 配送案内アイコン">
+<meta name="select:UtilityShippingIconStyle" content="giftbox" title="ボックス" label="⌊ 配送案内アイコン">
+<meta name="select:UtilityShippingIconStyle" content="noicon" title="アイコンなし" label="⌊ 配送案内アイコン">
+
+<meta name="if:UtilitySocialLink" content="1" label="⌊ SNSアイコンを表示する">
+
+<meta name="if:UtilityCalendar" content="1" label="カレンダーを表示">
+<meta name="if:UtilityCalendarPos" content="1" label="⌊ 表示位置[左/右]">
+<meta name="if:UtilityCalendarColor" content="1" label="⌊ 色[白/同調色]">
+<meta name="text:UtilityCalendarHeader" content="営業日カレンダー" label="⌊ カレンダータイトル">
+<meta name="text:CalendarClosedWeekly" content="sat,sun" label="⌊ マーカーの曜日一括指定">
+<meta name="text:CalendarClosedDay" content="10:5,6,7/11:1/12:25" label="⌊ マーカーの個別指定">
+<meta name="color:CalendarMarkerColor" content="#F79E9E" label="⌊ マーカーの色(数字は白)">
+<meta name="text:CalendarMarkerLegend" content="休業日" label="⌊ マーカーの意味">
+
+<meta name="image:UtilityBanner01" content="" label="ウィジェット画像バナー">
+<meta name="text:UtilityBanner01-url" content="" label=" ⌊ 画像バナーリンク先">
+<meta name="if:UtilityBanner01Pos" content="1" label="⌊ 表示位置[左/右]">
+
+<meta name="text:PageTitleAbout" content="私たちについて" label="ページ名称: About →">
+<meta name="text:PageTitleBlog" content="ブログ" label="⌊ Blog →">
+<meta name="text:PageTitleMembership" content="メンバーシップ" label="⌊ Membership →">
+<meta name="text:PageTitleCommunity" content="コミュニティ" label="⌊ Community →">
+
+<meta name="if:BlogAsPage" content="0" label="Blogでページ追加: ON/OFF(※マニュアル参照)">
+
+<meta name="image:MainVisual1" content="https://basefile.akamaized.net/ymtk/65a72c20b896f/placeholder-img-lightgray.png" label="メイン画像: 1枚目" data-group="home">
+<meta name="text:MainVisual1URL" content="" label="⌊ リンク先URL" data-group="home">
+<meta name="text:MainVisual1Cpt" content="" label="⌊ キャプション(空欄で非表示)" data-group="home">
+<meta name="image:MainVisual2" content="" label="メイン画像: 2枚目" data-group="home">
+<meta name="text:MainVisual2URL" content="" label="⌊ リンク先URL" data-group="home">
+<meta name="text:MainVisual2Cpt" content="" label="⌊ キャプション" data-group="home">
+<meta name="image:MainVisual3" content="" label="メイン画像: 3枚目" data-group="home">
+<meta name="text:MainVisual3URL" content="" label="⌊ リンク先URL" data-group="home">
+<meta name="text:MainVisual3Cpt" content="" label="⌊ キャプション" data-group="home">
+<meta name="image:MainVisual4" content="" label="メイン画像: 4枚目" data-group="home">
+<meta name="text:MainVisual4URL" content="" label="⌊ リンク先URL" data-group="home">
+<meta name="text:MainVisual4Cpt" content="" label="⌊ キャプション" data-group="home">
+
+<meta name="if:SplideType" content="1" label="⌊ メイン画像スライドタイプ(ON:一覧性の高いバナースライド / OFF:大きく1枚づつフェード)" data-group="home">
+
+<meta name="select:SplideHeight" content="heightNormal" title="通常" label="⌊ スライド最大高さ調整" data-group="home">
+<meta name="select:SplideHeight" content="heightLess" title="小さめ" label="⌊ スライド最大高さ調整" data-group="home">
+<meta name="select:SplideHeight" content="heightMore" title="大きめ" label="⌊ スライド最大高さ調整" data-group="home">
+<meta name="select:SplidePagenation" content="numbered" title="番号つき" label="⌊ スライド送りガイド" data-group="home">
+<meta name="select:SplidePagenation" content="dotted" title="シンプルドット" label="⌊ スライド送りガイド" data-group="home">
+<meta name="if:SplideAutoplay" content="1" label="⌊ 一定時間ごとに自動スライド" data-group="home">
+<meta name="select:SplideInterval" content="5000" title="5秒" label="⌊ 自動スライド間隔" data-group="home">
+<meta name="select:SplideInterval" content="7000" title="7秒" label="⌊ 自動スライド間隔" data-group="home">
+<meta name="select:SplideInterval" content="9000" title="9秒" label="⌊ 自動スライド間隔" data-group="home">
+<meta name="if:SplideAutoScroll" content="0" label="⌊ 滑らかに連続スクロール（バナースライドのみ）" data-group="home">
+
+<meta name="if:ActivateClctn" content="0" label="コレクション ON/OFF" data-group="home">
+<meta name="text:ClctnTitle" content="コレクション" label="⌊ コレクションタイトル(空欄で非表示)" data-group="home">
+<meta name="text:ClctnTitleSub" content="Collection" label="⌊ コレクションタイトルサブテキスト" data-group="home">
+<meta name="image:Clctn01Img" content="" label="⌊ 画像1 (縦横比は統一)" data-group="home">
+<meta name="text:Clctn01URL" content="" label="⌊ 画像1 リンク先" data-group="home">
+<meta name="image:Clctn02Img" content="" label="⌊ 画像2" data-group="home">
+<meta name="text:Clctn02URL" content="" label="⌊ 画像2 リンク先" data-group="home">
+<meta name="image:Clctn03Img" content="" label="⌊ 画像3" data-group="home">
+<meta name="text:Clctn03URL" content="" label="⌊ 画像3 リンク先" data-group="home">
+<meta name="image:Clctn04Img" content="" label="⌊ 画像4" data-group="home">
+<meta name="text:Clctn04URL" content="" label="⌊ 画像4 リンク先" data-group="home">
+<meta name="select:ClctnClm" content="clm2" title="2個並び" label="⌊ 画像の並べ方" data-group="home">
+<meta name="select:ClctnClm" content="clm4" title="4個並び" label="⌊ 画像の並べ方" data-group="home">
+
+<meta name="if:ActivateNews" content="1" label="お知らせ表示 ON/OFF" data-group="home">
+<meta name="text:NewsHeader" content="お知らせ" label="⌊ お知らせの見出し" data-group="home">
+<meta name="text:NewsHeaderSub" content="Information" label="⌊ お知らせの見出しサブテキスト" data-group="home">
+<meta name="text:News01-date" content="2025.01.01" label="⌊ お知らせ01 日付" data-group="home">
+<meta name="text:News01-text" content="オンラインストアをリニューアルオープンしました。" label="⌊ お知らせ01 内容" data-group="home">
+<meta name="text:News01-url" content="" label="⌊ お知らせ01 リンク先" data-group="home">
+
+<meta name="text:News02-date" content="2025.01.01" label="⌊ お知らせ02 日付" data-group="home">
+<meta name="text:News02-text" content="お知らせテキストが入ります" label="⌊ お知らせ02 内容" data-group="home">
+<meta name="text:News02-url" content="" label="⌊ お知らせ02 リンク先" data-group="home">
+
+<meta name="text:News03-date" content="2025.01.01" label="⌊ お知らせ03 日付" data-group="home">
+<meta name="text:News03-text" content="お知らせテキストが入ります" label="⌊ お知らせ03 内容" data-group="home">
+<meta name="text:News03-url" content="" label="⌊ お知らせ03 リンク先" data-group="home">
+
+<meta name="text:CatItemList01Title" content="" label="ピックアップカテゴリー1: タイトル(必須)" data-group="home">
+<meta name="text:CatItemList01CatID" content="" label="⌊ カテゴリーID(プレビューでは読込不可)" data-group="home">
+<meta name="select:CatItemList01Type" content="normal" title="登録順" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList01Type" content="random" title="ランダム" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList01Type" content="ranking" title="ランキング形式" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList01Bg" content="noBg" title="枠なし" label="⌊ 枠タイプ" data-group="home">
+<meta name="select:CatItemList01Bg" content="withBg Text10" title="枠あり: シンプル" label="⌊ 枠タイプ" data-group="home">
+<meta name="select:CatItemList01Bg" content="withBg Head30" title="枠あり: ヘッダーカラー" label="⌊ 枠タイプ" data-group="home">
+
+<meta name="text:CatItemList02Title" content="" label="ピックアップカテゴリー2: タイトル(必須)" data-group="home">
+<meta name="text:CatItemList02CatID" content="" label="⌊ カテゴリ商品リスト2: カテゴリーID" data-group="home">
+<meta name="select:CatItemList02Type" content="normal" title="登録順" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList02Type" content="random" title="ランダム" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList02Type" content="ranking" title="ランキング形式" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList02Bg" content="noBg" title="枠なし" label="⌊ 枠タイプ" data-group="home">
+<meta name="select:CatItemList02Bg" content="withBg Text10" title="枠あり: シンプル" label="⌊ 枠タイプ" data-group="home">
+<meta name="select:CatItemList02Bg" content="withBg Head30" title="枠あり: ヘッダーカラー" label="⌊ 枠タイプ" data-group="home">
+
+<meta name="text:CatItemList03Title" content="" label="ピックアップカテゴリー3: タイトル(必須)" data-group="home">
+<meta name="text:CatItemList03CatID" content="" label="⌊ カテゴリ商品リスト3: カテゴリーID" data-group="home">
+<meta name="select:CatItemList03Type" content="normal" title="登録順" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList03Type" content="random" title="ランダム" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList03Type" content="ranking" title="ランキング形式" label="⌊ 表示タイプ" data-group="home">
+<meta name="select:CatItemList03Bg" content="noBg" title="枠なし" label="⌊ 枠タイプ" data-group="home">
+<meta name="select:CatItemList03Bg" content="withBg Text10" title="枠あり: シンプル" label="⌊ 枠タイプ" data-group="home">
+<meta name="select:CatItemList03Bg" content="withBg Head30" title="枠あり: ヘッダーカラー" label="⌊ 枠タイプ" data-group="home">
+
+<meta name="select:CatItemListClm" content="cilClm4 spClm3" title="4つ並び(スマホ3)" label="ピックアップカテゴリー表示列数" data-group="home">
+<meta name="select:CatItemListClm" content="cilClm5 spClm4" title="5つ並び(スマホ3)" label="ピックアップカテゴリー表示列数" data-group="home">
+<meta name="select:CatItemListClm" content="cilClm3 spClm2" title="3つ並び(スマホ2)" label="ピックアップカテゴリー表示列数" data-group="home">
+
+<meta name="text:ItemThumbHeader" content="新着商品一覧" label="商品一覧の見出し" data-group="home">
+<meta name="text:ItemThumbHeaderSub" content="New Arrival" label="⌊ 商品一覧の見出しサブテキスト" data-group="home">
+<meta name="text:ItemLoadmore" content="もっと見る" label="商品一覧下の読込みボタン名(HOME/カテゴリーページ共通)" data-group="home">
+
+<meta name="if:ActivateBlogNews" content="1" label="ブログの新着記事を表示(画像付き3件)ON/OFF" data-group="home">
+<meta name="text:BlogNewsTitle" content="新着ブログ記事" label="⌊ 新着記事の見出し" data-group="home">
+<meta name="text:BlogNewsTitleSub" content="Blog" label="⌊ 新着記事の見出しサブテキスト" data-group="home">
+
+<meta name="if:ItemPageGallery" content="1" label="画像ギャラリータイプ(ON:軽量シンプルモード / OFF:拡大表示モード)" data-group="item">
+<meta name="select:ItemPageImageClm" content="thumbClm4" title="4つ並び" label="⌊ 写真サムネイル表示" data-group="item">
+<meta name="select:ItemPageImageClm" content="thumbClm5" title="5つ並び" label="⌊ 写真サムネイル表示" data-group="item">
+<meta name="select:ItemPageImageClm" content="thumbClm6" title="6つ並び" label="⌊ 写真サムネイル表示" data-group="item">
+<meta name="select:ItemPageImageClm" content="thumbClm3" title="3つ並び" label="⌊ 写真サムネイル表示" data-group="item">
+
+<meta name="if:ItemActionScroll" content="1" label="右カラムのスクロールを固定(PC表示)" data-group="item">
+
+<meta name="text:ItemPageProductHeader" content="" label="商品説明の見出し(空欄で非表示)" data-group="item">
+<meta name="if:ItemDescShort" content="0" label="商品説明を右エリアに(PC表示)" data-group="item">
+<meta name="if:ItemPageLargeImg" content="0" label="商品ページを常に1カラムに" data-group="item">
+
+<meta name="if:ItemPageFloatPurchase" content="1" label="スマホでの購入ボタン固定表示" data-group="item">
+<meta name="if:ItemPageFloatPurchaseMsgDisp" content="1" label="⌊ スマホでの質問ボタン表示" data-group="item">
+
+<meta name="text:RelatedItemsTitle" content="こちらの商品もおすすめ" label="関連商品の見出し" data-group="item">
+
+<meta name="if:itemFlowSaleItems" content="1" label="セール商品を表示" data-group="item">
+<meta name="text:itemFlowSaleItemsTitle" content="セール中の商品" label="⌊ セール商品の見出し" data-group="item">
+<meta name="if:itemFlowViewHistory" content="1" label="閲覧履歴を表示" data-group="item">
+<meta name="text:itemFlowViewHistoryTitle" content="最近見た商品" label="⌊ 閲覧履歴の見出し" data-group="item">
+
+<meta name="image:AboutHeaderImg" content="https://basefile.akamaized.net/ymtk/65a72c20b896f/placeholder-img-lightgray.png" label="ショップイメージ画像" data-group="about">
+<meta name="if:AboutHeaderImgHeader" content="1" label="⌊ 画像をヘッダーとして表示" data-group="about">
+
+<meta name="text:AboutHeaderText" content="ショップ紹介" label="ショップ紹介見出し" data-group="about">
+<meta name="text:AboutExtend" content="" label="⌊ ショップ紹介文(上書き用)" data-group="about">
+<meta name="if:AboutHQ" content="1" label="店舗案内: 代表店舗を大きく表示(１店舗のみの場合など)" data-group="about">
+<meta name="text:AboutHQAddress" content="" label="⌊ 店舗1: 所在地" data-group="about">
+<meta name="text:AboutHQtel" content="" label="⌊ 店舗1: TEL" data-group="about">
+<meta name="text:AboutHQhours" content="" label="⌊ 店舗1: 営業時間" data-group="about">
+<meta name="text:AboutHQholiday" content="" label="⌊ 店舗1: 定休日" data-group="about">
+<meta name="text:AboutHQemail" content="" label="⌊ 店舗1: E-Mail" data-group="about">
+<meta name="text:AboutHQaccessHeader" content="" label="⌊ 店舗1: アクセス案内見出し" data-group="about">
+<meta name="text:AboutHQgmapcode" content="" label="⌊ 店舗1: GoogleMap埋め込みコード(Gmapで場所表示→共有→地図を埋込む→サイズ大→HTMLをコピー→ここにペースト)" data-group="about">
+<meta name="text:AboutHQaccess" content="" label="⌊ 店舗1: アクセス方法の案内文" data-group="about">
+
+<meta name="text:PaymentHeader" content="お支払い方法について" label="決済案内: 見出し" data-group="about">
+<meta name="text:PaymentBody" content="オンラインショップでは以下の決済方法がご利用いただけます。" label="⌊ 説明本文" data-group="about">
+<meta name="if:PaymentCredit" content="0" label="⌊ 利用可否: クレジットカード" data-group="about">
+<meta name="if:PaymentPayID" content="0" label="⌊ 利用可否: PAY ID あと払い" data-group="about">
+<meta name="if:PaymentCarrier" content="0" label="⌊ 利用可否: キャリア決済" data-group="about">
+<meta name="if:PaymentBank" content="1" label="⌊ 利用可否: 銀行振込" data-group="about">
+<meta name="if:PaymentCombini" content="0" label="⌊ 利用可否: コンビニ決済" data-group="about">
+<meta name="if:PaymentPayPay" content="0" label="⌊ 利用可否: PayPay" data-group="about">
+<meta name="if:PaymentAmznPay" content="0" label="⌊ 利用可否: AmazonPay決済" data-group="about">
+<meta name="if:PaymentPayPal" content="0" label="⌊ 利用可否: PayPal決済" data-group="about">
+
+<meta name="text:ShippingHeader" content="配送料について" label="送料案内: 見出し" data-group="about">
+<meta name="text:ShippingBody" content="" label="⌊ 説明本文" data-group="about">
+
+
+<meta name="if:AboutBranch" content="0" label="店舗案内: 複数店舗の一覧表示モード" data-group="about">
+<meta name="text:AboutBranchTitle" content="店舗一覧" label="複数店舗一覧の見出し" data-group="about">
+<meta name="text:AboutBranchHQname" content="本店" label="店舗1: 店名(空欄で店舗非表示)" data-group="about">
+<meta name="text:AboutBranchHQgmaplink" content="" label="⌊ GoogleMap共有リンク(Gmapで場所表示→共有→共有リンクコピー→ここにペースト)" data-group="about">
+<meta name="image:AboutBranchHQimg" content="https://basefile.akamaized.net/ymtk/65a72c20b896f/placeholder-img-lightgray.png" label="⌊ 店舗1イメージ(画像無しでシンプルレイアウトに)" data-group="about">
+
+<meta name="text:AboutBranch02name" content="" label="店舗2: 店名(空欄でその店舗非表示)" data-group="about">
+<meta name="text:AboutBranch02addres" content="" label="⌊ 店舗2: 所在地" data-group="about">
+<meta name="text:AboutBranch02tel" content="" label="⌊ 店舗2: TEL" data-group="about">
+<meta name="text:AboutBranch02hours" content="" label="⌊ 店舗2: 営業時間" data-group="about">
+<meta name="text:AboutBranch02holiday" content="" label="⌊ 店舗2: 定休日" data-group="about">
+<meta name="text:AboutBranch02gmaplink" content="" label="⌊ 店舗2: GoogleMap共有リンク" data-group="about">
+<meta name="text:AboutBranch02instaID" content="" label="⌊ 店舗2: Instagram ID" data-group="about">
+<meta name="text:AboutBranch02lineID" content="" label="⌊ 店舗2: 公式LINE ID" data-group="about">
+<meta name="text:AboutBranch02access" content="" label="⌊ 店舗2: アクセス方法の案内文" data-group="about">
+<meta name="image:AboutBranch02img" content="https://basefile.akamaized.net/ymtk/65a72c20b896f/placeholder-img-lightgray.png" label="⌊ 店舗2イメージ" data-group="about">
+
+
+<meta name="text:FaqHeader" content="よくあるご質問" label="よくある質問: 見出し(空欄で非表示)" data-group="about">
+<meta name="text:Faq01" content="質問1が入ります" label="⌊ 質問1" data-group="about">
+<meta name="text:Faq01Ans" content="質問1の回答が入ります" label="⌊ 質問1に対する回答" data-group="about">
+<meta name="text:Faq02" content="" label="⌊ 質問2" data-group="about">
+<meta name="text:Faq02Ans" content="" label="⌊ 質問2に対する回答" data-group="about">
+<meta name="text:Faq03" content="" label="⌊ 質問3" data-group="about">
+<meta name="text:Faq03Ans" content="" label="⌊ 質問3に対する回答" data-group="about">
+<meta name="text:Faq04" content="" label="⌊ 質問4" data-group="about">
+<meta name="text:Faq04Ans" content="" label="⌊ 質問4に対する回答" data-group="about">
+
+
+<meta name="if:CategoryHeader" content="1" label="カテゴリーページ: ヘッダー画像として表示" data-group="app">
+<meta name="if:CategoryHeaderBorder" content="1" label="⌊ カテゴリーヘッダーに枠線を表示" data-group="app">
+<meta name="text:Cat01ID" content="" label="カテゴリー1: ID(0000000)" data-group="app">
+<meta name="image:Cat01Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー1: 画像(400x400)" data-group="app">
+<meta name="image:Cat01Ban" content="" label="⌊ カテゴリー1: ヘッダーバナー" data-group="app">
+<meta name="text:Cat02ID" content="" label="カテゴリー2: ID" data-group="app">
+<meta name="image:Cat02Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー2: 画像" data-group="app">
+<meta name="image:Cat02Ban" content="" label="⌊ カテゴリー2: ヘッダーバナー" data-group="app">
+<meta name="text:Cat03ID" content="" label="カテゴリー3: ID" data-group="app">
+<meta name="image:Cat03Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー3: 画像" data-group="app">
+<meta name="image:Cat03Ban" content="" label="⌊ カテゴリー3: ヘッダーバナー" data-group="app">
+<meta name="text:Cat04ID" content="" label="カテゴリー4: ID" data-group="app">
+<meta name="image:Cat04Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー4: 画像" data-group="app">
+<meta name="image:Cat04Ban" content="" label="⌊ カテゴリー4: ヘッダーバナー" data-group="app">
+<meta name="text:Cat05ID" content="" label="カテゴリー5: ID" data-group="app">
+<meta name="image:Cat05Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー5: 画像" data-group="app">
+<meta name="image:Cat05Ban" content="" label="⌊ カテゴリー5: ヘッダーバナー" data-group="app">
+<meta name="text:Cat06ID" content="" label="カテゴリー6: ID" data-group="app">
+<meta name="image:Cat06Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー6: 画像" data-group="app">
+<meta name="image:Cat06Ban" content="" label="⌊ カテゴリー6: ヘッダーバナー" data-group="app">
+<meta name="text:Cat07ID" content="" label="カテゴリー7: ID" data-group="app">
+<meta name="image:Cat07Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー7: 画像" data-group="app">
+<meta name="image:Cat07Ban" content="" label="⌊ カテゴリー7: ヘッダーバナー" data-group="app">
+<meta name="text:Cat08ID" content="" label="カテゴリー8: ID" data-group="app">
+<meta name="image:Cat08Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー8: 画像" data-group="app">
+<meta name="image:Cat08Ban" content="" label="⌊ カテゴリー8: ヘッダーバナー" data-group="app">
+<meta name="text:Cat09ID" content="" label="カテゴリー9: ID" data-group="app">
+<meta name="image:Cat09Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー9: 画像" data-group="app">
+<meta name="image:Cat09Ban" content="" label="⌊ カテゴリー9: ヘッダーバナー" data-group="app">
+<meta name="text:Cat10ID" content="" label="カテゴリー10: ID" data-group="app">
+<meta name="image:Cat10Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー10: 画像" data-group="app">
+<meta name="image:Cat10Ban" content="" label="⌊ カテゴリー10: ヘッダーバナー" data-group="app">
+<meta name="text:Cat11ID" content="" label="カテゴリー11: ID" data-group="app">
+<meta name="image:Cat11Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー11: 画像" data-group="app">
+<meta name="image:Cat11Ban" content="" label="⌊ カテゴリー11: ヘッダーバナー" data-group="app">
+<meta name="text:Cat12ID" content="" label="カテゴリー12: ID" data-group="app">
+<meta name="image:Cat12Img" content="https://basefile.akamaized.net/ymtk/66eb93e27fdf8/no_image.png" label="⌊ カテゴリー12: 画像" data-group="app">
+<meta name="image:Cat12Ban" content="" label="⌊ カテゴリー12: ヘッダーバナー" data-group="app">
+
+
+<meta name="text:hiddenCatID" content="" label="ナビには表示しないカテゴリID (,区切り)" data-group="app">
+<meta name="text:cmpHiddenCatID" content="" label="階層表現をなくすカテゴリID (,区切り)" data-group="app">
+<meta name="text:tagIndexCatID" content="" label="HOMEにタグ表示したい大カテゴリID(1つのみ)" data-group="app">
+<meta name="text:tagIndexTitle" content="" label="⌊ タグ一覧の見出し" data-group="app">
+
+<meta name="if:ActivateSideBlogNews" content="0" label="ブログApp: 新着をサイドバーに表示" data-group="app">
+<meta name="if:BlogNewsDate" content="1" label="ブログApp: 日付を表示する" data-group="app">
+
+<meta name="if:MailMagOnFooter" content="1" label="メルマガ: フッターに表示" data-group="app">
+<meta name="text:MailMagHeader" content="News Letter" label="⌊ タイトル" data-group="app">
+<meta name="text:MailMagDescription" content="" label="⌊ 説明文" data-group="app">
+<meta name="if:MailMagPopup" content="0" label="メルマガ: ポップアップ表示(※マニュアル参照)" data-group="app">
+<meta name="image:MailMagPopupImg" content="" label="⌊ ビジュアル" data-group="app">
+<meta name="select:MailMagPopupFreq" content="0" title="毎回(表示確認モード)" label="⌊ ポップアップ表示頻度" data-group="app">
+<meta name="select:MailMagPopupFreq" content="1" title="1日経過ごとに表示" label="⌊ ポップアップ表示頻度" data-group="app">
+<meta name="select:MailMagPopupFreq" content="3" title="3日経過ごとに表示" label="⌊ ポップアップ表示頻度" data-group="app">
+
+<meta name="if:openLine" content="1" label="LINEボタン: 画面下にLINEボタン表示(メッセージAppとの併用不可)" data-group="other">
+<meta name="text:InstagramFeed" content="" label="Instagram: インスタ埋め込みコード(※マニュアル参照)" data-group="other">
+<meta name="image:TransparentLogo" content="" label="テーマ上のみで適用するロゴ画像(※マニュアル参照)" data-group="other">
+<meta name="image:OGImage" content="" label="【上級者向け】独自のOGP画像を追加" data-group="other">
+<meta name="text:AdditionalTitle" content="" label="【上級者向け】SEO向けtitleタグ補充テキスト(※マニュアル必読)" data-group="other">
+<meta name="text:CustomCSS" content="" label="【上級者向け】独自スタイルシート" data-group="other">
+
+{/block:Hidden}
+
+{block:NotItemPage}
+{block:image-OGImage}<meta property="og:image" content="{image:OGImage}" />{/block:image-OGImage}
+{MetaShopInfoTag}
+{block:image-OGImage}
+<meta property="og:image" content="{image:OGImage}" />
+<meta name="twitter:image" content="{image:OGImage}" />
+{/block:image-OGImage}
+{/block:NotItemPage}
+{block:ItemPage}
+{MetaItemInfoTag}
+{/block:ItemPage}
+
+{block:IndexPage}
+{HeadLinkNextPrevTag}
+{/block:IndexPage}
+
+<link href="https://basefile.akamaized.net/ymtk/671ad20ead839/splide.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://basefile.akamaized.net/ymtk/69fc4a46534a0/retailpro117.min.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/js/change_status.js?{UpdateTime}"></script>
+<script src="https://basefile.akamaized.net/ymtk/67972ff0c8638/scripts4.min.js"></script>
+<script src="https://basefile.akamaized.net/ymtk/67bd1d525fa72/categorynav6.min.js"></script>
+<script src="https://basefile.akamaized.net/ymtk/6722cebc9fa50/splide.min.js"></script>
+
+{block:IndexPage}
+{block:NoIndexPageCategory}{block:NoIndexPageSearch}
+{block:if-SplideAutoScroll}<script src="https://basefile.akamaized.net/ymtk/693b65636b2a2/splide-extension-auto-scroll.min.js"></script>{/block:if-SplideAutoScroll}
+<script>
+{block:if-SplideType}
+document.addEventListener( 'DOMContentLoaded', function() {
+var splide = new Splide( '.splide.topMain' , {
+type   : 'loop',
+{block:if-SplideAutoplay}autoplay: true,
+interval: {select:SplideInterval},{/block:if-SplideAutoplay}
+
+{block:if-SplideAutoScroll}
+autoScroll: {
+    speed: 0.6,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    },
+autoplay: false,
+{/block:if-SplideAutoScroll}
+perPage: 3,
+heightRatio: 0.5,
+autoWidth: true,
+autoHeight: false,
+gap: 16,
+focus  : 'center',
+pagination: true,
+} );
+splide.mount({block:if-SplideAutoScroll}window.splide.Extensions{/block:if-SplideAutoScroll});
+} );
+{/block:if-SplideType}
+
+{block:not_if-SplideType}
+document.addEventListener( 'DOMContentLoaded', function () {
+var splide = new Splide( '.splide.topMain' , {
+type   : 'fade',
+{block:if-SplideAutoplay}autoplay: true,
+interval: {select:SplideInterval},{/block:if-SplideAutoplay}
+{block:not_if-SplideAutoplay}autoplay: false,{/block:not_if-SplideAutoplay}
+speed  : 2000,
+heightRatio: 0.7,
+rewind: true,
+} );
+splide.mount();
+} );
+{/block:not_if-SplideType}
+</script>
+{/block:NoIndexPageCategory}{/block:NoIndexPageSearch}
+{/block:IndexPage}
+
+{block:ItemPage}
+<script src="https://basefile.akamaized.net/ymtk/672487b37bdf2/itemDetail.min.js"></script>
+{block:if-itemFlowSaleItems}<script src="https://basefile.akamaized.net/ymtk/6943ce832c849/items_sale.min.js" defer></script>{/block:if-itemFlowSaleItems}
+{block:if-itemFlowViewHistory}<script src="https://basefile.akamaized.net/ymtk/6978825708d00/items_history3.min.js" defer></script>{/block:if-itemFlowViewHistory}
+
+{block:not_if-ItemPageGallery}
+<link rel="stylesheet" href="https://basefile.akamaized.net/ymtk/5f0d7363cb39f/default-skin.min.css">
+<link rel="stylesheet" href="https://basefile.akamaized.net/ymtk/5f0d73d62e02f/photoswipe.min.css">
+{/block:not_if-ItemPageGallery}
+{/block:ItemPage}
+
+<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" as="style" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<style type="text/css">
+{block:select-BodyFontSize}body { font-size: {select:BodyFontSize}px;}{/block:select-BodyFontSize}
+:root {
+    {block:color-SaleColor}--discount-color: {color:SaleColor};{/block:color-SaleColor}
+    --textColor: {TextColor};
+    --textColor75: {TextColor}75;
+    --textColor50: {TextColor}50;
+    --textColor25: {TextColor}25;
+    --textColor10: {TextColor}09;
+
+    {block:color-HeaderBgColor}
+    --HeaderBgColor:{color:HeaderBgColor};
+    --HeaderBgColor30:{color:HeaderBgColor}50;
+    --HeaderBgColor50:{color:HeaderBgColor}80;
+    --HeaderBgColor67:{color:HeaderBgColor}aa;
+    --HeaderBgColor75:{color:HeaderBgColor}bf;
+    --HeaderBgColor80:{color:HeaderBgColor}d1;
+    --HeaderBgColor90:{color:HeaderBgColor}e5;
+    {/block:color-HeaderBgColor}
+
+    {block:color-HeaderFontColor}
+    --HeaderFontColor: {color:HeaderFontColor};
+    --HeaderFontColor05: {color:HeaderFontColor}0c;
+    --HeaderFontColor30: {color:HeaderFontColor}4D;		
+    --HeaderFontColor70: {color:HeaderFontColor}b3;
+    {/block:color-HeaderFontColor}
+
+    {block:color-AccentColor}
+    --AccentColor:  {color:AccentColor};
+    {/block:color-AccentColor}
+
+    {block:color-AccentColorText}
+    --AccentColorText:  {color:AccentColorText};
+    --AccentColorText05:  {color:AccentColorText}0c;
+    {/block:color-AccentColorText}
+    {block:color-CalendarMarkerColor}
+    --CalendarMarkerColor: {color:CalendarMarkerColor};
+    {/block:color-CalendarMarkerColor}
+
+    {block:image-shIcon}
+    --shIconWidth:{text:shIconWidth}px;
+    --shIconHeight:{text:shIconHeight}px;
+    {/block:image-shIcon}
+}
+
+{block:image-shIcon}
+.sh04 .sHeading::after,.sh05 .sHeading::after,
+.sh04.BlogAsPage .main #about.blogDetail .blog_title::after, .sh05.BlogAsPage .main #about.blogDetail .blog_title::after { background-image: url('{image:shIcon}'); height: {text:shIconHeight}; width: {text:shIconWidth};}
+{/block:image-shIcon}
+
+.menu-container .imgbanner.sidewidget { order: {text:sideAreaBannerOrder};}
+
+{block:text-CustomCSS}
+{text:CustomCSS}
+{/block:text-CustomCSS}
+</style>
+
+<!-- ================================================================
+     OLD ORDER grounds-style skin (added by Kanno 2026-08-25)
+     ================================================================ -->
+<style id="oldorder-grounds-skin">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Nunito+Sans:wght@400;700;900&family=Jost:wght@500;600;700&display=swap');
+:root{
+  --oo-ink:#1c1b1b; --oo-bg:#ffffff; --oo-line:#e4e4e4; --oo-accent:#00aec7; --oo-muted:#8a8a8a;
+}
+body.public{ background:var(--oo-bg)!important; color:var(--oo-ink)!important;
+  font-family:"Nunito Sans","Montserrat",-apple-system,"Hiragino Kaku Gothic ProN",sans-serif!important; }
+header{ background:var(--oo-ink)!important; }
+header #shoplogo #logo, header #shoplogo #logo *{ color:#fff!important; letter-spacing:.14em!important; }
+header .headCatNav .filler b, header .navIcons a, header .cartIcon, header .searchbar input{ color:#fff!important; }
+header .navOpen span, header .navOpen span::before, header .navOpen span::after{ background:#fff!important; }
+header .searchbar input{ background:rgba(255,255,255,.08)!important; border:0!important; }
+header .searchbar input::placeholder{ color:rgba(255,255,255,.6)!important; }
+.splide.topMain .slideCaption, .singleImage .slideCaption{ left:50%!important; transform:translateX(-50%)!important;
+  background:rgba(20,19,19,.78)!important; border-left:3px solid var(--oo-accent)!important;
+  padding:16px 22px!important; bottom:14%!important; }
+.splide.topMain .slideCaption p, .singleImage .slideCaption p{ color:#fff!important; font-weight:700!important; letter-spacing:.08em!important; }
+.sHeading{ text-align:left!important; border:0!important; padding-left:0!important; }
+.sHeading span{ display:block!important; color:var(--oo-accent)!important; font-family:"Montserrat",sans-serif!important;
+  font-weight:800!important; font-size:11px!important; letter-spacing:.28em!important; text-transform:uppercase!important; margin-bottom:4px!important; }
+.sHeading h2{ font-family:"Montserrat",sans-serif!important; font-weight:800!important; font-size:15px!important;
+  letter-spacing:.22em!important; text-transform:uppercase!important; color:var(--oo-ink)!important; }
+#itemthumbs .item-box, .catItemList .item-box{ border:0!important; background:transparent!important; }
+.item-thumb-wrap{ overflow:hidden!important; border-radius:0!important; background:#ececec!important; }
+.item-img__primary img{ transition:transform .5s ease!important; }
+.item-box a:hover .item-img__primary img{ transform:scale(1.05)!important; }
+.item-title{ font-size:12px!important; letter-spacing:.04em!important; color:var(--oo-ink)!important; margin-top:8px!important; font-weight:700!important; }
+.item-price{ font-size:12px!important; color:var(--oo-muted)!important; font-weight:700!important; }
+#itemthumbs.item-view{ gap:14px 12px!important; }
+#moreItems a, .goCatPage a.arrow{ border:1px solid var(--oo-ink)!important; background:transparent!important;
+  color:var(--oo-ink)!important; letter-spacing:.24em!important; font-weight:800!important; font-size:11px!important;
+  padding:12px 40px!important; border-radius:0!important; text-transform:uppercase!important; }
+#moreItems a:hover{ background:var(--oo-ink)!important; color:#fff!important; }
+#newsbox dl{ border-bottom:1px solid var(--oo-line)!important; }
+.footerbar{ background:var(--oo-bg)!important; border-top:1px solid var(--oo-line)!important; }
+.footerbar .pagenav a{ color:var(--oo-muted)!important; letter-spacing:.12em!important; font-size:11px!important; text-transform:uppercase!important; }
+.footerbar .pagenav a:hover{ color:var(--oo-ink)!important; }
+.footerbar address{ color:var(--oo-muted)!important; letter-spacing:.08em!important; }
+.footerFunc .langSelect{ font-weight:700!important; letter-spacing:.08em!important; }
+.discountrate, .soldout span{ background:var(--oo-accent)!important; color:#fff!important; }
+/* ==== grounds-clone sections (v3) ==== */
+body#TopPage #collections, body#TopPage #catItemLists, body#TopPage #tagIndexCat, body#TopPage #trendTagHeader, body#TopPage #rssbox,
+body#TopPage .mainArea-inner > .sHeading, body#TopPage #itemthumbs,
+body#TopPage #moreItems, body#TopPage #loading{ display:none!important; }
+#ooSections{ background:var(--oo-bg); }
+.ooSec{ position:relative; padding:70px 48px 8px; }
+.ooSec__label{ position:absolute; left:14px; top:78px; writing-mode:vertical-rl;
+  font-family:"Jost","Montserrat",sans-serif; font-weight:600; font-size:15px; letter-spacing:.3em;
+  color:var(--oo-ink); text-transform:uppercase; }
+.ooSec__num{ position:absolute; right:16px; top:78px; writing-mode:vertical-rl;
+  font-family:"Jost","Montserrat",sans-serif; font-weight:600; font-size:15px; color:var(--oo-ink); }
+.ooSec__grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:44px 18px; }
+.ooItem a{ display:block; }
+.ooItem figure{ position:relative; margin:0; aspect-ratio:1/1; background:#fff; overflow:hidden; }
+.ooItem img{ width:100%; height:100%; object-fit:contain; transition:transform .4s ease; }
+.ooItem a:hover img{ transform:scale(1.06); }
+.ooItem figure.isSold img{ filter:grayscale(1); opacity:.45; }
+.ooSoldOv{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-family:"Montserrat",sans-serif; font-size:11px; font-weight:700; letter-spacing:.28em;
+  color:#8f8f8f; text-decoration:line-through; }
+.ooTag{ text-align:center; font-family:'Jost',sans-serif; font-size:9px; font-weight:600; letter-spacing:.24em;
+  margin-top:8px; color:var(--oo-ink); text-transform:uppercase; }
+.ooSec__more{ display:none!important; }
+.ooSec__more a{ border:1px solid var(--oo-ink); padding:10px 36px; font-size:10px;
+  letter-spacing:.24em; font-weight:800; color:var(--oo-ink); text-transform:uppercase; }
+.ooSec__more a:hover{ background:var(--oo-ink); color:#fff; }
+@media(max-width:760px){
+  .ooSec{ padding:40px 20px 2px; }
+  .ooSec__grid{ grid-template-columns:repeat(4,1fr); gap:14px 6px; }
+  .ooSec__label{ left:4px; top:44px; font-size:11px; letter-spacing:.22em; }
+  .ooSec__num{ right:5px; top:44px; font-size:11px; }
+  .ooTag{ font-size:7px; letter-spacing:.16em; margin-top:4px; }
+  .ooSoldOv{ font-size:7px; letter-spacing:.14em; }
+}
+#newsbox{ max-width:1100px; margin:0 auto; padding:36px 26px 0; }
+.singleImage{ position:relative; height:min(82vh,900px); overflow:hidden; }
+.singleImage img{ width:100%; height:100%; object-fit:cover; object-position:center 35%; }
+@media(max-width:760px){ .singleImage{ height:72vh; } .singleImage img{ object-position:center 30%; } }
+/* -- OVERTURE式 英語お知らせバー -- */
+.informationBanner{ display:none!important; }
+#ooNewsBar{ position:relative; background:#111; height:34px; overflow:hidden; }
+#ooNewsBar .ooNewsItem{ position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:opacity .5s; padding:0 16px; }
+#ooNewsBar .ooNewsItem.on{ opacity:1; visibility:visible; }
+#ooNewsBar .ooNewsItem a, #ooNewsBar .ooNewsItem span{ color:#fff!important; font-size:11px; letter-spacing:.1em; font-weight:700; white-space:nowrap; text-align:center; }
+#ooNewsBar .ooNewsItem a{ text-decoration:underline; color:#fff!important; }
+/* -- ロゴ縮小 + ヘッダースリム化 -- */
+header #shoplogo{ padding:10px 0 8px!important; }
+header #shoplogo #logo img{ max-height:48px!important; width:auto!important; display:inline-block!important; }
+header #shoplogo #logo{ font-size:20px!important; line-height:1.2!important; }
+/* -- 海外向け: 国内専用決済の表示を隠す(クレカのみ表示) -- */
+.utility.payment li.payID, .utility.payment li.paypay, .utility.payment li.carrier,
+.utility.payment li.combini, .utility.payment li.bank,
+#payment li.payID, #payment li.paypay, #payment li.carrier,
+#payment li.combini, #payment li.bank{ display:none!important; }
+/* -- hardcoded hero (Brunch collab) -- */
+body#TopPage .splide.topMain, body#TopPage .singleImage{ display:none!important; }
+#ooHero{ position:relative; background:#fff; }
+#ooHero img{ width:100%; height:auto; display:block; }
+#ooHero .ooHeroCap{ display:none; }
+/* -- SELECT YOUR SIZE bar (grounds-style) -- */
+#ooSizeBar{ position:sticky; top:0; z-index:45; background:#111; color:#fff;
+  display:flex; align-items:center; gap:26px; padding:10px 26px; overflow-x:auto; scrollbar-width:none; }
+#ooSizeBar::-webkit-scrollbar{ display:none; }
+#ooSizeBar .ooSB__head{ flex:0 0 auto; line-height:1.35; }
+#ooSizeBar .ooSB__head b{ display:block; font-family:"Jost","Montserrat",sans-serif; font-size:12px; font-weight:600; letter-spacing:.16em; }
+#ooSBcount{ font-size:10px; letter-spacing:.14em; color:#bbb; }
+.ooSB__sizes{ display:flex; gap:8px; align-items:center; }
+.ooSB__sizes button{ background:none; border:1.6px solid transparent; color:#fff;
+  font-family:"Jost","Montserrat",sans-serif; font-weight:600; font-size:17px;
+  width:42px; height:42px; border-radius:50%; cursor:pointer; flex:0 0 auto; padding:0; }
+.ooSB__sizes button.on{ border-color:#fff; }
+@media(max-width:760px){
+  #ooSizeBar{ gap:14px; padding:8px 14px; }
+  #ooSizeBar .ooSB__head b{ font-size:10px; }
+  .ooSB__sizes button{ width:34px; height:34px; font-size:14px; }
+}
+/* ==== /grounds-clone sections ==== */
+
+/* ==== sidebar fold (v4): PCサイドバー非表示・メニューはドロワーのみ ==== */
+.contentWrapper-inner > .sideArea{ display:none!important; }
+.contentWrapper-inner > .mainArea{ width:100%!important; max-width:none!important; flex:1 1 100%!important; }
+/* ==== /sidebar fold ==== */
+
+
+
+</style>
+<!-- ================= /OLD ORDER grounds-style skin ================= -->
+
+{block:AppsCommunity}
+{block:ItemPage}<link rel="stylesheet" href="https://basefile.akamaized.net/ymtk/67bd0f9e995b3/community-item-retailpro103.min.css">{/block:ItemPage}
+{block:NotItemPage}<link rel="stylesheet" href="https://basefile.akamaized.net/ymtk/674bb49f7b439/community-main-retailpro102.min.css">{/block:NotItemPage}
+{/block:AppsCommunity}
+
+{BackgroundTag}
+{GoogleAnalyticsTag}
+
+{block:NotContactPage}{block:AppsBlog}
+<link rel="alternate" type="application/rss+xml" title="{ShopName}" href="{BlogFeedPageURL}" />
+<div id="blogFeed" data-feed-url="{BlogFeedPageURL}"></div>    
+<script src="https://basefile.akamaized.net/ymtk/672489ed300f4/blogfeed2.min.js"></script>
+{/block:AppsBlog}{/block:NotContactPage}
+
+{block:AppsItemCategory}
+<style>
+{block:text-Cat01ID}.categoryHeaderOn #category-header.cat{text:Cat01ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat01ID} i { background-image: url({image:Cat01Img});}{/block:text-Cat01ID}
+{block:text-Cat02ID}.categoryHeaderOn #category-header.cat{text:Cat02ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat02ID} i { background-image: url({image:Cat02Img});}{/block:text-Cat02ID}
+{block:text-Cat03ID}.categoryHeaderOn #category-header.cat{text:Cat03ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat03ID} i { background-image: url({image:Cat03Img});}{/block:text-Cat03ID}
+{block:text-Cat04ID}.categoryHeaderOn #category-header.cat{text:Cat04ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat04ID} i { background-image: url({image:Cat04Img});}{/block:text-Cat04ID}
+{block:text-Cat05ID}.categoryHeaderOn #category-header.cat{text:Cat05ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat05ID} i { background-image: url({image:Cat05Img});}{/block:text-Cat05ID}
+{block:text-Cat06ID}.categoryHeaderOn #category-header.cat{text:Cat06ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat06ID} i { background-image: url({image:Cat06Img});}{/block:text-Cat06ID}
+{block:text-Cat07ID}.categoryHeaderOn #category-header.cat{text:Cat07ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat07ID} i { background-image: url({image:Cat07Img});}{/block:text-Cat07ID}
+{block:text-Cat08ID}.categoryHeaderOn #category-header.cat{text:Cat08ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat08ID} i { background-image: url({image:Cat08Img});}{/block:text-Cat08ID}
+{block:text-Cat09ID}.categoryHeaderOn #category-header.cat{text:Cat09ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat09ID} i { background-image: url({image:Cat09Img});}{/block:text-Cat09ID}
+{block:text-Cat10ID}.categoryHeaderOn #category-header.cat{text:Cat10ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat10ID} i { background-image: url({image:Cat10Img});}{/block:text-Cat10ID}
+{block:text-Cat11ID}.categoryHeaderOn #category-header.cat{text:Cat11ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat11ID} i { background-image: url({image:Cat11Img});}{/block:text-Cat11ID}
+{block:text-Cat12ID}.categoryHeaderOn #category-header.cat{text:Cat12ID} .headerImg,.categoryNav.iconTrue .cat{text:Cat12ID} i { background-image: url({image:Cat12Img});}{/block:text-Cat12ID}
+</style>
+{block:image-Cat01Ban}<meta data-category-id="{text:Cat01ID}" data-image-url="{image:Cat01Ban}">{/block:image-Cat01Ban}
+{block:image-Cat02Ban}<meta data-category-id="{text:Cat02ID}" data-image-url="{image:Cat02Ban}">{/block:image-Cat02Ban}
+{block:image-Cat03Ban}<meta data-category-id="{text:Cat03ID}" data-image-url="{image:Cat03Ban}">{/block:image-Cat03Ban}
+{block:image-Cat04Ban}<meta data-category-id="{text:Cat04ID}" data-image-url="{image:Cat04Ban}">{/block:image-Cat04Ban}
+{block:image-Cat05Ban}<meta data-category-id="{text:Cat05ID}" data-image-url="{image:Cat05Ban}">{/block:image-Cat05Ban}
+{block:image-Cat06Ban}<meta data-category-id="{text:Cat06ID}" data-image-url="{image:Cat06Ban}">{/block:image-Cat06Ban}
+{block:image-Cat07Ban}<meta data-category-id="{text:Cat07ID}" data-image-url="{image:Cat07Ban}">{/block:image-Cat07Ban}
+{block:image-Cat08Ban}<meta data-category-id="{text:Cat08ID}" data-image-url="{image:Cat08Ban}">{/block:image-Cat08Ban}
+{block:image-Cat09Ban}<meta data-category-id="{text:Cat09ID}" data-image-url="{image:Cat09Ban}">{/block:image-Cat09Ban}
+{block:image-Cat10Ban}<meta data-category-id="{text:Cat10ID}" data-image-url="{image:Cat10Ban}">{/block:image-Cat10Ban}
+{block:image-Cat11Ban}<meta data-category-id="{text:Cat11ID}" data-image-url="{image:Cat11Ban}">{/block:image-Cat11Ban}
+{block:image-Cat12Ban}<meta data-category-id="{text:Cat12ID}" data-image-url="{image:Cat12Ban}">{/block:image-Cat12Ban}
+{/block:AppsItemCategory}
+
+</head>
+<body id="{block:IndexPage}{block:NoIndexPageCategory}{block:NoIndexPageSearch}Top{/block:NoIndexPageSearch}{/block:NoIndexPageCategory}{/block:IndexPage}{block:IndexPageCategory}Category{/block:IndexPageCategory}{block:IndexPageSearch}Search{/block:IndexPageSearch}{block:ItemPage}Item{/block:ItemPage}{block:AboutPage}About{/block:AboutPage}{block:ContactPage}Contact{/block:ContactPage}{block:PrivacyPage}Privacy{/block:PrivacyPage}{block:LawPage}Law{/block:LawPage}{block:BlogPage}Blog{/block:BlogPage}Page" class="{block:NotShopPublic}not{/block:NotShopPublic}public {select:CornerOptions} {select:ItemThumbRacio}{block:if-BlogAsPage} BlogAsPage{/block:if-BlogAsPage}{block:ItemPage}{block:if-ItemPageFloatPurchase} spFloatPurchaseTrue{/block:if-ItemPageFloatPurchase}{block:not_if-ItemPageFloatPurchaseMsgDisp} spFloatPurchaseMsgDispNone{/block:not_if-ItemPageFloatPurchaseMsgDisp}{/block:ItemPage} sideAreaDisp{select:sideAreaDisp} headerBg{select:HeaderBgCont}{block:if-openLine} openLineTrue{/block:if-openLine} sh{select:shType}">
+{block:AppsInformationBanner}{AppsInformationBannerTag}{/block:AppsInformationBanner}
+<div id="ooConfig" style="display:none" aria-hidden="true"><span data-k="bar1">{block:text-OoBar1}{text:OoBar1}{/block:text-OoBar1}</span><span data-k="bar2">{block:text-OoBar2}{text:OoBar2}{/block:text-OoBar2}</span><span data-k="bar3">{block:text-OoBar3}{text:OoBar3}{/block:text-OoBar3}</span><span data-k="bar4">{block:text-OoBar4}{text:OoBar4}{/block:text-OoBar4}</span><span data-k="bar4url">{block:text-OoBar4Url}{text:OoBar4Url}{/block:text-OoBar4Url}</span><span data-k="popup">{block:if-OoPopup}1{/block:if-OoPopup}</span><span data-k="popuptitle">{block:text-OoPopupTitle}{text:OoPopupTitle}{/block:text-OoPopupTitle}</span><span data-k="popuptext">{block:text-OoPopupText}{text:OoPopupText}{/block:text-OoPopupText}</span><span data-k="popupcode">{block:text-OoPopupCode}{text:OoPopupCode}{/block:text-OoPopupCode}</span><span data-k="popupimg">{block:image-OoPopupImg}{image:OoPopupImg}{/block:image-OoPopupImg}</span><span data-k="sections">{block:text-OoSections}{text:OoSections}{/block:text-OoSections}</span><span data-k="gridpc">{select:OoGridPC}</span><span data-k="gridsp">{select:OoGridSP}</span><span data-k="sizefilter">{block:if-OoSizeFilter}1{/block:if-OoSizeFilter}</span><span data-k="ig">{block:if-OoIgSection}1{/block:if-OoIgSection}</span><span data-k="extradict">{block:text-OoExtraDict}{text:OoExtraDict}{/block:text-OoExtraDict}</span><span data-k="showcal">{block:if-OoShowCalendar}1{/block:if-OoShowCalendar}</span><span data-k="showbanner">{block:if-OoShowFooterBanner}1{/block:if-OoShowFooterBanner}</span></div>
+
+{block:IndexPage}
+<span id="max_page" style="display: none;">{MaxPageNumber}</span>
+<span id="next_page" style="display: none;">{NextPageNumber}</span>
+{/block:IndexPage}
+
+<header class="{block:image-HeaderBgImg}headerbgImgTrue{/block:image-HeaderBgImg}{block:if-HeaderBgImgBorderUI} borderUI{/block:if-HeaderBgImgBorderUI}">
+<div id="shoplogo" class="{select:logoLayout} {select:LogoFontSize} {select:LogoFontWeight} {select:LogoFontSpace}{block:if-HeaderAboutNav} forcelogoLeft byAboutnav{/block:if-HeaderAboutNav}{block:text-HeaderFreeNav} forcelogoLeft byFreenav{/block:text-HeaderFreeNav}">
+
+<h1><a href="{IndexPageURL}" id="logo" class="{select:LogoFontJP}">{block:not_image-TransparentLogo}{LogoTag}{/block:not_image-TransparentLogo}{block:image-TransparentLogo}<img src="{image:TransparentLogo}" alt="{ShopName}" />{/block:image-TransparentLogo}</a></h1>
+<div id="subNav" class="{select:HeaderNavType}">
+<ul>
+{block:if-HeaderAboutNav}<li class="shopInfo"><a href="{AboutPageURL}" class="arrow">{block:not_text-PageTitleAbout}About{/block:not_text-PageTitleAbout}{block:text-PageTitleAbout}{text:PageTitleAbout}{/block:text-PageTitleAbout}</a></li> {/block:if-HeaderAboutNav}
+{block:text-HeaderFreeNav}<li class="freeNav"><a href="{text:HeaderFreeNav-url}" class="arrow"{block:if-HeaderFreeNav-blank} target="_blank"{/block:if-HeaderFreeNav-blank}>{text:HeaderFreeNav}</a></li>{/block:text-HeaderFreeNav}
+</ul>
+</div>
+</div>
+<div id="headNavwrap" class="{select:navText}"><div class="widthfix">
+<div class="headCatNav menu">
+<a href="#" class="navOpen" onclick="checkCheckbox(event)"><div class="filler"><span></span><b>メニュー</b></div></a>
+
+</div>
+{block:AppsSearch}<div class="searchbar">
+<form role="search" id="searchform" action="{SearchPageURL}" method="get">
+<div><input type="search" name="q"{block:text-SearchText} placeholder="{text:SearchText}"{/block:text-SearchText} value="{IndexPageSearch}"/></div>
+</form>
+</div>{/block:AppsSearch}
+<div class="navIcons">
+{block:AppsMembership}<div class="memberIcon"><a href="{MembershipPageURL}" title="{text:PageTitleMembership}"><span>マイページ</span></a></div>{/block:AppsMembership}
+<div class="cartIcon {select:cartIconStyle}" title="カートを見る">{BASEMenuTag}</div>
+</div>
+</div>
+</header>
+{block:AppsSearch}{block:if-TrendTags}<div id="trendTagHeader"><div class="filler"><dl class="{select:TrendColor}">
+<dd class="spacer"></dd>
+<dt>{text:TrendTagsTitle}</dt>
+{block:text-TrendTag01}<dd><a href="{ShopURL}search?q={text:TrendTag01}">{text:TrendTag01}</a></dd>{/block:text-TrendTag01}
+{block:text-TrendTag02}<dd><a href="{ShopURL}search?q={text:TrendTag02}">{text:TrendTag02}</a></dd>{/block:text-TrendTag02}
+{block:text-TrendTag03}<dd><a href="{ShopURL}search?q={text:TrendTag03}">{text:TrendTag03}</a></dd>{/block:text-TrendTag03}
+{block:text-TrendTag04}<dd><a href="{ShopURL}search?q={text:TrendTag04}">{text:TrendTag04}</a></dd>{/block:text-TrendTag04}
+<dd class="spacer"></dd>
+</dl></div></div>{/block:if-TrendTags}{/block:AppsSearch}
+
+<div class="contentWrapper {select:sideAreaPosition}">
+{block:if-AboutHeaderImgHeader}{block:AboutPage}
+{block:image-AboutHeaderImg}<div id="AboutHeaderImg" class=""><img src="{image:AboutHeaderImg}" alt="{ShopName}" class="" /></div>{/block:image-AboutHeaderImg}
+{/block:AboutPage}{/block:if-AboutHeaderImgHeader}
+
+{block:IndexPage}
+
+{block:NoIndexPageSearch}
+{block:NoIndexPageCategory}
+
+{block:if-SplideType}
+<section class="splide topMain typeLoop {select:SplideHeight} {select:SplidePagenation}" aria-label="MainSlider">
+<div class="splide__track">
+<ul class="splide__list">
+<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual1URL}<a href="{text:MainVisual1URL}">{/block:text-MainVisual1URL}<img src="{block:image-MainVisual1}{image:MainVisual1}{/block:image-MainVisual1}{block:not_image-MainVisual1}https://basefile.akamaized.net/ymtk/65a72c20b896f/placeholder-img-lightgray.png{/block:not_image-MainVisual1}" />{block:text-MainVisual1Cpt}<div class="slideCaption"><p>{text:MainVisual1Cpt}</p></div>{/block:text-MainVisual1Cpt}{block:text-MainVisual1URL}</a>{/block:text-MainVisual1URL}</div></li>
+<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual2URL}<a href="{text:MainVisual2URL}">{/block:text-MainVisual2URL}<img src="{block:image-MainVisual2}{image:MainVisual2}{/block:image-MainVisual2}{block:not_image-MainVisual2}https://basefile.akamaized.net/ymtk/65a72c20b896f/placeholder-img-lightgray.png{/block:not_image-MainVisual2}" />{block:text-MainVisual2Cpt}<div class="slideCaption"><p>{text:MainVisual2Cpt}</p></div>{/block:text-MainVisual2Cpt}{block:text-MainVisual2URL}</a>{/block:text-MainVisual2URL}</div></li>
+<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual3URL}<a href="{text:MainVisual3URL}">{/block:text-MainVisual3URL}<img src="{block:image-MainVisual3}{image:MainVisual3}{/block:image-MainVisual3}{block:not_image-MainVisual3}https://basefile.akamaized.net/ymtk/65a72c20b896f/placeholder-img-lightgray.png{/block:not_image-MainVisual3}" />{block:text-MainVisual3Cpt}<div class="slideCaption"><p>{text:MainVisual3Cpt}</p></div>{/block:text-MainVisual3Cpt}{block:text-MainVisual3URL}</a>{/block:text-MainVisual3URL}</div></li>
+{block:image-MainVisual4}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual4URL}<a href="{text:MainVisual4URL}">{/block:text-MainVisual4URL}<img src="{image:MainVisual4}" />{block:text-MainVisual4Cpt}<div class="slideCaption"><p>{text:MainVisual4Cpt}</p></div>{/block:text-MainVisual4Cpt}{block:text-MainVisual4URL}</a>{/block:text-MainVisual4URL}</div></li>{/block:image-MainVisual4}
+{block:image-MainVisual5}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual5URL}<a href="{text:MainVisual5URL}">{/block:text-MainVisual5URL}<img src="{image:MainVisual5}" />{block:text-MainVisual5Cpt}<div class="slideCaption"><p>{text:MainVisual5Cpt}</p></div>{/block:text-MainVisual5Cpt}{block:text-MainVisual5URL}</a>{/block:text-MainVisual5URL}</div></li>{/block:image-MainVisual5}
+{block:image-MainVisual6}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual6URL}<a href="{text:MainVisual6URL}">{/block:text-MainVisual6URL}<img src="{image:MainVisual6}" />{block:text-MainVisual6Cpt}<div class="slideCaption"><p>{text:MainVisual6Cpt}</p></div>{/block:text-MainVisual6Cpt}{block:text-MainVisual6URL}</a>{/block:text-MainVisual6URL}</div></li>{/block:image-MainVisual6}
+</ul>
+</div>
+</section>
+{/block:if-SplideType}
+
+{block:not_if-SplideType}
+{block:image-MainVisual1}{block:not_image-MainVisual2}
+<div class="singleImage">{block:text-MainVisual1URL}<a href="{text:MainVisual1URL}">{/block:text-MainVisual1URL}<img src="{image:MainVisual1}" />{block:text-MainVisual1Cpt}<div class="slideCaption"><p>{text:MainVisual1Cpt}</p></div>{/block:text-MainVisual1Cpt}{block:text-MainVisual1URL}</a>{/block:text-MainVisual1URL}</div>
+{/block:not_image-MainVisual2}{/block:image-MainVisual1}
+{block:image-MainVisual2}
+<section class="splide topMain typeFade {select:SplideHeight} {select:SplidePagenation}" aria-label="MainSlider">
+<div class="splide__track">
+    <ul class="splide__list">
+        <li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual1URL}<a href="{text:MainVisual1URL}">{/block:text-MainVisual1URL}<img src="{image:MainVisual1}" />{block:text-MainVisual1Cpt}<div class="slideCaption"><p>{text:MainVisual1Cpt}</p></div>{/block:text-MainVisual1Cpt}{block:text-MainVisual1URL}</a>{/block:text-MainVisual1URL}</div></li>
+        {block:image-MainVisual2}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual2URL}<a href="{text:MainVisual2URL}">{/block:text-MainVisual2URL}<img src="{image:MainVisual2}" />{block:text-MainVisual2Cpt}<div class="slideCaption"><p>{text:MainVisual2Cpt}</p></div>{/block:text-MainVisual2Cpt}{block:text-MainVisual2URL}</a>{/block:text-MainVisual2URL}</div></li>{/block:image-MainVisual2}
+        {block:image-MainVisual3}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual3URL}<a href="{text:MainVisual3URL}">{/block:text-MainVisual3URL}<img src="{image:MainVisual3}" />{block:text-MainVisual3Cpt}<div class="slideCaption"><p>{text:MainVisual3Cpt}</p></div>{/block:text-MainVisual3Cpt}{block:text-MainVisual3URL}</a>{/block:text-MainVisual3URL}</div></li>{/block:image-MainVisual3}
+        {block:image-MainVisual4}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual4URL}<a href="{text:MainVisual4URL}">{/block:text-MainVisual4URL}<img src="{image:MainVisual4}" />{block:text-MainVisual4Cpt}<div class="slideCaption"><p>{text:MainVisual4Cpt}</p></div>{/block:text-MainVisual4Cpt}{block:text-MainVisual4URL}</a>{/block:text-MainVisual4URL}</div></li>{/block:image-MainVisual4}
+        {block:image-MainVisual5}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual5URL}<a href="{text:MainVisual5URL}">{/block:text-MainVisual5URL}<img src="{image:MainVisual5}" />{block:text-MainVisual5Cpt}<div class="slideCaption"><p>{text:MainVisual5Cpt}</p></div>{/block:text-MainVisual5Cpt}{block:text-MainVisual5URL}</a>{/block:text-MainVisual5URL}</div></li>{/block:image-MainVisual5}
+        {block:image-MainVisual6}<li class="splide__slide"><div class="splide__slide__container">{block:text-MainVisual6URL}<a href="{text:MainVisual6URL}">{/block:text-MainVisual6URL}<img src="{image:MainVisual6}" />{block:text-MainVisual6Cpt}<div class="slideCaption"><p>{text:MainVisual6Cpt}</p></div>{/block:text-MainVisual6Cpt}{block:text-MainVisual6URL}</a>{/block:text-MainVisual6URL}</div></li>{/block:image-MainVisual6}
+    </ul>
+</div>
+</section>
+{/block:image-MainVisual2}
+{/block:not_if-SplideType}
+
+{/block:NoIndexPageCategory}
+{/block:NoIndexPageSearch}
+{/block:IndexPage}
+
+{block:if-WhiteBg}<div class="whitebg">{/block:if-WhiteBg}<div class="contentWrapper-inner">
+
+<div class="sideArea {select:sideAreaNavSize}">
+<div class="sideArea-inner">
+</div><!-- .sideArea-inner -->
+</div><!-- .sideArea -->
+
+
+<div class="mainArea">		
+
+{block:IndexPage}
+<div class="mainArea-inner">	
+{block:NoIndexPageSearch}
+{block:NoIndexPageCategory}
+{block:AppsBlogArticleIsPinned}
+<div class="BlogPinnedArticle"><a href="{AppsBlogArticlePageURL}">{AppsBlogArticleTitle}</a></div>
+{/block:AppsBlogArticleIsPinned}						
+{/block:NoIndexPageCategory}
+{/block:NoIndexPageSearch}
+
+<!------------------------------>
+{block:ShopPublic}
+
+{block:NoIndexPageSearch}
+{block:NoIndexPageCategory}
+<div id="TopContentOrder">
+
+{block:if-ActivateClctn}
+<div id="collections" class="{select:ClctnClm} {select:ClctnBox} {select:ClctnBtnColor}{block:not_text-ClctnTitle} noTitle{/block:not_text-ClctnTitle}">
+{block:text-ClctnTitle}<div class="sHeading">
+{block:text-ClctnTitleSub}<span>{text:ClctnTitleSub}</span>{/block:text-ClctnTitleSub}
+<h2>{text:ClctnTitle}</h2></div>{/block:text-ClctnTitle}
+<div class="widthfix">
+    {block:image-Clctn01Img}<div class="catcard">{block:text-Clctn01URL}<a href="{text:Clctn01URL}">{/block:text-Clctn01URL}<div class="card-image"><img src="{image:Clctn01Img}" alt=""></div>{block:text-Clctn01URL}</a>{/block:text-Clctn01URL}</div>{/block:image-Clctn01Img}
+    {block:image-Clctn02Img}<div class="catcard">{block:text-Clctn02URL}<a href="{text:Clctn02URL}">{/block:text-Clctn02URL}<div class="card-image"><img src="{image:Clctn02Img}" alt=""></div>{block:text-Clctn02URL}</a>{/block:text-Clctn02URL}</div>{/block:image-Clctn02Img}
+    {block:image-Clctn03Img}<div class="catcard">{block:text-Clctn03URL}<a href="{text:Clctn03URL}">{/block:text-Clctn03URL}<div class="card-image"><img src="{image:Clctn03Img}" alt=""></div>{block:text-Clctn03URL}</a>{/block:text-Clctn03URL}</div>{/block:image-Clctn03Img}
+    {block:image-Clctn04Img}<div class="catcard">{block:text-Clctn04URL}<a href="{text:Clctn04URL}">{/block:text-Clctn04URL}<div class="card-image"><img src="{image:Clctn04Img}" alt=""></div>{block:text-Clctn04URL}</a>{/block:text-Clctn04URL}</div>{/block:image-Clctn04Img}
+</div>
+</div>
+{/block:if-ActivateClctn}
+
+
+{block:if-ActivateNews}
+<div id="newsbox" class="newson">
+{block:text-NewsHeader}<div class="sHeading">
+{block:text-NewsHeaderSub}<span>{text:NewsHeaderSub}</span>{/block:text-NewsHeaderSub}
+<h2>{text:NewsHeader}</h2>
+</div>{/block:text-NewsHeader}
+
+{block:text-News01-date}
+<dl>
+<dt>{text:News01-date}</dt>
+<dd>{block:text-News01-url}<a href="{text:News01-url}">{/block:text-News01-url}{text:News01-text}{block:text-News01-url}</a>{/block:text-News01-url}</dd>
+</dl>
+{/block:text-News01-date}
+{block:text-News02-date}
+<dl>
+<dt>{text:News02-date}</dt>
+<dd>{block:text-News02-url}<a href="{text:News02-url}">{/block:text-News02-url}{text:News02-text}{block:text-News02-url}</a>{/block:text-News02-url}</dd>
+</dl>
+{/block:text-News02-date}
+{block:text-News03-date}
+<dl>
+<dt>{text:News03-date}</dt>
+<dd>{block:text-News03-url}<a href="{text:News03-url}">{/block:text-News03-url}{text:News03-text}{block:text-News03-url}</a>{/block:text-News03-url}</dd>
+</dl>
+{/block:text-News03-date}
+</div>
+{/block:if-ActivateNews}
+
+<div id="catItemLists">
+{block:text-CatItemList01Title}
+<div class="catItemList {select:CatItemListClm}">
+<div id="cat_list_{text:CatItemList01CatID}" class="{select:CatItemList01Type} {select:CatItemList01Bg}">
+<h2 class="general"><em>{text:CatItemList01Title}</em> <span class="goCatPage"><a href="/categories/{text:CatItemList01CatID}" class="arrow">もっと見る</a></span></h2>
+</div>
+
+{block:text-CatItemList02Title}
+<div id="cat_list_{text:CatItemList02CatID}" class="{select:CatItemList02Type} {select:CatItemList02Bg}">
+<h2 class="general"><em>{text:CatItemList02Title}</em> <span class="goCatPage"><a href="/categories/{text:CatItemList02CatID}" class="arrow">もっと見る</a></span></h2>
+</div>
+{/block:text-CatItemList02Title}
+{block:text-CatItemList03Title}
+<div id="cat_list_{text:CatItemList03CatID}" class="{select:CatItemList03Type} {select:CatItemList03Bg}">
+<h2 class="general"><em>{text:CatItemList03Title}</em> <span class="goCatPage"><a href="/categories/{text:CatItemList03CatID}" class="arrow">もっと見る</a></span></h2>
+</div>
+{/block:text-CatItemList03Title}
+</div>
+{/block:text-CatItemList01Title}
+</div>
+
+{block:text-tagIndexCatID}
+<script src="https://basefile.akamaized.net/ymtk/67298d501ad6b/tagIndex.min.js"></script>
+<div id="tagIndexCat" data-ids="{text:tagIndexCatID}">
+{block:text-tagIndexTitle}<div class="sHeading"><h2 class="general">{text:tagIndexTitle}</h2></div>{/block:text-tagIndexTitle}
+    <div id="tagIndex"></div>
+</div>
+{/block:text-tagIndexCatID}
+
+</div><!--#TopContentOrder-->
+{/block:NoIndexPageCategory}
+{/block:NoIndexPageSearch}
+
+{block:NoIndexPageSearch}
+{block:NoIndexPageCategory}
+{block:text-ItemThumbHeader}<div class="sHeading">
+{block:text-ItemThumbHeaderSub}<span>{text:ItemThumbHeaderSub}</span>{/block:text-ItemThumbHeaderSub}
+<h2 class="general">{text:ItemThumbHeader}</h2>
+</div>{/block:text-ItemThumbHeader}
+{/block:NoIndexPageCategory}
+{/block:NoIndexPageSearch}
+
+{block:NoIndexPageSearch}{block:IndexPageCategory}
+{BreadcrumbTag}
+<div id="categoryBanner"></div>
+<div class="pagetitle{block:if-CategoryHeader} categoryHeaderOn{block:if-CategoryHeaderBorder} border{/block:if-CategoryHeaderBorder}{/block:if-CategoryHeader} {block:HasAppsItemCategoryChildCategories}hasChild{/block:HasAppsItemCategoryChildCategories} {select:ChildCatStyle}">
+<div id="category-header">
+{block:if-CategoryHeader}<div class="headerImg"><img src="https://basefile.akamaized.net/ymtk/66a9d5be42aff/transparent.png" /></div>{/block:if-CategoryHeader}
+<div class="headerTitles"><h2 class="category-title">{IndexPageCategory}</h2>
+</div>
+</div>  
+{block:HasAppsItemCategoryChildCategories}
+<ul class="ChildCategories">
+    {block:AppsItemCategoryChildCategories}
+    <li class="ChildCategory_child"><a href="{AppsItemCategoryChildCategoryPageURL}">{AppsItemCategoryChildCategoryName}</a></li>
+    {/block:AppsItemCategoryChildCategories}
+</ul>
+{/block:HasAppsItemCategoryChildCategories}
+</div>
+
+{/block:IndexPageCategory}{/block:NoIndexPageSearch}
+
+{block:IndexPageSearch}
+<div class="pagetitle"><h2 class="seatchresult-title">{lang:ItemSearchResult}</h2></div>
+{/block:IndexPageSearch}
+
+{block:HasItems}
+<div id="itemthumbs" class="{select:ItemThumbClm} item-view clearfix" data-max-page="{MaxPageNumber}" data-next-page="{NextPageNumber}">
+
+{block:Items}
+{block:NoIndexPageSearch}
+
+{block:IndexPageCategory}
+<div class="item-box">
+    <a href="{ItemPageURL}" title="{ItemTitle}">
+        <div class="item-thumb-wrap">
+            <span class="item-img__primary" style="background-image: url({block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1})"><img src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}" title="{ItemTitle}" class="image-resize" /></span>							  	
+        </div>
+        <div class="item-meta">
+            <div class="item-title">{ItemTitle}</div>
+
+            {block:HasItemStock}																
+                {block:NoItemProperPrice}
+                    <div class="item-price">{ItemPrice}</div>
+                {/block:NoItemProperPrice}
+                {block:HasItemProperPrice}						
+                    <div class="item-price"><span class="properprice">{ItemProperPrice}</span><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+                {/block:HasItemProperPrice}
+                {block:ItemNowOnSale}
+                    {block:ItemPreOrder}<span class="preOrder">{lang:PreOrderItem}</span>{/block:ItemPreOrder}
+                {/block:ItemNowOnSale}
+                {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+                {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+            {/block:HasItemStock}
+
+            {block:NoItemStock}
+                {block:NoItemProperPrice}
+                    <div class="item-price">{ItemPrice}</div>
+                {/block:NoItemProperPrice}
+                {block:HasItemProperPrice}
+                    <div class="item-price"><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+                {/block:HasItemProperPrice}
+                {block:ItemNowOnSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemNowOnSale}
+                {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+                {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+            {/block:NoItemStock}								
+
+            <div class="applabels">
+            {block:ItemCommunityLimited}<span class="community">{lang:CommunityLimitedItem}</span>{/block:ItemCommunityLimited}
+            {block:ItemTakeout}<span class="takeout">{lang:TakeoutItem}</span>{/block:ItemTakeout}
+            {block:ItemLottery}<span class="lottery">{lang:LotteryItem}</span>{/block:ItemLottery}
+            </div>
+        </div>
+    </a>
+    {block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}
+</div>
+
+
+{/block:IndexPageCategory}
+
+{block:NoIndexPageCategory}
+
+<div class="item-box">
+    <a href="{ItemPageURL}" title="{ItemTitle}">
+        <div class="item-thumb-wrap">
+            <span class="item-img__primary" style="background-image: url({block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1})"><img src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}" title="{ItemTitle}" class="image-resize" /></span>							  	
+        </div>
+        <div class="item-meta">
+            <div class="item-title">{ItemTitle}</div>
+
+            {block:HasItemStock}																
+                {block:NoItemProperPrice}
+                    <div class="item-price">{ItemPrice}</div>
+                {/block:NoItemProperPrice}
+                {block:HasItemProperPrice}						
+                    <div class="item-price"><span class="properprice">{ItemProperPrice}</span><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+                {/block:HasItemProperPrice}
+                {block:ItemNowOnSale}
+                    {block:ItemPreOrder}<span class="preOrder">{lang:PreOrderItem}</span>{/block:ItemPreOrder}
+                {/block:ItemNowOnSale}
+                {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+                {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+            {/block:HasItemStock}
+
+            {block:NoItemStock}
+                {block:NoItemProperPrice}
+                    <div class="item-price">{ItemPrice}</div>
+                {/block:NoItemProperPrice}
+                {block:HasItemProperPrice}
+                    <div class="item-price"><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+                {/block:HasItemProperPrice}
+                {block:ItemNowOnSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemNowOnSale}
+                {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+                {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+            {/block:NoItemStock}
+
+            <div class="applabels">
+            {block:ItemCommunityLimited}<span class="community">{lang:CommunityLimitedItem}</span>{/block:ItemCommunityLimited}
+            {block:ItemTakeout}<span class="takeout">{lang:TakeoutItem}</span>{/block:ItemTakeout}
+            {block:ItemLottery}<span class="lottery">{lang:LotteryItem}</span>{/block:ItemLottery}
+            </div>
+            
+        </div>
+    </a>
+    {block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}
+</div>
+
+{/block:NoIndexPageCategory}
+
+{/block:NoIndexPageSearch}
+
+{block:IndexPageSearch}
+<div class="item-box">
+<a href="{ItemPageURL}" title="{ItemTitle}">
+    <div class="item-thumb-wrap">
+        <span class="item-img__primary" style="background-image: url({block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1})"><img src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}" title="{ItemTitle}" class="image-resize" /></span>							  	
+    </div>
+    <div class="item-meta">
+        <div class="item-title">{ItemTitle}</div>
+
+        {block:HasItemStock}																
+            {block:NoItemProperPrice}
+                <div class="item-price">{ItemPrice}</div>
+            {/block:NoItemProperPrice}
+            {block:HasItemProperPrice}						
+                <div class="item-price"><span class="properprice">{ItemProperPrice}</span><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+            {/block:HasItemProperPrice}
+            {block:ItemNowOnSale}
+                {block:ItemPreOrder}<span class="preOrder">{lang:PreOrderItem}</span>{/block:ItemPreOrder}
+            {/block:ItemNowOnSale}
+            {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+            {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+        {/block:HasItemStock}
+
+        {block:NoItemStock}
+            {block:NoItemProperPrice}
+                <div class="item-price">{ItemPrice}</div>
+            {/block:NoItemProperPrice}
+            {block:HasItemProperPrice}
+                <div class="item-price"><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+            {/block:HasItemProperPrice}
+            {block:ItemNowOnSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemNowOnSale}
+            {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+            {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+        {/block:NoItemStock}
+
+        <div class="applabels">
+        {block:ItemCommunityLimited}<span class="community">{lang:CommunityLimitedItem}</span>{/block:ItemCommunityLimited}
+        {block:ItemTakeout}<span class="takeout">{lang:TakeoutItem}</span>{/block:ItemTakeout}
+        {block:ItemLottery}<span class="lottery">{lang:LotteryItem}</span>{/block:ItemLottery}
+        </div>
+    </div>
+</a>
+{block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}
+</div>
+
+{/block:IndexPageSearch}	
+{/block:Items}
+</div>
+
+<div id="loading" style="display: none;text-align: center;margin: 0 0 0 0;"><div class="loader">Loading...</div></div>
+<div id="moreItems"><a href="#">{text:ItemLoadmore}</a></div>
+
+{/block:HasItems}
+{/block:ShopPublic}
+
+{block:ShopPublic}
+{block:NoItems}
+<section class="noItems">
+<h2 class="noItemsMessage">{lang:NoItemsMessage}</h2> 
+
+{block:AppsItemCategory}
+<div class="notfound categoryMap">
+<h3>{text:CategoryNavHeader}から探す</h3>
+{AppsItemCategoryCategoriesTag}
+</div>
+{/block:AppsItemCategory}
+
+{block:if-TrendTags}
+<div class="notfound trendIndex">
+<h3>{text:TrendTagsTitle}から探す</h3>
+    <ul>
+    {block:text-TrendTag01}<li><a href="{ShopURL}search?q={text:TrendTag01}">{text:TrendTag01}</a></li>{/block:text-TrendTag01}
+    {block:text-TrendTag02}<li><a href="{ShopURL}search?q={text:TrendTag02}">{text:TrendTag02}</a></li>{/block:text-TrendTag02}
+    {block:text-TrendTag03}<li><a href="{ShopURL}search?q={text:TrendTag03}">{text:TrendTag03}</a></li>{/block:text-TrendTag03}
+    {block:text-TrendTag04}<li><a href="{ShopURL}search?q={text:TrendTag04}">{text:TrendTag04}</a></li>{/block:text-TrendTag04}
+    </ul>
+</div>
+{/block:if-TrendTags}
+
+<div class="notfound search">
+<h3>{block:text-SearchText}{text:SearchText}{/block:text-SearchText}{block:not_text-SearchText}キーワードで探す{/block:not_text-SearchText}</h3>
+<form id="search3" action="{SearchPageURL}" method="get">
+<input id="sinput3" type="text" name="q" placeholder="{text:SearchText}" value=""/>
+<button id="sbtn3" type="button"><span class="material-icons">search</span></button>
+</form>
+</div>
+</section>
+{/block:NoItems}
+{/block:ShopPublic}
+
+
+{block:NotShopPublic}
+<div class="widthfix notpublicmessage"><section class="tmpBox">
+<p class="errormessage"><span class="material-icons">hourglass_top</span> {lang:NotShopPublicMessage}</p>
+</section></div>
+{/block:NotShopPublic}
+
+{block:ShopPublic}
+<div id="loadItemsParams" data-url="{LoadItemsPageURL}" data-url-params="{LoadItemsPageURLParams}"></div>
+<script src="https://basefile.akamaized.net/ymtk/67248606b99e9/loadmoreItems.min.js"></script>
+{/block:ShopPublic}
+
+</div><!--.mainArea-inner-->
+{/block:IndexPage}
+
+{block:ShopPublic}
+{block:ItemPage}
+<div class="mainArea-inner">
+<div id="item_page_wrap" class="clearfix">
+{IllegalReportMessageTag}
+
+<ul class="breadcrumb"><li class="breadcrumb__child"><a href="{ShopURL}">Home</a></li><li class="breadcrumb__child"><span class="breadcrumb__notlink">{ItemTitle}</span></li></ul>
+<!-- <h1 class="itemTitle altTitle">{ItemTitle}{block:ItemDigitalContent}<div class="filename"><span>{ItemDigitalContent}</span></div>{/block:ItemDigitalContent}</h1> -->
+
+<section class="firstview {block:if-ItemActionScroll}actionSticky{/block:if-ItemActionScroll}{block:if-ItemPageLargeImg} oneClm{/block:if-ItemPageLargeImg}">
+
+<div id="item-photos" class="left-top" data-pswp>	
+    <div class="photoGallery">
+        {block:if-ItemPageGallery}
+        <section id="itemPhotoSplide" class="splide" aria-label="ItemPhotos">
+            {block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><img src="{block:ItemImage1}{ItemImage1URL-1280}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}" class="radius" /></li>
+                    {block:ItemImage2}<li class="splide__slide"><img src="{ItemImage2URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage2}
+                    {block:ItemImage3}<li class="splide__slide"><img src="{ItemImage3URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage3}
+                    {block:ItemImage4}<li class="splide__slide"><img src="{ItemImage4URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage4}
+                    {block:ItemImage5}<li class="splide__slide"><img src="{ItemImage5URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage5}
+                    {block:ItemImage6}<li class="splide__slide"><img src="{ItemImage6URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage6}
+                    {block:ItemImage7}<li class="splide__slide"><img src="{ItemImage7URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage7}
+                    {block:ItemImage8}<li class="splide__slide"><img src="{ItemImage8URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage8}
+                    {block:ItemImage9}<li class="splide__slide"><img src="{ItemImage9URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage9}
+                    {block:ItemImage10}<li class="splide__slide"><img src="{ItemImage10URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage10}
+                    {block:ItemImage11}<li class="splide__slide"><img src="{ItemImage11URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage11}
+                    {block:ItemImage12}<li class="splide__slide"><img src="{ItemImage12URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage12}
+                    {block:ItemImage13}<li class="splide__slide"><img src="{ItemImage13URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage13}
+                    {block:ItemImage14}<li class="splide__slide"><img src="{ItemImage14URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage14}
+                    {block:ItemImage15}<li class="splide__slide"><img src="{ItemImage15URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage15}
+                    {block:ItemImage16}<li class="splide__slide"><img src="{ItemImage16URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage16}
+                    {block:ItemImage17}<li class="splide__slide"><img src="{ItemImage17URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage17}
+                    {block:ItemImage18}<li class="splide__slide"><img src="{ItemImage18URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage18}
+                    {block:ItemImage19}<li class="splide__slide"><img src="{ItemImage19URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage19}
+                    {block:ItemImage20}<li class="splide__slide"><img src="{ItemImage20URL-1280}" alt="{ItemTitle}" class="radius" /></li>{/block:ItemImage20}			
+                </ul>
+            </div>
+        </section>
+        {block:ItemImage2}
+        <div class="photoThumbs {select:ItemPageImageClm}">	
+            <ul id="thumbnails" class="thumbnails">
+                <li class="thumbnail"><img src="{ItemImage1URL-300}" alt="{ItemTitle}" /></li>
+                <li class="thumbnail"><img src="{ItemImage2URL-300}" alt="{ItemTitle}"></li>
+                {block:ItemImage3}<li class="thumbnail"><img src="{ItemImage3URL-300}" alt=""></li>{/block:ItemImage3}
+                {block:ItemImage4}<li class="thumbnail"><img src="{ItemImage4URL-300}" alt=""></li>{/block:ItemImage4}
+                {block:ItemImage5}<li class="thumbnail"><img src="{ItemImage5URL-300}" alt=""></li>{/block:ItemImage5}
+                {block:ItemImage6}<li class="thumbnail"><img src="{ItemImage6URL-300}" alt=""></li>{/block:ItemImage6}
+                {block:ItemImage7}<li class="thumbnail"><img src="{ItemImage7URL-300}" alt=""></li>{/block:ItemImage7}
+                {block:ItemImage8}<li class="thumbnail"><img src="{ItemImage8URL-300}" alt=""></li>{/block:ItemImage8}
+                {block:ItemImage9}<li class="thumbnail"><img src="{ItemImage9URL-300}" alt=""></li>{/block:ItemImage9}
+                {block:ItemImage10}<li class="thumbnail"><img src="{ItemImage10URL-300}" alt=""></li>{/block:ItemImage10}
+                {block:ItemImage11}<li class="thumbnail"><img src="{ItemImage11URL-300}" alt=""></li>{/block:ItemImage11}
+                {block:ItemImage12}<li class="thumbnail"><img src="{ItemImage12URL-300}" alt=""></li>{/block:ItemImage12}
+                {block:ItemImage13}<li class="thumbnail"><img src="{ItemImage13URL-300}" alt=""></li>{/block:ItemImage13}
+                {block:ItemImage14}<li class="thumbnail"><img src="{ItemImage14URL-300}" alt=""></li>{/block:ItemImage14}
+                {block:ItemImage15}<li class="thumbnail"><img src="{ItemImage15URL-300}" alt=""></li>{/block:ItemImage15}
+                {block:ItemImage16}<li class="thumbnail"><img src="{ItemImage16URL-300}" alt=""></li>{/block:ItemImage16}
+                {block:ItemImage17}<li class="thumbnail"><img src="{ItemImage17URL-300}" alt=""></li>{/block:ItemImage17}
+                {block:ItemImage18}<li class="thumbnail"><img src="{ItemImage18URL-300}" alt=""></li>{/block:ItemImage18}
+                {block:ItemImage19}<li class="thumbnail"><img src="{ItemImage19URL-300}" alt=""></li>{/block:ItemImage19}
+                {block:ItemImage20}<li class="thumbnail"><img src="{ItemImage20URL-300}" alt=""></li>{/block:ItemImage20}
+            </ul>
+        </div>
+        {/block:ItemImage2}
+        <script src="https://basefile.akamaized.net/ymtk/67248883b78dc/itemPhotoSplide.min.js"></script>
+        {/block:if-ItemPageGallery}
+        
+        {block:not_if-ItemPageGallery}
+        <div class="photoStage">
+            <a href="{ItemImage1URL-1280}" target="_blank" data-caption="{ItemTitle} [1/{ItemImageCount}]" data-author="">
+                <div class="imgPos">
+                    {block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}
+                    <img src="{block:ItemImage1}{ItemImage1URL-640}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}">
+                </div>
+            </a>
+        </div>	
+        {block:ItemImage2}
+        <div class="photoThumbs {select:ItemPageImageClm}">										
+            <ul>
+                <li><a href="{ItemImage2URL-1280}" target="_blank" data-caption="{ItemTitle} [2/{ItemImageCount}]" data-author=""><img src="{ItemImage2URL-300}" alt="{ItemTitle}"></a></li>
+                {block:ItemImage3}<li><a href="{ItemImage3URL-1280}" target="_blank" data-caption="{ItemTitle} [3/{ItemImageCount}]" data-author=""><img src="{ItemImage3URL-300}" alt=""></a></li>{/block:ItemImage3}
+                {block:ItemImage4}<li><a href="{ItemImage4URL-1280}" target="_blank" data-caption="{ItemTitle} [4/{ItemImageCount}]" data-author=""><img src="{ItemImage4URL-300}" alt=""></a></li>{/block:ItemImage4}
+                {block:ItemImage5}<li><a href="{ItemImage5URL-1280}" target="_blank" data-caption="{ItemTitle} [5/{ItemImageCount}]" data-author=""><img src="{ItemImage5URL-300}" alt=""></a></li>{/block:ItemImage5}
+                {block:ItemImage6}<li><a href="{ItemImage6URL-1280}" target="_blank" data-caption="{ItemTitle} [6/{ItemImageCount}]" data-author=""><img src="{ItemImage6URL-300}" alt=""></a></li>{/block:ItemImage6}
+                {block:ItemImage7}<li><a href="{ItemImage7URL-1280}" target="_blank" data-caption="{ItemTitle} [7/{ItemImageCount}]" data-author=""><img src="{ItemImage7URL-300}" alt=""></a></li>{/block:ItemImage7}
+                {block:ItemImage8}<li><a href="{ItemImage8URL-1280}" target="_blank" data-caption="{ItemTitle} [8/{ItemImageCount}]" data-author=""><img src="{ItemImage8URL-300}" alt=""></a></li>{/block:ItemImage8}
+                {block:ItemImage9}<li><a href="{ItemImage9URL-1280}" target="_blank" data-caption="{ItemTitle} [9/{ItemImageCount}]" data-author=""><img src="{ItemImage9URL-300}" alt=""></a></li>{/block:ItemImage9}
+                {block:ItemImage10}<li><a href="{ItemImage10URL-1280}" target="_blank" data-caption="{ItemTitle} [10/{ItemImageCount}]" data-author=""><img src="{ItemImage10URL-300}" alt=""></a></li>{/block:ItemImage10}
+                {block:ItemImage11}<li><a href="{ItemImage11URL-1280}" target="_blank" data-caption="{ItemTitle} [11/{ItemImageCount}]" data-author=""><img src="{ItemImage11URL-300}" alt=""></a></li>{/block:ItemImage11}
+                {block:ItemImage12}<li><a href="{ItemImage12URL-1280}" target="_blank" data-caption="{ItemTitle} [12/{ItemImageCount}]" data-author=""><img src="{ItemImage12URL-300}" alt=""></a></li>{/block:ItemImage12}
+                {block:ItemImage13}<li><a href="{ItemImage13URL-1280}" target="_blank" data-caption="{ItemTitle} [13/{ItemImageCount}]" data-author=""><img src="{ItemImage13URL-300}" alt=""></a></li>{/block:ItemImage13}
+                {block:ItemImage14}<li><a href="{ItemImage14URL-1280}" target="_blank" data-caption="{ItemTitle} [14/{ItemImageCount}]" data-author=""><img src="{ItemImage14URL-300}" alt=""></a></li>{/block:ItemImage14}
+                {block:ItemImage15}<li><a href="{ItemImage15URL-1280}" target="_blank" data-caption="{ItemTitle} [15/{ItemImageCount}]" data-author=""><img src="{ItemImage15URL-300}" alt=""></a></li>{/block:ItemImage15}
+                {block:ItemImage16}<li><a href="{ItemImage16URL-1280}" target="_blank" data-caption="{ItemTitle} [16/{ItemImageCount}]" data-author=""><img src="{ItemImage16URL-300}" alt=""></a></li>{/block:ItemImage16}
+                {block:ItemImage17}<li><a href="{ItemImage17URL-1280}" target="_blank" data-caption="{ItemTitle} [17/{ItemImageCount}]" data-author=""><img src="{ItemImage17URL-300}" alt=""></a></li>{/block:ItemImage17}
+                {block:ItemImage18}<li><a href="{ItemImage18URL-1280}" target="_blank" data-caption="{ItemTitle} [18/{ItemImageCount}]" data-author=""><img src="{ItemImage18URL-300}" alt=""></a></li>{/block:ItemImage18}
+                {block:ItemImage19}<li><a href="{ItemImage19URL-1280}" target="_blank" data-caption="{ItemTitle} [19/{ItemImageCount}]" data-author=""><img src="{ItemImage19URL-300}" alt=""></a></li>{/block:ItemImage19}
+                {block:ItemImage20}<li><a href="{ItemImage20URL-1280}" target="_blank" data-caption="{ItemTitle} [20/{ItemImageCount}]" data-author=""><img src="{ItemImage20URL-300}" alt=""></a></li>{/block:ItemImage20}
+            </ul>
+        </div>
+        {/block:ItemImage2}
+        {/block:not_if-ItemPageGallery}
+                            
+    </div>
+        
+</div><!-- item-photos-->
+
+
+<div id="item-action" class="right-top">
+    <h1 class="itemTitle">{ItemTitle}{block:ItemDigitalContent}<div class="filename"><span>{ItemDigitalContent}</span></div>{/block:ItemDigitalContent}</h1>
+
+    <div class="actionbox{block:if-ItemActionboxBg} bgTrue{/block:if-ItemActionboxBg}"><div class="actionbox-inner" id="spFloatPurchaseAncr">
+    
+    {block:NoSubscriptionInitialPrice}
+    <div class="priceBox"> 
+        {block:NoItemProperPrice}
+        <div id="price"><p>{ItemPrice}<span class="tax">{lang:IncludedTax}</span></p></div>
+        {/block:NoItemProperPrice}
+        {block:HasItemProperPrice}
+        <div class="discounted"><span class="properprice">{ItemProperPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+        <div id="price" class="discountprice"><p>{ItemPrice}<span class="tax">{lang:IncludedTax}</span></p></div>
+        {/block:HasItemProperPrice}
+    </div>
+    {/block:NoSubscriptionInitialPrice}
+
+    {block:HasSubscriptionInitialPrice}
+        <div class="subscriptionPrice initial">
+            <div class="labelBox">{lang:SubscriptionInitialPrice}</div>
+            <div class="priceBox">          
+                {block:NoSubscriptionInitialProperPrice}
+                <div id="price"><p>{SubscriptionInitialPrice}<span class="tax">{lang:IncludedTax}</span></p></div>
+                {/block:NoSubscriptionInitialProperPrice}
+
+                {block:HasSubscriptionInitialProperPrice}
+                <div class="discounted"><span class="properprice">{SubscriptionInitialProperPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+                <div id="price" class="discountprice"><p>{SubscriptionInitialPrice}<span class="tax">{lang:IncludedTax}</span></p></div>
+                {/block:HasSubscriptionInitialProperPrice}
+                </div>
+
+        </div>
+
+        <div class="subscriptionPrice repeat">
+            <div class="labelBox">{lang:SubscriptionRepeatPrice}</div>
+            <div class="priceBox">
+                {block:NoSubscriptionRepeatProperPrice}
+                <div id="price"><p>{SubscriptionRepeatPrice}<span class="tax">{lang:IncludedTax}</span></p></div>
+                {/block:NoSubscriptionRepeatProperPrice}
+
+                {block:HasSubscriptionRepeatProperPrice}
+                <div class="discounted"><span class="properprice">{SubscriptionRepeatProperPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+                <div id="price" class="discountprice"><p>{SubscriptionRepeatPrice}<span class="tax">{lang:IncludedTax}</span></p></div>
+                {/block:HasSubscriptionRepeatProperPrice}
+            </div>
+        </div>
+
+
+    {/block:HasSubscriptionInitialPrice}
+
+    {block:HasItemStock}<div class="stockStatus hasStock">
+        {block:ItemWaitingForSale}<p class="comingSoon">COMING SOON</p>{/block:ItemWaitingForSale}
+        {block:ItemEndOfSale}<span class="soldout">SOLD OUT</span>{/block:ItemEndOfSale}
+    </div>{/block:HasItemStock}
+    {block:NoItemStock}<div class="stockStatus noStock">
+        {block:ItemWaitingForSale}<p class="comingSoon">COMING SOON</p>{/block:ItemWaitingForSale}
+        {block:ItemNowOnSale}<span class="soldout">SOLD OUT</span>{/block:ItemNowOnSale}
+        {block:ItemEndOfSale}<span class="soldout">SOLD OUT</span>{/block:ItemEndOfSale}
+    </div>{/block:NoItemStock}	
+
+    {ItemBnplBannerTag}
+    {ItemAttentionTag}
+
+    {block:PurchaseForm}
+        {ItemSelectTag}
+        {AppsAgeVerificationWarningTag}
+        {block:ItemCommunityLimited}{CommunityPurchaseButton}{/block:ItemCommunityLimited}
+        {PurchaseButton}
+    {/block:PurchaseForm}
+    
+    </div></div>
+
+    {block:if-ItemDescShort}
+    <div id="item_detail" class="itemDescShort">
+        {block:text-ItemPageProductHeader}<h3>{text:ItemPageProductHeader}</h3>{/block:text-ItemPageProductHeader}
+        <p>{ItemDetail}</p>
+    </div>
+    {/block:if-ItemDescShort}
+        </div><!--item-action"-->
+
+<div id="item-content" class="left-bottom">
+    {block:not_if-ItemDescShort}
+    <div id="item_detail">
+        {block:text-ItemPageProductHeader}<h3>{text:ItemPageProductHeader}</h3>{/block:text-ItemPageProductHeader}
+        <p>{ItemDetail}</p>
+    </div>
+    {/block:not_if-ItemDescShort}
+
+    {block:AppsItemDetailCustom}
+    <section class="ItemDetailApp">
+        {AdditionalItemDetail}
+        {AdditionalItemDetailDefaultCssAndJs}
+    </section>
+    {/block:AppsItemDetailCustom}
+</div>
+</section>
+
+<div id="socialbox">
+<div class="sharebtn">
+    <div class="twitter"><a href="https://twitter.com/intent/tweet?url={ItemRedirectUrl}&amp;hashtags=BASEec" target="_blank"><img src="/img/shop/twicon.png">POST</a></div>
+    <div class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={ItemRedirectUrl}" target="_blank"><img src="/img/shop/fbicon.png">FACEBOOK</a></div>
+    <div class="line"><a href="https://social-plugins.line.me/lineit/share?url={ItemRedirectUrl}" target="_blank"><img src="/img/shop/lineicon.png">LINE</a></div>
+</div>
+</div>
+
+<div id="reportBtn">{IllegalReportTag}</div>
+</div><!--item_page_wrap-->
+
+<div id="item_page_wrap">
+
+{block:HasRelatedItems}
+<h3 id="relatedItems-title">{block:text-RelatedItemsTitle}{text:RelatedItemsTitle}{/block:text-RelatedItemsTitle}</h3>
+<div id="relatedItems" class="itemThumbClm3 clearfix">
+{block:RelatedItems}
+<div class="item-box">
+    <a href="{RelatedItemPageURL}">
+        <span class="item-thumb-wrap">
+        <span class="item-img__primary" style="background-image: url({RelatedItemImageURL-640})">
+        <img src="{RelatedItemImageURL-640}" alt="{ItemTitle}" title="{ItemTitle}" class="image-resize" />
+        </span>							  	
+        </span>
+        <div class="item-meta">
+            <div class="item-title">{RelatedItemTitle}</div>
+            <div class="item-price">{RelatedItemPrice}</div>
+        </div>
+    </a>
+</div>
+{/block:RelatedItems}
+</div>
+{/block:HasRelatedItems}	
+
+{block:if-itemFlowSaleItems}
+<div id="saleitemsBox">
+<h3 id="itemDetail-undersection">{text:itemFlowSaleItemsTitle}</h3>
+<div id="sale_items" class="splide itemflow" role="group" aria-label="Splide-SaleItems">
+<div class="splide__track">
+        <ul class="splide__list"></ul>
+</div>
+</div>
+</div>
+{/block:if-itemFlowSaleItems}
+
+{block:if-itemFlowViewHistory}
+<div id="viewhistoryBox">
+<h3 id="itemDetail-undersection">{text:itemFlowViewHistoryTitle}</h3>
+<div id="item_histories" class="splide itemflow" role="group" aria-label="Splide-ItemHistories">
+<div class="splide__track">
+        <ul class="splide__list"></ul>
+</div>
+</div>
+</div>
+{/block:if-itemFlowViewHistory}
+
+{block:AppsReview}
+<div id="reviews">{AppsReviewTag}</div>
+{/block:AppsReview}
+
+</div><!--item_page_wrap-->
+
+</div><!-- .mainArea-inner -->
+
+{block:if-ItemPageFloatPurchase}
+<div class="spFloatPurchaseBtn">
+<div class="inner">
+<a class="overwrapBtn" href="#spFloatPurchaseAncr"></a>
+{block:PurchaseForm}{PurchaseButton}{/block:PurchaseForm}
+</div></div>
+<script src="https://basefile.akamaized.net/ymtk/6724894ccc233/spFloatPurcBtn2.min.js"></script>
+{/block:if-ItemPageFloatPurchase}
+
+{/block:ItemPage}
+{/block:ShopPublic}
+
+{block:AboutPage}
+<div class="mainArea-inner">
+<div class="static_wrap" id="about">
+<div id="about">
+
+<div class="static pagetitle sHeading">
+    <h2>{block:not_text-PageTitleAbout}About{/block:not_text-PageTitleAbout}{block:text-PageTitleAbout}{text:PageTitleAbout}{/block:text-PageTitleAbout}</h2>
+</div>
+
+{block:not_if-AboutHeaderImgHeader}
+{block:image-AboutHeaderImg}<div class="aboutInnerHeader"><img src="{image:AboutHeaderImg}" alt="{ShopName}" class="radius" /></div>{/block:image-AboutHeaderImg}
+{/block:not_if-AboutHeaderImgHeader}
+
+<div class="shopbio">
+    <p>{ShopIntroduction}</p>
+    {block:text-AboutExtend}<p>{text:AboutExtend}</p>{/block:text-AboutExtend}
+</div>
+<div class="sociallinks">
+    <ul class="clearfix">
+        {block:ShopInstagramId}
+        <li><a href="https://instagram.com/{ShopInstagramId}" target="_blank"><img src="/img/shop/igicon.png" width="32"></a></li>
+        {/block:ShopInstagramId}
+        {block:ShopTwitterId}
+        <li class="tw"><a href="https://twitter.com/{ShopTwitterId}" target="_blank"><img src="/img/shop/twicon.png" width="32"></a></li>
+        {/block:ShopTwitterId}
+        {block:ShopLineId}
+        <li class="ln"><a href="https://line.me/R/ti/p/@{ShopLineId}" target="_blank"><img src="/img/shop/lineicon.png" width="32"></a></li>
+        {/block:ShopLineId}
+        {block:ShopFacebookId}
+        <li><a href="https://www.facebook.com/{ShopFacebookId}" target="_blank"><img src="/img/shop/fbicon.png" width="32"></a></li>
+        {/block:ShopFacebookId}
+        {block:ShopYoutubeId}
+        <li><a href="{ShopYoutubeId}" target="_blank"><img src="/img/shop/youtubeicon.png" width="32"></a></li>{/block:ShopYoutubeId}	
+        {block:ShopTiktokId}
+        <li><a href="https://tiktok.com/@{ShopTiktokId}" target="_blank"><img src="/img/shop/tiktokicon_black.png" width="32"></a></li>
+        {/block:ShopTiktokId}
+        {block:ShopNoteId}
+        <li><a href="https://note.com/{ShopNoteId}" target="_blank"><img src="/img/shop/noteicon.png" width="32"></a></li>
+        {/block:ShopNoteId}
+        {block:ShopAmebaId}
+        <li><a href="https://ameblo.jp/{ShopAmebaId}" target="_blank"><img src="/img/shop/ambicon.png" width="32"></a></li>
+        {/block:ShopAmebaId}	 
+    </ul>
+</div>
+
+{block:if-AboutHQ}
+    <div id="shopinfo">	
+        <h3>{text:AboutHeaderText}</h3>
+        <dl>
+            {block:text-AboutHQAddress}
+            <dt>所在地</dt><dd>{text:AboutHQAddress}</dd>
+            {/block:text-AboutHQAddress}
+            {block:text-AboutHQtel}
+            <dt>TEL</dt><dd>{text:AboutHQtel}</dd>
+            {/block:text-AboutHQtel}
+            {block:text-AboutHQhours}
+            <dt>営業時間</dt><dd>{text:AboutHQhours}</dd>
+            {/block:text-AboutHQhours}
+            {block:text-AboutHQholiday}
+            <dt>定休日</dt><dd>{text:AboutHQholiday}</dd>
+            {/block:text-AboutHQholiday}
+            {block:text-AboutHQemail}
+            <dt>Email</dt><dd>{text:AboutHQemail}</dd>
+            {/block:text-AboutHQemail}
+        </dl>
+    </div>
+
+    {block:text-AboutHQgmapcode}
+    <div id="access" class="gmap">
+        {block:text-AboutHQaccessHeader}<h3>{text:AboutHQaccessHeader}</h3>{/block:text-AboutHQaccessHeader}
+        <p>{text:AboutHQaccess}</p>
+        {block:text-AboutHQgmapcode}
+            <div class="embedcode">{text:AboutHQgmapcode}</div>
+        {/block:text-AboutHQgmapcode}
+    </div>
+    {/block:text-AboutHQgmapcode}
+
+{/block:if-AboutHQ}	
+
+{block:text-PaymentHeader}
+<div id="payment">
+<h3>{text:PaymentHeader}</h3>
+{text:PaymentBody}		
+    <ul>
+        {block:if-PaymentCredit}<li class="credit"><span>クレジットカード</span><img src="https://basefile.akamaized.net/ymtk/658278a0cf3df/visa.png" alt="VISA" class="creditlogo visa" /><img src="https://basefile.akamaized.net/ymtk/658278b4c2b36/mastercard.png" alt="MasterCard" class="creditlogo master" /><img src="https://basefile.akamaized.net/ymtk/658278be11ae8/jcb.png" alt="JCB" class="creditlogo jcb" /><img src="https://basefile.akamaized.net/ymtk/658278c70e934/amex.png" alt="AMEX" class="creditlogo amex" /><img src="https://basefile.akamaized.net/ymtk/680aec1bd7495/logo_diners_club.png" alt="Diners Club" class="creditlogo diners" /></li>{/block:if-PaymentCredit}
+        {block:if-PaymentPayID}<li class="payID"><span>PAY ID あと払い</span><img src="https://basefile.akamaized.net/ymtk/69fc0422cb799/payid.png" alt="PAY ID 翌月あと払い/PAY ID 3回あと払い）" /></li>{/block:if-PaymentPayID}
+        {block:if-PaymentCarrier}<li class="carrier"><span>キャリア決済</span>
+        <div>
+        <img src="https://basefile.akamaized.net/ymtk/641c0f69cd558/carrier_docomo.png" alt="ドコモ d払い" />
+        <img src="https://basefile.akamaized.net/ymtk/694520b1a98b5/carrier_aupay.png" alt="au pay （auかんたん決済）" />
+        <img src="https://basefile.akamaized.net/ymtk/5e34e4e532f57/carrier_softbank.png" alt="ソフトバンクまとめて支払い・ワイモバイルまとめて支払い" />
+        </div></li>
+        {/block:if-PaymentCarrier}
+        {block:if-PaymentBank}<li class="bank"><span>銀行振込</span><img src="https://basefile.akamaized.net/ymtk/5cf87f5ce2f17/bank_smbc.png" alt="銀行振込" /></li>{/block:if-PaymentBank}
+        {block:if-PaymentCombini}<li class="combini"><span>コンビニ決済・Pay-easy</span><img src="https://basefile.akamaized.net/ymtk/5cf87f77efaf5/combini.png" alt="コンビニ決済・Pay-easy" /></li>{/block:if-PaymentCombini}
+        {block:if-PaymentPayPay}<li class="paypay"><span>PayPay</span><img src="https://basefile.akamaized.net/ymtk/697c9da697dc6/paypay.png" alt="PayPay" /></li>{/block:if-PaymentPayPay}
+        {block:if-PaymentAmznPay}<li class="amznpay"><span>Amazon Pay</span><img src="https://basefile.akamaized.net/ymtk/6051b5a94bc37/amznpay.png" alt="Amazon Pay" /></li>{/block:if-PaymentAmznPay}
+        {block:if-PaymentPayPal}<li class="paypal"><span>PayPal決済</span><img src="https://basefile.akamaized.net/ymtk/63158145d46de/paypal.png" alt="PayPal" /></li>{/block:if-PaymentPayPal}
+        <!-- {block:if-PaymentPaylater}<li class="paylater"><span>代金後払い</span><img src="https://basefile.akamaized.net/ymtk/5e34e556dcd5c/later_logos.png" alt="後払い" /></li>{/block:if-PaymentPaylater} -->
+    </ul>	
+</div>
+{/block:text-PaymentHeader}
+
+{block:text-ShippingHeader}
+<div id="shipping">
+<h3>{text:ShippingHeader}</h3>
+{text:ShippingBody}
+</div>
+{/block:text-ShippingHeader}
+
+{block:if-AboutBranch}
+<div id="branchStores">
+    <h3>{text:AboutBranchTitle}</h3>
+    
+    <div class="branchList {block:image-AboutBranchHQimg} withImg{/block:image-AboutBranchHQimg}{block:not_image-AboutBranchHQimg} withoutImg{/block:not_image-AboutBranchHQimg}">
+    
+        {block:text-AboutBranchHQname}
+        <div class="branchSet branchHQ">
+            {block:image-AboutBranchHQimg}<div class="storeImg">
+                <span><img src="{image:AboutBranchHQimg}" class="radius" alt="" ></span>
+            </div>
+            {/block:image-AboutBranchHQimg}
+            <div class="storeInfo">
+                <h4>{text:AboutBranchHQname}</h4>
+                <dl>
+                    {block:text-AboutHQAddress}
+                    <dt>所在地</dt><dd>{text:AboutHQAddress}</dd>
+                    {/block:text-AboutHQAddress}
+                    {block:text-AboutHQtel}
+                    <dt>TEL</dt><dd>{text:AboutHQtel}</dd>
+                    {/block:text-AboutHQtel}
+                    {block:text-AboutHQhours}
+                    <dt>営業時間</dt><dd>{text:AboutHQhours}</dd>
+                    {/block:text-AboutHQhours}
+                    {block:text-AboutHQholiday}
+                    <dt>定休日</dt><dd>{text:AboutHQholiday}</dd>
+                    {/block:text-AboutHQholiday}
+                    {block:text-AboutHQemail}
+                    <dt>Email</dt><dd>{text:AboutHQemail}</dd>
+                    {/block:text-AboutHQemail}
+                </dl>
+                <div class="shopAccountLinks">{block:text-AboutBranchHQgmaplink}<span class="gmapLink"><a href="{text:AboutBranchHQgmaplink}" target="_blank" class="gmapLinkBtn">Map</a></span>{/block:text-AboutBranchHQgmaplink} <span class="snsicons">{block:ShopInstagramId}<a href="https://instagram.com/{ShopInstagramId}" target="_blank"><img src="/img/shop/igicon.png" width="32"></a>{/block:ShopInstagramId}{block:ShopLineId} <a href="https://line.me/R/ti/p/@{ShopLineId}" target="_blank"><img src="/img/shop/lineicon.png" width="32"></a>{/block:ShopLineId}</span></div>
+                {block:text-AboutHQaccess}<p class="accessText">{text:AboutHQaccess}</p>{/block:text-AboutHQaccess}
+            </div>
+        </div>
+        {/block:if-AboutBranchHQname}
+
+        {block:text-AboutBranch02name}
+        <div class="branchSet branchHQ">
+            {block:image-AboutBranch02img}<div class="storeImg">
+                <span><img src="{image:AboutBranch02img}" class="radius" alt="" ></span>
+            </div>
+            {/block:image-AboutBranch02img}
+            <div class="storeInfo">
+                <h4>{text:AboutBranch02name}</h4>
+                <dl>
+                    {block:text-AboutBranch02addres}
+                    <dt>所在地</dt><dd>{text:AboutBranch02addres}</dd>
+                    {/block:text-AboutBranch02addres}
+                    {block:text-AboutBranch02tel}
+                    <dt>TEL</dt><dd>{text:AboutBranch02tel}</dd>
+                    {/block:text-AboutBranch02tel}
+                    {block:text-AboutBranch02hours}
+                    <dt>営業時間</dt><dd>{text:AboutBranch02hours}</dd>
+                    {/block:text-AboutBranch02hours}
+                    {block:text-AboutBranch02holiday}
+                    <dt>定休日</dt><dd>{text:AboutBranch02holiday}</dd>
+                    {/block:text-AboutBranch02holiday}
+                    {block:text-AboutBranch02email}
+                    <dt>Email</dt><dd>{text:AboutBranch02email}</dd>
+                    {/block:text-AboutBranch02email}
+                </dl>
+                <div class="shopAccountLinks">{block:text-AboutBranch02gmaplink}<span class="gmapLink"><a href="{text:AboutBranch02gmaplink}" target="_blank" class="gmapLinkBtn">Map</a></span>{/block:text-AboutBranch02gmaplink} <span class="snsicons">{block:text-AboutBranch02instaID}<a href="https://instagram.com/{text:AboutBranch02instaID}" target="_blank"><img src="/img/shop/igicon.png" width="32"></a>{/block:text-AboutBranch02instaID}{block:text-AboutBranch02lineID} <a href="https://line.me/R/ti/p/@{text:AboutBranch02lineID}" target="_blank"><img src="/img/shop/lineicon.png" width="32"></a>{/block:text-AboutBranch02lineID}</span></div>
+                {block:text-AboutBranch02access}<p class="accessText">{text:AboutBranch02access}</p>{/block:text-AboutBranch02access}
+            </div>
+        </div>
+        {/block:if-AboutBranch02name}
+
+        {block:text-AboutBranch03name}
+        <div class="branchSet branchHQ">
+            {block:image-AboutBranch03img}<div class="storeImg">
+                <span><img src="{image:AboutBranch03img}" class="radius" alt="" ></span>
+            </div>
+            {/block:image-AboutBranch03img}
+            <div class="storeInfo">
+                <h4>{text:AboutBranch03name}</h4>
+                <dl>
+                    {block:text-AboutBranch03addres}
+                    <dt>所在地</dt><dd>{text:AboutBranch03addres}</dd>
+                    {/block:text-AboutBranch03addres}
+                    {block:text-AboutBranch03tel}
+                    <dt>TEL</dt><dd>{text:AboutBranch03tel}</dd>
+                    {/block:text-AboutBranch03tel}
+                    {block:text-AboutBranch03hours}
+                    <dt>営業時間</dt><dd>{text:AboutBranch03hours}</dd>
+                    {/block:text-AboutBranch03hours}
+                    {block:text-AboutBranch03holiday}
+                    <dt>定休日</dt><dd>{text:AboutBranch03holiday}</dd>
+                    {/block:text-AboutBranch03holiday}
+                    {block:text-AboutBranch03email}
+                    <dt>Email</dt><dd>{text:AboutBranch03email}</dd>
+                    {/block:text-AboutBranch03email}
+                </dl>
+                <div class="shopAccountLinks">{block:text-AboutBranch03gmaplink}<span class="gmapLink"><a href="{text:AboutBranch03gmaplink}" target="_blank" class="gmapLinkBtn">Map</a></span>{/block:text-AboutBranch03gmaplink} <span class="snsicons">{block:text-AboutBranch03instaID}<a href="https://instagram.com/{text:AboutBranch03instaID}" target="_blank"><img src="/img/shop/igicon.png" width="32"></a>{/block:text-AboutBranch03instaID}{block:text-AboutBranch03lineID} <a href="https://line.me/R/ti/p/@{text:AboutBranch03lineID}" target="_blank"><img src="/img/shop/lineicon.png" width="32"></a>{/block:text-AboutBranch03lineID}</span></div>
+                {block:text-AboutBranch03access}<p class="accessText">{text:AboutBranch03access}</p>{/block:text-AboutBranch03access}
+            </div>
+        </div>
+        {/block:if-AboutBranch03name}
+
+        {block:text-AboutBranch04name}
+        <div class="branchSet branchHQ">
+            {block:image-AboutBranch04img}<div class="storeImg">
+                <span><img src="{image:AboutBranch04img}" class="radius" alt="" ></span>
+            </div>
+            {/block:image-AboutBranch04img}
+            <div class="storeInfo">
+                <h4>{text:AboutBranch04name}</h4>
+                <dl>
+                    {block:text-AboutBranch04addres}
+                    <dt>所在地</dt><dd>{text:AboutBranch04addres}</dd>
+                    {/block:text-AboutBranch04addres}
+                    {block:text-AboutBranch04tel}
+                    <dt>TEL</dt><dd>{text:AboutBranch04tel}</dd>
+                    {/block:text-AboutBranch04tel}
+                    {block:text-AboutBranch04hours}
+                    <dt>営業時間</dt><dd>{text:AboutBranch04hours}</dd>
+                    {/block:text-AboutBranch04hours}
+                    {block:text-AboutBranch04holiday}
+                    <dt>定休日</dt><dd>{text:AboutBranch04holiday}</dd>
+                    {/block:text-AboutBranch04holiday}
+                    {block:text-AboutBranch04email}
+                    <dt>Email</dt><dd>{text:AboutBranch04email}</dd>
+                    {/block:text-AboutBranch04email}
+                </dl>
+                <div class="shopAccountLinks">{block:text-AboutBranch04gmaplink}<span class="gmapLink"><a href="{text:AboutBranch04gmaplink}" target="_blank" class="gmapLinkBtn">Map</a></span>{/block:text-AboutBranch04gmaplink} <span class="snsicons">{block:text-AboutBranch04instaID}<a href="https://instagram.com/{text:AboutBranch04instaID}" target="_blank"><img src="/img/shop/igicon.png" width="32"></a>{/block:text-AboutBranch04instaID}{block:text-AboutBranch04lineID} <a href="https://line.me/R/ti/p/@{text:AboutBranch04lineID}" target="_blank"><img src="/img/shop/lineicon.png" width="32"></a>{/block:text-AboutBranch04lineID}</span></div>
+                {block:text-AboutBranch04access}<p class="accessText">{text:AboutBranch04access}</p>{/block:text-AboutBranch04access}
+            </div>
+        </div>
+        {/block:if-AboutBranch04name}
+    </div>
+</div>
+{/block:if-AboutBranch}
+
+{block:text-FaqHeader}
+<div id="faq">
+    <h3>{text:FaqHeader}</h3>
+    <div class="faqList">
+        {block:text-Faq01}<dl>
+            <dt><span>Q.</span>{text:Faq01}</dt>
+            <dd>{text:Faq01Ans}</dd>
+        </dl>{/block:text-Faq01}
+        {block:text-Faq02}<dl>
+            <dt><span>Q.</span>{text:Faq02}</dt>
+            <dd>{text:Faq02Ans}</dd>
+        </dl>{/block:text-Faq02}
+        {block:text-Faq03}<dl>
+            <dt><span>Q.</span>{text:Faq03}</dt>
+            <dd>{text:Faq03Ans}</dd>
+        </dl>{/block:text-Faq03}
+        {block:text-Faq04}<dl>
+            <dt><span>Q.</span>{text:Faq04}</dt>
+            <dd>{text:Faq04Ans}</dd>
+        </dl>{/block:text-Faq04}
+        {block:text-Faq05}<dl>
+            <dt><span>Q.</span>{text:Faq05}</dt>
+            <dd>{text:Faq05Ans}</dd>
+        </dl>{/block:text-Faq05}
+    </div>
+</div>
+{/block:text-FaqHeader}
+
+</div>
+</div>
+</div><!--.mainArea-inner -->
+{/block:AboutPage}
+
+{block:ContactPage}
+<div class="mainArea-inner">
+<div class="static_wrap" id="contact">{PageContents}</div>
+</div>
+{/block:ContactPage}
+
+{block:PrivacyPage}
+<div class="mainArea-inner">
+<div class="static_wrap" id="privacy">{PageContents}</div>
+</div>
+{/block:PrivacyPage}
+
+{block:LawPage}
+<div class="mainArea-inner">
+<div class="static_wrap" id="law">{PageContents}</div>
+</div>
+{/block:LawPage}
+
+{block:BlogPage}
+<div class="mainArea-inner">
+<div class="blogtitle pagetitle sHeading">
+<h2>{block:not_text-PageTitleBlog}Blog{/block:not_text-PageTitleBlog}{block:text-PageTitleBlog}{text:PageTitleBlog}{/block:text-PageTitleBlog}</h2>
+</div>
+<div class="static_wrap{block:not_if-BlogNewsDate} hideDate{/block:not_if-BlogNewsDate}" id="blog">{PageContents}</div>
+<div class="blogtop"><a href="{IndexPageURL}/blog/" class="button">{block:not_text-PageTitleBlog}ブログ{/block:not_text-PageTitleBlog}{block:text-PageTitleBlog}{text:PageTitleBlog}{/block:text-PageTitleBlog}トップへ</a></div>
+</div>
+{/block:BlogPage}
+
+{block:CommunityPage}
+<div class="mainArea-inner">
+<div class="static_wrap" id="community">{PageContents}</div>
+</div>
+{/block:CommunityPage}
+
+{block:MembershipPage}
+<div class="mainArea-inner">
+<div class="static pagetitle">
+<h2>{text:PageTitleMembership}</h2>
+</div>
+<div class="static_wrap">
+{PageContents}
+</div>
+</div>
+{/block:MembershipPage}
+{block:MembershipMyPage}
+<div class="mainArea-inner">
+<div class="static pagetitle">
+<h2>{text:PageTitleMembership}</h2>
+</div>
+<div class="static_wrap">
+{PageContents}
+</div>
+</div>
+{/block:MembershipMyPage}
+{block:MembershipLoginPage}
+<div class="mainArea-inner">
+<div class="static pagetitle">
+<h2>{text:PageTitleMembership}</h2>
+</div>
+<div class="static_wrap">{PageContents}</div>
+</div>
+{/block:MembershipLoginPage}
+
+<input id="base_url" type="hidden" value="{ShopURL}" />
+
+{block:IndexPage}
+{block:NoIndexPageSearch}
+{block:NoIndexPageCategory}
+
+{block:AppsBlog}{block:if-ActivateBlogNews}{block:not_if-BlogAsPage}
+<div id="rssbox" class="{block:not_if-BlogNewsDate}hideDate{/block:not_if-BlogNewsDate}">
+{block:text-BlogNewsTitle}<div class="sHeading">
+{block:text-BlogNewsTitleSub}<span>{text:BlogNewsTitleSub}</span>{/block:text-BlogNewsTitleSub}
+{block:text-BlogNewsTitle}<h2>{text:BlogNewsTitle}</h2> {/block:text-BlogNewsTitle}
+</div>{/block:text-BlogNewsTitle}
+<div id="rss" class="clearfix"></div>
+<div class="viewall"><a href="{BlogPageURL}" class="arrow">{block:not_text-PageTitleBlog}ブログ{/block:not_text-PageTitleBlog}{block:text-PageTitleBlog}{text:PageTitleBlog}{/block:text-PageTitleBlog}トップへ</a></div>
+</div>
+{/block:not_if-BlogAsPage}{/block:if-ActivateBlogNews}{/block:AppsBlog}
+
+{/block:NoIndexPageCategory}
+{/block:NoIndexPageSearch}
+{/block:IndexPage}
+
+</div><!--mainArea-->
+</div><!--contentWrapper-inner-->{block:if-WhiteBg}</div>{/block:if-WhiteBg}
+
+{block:text-InstagramFeed}<div id="instagramfeed"><div class="widthfix">
+{text:InstagramFeed}
+</div></div>{/block:text-InstagramFeed}
+
+<div id="pagetop"><div class="filler"><a href="#"><span class="material-icons">vertical_align_top</span>ページトップへ</a></div></div>
+
+{block:if-Utility}
+<footer id="mainFooter" class="nav-footer"><div class="filler">
+<div id="utilities">
+
+<div class="utilityG1">
+{block:if-UtilityCalendar}{block:not_if-UtilityCalendarPos}<div class="utility">
+{block:text-UtilityCalendarHeader}<h3>{text:UtilityCalendarHeader}</h3>{/block:text-UtilityCalendarHeader}
+<div id="calendarContainer" class="{block:if-UtilityCalendarColor}colored{/block:if-UtilityCalendarColor}{block:not_if-UtilityCalendarColor}white{/block:not_if-UtilityCalendarColor}" data-closed-days="{text:CalendarClosedDay}" data-closed-weekly="{text:CalendarClosedWeekly}"></div>
+<p class="legend"><span class="today"></span>：本日　<span class="closed"></span>：{text:CalendarMarkerLegend}</p>
+<script src="https://basefile.akamaized.net/ymtk/692f7b4a2fcbe/calendar2.min.js"></script>
+</div>{/block:not_if-UtilityCalendarPos}{/block:if-UtilityCalendar}			
+
+{block:if-UtilityShipping}
+<div class="utility shipping">	
+<h3>{text:ShippingHeader}</h3>
+<div class="banner"><div class="deliveryicon {select:UtilityShippingIconStyle}">
+    <h4>{text:UtilityShippingTagline}</h4>
+        <p>{text:UtilityShippingText}</p>
+</div></div>
+<p class="read_more"><a href="{AboutPageURL}#shipping">詳しい送料はこちら</a></p>
+</div>
+{/block:if-UtilityShipping}
+
+{block:if-UtilityPayment}
+<div class="utility payment">
+<h3>お支払い方法について</h3>
+{block:not_if-UtilityPaymentLogo}
+<ul class="paymentLogos">
+{block:if-PaymentCredit}<li class="credit"><img src="https://basefile.akamaized.net/ymtk/658278a0cf3df/visa.png" alt="VISA" class="creditlogo visa" /><img src="https://basefile.akamaized.net/ymtk/658278b4c2b36/mastercard.png" alt="MasterCard" class="creditlogo master" /><img src="https://basefile.akamaized.net/ymtk/658278be11ae8/jcb.png" alt="JCB" class="creditlogo jcb" /><img src="https://basefile.akamaized.net/ymtk/658278c70e934/amex.png" alt="AMEX" class="creditlogo amex" /><img src="https://basefile.akamaized.net/ymtk/680aec1bd7495/logo_diners_club.png" alt="Diners Club" class="creditlogo diners" /></li>{/block:if-PaymentCredit}
+{block:if-PaymentPayID}<li class="payID"><img src="https://basefile.akamaized.net/ymtk/69fc0422cb799/payid.png" alt="PAY ID 翌月あと払い/PAY ID 3回あと払い）" /></li>{/block:if-PaymentPayID}
+{block:if-PaymentPayPay}<li class="paypay"><img src="https://basefile.akamaized.net/ymtk/697c9da697dc6/paypay.png" alt="PayPay" /></li>{/block:if-PaymentPayPay}
+{block:if-PaymentAmznPay}<li class="amznpay"><img src="https://basefile.akamaized.net/ymtk/6051b5a94bc37/amznpay.png" alt="Amazon Pay" /></li>{/block:if-PaymentAmznPay}
+{block:if-PaymentPayPal}<li class="paypal"><img src="https://basefile.akamaized.net/ymtk/63158145d46de/paypal.png" alt="PayPal" /></li>{/block:if-PaymentPayPal}
+{block:if-PaymentCarrier}<li class="carrier"><span>キャリア決済</span></li>{/block:if-PaymentCarrier}
+{block:if-PaymentCombini}<li class="combini"><span>コンビニ・Pay-easy</span></li>{/block:if-PaymentCombini}
+{block:if-PaymentBank}<li class="bank"><span>銀行振込</span></li>{/block:if-PaymentBank}
+</ul>
+{/block:not_if-UtilityPaymentLogo}
+{block:if-UtilityPaymentLogo}
+<ul>
+    {block:if-PaymentCredit}<li class="credit"><span>クレジットカード</span><img src="https://basefile.akamaized.net/ymtk/658278a0cf3df/visa.png" alt="VISA" class="creditlogo visa" /><img src="https://basefile.akamaized.net/ymtk/658278b4c2b36/mastercard.png" alt="MasterCard" class="creditlogo master" /><img src="https://basefile.akamaized.net/ymtk/658278be11ae8/jcb.png" alt="JCB" class="creditlogo jcb" /><img src="https://basefile.akamaized.net/ymtk/658278c70e934/amex.png" alt="AMEX" class="creditlogo amex" /><img src="https://basefile.akamaized.net/ymtk/680aec1bd7495/logo_diners_club.png" alt="Diners Club" class="creditlogo diners" /></li>{/block:if-PaymentCredit}
+    {block:if-PaymentPayID}<li class="payID"><span>PAY ID あと払い</span></li>{/block:if-PaymentPayID}
+    {block:if-PaymentPayPay}<li class="paypay"><span>PayPay</span></li>{/block:if-PaymentPayPay}
+    {block:if-PaymentCarrier}<li class="carrier"><span>キャリア決済</span></li>{/block:if-PaymentCarrier}
+    {block:if-PaymentCombini}<li class="combini"><span>コンビニ・Pay-easy</span></li>{/block:if-PaymentCombini}
+    {block:if-PaymentAmznPay}<li class="amznpay"><span>Amazon Pay</span></li>{/block:if-PaymentAmznPay}
+    {block:if-PaymentPayPal}<li class="paypal"><span>PayPal決済</span></li>{/block:if-PaymentPayPal}
+    {block:if-PaymentBank}<li class="bank"><span>銀行振込</span></li>{/block:if-PaymentBank}
+    <!-- {block:if-PaymentPaylater}<li class="paylater"><span>代金後払い（コンビニ/Line Pay）</span></li>{/block:if-PaymentPaylater} -->
+</ul>
+{/block:if-UtilityPaymentLogo}
+
+<p class="read_more"><a href="{AboutPageURL}#payment">詳しいお支払方法のご案内</a></p>
+</div>
+{/block:if-UtilityPayment}
+
+{block:image-UtilityBanner01}{block:not_if-UtilityBanner01Pos}
+<div class="utility imgbanner">
+{block:text-UtilityBanner01-url}<a href="{text:UtilityBanner01-url}">{/block:text-UtilityBanner01-url}<img src="{image:UtilityBanner01}" alt="" />{block:text-UtilityBanner01-url}</a>{/block:text-UtilityBanner01-url}
+</div>
+{/block:not_if-UtilityBanner01Pos}{/block:image-UtilityBanner01}
+</div>
+
+<div class="utilityG2">
+
+{block:if-UtilityCalendar}{block:if-UtilityCalendarPos}<div class="utility">
+{block:text-UtilityCalendarHeader}<h3>{text:UtilityCalendarHeader}</h3>{/block:text-UtilityCalendarHeader}
+<div id="calendarContainer"  class="{block:if-UtilityCalendarColor}colored{/block:if-UtilityCalendarColor}{block:not_if-UtilityCalendarColor}white{/block:not_if-UtilityCalendarColor}" data-closed-days="{text:CalendarClosedDay}" data-closed-weekly="{text:CalendarClosedWeekly}"></div>
+<p class="legend"><span class="today"></span>：本日　<span class="closed"></span>：{text:CalendarMarkerLegend}</p>
+<script src="https://basefile.akamaized.net/ymtk/692f7b4a2fcbe/calendar2.min.js"></script>
+</div>{/block:if-UtilityCalendarPos}{/block:if-UtilityCalendar}
+
+{block:if-UtilityAbout}
+<div class="utility realstore">
+    <h3>{text:AboutHeaderText}</h3>
+    {block:image-AboutHeaderImg}<a href="{AboutPageURL}" title="{ShopName}:{text:AboutHeaderText}" id="retailstoreImg" style="background-image: url({image:AboutHeaderImg})"></a>{/block:image-AboutHeaderImg}
+    <dl>
+        {block:text-AboutHQAddress}
+        <dt>所在地</dt><dd>{text:AboutHQAddress}</dd>
+        {/block:text-AboutHQAddress}
+        {block:text-AboutHQtel}
+        <dt>TEL</dt><dd>{text:AboutHQtel}</dd>
+        {/block:text-AboutHQtel}
+        {block:text-AboutHQhours}
+        <dt>営業時間</dt><dd>{text:AboutHQhours}</dd>
+        {/block:text-AboutHQhours}
+        {block:text-AboutHQholiday}
+        <dt>定休日</dt><dd>{text:AboutHQholiday}</dd>
+        {/block:text-AboutHQholiday}
+        {block:text-AboutHQemail}
+        <dt>Email</dt><dd>{text:AboutHQemail}</dd>
+        {/block:text-AboutHQemail}
+    </dl>
+{block:if-AboutHQ}<p class="read_more"><a href="{AboutPageURL}#shopinfo">{text:AboutHeaderText}</a></p>{/block:if-AboutHQ}
+{block:if-AboutBranch}<p class="read_more"><a href="{AboutPageURL}#branchStores">{text:AboutBranchTitle}</a></p>{/block:if-AboutBranch}
+</div>
+{/block:if-UtilityAbout}
+
+{block:image-UtilityBanner01}{block:if-UtilityBanner01Pos}
+<div class="utility imgbanner">
+{block:text-UtilityBanner01-url}<a href="{text:UtilityBanner01-url}">{/block:text-UtilityBanner01-url}<img src="{image:UtilityBanner01}">{block:text-UtilityBanner01-url}</a>{/block:text-UtilityBanner01-url}
+</div>
+{/block:if-UtilityBanner01Pos}{/block:image-UtilityBanner01}
+
+{block:if-UtilitySocialLink}
+<div class="utility sociallinks">
+<ul class="clearfix">
+    {block:ShopInstagramId}
+    <li><a href="https://instagram.com/{ShopInstagramId}" target="_blank"><img src="/img/shop/igicon.png" width="32"></a></li>
+    {/block:ShopInstagramId}
+    {block:ShopTwitterId}
+    <li class="tw"><a href="https://twitter.com/{ShopTwitterId}" target="_blank"><img src="/img/shop/twicon.png" width="32"></a></li>
+    {/block:ShopTwitterId}
+    {block:ShopLineId}
+    <li class="ln"><a href="https://line.me/R/ti/p/@{ShopLineId}" target="_blank"><img src="/img/shop/lineicon.png" width="32"></a></li>
+    {/block:ShopLineId}
+    {block:ShopFacebookId}
+    <li><a href="https://www.facebook.com/{ShopFacebookId}" target="_blank"><img src="/img/shop/fbicon.png" width="32"></a></li>
+    {/block:ShopFacebookId}
+    {block:ShopYoutubeId}
+    <li><a href="{ShopYoutubeId}" target="_blank"><img src="/img/shop/youtubeicon.png" width="32"></a></li>{/block:ShopYoutubeId}	
+    {block:ShopTiktokId}
+    <li><a href="https://tiktok.com/@{ShopTiktokId}" target="_blank"><img src="/img/shop/tiktokicon_black.png" width="32"></a></li>
+    {/block:ShopTiktokId}
+    {block:ShopNoteId}
+    <li><a href="https://note.com/{ShopNoteId}" target="_blank"><img src="/img/shop/noteicon.png" width="32"></a></li>
+    {/block:ShopNoteId}
+    {block:ShopAmebaId}
+    <li><a href="https://ameblo.jp/{ShopAmebaId}" target="_blank"><img src="/img/shop/ambicon.png" width="32"></a></li>
+    {/block:ShopAmebaId}	 
+</ul>
+</div>
+{/block:if-UtilitySocialLink}
+
+</div>
+
+</div>
+
+</div></footer>
+{/block:if-Utility}
+{block:AppsMailMagazine}{block:if-MailMagOnFooter}
+<div class="mailMagazine"><div class="filler">
+<div class="onpaper">
+<h3><span class="material-symbols-outlined">mail</span>{text:MailMagHeader}</h3>
+<p>{text:MailMagDescription}</p>
+{MailMagazineSubscribeTag}
+</div>
+</div></div>
+{/block:if-MailMagOnFooter}{/block:AppsMailMagazine}
+
+{block:if-openLine}
+<div id="openLine">
+<div class="line_startButton"><a href="https://line.me/R/ti/p/@{ShopLineId}" target="_blank"><span class="line_startButton__icon"></span><span class="line_startButton__text">LINE公式アカウント</span></a></div>
+</div>{/block:if-openLine}
+
+<div class="footerbar"><div class="widthfix">
+<div class="footernav">
+<ul class="pagenav">
+<li class="top"><a href="{ShopURL}">HOME</a></li>
+<li class="about"><a href="{AboutPageURL}">{block:not_text-PageTitleAbout}About Us{/block:not_text-PageTitleAbout}{block:text-PageTitleAbout}{text:PageTitleAbout}{/block:text-PageTitleAbout}</a></li>
+{block:AppsBlog}
+<li class="blog"><a href="{BlogPageURL}">{block:not_text-PageTitleBlog}Blog{/block:not_text-PageTitleBlog}{block:text-PageTitleBlog}{text:PageTitleBlog}{/block:text-PageTitleBlog}</a></li>
+{/block:AppsBlog}
+<li class="contact"><a href="{ContactPageURL}">Contact Us</a></li>
+{block:AppsMembership}<li class="membership"><a href="https://thebase.com/pages/shop_membership_term">会員規約</a></li>{/block:AppsMembership}
+<li class="privacy"><a href="{PrivacyPageURL}">{lang:Privacy}</a></li>
+<li class="law"><a href="{LawPageURL}">{lang:Law}</a></li>			
+</ul>
+<div class="footerFunc">
+{block:AppsI18n}<div class="langSelect">{AppsI18nTag}</div>{/block:AppsI18n}
+{BASEMenuTag}
+</div>
+</div>
+<address> Copyright &copy; {ShopName}. All Rights Reserved.</address>
+</div></div>
+</div><!--contentWrapper-->
+
+<!-- DRAWER NAVIGATION-->
+<input type="checkbox" id="drawer">
+<label for="drawer" class="open"><span></span><p></p></label>
+<label for="drawer" class="close"></label>
+
+<div class="drawerWrapper {select:sideAreaNavSize}">
+{block:if-drawerLogo}<div id="logo" class="{select:LogoFontJP} {select:LogoFontWeight} {select:LogoFontSpace}"><a href="{ShopURL}">{block:not_image-TransparentLogo}{LogoTag}{/block:not_image-TransparentLogo}{block:image-TransparentLogo}<img src="{image:TransparentLogo}" alt="{ShopName}" />{/block:image-TransparentLogo}</a></div>{/block:if-drawerLogo}
+<div class="sideArea-inner">
+<div class="menu-container">
+<ul class="drawerIconNav">
+<li class="home"><a href="{ShopURL}"><span class="material-symbols-outlined">home</span></a></li>
+<li class="info"><a href="{AboutPageURL}"><span class="material-symbols-outlined">info</span></a></li>
+{block:AppsMembership}<li class="member"><a href="{MembershipMyPageURL}"><span class="material-icons">person </span></a></li>{/block:AppsMembership}
+<li class="cartIcon {select:cartIconStyle}">{BASEMenuTag}</li>
+</ul>
+
+{block:AppsItemCategory}
+<div class="categoryNav{block:if-CategoryNavIcon} iconTrue{/block:if-CategoryNavIcon} {select:sideAreaNavWeight}">
+{block:text-CategoryNavHeader}<h3>{text:CategoryNavHeader}</h3>{/block:text-CategoryNavHeader}
+<div class="accordion-wrapper">
+{block:AppsItemCategoryCategories}
+<input id="drawer-accordion-check{AppsItemCategoryCategoryName}" class="accordion-check" type="checkbox">
+<label class="accordion-label{block:HasAppsItemCategoryMediumCategories} hasChild{/block:HasAppsItemCategoryMediumCategories}" for="drawer-accordion-check{AppsItemCategoryCategoryName}"><a href="{AppsItemCategoryCategoryPageURL}">{block:if-CategoryNavIcon}<i></i>{/block:if-CategoryNavIcon}<span>{AppsItemCategoryCategoryName}</span></a></label>
+    {block:HasAppsItemCategoryMediumCategories}
+    <div class="accordion-content">
+        <ul>
+            {block:AppsItemCategoryMediumCategories}
+            <li><a href="{AppsItemCategoryMediumCategoryPageURL}"><span>{AppsItemCategoryMediumCategoryName}</span></a></li>
+            {/block:AppsItemCategoryMediumCategories}
+        </ul>
+    </div>
+    {/block:HasAppsItemCategoryMediumCategories}
+{/block:AppsItemCategoryCategories}
+</div>
+</div>
+{block:text-hiddenCatID}<div id="hiddenCats" data-ids="{text:hiddenCatID}"></div>{/block:text-hiddenCatID}
+{block:text-cmpHiddenCatID}<div id="cmpHiddenCats" data-ids="{text:cmpHiddenCatID}"></div> {/block:text-cmpHiddenCatID}
+{/block:AppsItemCategory}
+
+<div class="staticNav sidewidget {select:AboutNavWeight}">
+<h3>{block:text-AboutNavHeader}{text:AboutNavHeader}{/block:text-AboutNavHeader}</h3>
+<ul>
+<li class="about"><a href="{AboutPageURL}">{block:not_text-PageTitleAbout}{ShopName}とは{/block:not_text-PageTitleAbout}{block:text-PageTitleAbout}{text:PageTitleAbout}{/block:text-PageTitleAbout}</a></li>
+{block:text-FreeNav01}<li class="freeNav01"><a href="{text:FreeNav01-url}">{text:FreeNav01}</a></li>{/block:text-FreeNav01}
+{block:text-PaymentHeader}<li class="aboutPayment"><a href="{AboutPageURL}/#payment">{text:PaymentHeader}</a></li>{/block:text-PaymentHeader}
+{block:text-ShippingHeader}<li class="aboutDelivery"><a href="{AboutPageURL}/#shipping">{text:ShippingHeader}</a></li>{/block:text-ShippingHeader}
+{block:if-AboutBranch}<li class="aboutStores"><a href="{AboutPageURL}/#branchStores">{text:AboutBranchTitle}</a></li>{/block:if-AboutBranch}
+{block:text-FaqHeader}<li class="aboutFaq"><a href="{AboutPageURL}/#faq">{text:FaqHeader}</a></li>{/block:text-FaqHeader}
+{block:text-FreeNav02}<li class="freeNav02"><a href="{text:FreeNav02-url}">{text:FreeNav02}</a></li>{/block:text-FreeNav02}
+<li class="contact"><a href="{ContactPageURL}">Contact</a></li>
+</ul>
+</div>
+
+{block:image-sideAreaBanner01}<div class="imgbanner sidewidget">
+{block:text-sideAreaBanner01-url}<a href="{text:sideAreaBanner01-url}">{/block:text-sideAreaBanner01-url}<img src="{image:sideAreaBanner01}" alt="" />{block:text-sideAreaBanner01-url}</a>{/block:text-sideAreaBanner01-url}
+{block:text-sideAreaBanner02-url}<a href="{text:sideAreaBanner02-url}">{/block:text-sideAreaBanner02-url}<img src="{image:sideAreaBanner02}" alt="" />{block:text-sideAreaBanner02-url}</a>{/block:text-sideAreaBanner02-url}
+</div>{/block:image-sideAreaBanner01}
+
+{block:text-HeaderFreeNav}<ul class="freeNavBtn">
+<li><a href="{text:HeaderFreeNav-url}"{block:if-HeaderFreeNav-blank} class="arrow" target="_blank"{/block:if-HeaderFreeNav-blank}>{text:HeaderFreeNav}</a></li>
+</ul>{/block:text-HeaderFreeNav}
+
+<div class="member-community sidewidget">
+{block:AppsMembership}
+<div class="membership">
+<span class="heightajst">{text:PageTitleMembership}</span>
+<a class="card" href="{MembershipPageURL}">{text:PageTitleMembership}</a>
+<a class="btnincard" href="{MembershipMyPageURL}">マイページ / ログイン</a>
+</div>
+{/block:AppsMembership}
+
+{block:AppsCommunity}
+<div class="community"><a href="{CommunityPageURL}">{block:not_text-PageTitleCommunity}Community{/block:not_text-PageTitleCommunity}{block:text-PageTitleCommunity}{text:PageTitleCommunity}{/block:text-PageTitleCommunity}</a></div>
+{/block:AppsCommunity}
+</div>
+
+{block:AppsBlog}{block:if-ActivateSideBlogNews}{block:not_if-BlogAsPage}
+<div class="latestBlog sidewidget">
+<h3>{text:BlogNewsTitle}</h3>
+<div class="{block:not_if-BlogNewsDate}hideDate{/block:not_if-BlogNewsDate}">
+<div class="latestBlogList"></div>
+<div class="viewall"><a href="{BlogPageURL}" class="arrow">{block:not_text-PageTitleBlog}ブログ{/block:not_text-PageTitleBlog}{block:text-PageTitleBlog}{text:PageTitleBlog}{/block:text-PageTitleBlog}トップへ</a></div>
+</div>
+</div>
+{/block:not_if-BlogAsPage}{/block:if-ActivateSideBlogNews}{/block:AppsBlog}
+
+</div><!-- .menu-container" -->
+</div><!-- .sideArea-inner -->
+</div><!-- .drawerWrapper -->
+
+{block:ItemPage}{block:not_if-ItemPageGallery}
+<script src="https://basefile.akamaized.net/ymtk/5c9adca5250e4/photoswipe.min.js" charset="utf-8"></script>
+<script src="https://basefile.akamaized.net/ymtk/5c9adcca3be5d/photoswipe-ui-default.min.js" charset="utf-8"></script>
+<script src="https://basefile.akamaized.net/ymtk/5c9adcde5a984/photoswipe-simplify.min.js" charset="utf-8"></script>
+<script charset="utf-8">
+photoswipeSimplify.init({
+bgOpacity:0.8,
+shareEl: false,
+});
+</script>
+{/block:not_if-ItemPageGallery}{/block:ItemPage}
+
+{block:IndexPage}{block:NoIndexPageSearch}{block:NoIndexPageCategory}
+{block:AppsMailMagazine}{block:if-MailMagPopup}
+<script src="https://basefile.akamaized.net/ymtk/61e75ffa9a492/jquery.modal.min.js"></script>
+<script type="text/javascript">var checkNewsletter=function(){var e=new Date;if(null==localStorage.getItem("base-newsletter")||"undefined"==localStorage.getItem("base-newsletter"))$("#newsletter-popup").modal({fadeDuration:200}),localStorage.setItem("base-newsletter",e);else{var t=new Date(e)-new Date(localStorage.getItem("base-newsletter"));t=(t-t%1e3)/1e3,Math.floor(t/86400)>={select:MailMagPopupFreq}&&($("#newsletter-popup").modal({fadeDuration:200}),localStorage.setItem("base-newsletter",e))}};$(document).ready(function(){$("#newsletter-popup").length>0&&checkNewsletter()}),$("a[data-modal]").click(function(e){return $(this).modal({fadeDuration:200}),!1});</script>
+
+<div id="newsletter-popup" class="modal fade in{block:not_image-MailMagPopupImg} noImage{/block:not_image-MailMagPopupImg}" tabindex="-1" role="dialog" aria-hidden="false">
+<div class="nl-wraper-popup bounceInDown animated">
+<div class="nl-popup-close"><span rel="modal:close" data-toggle="tooltip" data-placement="top" title="" data-original-title="Close"><i class="cs-icon icon-icon_close"></i></span></div>
+<div class="nl-wraper-popup-inner">
+<div class="nl-wraper-popup-left">
+<span id="logo" class="{select:LogoFontWeight} {select:LogoFontSpace} {select:LogoFontJP}">{LogoTag}</span>
+<h3 class="{select:MailMagHeaderFont}">{text:MailMagHeader}</h3>
+<p>{text:MailMagDescription}</p>
+{MailMagazineSubscribeTag} 
+</div>
+<div class="nl-wraper-popup-right" style="background-image: url({image:MailMagPopupImg});">
+</div>
+</div>
+</div>
+</div>
+{/block:if-MailMagPopup}{/block:AppsMailMagazine}
+{/block:NoIndexPageCategory}{/block:NoIndexPageSearch}{/block:IndexPage}
+
+
+<script src="https://omt-inc.com/assets/oldorder/oo.js" defer></script>
+
+</body>
+</html>
+{/block:NotLoadItemsPage}
+
+{block:LoadItemsPage}
+{block:ShopPublic}
+{block:Items}
+<div class="item-box effect-scroll">
+<a href="{ItemPageURL}" title="{ItemTitle}">
+<div class="item-thumb-wrap">
+<span class="item-img__primary" style="background-image: url({block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1})"><img src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}" title="{ItemTitle}" class="image-resize" /></span>							  	
+</div>
+<div class="item-meta">
+<div class="item-title">{ItemTitle}</div>
+{block:HasItemStock}																
+{block:NoItemProperPrice}
+<div class="item-price">{ItemPrice}</div>
+{/block:NoItemProperPrice}
+{block:HasItemProperPrice}						
+<div class="item-price"><span class="properprice">{ItemProperPrice}</span><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+{/block:HasItemProperPrice}
+{block:ItemNowOnSale}
+{block:ItemPreOrder}<span class="preOrder">{lang:PreOrderItem}</span>{/block:ItemPreOrder}
+{/block:ItemNowOnSale}
+{block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+{block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+{/block:HasItemStock}
+
+{block:NoItemStock}
+{block:NoItemProperPrice}
+<div class="item-price">{ItemPrice}</div>
+{/block:NoItemProperPrice}
+{block:HasItemProperPrice}
+<div class="item-price"><span class="discountprice">{ItemPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div>
+{/block:HasItemProperPrice}
+{block:ItemNowOnSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemNowOnSale}
+{block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+{block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+{/block:NoItemStock}
+
+<div class="applabels">
+{block:ItemCommunityLimited}<span class="community">{lang:CommunityLimitedItem}</span>{/block:ItemCommunityLimited}
+{block:ItemTakeout}<span class="takeout">{lang:TakeoutItem}</span>{/block:ItemTakeout}
+{block:ItemLottery}<span class="lottery">{lang:LotteryItem}</span>{/block:ItemLottery}
+</div>
+</div>
+</a>
+{block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}
+</div>
+{/block:Items}
+{/block:ShopPublic}
+{/block:LoadItemsPage}

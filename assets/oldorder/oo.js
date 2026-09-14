@@ -1,3 +1,16 @@
+/* ==== CONFIG READER: テーマ設定(#ooConfig)を読む。無ければ全て従来デフォルト ==== */
+(function(){
+var o={};
+var c=document.getElementById('ooConfig');
+if(c){var sp=c.querySelectorAll('[data-k]');for(var i=0;i<sp.length;i++){o[sp[i].getAttribute('data-k')]=(sp[i].textContent||'').trim();}}
+window.__ooCfg=o;
+/* グリッド列数(設定があるときだけ上書き) */
+var css='';
+if(o.gridpc==='4'||o.gridpc==='5'||o.gridpc==='6'){css+='@media(min-width:761px){.ooSec__grid{grid-template-columns:repeat('+o.gridpc+',1fr)!important}}';}
+if(o.gridsp==='2'||o.gridsp==='3'||o.gridsp==='4'){css+='@media(max-width:760px){.ooSec__grid{grid-template-columns:repeat('+o.gridsp+',1fr)!important}}';}
+if(css){var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);}
+})();
+
 (function(){
 var POP=7346651;
 var SECTIONS=[
@@ -24,6 +37,23 @@ var SECTIONS=[
 {label:'BBIMP',id:6372099},
 {label:'ACCESSORY',id:6630103}
 ];
+/* 設定「トップセクション構成」があれば上書き(書式: LABEL:カテゴリID[,LABEL:ID:tagall...]。不正時は既定のまま) */
+(function(){
+var C=window.__ooCfg||{};
+if(!C.sections)return;
+var parsed=[];
+var parts=C.sections.split(',');
+for(var i=0;i<parts.length;i++){
+var a=parts[i].split(':');
+if(a.length<2)continue;
+var lb=a[0].trim();var ids=a[1].trim();
+if(!lb||!/^[0-9]+$/.test(ids))continue;
+var ob={label:lb,id:parseInt(ids,10)};
+if((a[2]||'').trim().toLowerCase()==='tagall')ob.tagAll=1;
+parsed.push(ob);
+}
+if(parsed.length)SECTIONS=parsed;
+})();
 function fetchDoc(u){return fetch(u).then(function(r){return r.text();}).then(function(h){return new DOMParser().parseFromString(h,'text/html');});}
 function fetchCatDocs(id){
 return fetchDoc('/categories/'+id).then(function(doc){
@@ -39,7 +69,25 @@ function boxesOf(docs){var out=[];docs.forEach(function(d){out=out.concat(Array.
 function build(){
 var __L=document.querySelectorAll('a,span,p,div,b');for(var __i=0;__i<__L.length;__i++){var __e=__L[__i];if(__e.children.length===0&&__e.textContent.trim()==='店舗情報'){__e.textContent='JAPAN SHOP INFORMATION';}}
 var __nb=document.createElement('div');__nb.id='ooNewsBar';
-__nb.innerHTML='<div class="ooNewsItem on"><span>FIRST ORDER \u00a5500 OFF \u2014 CODE "oldorder001"</span></div><div class="ooNewsItem"><span>WORLDWIDE SHIPPING</span></div><div class="ooNewsItem"><span>OLD ORDER OFFICIAL ONLINE STORE</span></div><div class="ooNewsItem"><a href="https://oldorder.jp" target="_blank">LIVING IN JAPAN? VISIT OLDORDER.JP \u2192</a></div>';
+/* \u30d0\u30fc\u6587\u8a00: \u8a2d\u5b9a(bar1\u301c4)\u304c1\u3064\u3067\u3082\u3042\u308c\u3070\u305d\u308c\u3092\u4f7f\u7528\u3001\u5168\u3066\u7a7a\u306a\u3089\u65e2\u5b9a4\u672c */
+(function(){
+var C=window.__ooCfg||{};
+function esc(t){return String(t).split('<').join('&lt;').split('>').join('&gt;');}
+var msgs=[];
+if(C.bar1)msgs.push({t:C.bar1});
+if(C.bar2)msgs.push({t:C.bar2});
+if(C.bar3)msgs.push({t:C.bar3});
+if(C.bar4)msgs.push({t:C.bar4,u:C.bar4url||''});
+if(!msgs.length){
+msgs=[{t:'FIRST ORDER \u00a5500 OFF \u2014 CODE "oldorder001"'},{t:'WORLDWIDE SHIPPING'},{t:'OLD ORDER OFFICIAL ONLINE STORE'},{t:'LIVING IN JAPAN? VISIT OLDORDER.JP \u2192',u:'https://oldorder.jp'}];
+}
+var h='';
+for(var i=0;i<msgs.length;i++){
+var inner=msgs[i].u?('<a href="'+esc(msgs[i].u)+'" target="_blank">'+esc(msgs[i].t)+'</a>'):('<span>'+esc(msgs[i].t)+'</span>');
+h+='<div class="ooNewsItem'+(i===0?' on':'')+'">'+inner+'</div>';
+}
+__nb.innerHTML=h;
+})();
 document.body.insertBefore(__nb,document.body.firstChild);
 var __nbIt=__nb.querySelectorAll('.ooNewsItem');var __nbX=0;
 if(__nbIt.length>1){setInterval(function(){__nbIt[__nbX].classList.remove('on');__nbX=(__nbX+1)%__nbIt.length;__nbIt[__nbX].classList.add('on');},4000);}
@@ -74,6 +122,16 @@ var __TD={
 '種類':'Size','数量':'Qty','通報する':'Report','ショップの評価':'Shop Reviews','すべて':'All',
 '海外送料を見る':'See international shipping rates','詳細を見る':'Details','※送料は':'Shipping: ','です。':''
 };
+/* 設定「追加翻訳辞書」(書式: 日本語=English | 日本語=English)をマージ */
+(function(){
+var C=window.__ooCfg||{};
+if(!C.extradict)return;
+var pairs=C.extradict.split('|');
+for(var i=0;i<pairs.length;i++){
+var p=pairs[i];var k=p.indexOf('=');
+if(k>0){var jp=p.slice(0,k).trim();var en=p.slice(k+1).trim();if(jp)__TD[jp]=en;}
+}
+})();
 var __TC=[
 ['2019年より','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.'],
 ['全国一律','Flat-rate shipping \u00a51,100 \u2014 free shipping on orders over \u00a530,000.'],
@@ -142,6 +200,8 @@ if(!document.body||document.body.id!=='TopPage'){
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',arguments.callee);return;}
 if(!document.body||document.body.id!=='TopPage')return;
 }
+var __sfC=window.__ooCfg||{};
+if(('sizefilter' in __sfC)&&__sfC.sizefilter!=='1')return;
 var DATA='https://omt-inc.com/assets/oldorder/sizes.json';
 function boot(){
 var host=document.getElementById('ooSections');
@@ -200,6 +260,12 @@ boot();
 function ready(f){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}}
 ready(function(){
 if(!document.body||document.body.id!=='TopPage')return;
+var __ppC=window.__ooCfg||{};
+if(('popup' in __ppC)&&__ppC.popup!=='1')return;
+var PT=__ppC.popuptitle||'GET 5% OFF';
+var PX=__ppC.popuptext||'Sign up for our newsletter and get 5% off your first order.';
+var PCD=__ppC.popupcode||'Q9XTUMEK';
+var PIM=__ppC.popupimg||'https://omt-inc.com/assets/oldorder/brunch-hero.jpg';
 var KEY='ooPop_v1';var st='';
 try{st=localStorage.getItem(KEY)||'';}catch(e){}
 if(st==='sub'||st==='close2')return;
@@ -208,7 +274,8 @@ var css=document.createElement('style');
 css.textContent='#ooPop{position:fixed;top:0;left:0;right:0;bottom:0;z-index:99990;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55)}#ooPop .card{display:flex;width:min(680px,92vw);max-height:88vh;background:#fff;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}#ooPop .side{flex:0 0 45%;background:#eee center 30%/cover no-repeat}#ooPop .bodyc{flex:1 1 auto;padding:36px 28px;display:flex;flex-direction:column;justify-content:center;text-align:center;position:relative}#ooPop h2{font-family:Jost,Montserrat,sans-serif;font-size:30px;font-weight:600;letter-spacing:.04em;color:#141312;margin:0 0 10px}#ooPop p{font-size:12.5px;line-height:1.7;color:#444;margin:0 0 16px}#ooPop input{border:1px solid #bbb;padding:12px;font-size:14px;width:100%;margin-bottom:10px;text-align:center;box-sizing:border-box}#ooPop .go{background:#141312;color:#fff;border:0;padding:13px;font-family:Jost,sans-serif;font-weight:600;letter-spacing:.18em;font-size:12px;cursor:pointer;width:100%}#ooPop .no{background:none;border:0;color:#999;font-size:11px;margin-top:12px;cursor:pointer;text-decoration:underline}#ooPop .x{position:absolute;top:8px;right:12px;background:none;border:0;font-size:24px;color:#666;cursor:pointer}#ooPop .code{border:2px dashed #141312;padding:12px;font-family:Jost,sans-serif;font-size:20px;font-weight:600;letter-spacing:.14em;margin:8px 0 12px;-webkit-user-select:all;user-select:all}@media(max-width:560px){#ooPop .side{display:none}}';
 document.head.appendChild(css);
 var w=document.createElement('div');w.id='ooPop';
-w.innerHTML='<div class="card"><div class="side" style="background-image:url(https://omt-inc.com/assets/oldorder/brunch-hero.jpg)"></div><div class="bodyc"><button type="button" class="x">×</button><h2>GET 5% OFF</h2><p>Sign up for our newsletter and get 5% off your first order.</p><input type="email" placeholder="Email"><button type="button" class="go">CONTINUE</button><button type="button" class="no">No thanks</button></div></div>';
+function __pesc(t){return String(t).split('<').join('&lt;').split('>').join('&gt;');}
+w.innerHTML='<div class="card"><div class="side" style="background-image:url('+PIM+')"></div><div class="bodyc"><button type="button" class="x">×</button><h2>'+__pesc(PT)+'</h2><p>'+__pesc(PX)+'</p><input type="email" placeholder="Email"><button type="button" class="go">CONTINUE</button><button type="button" class="no">No thanks</button></div></div>';
 function shut(){try{var s=localStorage.getItem(KEY)||'';if(s.indexOf('close1:')===0){localStorage.setItem(KEY,'close2');}else{localStorage.setItem(KEY,'close1:'+Date.now());}}catch(e){}if(w.parentNode)w.parentNode.removeChild(w);}
 w.addEventListener('click',function(e){if(e.target===w)shut();});
 setTimeout(function(){
@@ -225,7 +292,7 @@ if(fi&&fb){fi.value=em;fi.dispatchEvent(new Event('input',{bubbles:true}));fb.cl
 }catch(e){}
 try{localStorage.setItem(KEY,'sub');}catch(e){}
 var b=w.querySelector('.bodyc');
-b.innerHTML='<h2>WELCOME!</h2><p>Use this code at checkout for 5% off your first order:</p><div class="code">Q9XTUMEK</div><p>A confirmation email is on its way — please confirm your subscription.</p><button type="button" class="go">DONE</button>';
+b.innerHTML='<h2>WELCOME!</h2><p>Use this code at checkout:</p><div class="code">'+__pesc(PCD)+'</div><p>A confirmation email is on its way — please confirm your subscription.</p><button type="button" class="go">DONE</button>';
 b.querySelector('.go').addEventListener('click',function(){if(w.parentNode)w.parentNode.removeChild(w);});
 });
 },2500);
@@ -241,6 +308,8 @@ function boot(){
 var host=document.getElementById('ooSections');
 if(!host||!host.querySelector('.ooSec')){setTimeout(boot,400);return;}
 if(document.querySelector('.ooSecIG'))return;
+var __igC=window.__ooCfg||{};
+if(('ig' in __igC)&&__igC.ig!=='1')return;
 fetch('https://omt-inc.com/assets/oldorder/ig.json').then(function(r){return r.json();}).then(function(d){
 if(!d.posts||!d.posts.length)return;
 var css=document.createElement('style');
@@ -478,11 +547,15 @@ s.textContent='body#TopPage .splide.topMain{display:block!important}body#TopPage
 document.head.appendChild(s);
 })();
 
-/* ==== HIDE FOOTER WIDGETS (中田さん要望 2026-09-14): カレンダー / すぐ届く公式サイトバナー ==== */
+/* ==== FOOTER WIDGETS: 既定は非表示(中田さん要望 2026-09-14)。テーマ設定のON/OFFで復活可 ==== */
 (function(){
+var C=window.__ooCfg||{};
+if(C.showbanner!=='1'){
 var s=document.createElement('style');
 s.textContent='#mainFooter .utility.imgbanner{display:none!important}';
 document.head.appendChild(s);
+}
+if(C.showcal==='1')return;
 function hideCal(){
 var c=document.getElementById('calendarContainer');
 while(c){
