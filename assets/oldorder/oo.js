@@ -477,3 +477,20 @@ var s=document.createElement('style');
 s.textContent='body#TopPage .splide.topMain{display:block!important}body#TopPage .singleImage{display:block!important}';
 document.head.appendChild(s);
 })();
+
+/* ==== HIDE FOOTER WIDGETS (中田さん要望 2026-09-14): カレンダー / すぐ届く公式サイトバナー ==== */
+(function(){
+var s=document.createElement('style');
+s.textContent='#mainFooter .utility.imgbanner{display:none!important}';
+document.head.appendChild(s);
+function hideCal(){
+var c=document.getElementById('calendarContainer');
+while(c){
+var u=c.closest('.utility');
+if(u){u.style.display='none';}else{c.style.display='none';}
+c.id='calendarContainer_hidden';
+c=document.getElementById('calendarContainer');
+}
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){hideCal();setTimeout(hideCal,1500);});}else{hideCal();setTimeout(hideCal,1500);}
+})();
