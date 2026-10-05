@@ -872,7 +872,9 @@
           <label>お問い合わせ内容<i>必須</i></label>
           <textarea name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
         </div>
+        <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>会社名<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
         <button type="submit" class="btn-dark">SEND MESSAGE</button>
+        <p id="cfStatus" style="display:none;margin-top:14px;font-size:13px;font-weight:700"></p>
       </form>
     </div>
   </div>
@@ -903,10 +905,6 @@
 </footer>
 
 <script>
-  // ▼ 公開前に要設定: お問い合わせの送信先メールアドレス
-  //   現状は「メールソフトが立ち上がる方式(mailto)」。公開時は FormSubmit / Google Form 等への差し替えを推奨。
-  var CONTACT_EMAIL = 'master@omt-inc.com';
-
   if (location.search.indexOf('debugshot') > -1) document.documentElement.classList.add('debugshot');
 
   // フェードイン
@@ -952,17 +950,41 @@
   document.querySelector('.menu-btn').addEventListener('click',function(){ document.body.classList.toggle('nav-open'); });
   document.querySelectorAll('nav.gnav a').forEach(function(a){ a.addEventListener('click',function(){ document.body.classList.remove('nav-open'); }); });
 
-  // お問い合わせ(mailto方式)
-  document.getElementById('contactForm').addEventListener('submit',function(ev){
-    ev.preventDefault();
-    var f = ev.target;
-    var subject = '【OMTサイト】' + f.type.value + ' - ' + f.name.value;
-    var body = 'お問い合わせ種別: ' + f.type.value + '\n'
-             + 'お名前: ' + f.name.value + '\n'
-             + 'メールアドレス: ' + f.email.value + '\n\n'
-             + f.message.value;
-    location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
+  // お問い合わせ(フォーム送信方式)
+  (function(){
+    var FORM_API = 'https://script.google.com/macros/s/AKfycbx5FdgjtbrdBr0U3ioAlLrMDqe7OYNcz5nX6SlcwOfDblHZ26mYqqSxaD1er1VLiIJeMA/exec';
+    var loadedAt = Date.now();
+    var form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var f = form.elements;
+      var st = document.getElementById('cfStatus');
+      var btn = form.querySelector('button[type="submit"]');
+      var ts = String(loadedAt);
+      var body = new URLSearchParams();
+      body.append('type', f['type'].value);
+      body.append('name', f['name'].value);
+      body.append('email', f['email'].value);
+      body.append('message', f['message'].value);
+      body.append('company', f['company'].value);
+      body.append('ts', ts);
+      body.append('k', ts.split('').reverse().join(''));
+      btn.disabled = true; btn.textContent = 'SENDING...';
+      st.style.display = 'none';
+      fetch(FORM_API, { method: 'POST', body: body }).then(function(r){ return r.json(); }).then(function(res){
+        if (res && res.ok) {
+          form.reset();
+          btn.textContent = 'SENT ✓';
+          st.textContent = '送信しました。内容を確認のうえ、担当者よりご連絡いたします。';
+          st.style.color = '#1a7f4e'; st.style.display = 'block';
+        } else { throw new Error((res && res.err) || 'error'); }
+      }).catch(function(){
+        btn.disabled = false; btn.textContent = 'SEND MESSAGE';
+        st.textContent = '送信に失敗しました。お手数ですが、時間をおいて再度お試しください。';
+        st.style.color = '#c8102e'; st.style.display = 'block';
+      });
+    });
+  })();
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
