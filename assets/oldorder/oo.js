@@ -11,6 +11,17 @@ if(o.gridsp==='2'||o.gridsp==='3'||o.gridsp==='4'){css+='@media(max-width:760px)
 if(css){var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);}
 })();
 
+/* ==== 言語の出し分け(2026-10 会長決定A): 日本語ブラウザ=日本語(BASE本来の表示)、それ以外=英語。切り替えボタンで変更・記憶 ==== */
+(function(){
+var L=null;try{L=localStorage.getItem('ooLang');}catch(e){}
+if(L!=='ja'&&L!=='en'){var ls=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];L=/^ja\b/i.test(ls[0]||'')?'ja':'en';}
+window.__ooLang=L;
+document.documentElement.setAttribute('data-oolang',L);
+var st=document.createElement('style');
+st.textContent='#ooLangSw{position:absolute;right:10px;top:0;bottom:0;z-index:3;display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;letter-spacing:.06em}#ooLangSw button{background:none;border:0;padding:2px 3px;color:#888;cursor:pointer;font:inherit}#ooLangSw button.on{color:#fff;text-decoration:underline}#ooLangSw i{color:#666;font-style:normal}@media(max-width:760px){#ooNewsBar .ooNewsItem{padding-right:86px!important;justify-content:flex-start!important}#ooNewsBar .ooNewsItem a,#ooNewsBar .ooNewsItem span{font-size:10px!important;overflow:hidden;text-overflow:ellipsis}}';
+document.head.appendChild(st);
+})();
+
 (function(){
 var POP=7346651;
 var SECTIONS=[
@@ -67,7 +78,8 @@ return Promise.all(ps).then(function(rest){return [doc].concat(rest.filter(Boole
 }
 function boxesOf(docs){var out=[];docs.forEach(function(d){out=out.concat(Array.prototype.slice.call(d.querySelectorAll('#itemthumbs .item-box')));});return out;}
 function build(){
-var __L=document.querySelectorAll('a,span,p,div,b');for(var __i=0;__i<__L.length;__i++){var __e=__L[__i];if(__e.children.length===0&&__e.textContent.trim()==='店舗情報'){__e.textContent='JAPAN SHOP INFORMATION';}}
+var __EN=window.__ooLang!=='ja';
+var __L=__EN?document.querySelectorAll('a,span,p,div,b'):[];for(var __i=0;__i<__L.length;__i++){var __e=__L[__i];if(__e.children.length===0&&__e.textContent.trim()==='店舗情報'){__e.textContent='JAPAN SHOP INFORMATION';}}
 var __nb=document.createElement('div');__nb.id='ooNewsBar';
 /* \u30d0\u30fc\u6587\u8a00: \u8a2d\u5b9a(bar1\u301c4)\u304c1\u3064\u3067\u3082\u3042\u308c\u3070\u305d\u308c\u3092\u4f7f\u7528\u3001\u5168\u3066\u7a7a\u306a\u3089\u65e2\u5b9a4\u672c */
 (function(){
@@ -78,6 +90,9 @@ if(C.bar1)msgs.push({t:C.bar1});
 if(C.bar2)msgs.push({t:C.bar2});
 if(C.bar3)msgs.push({t:C.bar3});
 if(C.bar4)msgs.push({t:C.bar4,u:C.bar4url||''});
+if(!msgs.length&&!__EN){
+msgs=[{t:'\u521d\u56de\u8cfc\u5165 \u00a5500 OFF \u2014 \u30af\u30fc\u30dd\u30f3\u30b3\u30fc\u30c9\u300coldorder001\u300d'},{t:'\u9001\u6599 \u5168\u56fd\u4e00\u5f8b \u00a51,100\u30fb\u00a530,000\u4ee5\u4e0a\u3067\u7121\u6599'},{t:'OLD ORDER \u516c\u5f0f\u30aa\u30f3\u30e9\u30a4\u30f3\u30b9\u30c8\u30a2'}];
+}
 if(!msgs.length){
 msgs=[{t:'FIRST ORDER \u00a5500 OFF \u2014 CODE "oldorder001"'},{t:'WORLDWIDE SHIPPING'},{t:'OLD ORDER OFFICIAL ONLINE STORE'},{t:'LIVING IN JAPAN? VISIT OLDORDER.JP \u2192',u:'https://oldorder.jp'}];
 }
@@ -86,15 +101,20 @@ for(var i=0;i<msgs.length;i++){
 var inner=msgs[i].u?('<a href="'+esc(msgs[i].u)+'" target="_blank">'+esc(msgs[i].t)+'</a>'):('<span>'+esc(msgs[i].t)+'</span>');
 h+='<div class="ooNewsItem'+(i===0?' on':'')+'">'+inner+'</div>';
 }
+h+='<div id="ooLangSw"><button type="button" data-l="ja"'+(__EN?'':' class="on"')+'>日本語</button><i>/</i><button type="button" data-l="en"'+(__EN?' class="on"':'')+'>EN</button></div>';
 __nb.innerHTML=h;
+var __sw=__nb.querySelectorAll('#ooLangSw button');
+for(var j=0;j<__sw.length;j++){__sw[j].addEventListener('click',function(){var l=this.getAttribute('data-l');if(l===window.__ooLang)return;try{localStorage.setItem('ooLang',l);}catch(e){}location.reload();});}
 })();
 document.body.insertBefore(__nb,document.body.firstChild);
 var __nbIt=__nb.querySelectorAll('.ooNewsItem');var __nbX=0;
 if(__nbIt.length>1){setInterval(function(){__nbIt[__nbX].classList.remove('on');__nbX=(__nbX+1)%__nbIt.length;__nbIt[__nbX].classList.add('on');},4000);}
+if(__EN){
 var __NH=document.querySelectorAll('#newsbox h2');for(var __j=0;__j<__NH.length;__j++){if(__NH[__j].textContent.trim()==='お知らせ')__NH[__j].textContent='NEWS';}
 var __NM=[['非正規販売','[IMPORTANT] Beware of unauthorized resale sites and counterfeit products.'],['営業時間','[Business Hours] Weekdays 10:00\u201318:00 JST (closed on weekends & holidays). Inquiries received outside business hours will be answered from the next business day.'],['ギフトラッピング','Gift wrapping is not available.']];
 var __ND=document.querySelectorAll('#newsbox dd');
 for(var __k=0;__k<__ND.length;__k++){var __dd=__ND[__k];for(var __m=0;__m<__NM.length;__m++){if(__dd.textContent.indexOf(__NM[__m][0])>-1){var __tgt=__dd.querySelector('a')||__dd;__tgt.textContent=__NM[__m][1];break;}}}
+}
 var __TD={
 'メニュー':'MENU','カート':'CART','カートを見る':'View Cart',
 '商品カテゴリー':'CATEGORY','ショップガイド':'SHOP GUIDE','新着ブログ記事':'LATEST BLOG POSTS',
@@ -148,6 +168,7 @@ for(var i=0;i<si.length;i++){var ph=si[i].getAttribute('placeholder')||'';if(ph.
 var lg=document.querySelectorAll('p.legend');
 for(var j=0;j<lg.length;j++){var __h=lg[j].innerHTML;var __h2=__h.replace('：本日',' Today ').replace('：休業日',' Closed').replace(/　/g,' ');if(__h2!==__h)lg[j].innerHTML=__h2;}
 }
+if(__EN){
 __trAll();setTimeout(__trAll,1500);
 var __trT=null;
 var __trObs=new MutationObserver(function(){
@@ -155,6 +176,7 @@ if(__trT)return;
 __trT=setTimeout(function(){__trT=null;__trObs.disconnect();__trAll();__trObs.observe(document.body,{childList:true,subtree:true,characterData:true});},300);
 });
 __trObs.observe(document.body,{childList:true,subtree:true,characterData:true});
+}
 
 if(document.body.id!=='TopPage')return;
 /* ヒーローのハードコードは2026-09-13に撤去。テーマ設定「メイン画像」駆動(OVERTURE式)に戻した */
@@ -174,7 +196,7 @@ host.appendChild(sec);
 var dP=(s.id===POP&&popDocs)?Promise.resolve(popDocs):fetchCatDocs(s.id);
 dP.then(function(docs){
 var boxes=boxesOf(docs);
-var grid=sec.querySelector('.ooSec__grid');var n=0;
+var grid=sec.querySelector('.ooSec__grid');var n=0;var soldEls=[];
 boxes.forEach(function(b){
 var a=b.querySelector('a');var img=b.querySelector('.item-img__primary img');
 if(!a||!img)return;
@@ -183,8 +205,10 @@ var sold=!!b.querySelector('.soldout');
 var tag=s.tagAll?s.label:(popSet[href]?'POPULAR':'');
 var d=document.createElement('div');d.className='ooItem';
 d.innerHTML='<a href="'+href+'"><figure'+(sold?' class="isSold"':'')+'><img loading="lazy" src="'+img.getAttribute('src')+'" alt="">'+(sold?'<span class="ooSoldOv">SOLD OUT</span>':'')+'</figure>'+(tag?'<div class="ooTag">'+tag+'</div>':'')+'</a>';
-grid.appendChild(d);n++;
+if(sold){soldEls.push(d);}else{grid.appendChild(d);}n++;
 });
+/* 売り切れは各列の後ろへ。全部売り切れの列(SANRIO/DISNEY)も消さない=コラボ実績として残す(2026-09-22 会長指示) */
+soldEls.forEach(function(d){grid.appendChild(d);});
 sec.querySelector('.ooSec__num').textContent=n;
 if(!n)sec.style.display='none';
 }).catch(function(){sec.style.display='none';});
@@ -262,8 +286,9 @@ ready(function(){
 if(!document.body||document.body.id!=='TopPage')return;
 var __ppC=window.__ooCfg||{};
 if(('popup' in __ppC)&&__ppC.popup!=='1')return;
-var PT=__ppC.popuptitle||'GET 5% OFF';
-var PX=__ppC.popuptext||'Sign up for our newsletter and get 5% off your first order.';
+var JA=window.__ooLang==='ja';
+var PT=__ppC.popuptitle||(JA?'5% OFFクーポン':'GET 5% OFF');
+var PX=__ppC.popuptext||(JA?'メールマガジンに登録すると、初回のお買い物が5%OFFになるクーポンをお渡しします。':'Sign up for our newsletter and get 5% off your first order.');
 var PCD=__ppC.popupcode||'Q9XTUMEK';
 var PIM=__ppC.popupimg||'https://omt-inc.com/assets/oldorder/brunch-hero.jpg';
 var KEY='ooPop_v1';var st='';
@@ -275,7 +300,7 @@ css.textContent='#ooPop{position:fixed;top:0;left:0;right:0;bottom:0;z-index:999
 document.head.appendChild(css);
 var w=document.createElement('div');w.id='ooPop';
 function __pesc(t){return String(t).split('<').join('&lt;').split('>').join('&gt;');}
-w.innerHTML='<div class="card"><div class="side" style="background-image:url('+PIM+')"></div><div class="bodyc"><button type="button" class="x">×</button><h2>'+__pesc(PT)+'</h2><p>'+__pesc(PX)+'</p><input type="email" placeholder="Email"><button type="button" class="go">CONTINUE</button><button type="button" class="no">No thanks</button></div></div>';
+w.innerHTML='<div class="card"><div class="side" style="background-image:url('+PIM+')"></div><div class="bodyc"><button type="button" class="x">×</button><h2>'+__pesc(PT)+'</h2><p>'+__pesc(PX)+'</p><input type="email" placeholder="'+(JA?'メールアドレス':'Email')+'"><button type="button" class="go">'+(JA?'登録する':'CONTINUE')+'</button><button type="button" class="no">'+(JA?'今はしない':'No thanks')+'</button></div></div>';
 function shut(){try{var s=localStorage.getItem(KEY)||'';if(s.indexOf('close1:')===0){localStorage.setItem(KEY,'close2');}else{localStorage.setItem(KEY,'close1:'+Date.now());}}catch(e){}if(w.parentNode)w.parentNode.removeChild(w);}
 w.addEventListener('click',function(e){if(e.target===w)shut();});
 setTimeout(function(){
@@ -292,7 +317,7 @@ if(fi&&fb){fi.value=em;fi.dispatchEvent(new Event('input',{bubbles:true}));fb.cl
 }catch(e){}
 try{localStorage.setItem(KEY,'sub');}catch(e){}
 var b=w.querySelector('.bodyc');
-b.innerHTML='<h2>WELCOME!</h2><p>Use this code at checkout:</p><div class="code">'+__pesc(PCD)+'</div><p>A confirmation email is on its way — please confirm your subscription.</p><button type="button" class="go">DONE</button>';
+b.innerHTML=JA?('<h2>ご登録ありがとうございます</h2><p>お会計のときにこのコードを入力してください：</p><div class="code">'+__pesc(PCD)+'</div><p>確認メールをお送りしました。メール内のリンクから登録を完了してください。</p><button type="button" class="go">閉じる</button>'):('<h2>WELCOME!</h2><p>Use this code at checkout:</p><div class="code">'+__pesc(PCD)+'</div><p>A confirmation email is on its way — please confirm your subscription.</p><button type="button" class="go">DONE</button>');
 b.querySelector('.go').addEventListener('click',function(){if(w.parentNode)w.parentNode.removeChild(w);});
 });
 },2500);
@@ -535,6 +560,7 @@ document.head.appendChild(s);
 
 /* ==== HIDE JP-ONLY BNPL BANNER (PAY ID) on overseas store ==== */
 (function(){
+if(window.__ooLang==='ja')return;
 var s=document.createElement('style');
 s.textContent='.bnplBanner{display:none!important}';
 document.head.appendChild(s);
