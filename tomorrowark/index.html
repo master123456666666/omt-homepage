@@ -389,10 +389,10 @@
     <div class="ta-charts fade">
       <div class="ta-chart-card">
         <h4>会員の年齢構成</h4>
-        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#e6e6e4 0% 9.3%, #b3b3b1 9.3% 86.6%, #d2d2d0 86.6% 97%, #8a8a88 97% 100%)"></div>
+        <div class="ta-donut" id="taDonut" style="background:conic-gradient(#e6e6e4 0% 9.2%, #b3b3b1 9.2% 86.6%, #d2d2d0 86.6% 97%, #8a8a88 97% 100%)"></div>
         <ul class="ta-legend">
-          <li><i style="background:#e6e6e4"></i>10代<small>9.3%</small></li>
-          <li><i style="background:#b3b3b1"></i>20代<small>77.3%</small></li>
+          <li><i style="background:#e6e6e4"></i>10代<small>9.2%</small></li>
+          <li><i style="background:#b3b3b1"></i>20代<small>77.4%</small></li>
           <li><i style="background:#d2d2d0"></i>30代<small>10.4%</small></li>
           <li><i style="background:#8a8a88"></i>40代以上<small>3.0%</small></li>
         </ul>
@@ -408,7 +408,7 @@
         <p class="cap">会員の9割以上が男性。メンズブランドとして支持されています。</p>
       </div>
     </div>
-    <p class="ta-data-note fade">※2026年10月8日時点。自社会員データより算出(年齢・性別は判明分の比率)しています。</p>
+    <p class="ta-data-note fade">※2026年10月9日時点。自社会員データより算出(年齢・性別は判明分の比率)しています。</p>
   </div>
 </section>
 
@@ -558,7 +558,7 @@
       requestAnimationFrame(step);
     }
     var donut = document.getElementById('taDonut');
-    var SEGS = [[9.3,'#e6e6e4'],[86.6,'#b3b3b1'],[97,'#d2d2d0'],[100,'#8a8a88']];
+    var SEGS = [[9.2,'#e6e6e4'],[86.6,'#b3b3b1'],[97,'#d2d2d0'],[100,'#8a8a88']];
     function paintDonut(t){
       var stops = [], prev = 0;
       for (var i = 0; i < SEGS.length; i++) {
