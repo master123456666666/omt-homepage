@@ -13,6 +13,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OLD ORDER POP UP @大阪 梅田阪急 | 株式会社マニアジャパン</title>
+<link rel="canonical" href="https://omt-inc.com/maniajapan/news/20251008-oldorder-umeda-hankyu.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OMTグループ">
+<meta property="og:title" content="OLD ORDER POP UP @大阪 梅田阪急 | 株式会社マニアジャパン">
+<meta property="og:description" content="2025年10月8日〜10月21日、大阪・梅田阪急にてOLD ORDERのPOP UPを開催しました。">
+<meta property="og:url" content="https://omt-inc.com/maniajapan/news/20251008-oldorder-umeda-hankyu.html">
+<meta property="og:image" content="https://omt-inc.com/assets/event-oldorder-umeda-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="2025年10月8日〜10月21日、大阪・梅田阪急にてOLD ORDERのPOP UPを開催しました。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +88,7 @@
     <img src="../../assets/event-oldorder-umeda-3.jpg" alt="OLD ORDERパネルディスプレイ">
     <img src="../../assets/event-oldorder-umeda-4.jpg" alt="SNEAKER EDIT什器のコラボモデル">
     <img src="../../assets/event-oldorder-umeda-5.jpg" alt="スニーカーのクローズアップ">
-    <p>今後も各地でのPOP UPを企画してまいります。最新情報は各店のInstagramとEC「<a href="https://oldorder.jp" target="_blank" rel="noopener" style="text-decoration:underline">OLD ORDER JAPAN</a>」でお知らせします。</p>
+    <p>今後も各地でのPOP UPを企画してまいります。最新情報は各店のInstagramとEC「<a href="https://oldorder.jp/?utm_source=omt-inc.com&amp;utm_medium=referral&amp;utm_campaign=corporate_site" target="_blank" rel="noopener" style="text-decoration:underline">OLD ORDER JAPAN</a>」でお知らせします。</p>
   </div>
 </main>
 
@@ -112,5 +120,15 @@
       window.addEventListener('pageshow', function(){ fade.classList.remove('show'); });
     }
   })();
-</script</body>
+</script<script>
+  // EC外部リンクのクリック計測(GA4)
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a || !a.hostname) return;
+    var h = a.hostname;
+    if (/(^|\.)oldorder\.jp$|(^|\.)rouge-pomme\.jp$|(^|\.)over-ture\.com$|(^|\.)alude\.official\.ec$/.test(h) && typeof gtag === 'function') {
+      gtag('event', 'ec_click', { ec_domain: h, link_url: a.href.split('?')[0], page_path: location.pathname });
+    }
+  }, true);
+</script></body>
 </html>
