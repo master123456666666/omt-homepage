@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com https://www.google.co.jp; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com https://www.google.co.jp https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9FEDH2GVF"></script>
 <script>
@@ -929,15 +931,15 @@
         </div>
         <div class="field">
           <label>お名前<i>必須</i></label>
-          <input type="text" name="name" required placeholder="山田 太郎">
+          <input type="text" name="name" required maxlength="100" placeholder="山田 太郎">
         </div>
         <div class="field">
           <label>メールアドレス<i>必須</i></label>
-          <input type="email" name="email" required placeholder="example@email.com">
+          <input type="email" name="email" required maxlength="200" placeholder="example@email.com">
         </div>
         <div class="field">
           <label>お問い合わせ内容<i>必須</i></label>
-          <textarea name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+          <textarea name="message" required maxlength="5000" placeholder="お問い合わせ内容をご記入ください"></textarea>
         </div>
         <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>会社名<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
         <button type="submit" class="btn-dark">SEND MESSAGE</button>
@@ -1246,7 +1248,8 @@
       window.addEventListener('pageshow', function(){ fade.classList.remove('show'); });
     }
   })();
-</script<script>
+</script>
+<script>
   // EC外部リンクのクリック計測(GA4)
   document.addEventListener('click', function(e){
     var a = e.target && e.target.closest ? e.target.closest('a') : null;
