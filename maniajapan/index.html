@@ -467,12 +467,12 @@
     <div class="mj-charts fade">
       <div class="chart-card">
         <h4>会員の年齢構成</h4>
-        <div class="mj-donut" id="mjDonut" style="background:conic-gradient(#7fd4d4 0% 11.9%, #00AEC7 11.9% 83.5%, #ed7d2b 83.5% 94%, #494d4e 94% 100%)"></div>
+        <div class="mj-donut" id="mjDonut" style="background:conic-gradient(#7fd4d4 0% 11.9%, #00AEC7 11.9% 83.5%, #ed7d2b 83.5% 94.1%, #494d4e 94.1% 100%)"></div>
         <ul class="mj-legend">
           <li><i style="background:#7fd4d4"></i>10代<small>11.9%</small></li>
           <li><i style="background:#00AEC7"></i>20代<small>71.6%</small></li>
-          <li><i style="background:#ed7d2b"></i>30代<small>10.5%</small></li>
-          <li><i style="background:#494d4e"></i>40代以上<small>6.0%</small></li>
+          <li><i style="background:#ed7d2b"></i>30代<small>10.6%</small></li>
+          <li><i style="background:#494d4e"></i>40代以上<small>5.9%</small></li>
         </ul>
         <p class="cap">会員の8割超が10〜20代。Z世代に選ばれています。</p>
       </div>
@@ -490,7 +490,7 @@
       <div class="label">POP UP 出店実績</div>
       <div class="venues"><i>伊勢丹新宿店</i><i>梅田阪急</i><i>渋谷PARCO</i><i>心斎橋PARCO</i><i>名古屋PARCO</i></div>
     </div>
-    <p class="mj-data-note fade">※2026年11月11日時点。自社会員データより算出しています。</p>
+    <p class="mj-data-note fade">※2026年11月12日時点。自社会員データより算出しています。</p>
   </div>
 </section>
 
@@ -643,7 +643,7 @@
       requestAnimationFrame(step);
     }
     var donut = document.getElementById('mjDonut');
-    var SEGS = [[11.9,'#7fd4d4'],[83.5,'#00AEC7'],[94,'#ed7d2b'],[100,'#494d4e']];
+    var SEGS = [[11.9,'#7fd4d4'],[83.5,'#00AEC7'],[94.1,'#ed7d2b'],[100,'#494d4e']];
     function paintDonut(t){
       var stops = [], prev = 0;
       for (var i = 0; i < SEGS.length; i++) {
