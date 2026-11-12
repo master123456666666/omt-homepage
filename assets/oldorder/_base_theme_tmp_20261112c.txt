@@ -1,0 +1,895 @@
+{block:NotLoadItemsPage}<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{block:NotIndexPage}{PageTitle}{/block:NotIndexPage}{block:IndexPage}{block:IndexPageCategory}{PageTitle}{/block:IndexPageCategory}{block:IndexPageSearch}{PageTitle}{/block:IndexPageSearch}{block:NoIndexPageCategory}{block:NoIndexPageSearch}{block:text-OoTopTitle}{text:OoTopTitle}{/block:text-OoTopTitle}{block:not_text-OoTopTitle}{PageTitle}{/block:not_text-OoTopTitle}{/block:NoIndexPageSearch}{/block:NoIndexPageCategory}{/block:IndexPage}</title>
+{FaviconTag}
+{CanonicalTag}
+{BackgroundTag}
+{JQueryTag}
+{GoogleAnalyticsTag}
+{HeadLinkNextPrevTag}
+{block:ItemPage}{MetaItemInfoTag}{/block:ItemPage}
+{block:IndexPage}{MetaShopInfoTag}{/block:IndexPage}
+<meta name="BASE-Theme-Name" content="OLD ORDER Official">
+<meta name="BASE-Theme-Version" content="1.0">
+{block:Hidden}
+<meta name="image:Hero1" content="" label="◾トップの大きな写真 1枚目(横長・1600px以上がおすすめ)" data-group="home">
+<meta name="text:Hero1URL" content="" label="⌊ 1枚目を押したときのリンク先(任意)" data-group="home">
+<meta name="image:Hero2" content="" label="◾トップの大きな写真 2枚目" data-group="home">
+<meta name="text:Hero2URL" content="" label="⌊ 2枚目のリンク先(任意)" data-group="home">
+<meta name="image:Hero3" content="" label="◾トップの大きな写真 3枚目" data-group="home">
+<meta name="text:Hero3URL" content="" label="⌊ 3枚目のリンク先(任意)" data-group="home">
+<meta name="image:Hero4" content="" label="◾トップの大きな写真 4枚目" data-group="home">
+<meta name="text:Hero4URL" content="" label="⌊ 4枚目のリンク先(任意)" data-group="home">
+<meta name="text:Hero1Title" content="" label="⌊ 1枚目の写真の上の見出し(任意)" data-group="home">
+<meta name="text:Hero1Sub" content="" label="⌊ 1枚目の小さな説明文(任意)" data-group="home">
+<meta name="text:Hero2Title" content="" label="⌊ 2枚目の写真の上の見出し(任意)" data-group="home">
+<meta name="text:Hero2Sub" content="" label="⌊ 2枚目の小さな説明文(任意)" data-group="home">
+<meta name="text:Hero3Title" content="" label="⌊ 3枚目の写真の上の見出し(任意)" data-group="home">
+<meta name="text:Hero3Sub" content="" label="⌊ 3枚目の小さな説明文(任意)" data-group="home">
+<meta name="text:Hero4Title" content="" label="⌊ 4枚目の写真の上の見出し(任意)" data-group="home">
+<meta name="text:Hero4Sub" content="" label="⌊ 4枚目の小さな説明文(任意)" data-group="home">
+<meta name="text:HeroBtn1" content="" label="◾写真の上のボタン1の文字(例 MEN)" data-group="home">
+<meta name="text:HeroBtn1URL" content="" label="⌊ ボタン1のリンク先" data-group="home">
+<meta name="text:HeroBtn2" content="" label="◾写真の上のボタン2の文字(例 WOMEN)" data-group="home">
+<meta name="text:HeroBtn2URL" content="" label="⌊ ボタン2のリンク先" data-group="home">
+<meta name="image:SpHero1" content="" label="◾スマホ用の縦長写真 1枚目(空欄=上の横長を使う)" data-group="home">
+<meta name="image:SpHero2" content="" label="⌊ スマホ用 2枚目" data-group="home">
+<meta name="image:SpHero3" content="" label="⌊ スマホ用 3枚目" data-group="home">
+<meta name="image:SpHero4" content="" label="⌊ スマホ用 4枚目" data-group="home">
+<meta name="image:FeatImg" content="" label="◾写真+濃い面の組み合わせ: 左の大きな写真" data-group="home">
+<meta name="image:FeatThumb" content="" label="⌊ 右の小さな商品写真" data-group="home">
+<meta name="text:FeatTitle" content="Walk In Pure Comfort" label="⌊ 見出し" data-group="home">
+<meta name="text:FeatSub" content="Engineered for all day ease and effortless versatile style" label="⌊ 小さな説明文" data-group="home">
+<meta name="text:FeatName" content="ONE WEEK / Brown Marron" label="⌊ 商品名" data-group="home">
+<meta name="text:FeatPrice" content="¥16,500" label="⌊ 値段" data-group="home">
+<meta name="text:FeatURL" content="/items/155476317" label="⌊ 商品ページのURL" data-group="home">
+<meta name="text:FeatAfter" content="1" label="⌊ 何番目の列のあとに出すか(数字)" data-group="home">
+<meta name="text:OoBestPin" content="96657059,96655538,96659234,105389260,155476260,128370567" label="◾Best Sellersの列で先頭に並べる商品(商品IDをカンマ区切り・空欄=BASEの売れ数で決めた既定の順・0=並べ替えない)" data-group="home">
+<meta name="text:OoSections" content="" label="◾トップの商品の列(書式: 見出し:カテゴリID をカンマ区切り / 空欄=既定)" data-group="home">
+<meta name="text:OoBar1" content="" label="◾一番上の黒い帯: メッセージ1(全部空欄=既定)" data-group="home">
+<meta name="text:OoBar2" content="" label="⌊ メッセージ2" data-group="home">
+<meta name="text:OoBar3" content="" label="⌊ メッセージ3" data-group="home">
+<meta name="if:OoPopup" content="1" label="◾メール登録の案内(5%OFF)を出す" data-group="home">
+<meta name="text:OoPopupCode" content="" label="⌊ クーポンコード(空欄=Q9XTUMEK)" data-group="home">
+<meta name="if:OoSizeFilter" content="1" label="◾サイズで絞り込む帯を出す" data-group="home">
+<meta name="if:OoIgSection" content="1" label="◾Instagramの列を出す" data-group="home">
+<meta name="text:OoExtraDict" content="" label="◾英語の追加の言い換え(書式: 日本語=English | 日本語=English)" data-group="home">
+<meta name="text:OoTopTitle" content="OLD ORDER JAPAN 公式BASE店｜Official Worldwide Store" label="◾トップページのタイトル(Googleの検索結果に出る名前・空欄=ショップ名)" data-group="home">
+{/block:Hidden}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap">
+<style>
+:root{ --ink:#111;--sub:#666;--line:#e6e6e6;--soft:#f6f5f2;--serif:Poppins,sans-serif;--sans:"Bricolage Grotesque",sans-serif;--pad:40px}*{ box-sizing:border-box}html,body{ margin:0;padding:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}a{ color:inherit;text-decoration:none}img{ max-width:100%;display:block}button{ font:inherit;color:inherit}.serif{ font-family:var(--serif);font-weight:600;letter-spacing:.01em}[hidden]{ display:none!important}#ooBar{ position:relative;background:#141312;color:#fff;height:34px;overflow:hidden}#ooBar .msg{ position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .5s;padding:0 96px;font-size:11px;font-weight:600;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#ooBar .msg.on{ opacity:1;visibility:visible}#ooBar .msg a{ text-decoration:underline}#ooLangSw{ position:absolute;right:12px;top:0;bottom:0;z-index:2;display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700}#ooLangSw button{ background:none;border:0;color:#8a8a8a;cursor:pointer;padding:4px 3px}#ooLangSw button.on{ color:#fff;text-decoration:underline}#ooLangSw .cur{ color:#fff}#ooLangSw ul{ position:absolute;right:0;top:30px;list-style:none;margin:0;padding:6px 0;background:#141312;min-width:120px;z-index:60}#ooLangSw ul button{ display:block;width:100%;text-align:left;padding:7px 14px;color:#bbb}#ooBar{ overflow:visible;z-index:60}#ooBar .msgs{ position:absolute;inset:0;overflow:hidden}#ooFootLang ul{ list-style:none;margin:0;padding:0}#ooFootLang button{ background:none;border:0;padding:0;cursor:pointer;font-size:13px;color:var(--sub);margin:6px 0}#ooFootLang button.on{ color:var(--ink);font-weight:700}.it-intl{ border:1px solid var(--line);background:#fafaf8;padding:12px 14px;margin:14px 0;font-size:12px;line-height:1.6}.it-intl .t{ font-weight:700;margin:0 0 6px}#ooWantOverlay{ position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}#ooWantOverlay.on{ display:flex}#ooWantOverlay .box{ background:#fff;max-width:440px;width:100%;max-height:80vh;overflow-y:auto;padding:26px 22px 18px;font-size:13px;line-height:1.8;position:relative}#ooWantOverlay h3{ font-size:15px;margin:0 0 10px}#ooWantOverlay p{ margin:0 0 10px}#ooWantOverlay .x{ position:absolute;top:6px;right:10px;border:0;background:none;font-size:24px;cursor:pointer;color:#666}#ooWantOpen{ text-decoration:underline;cursor:pointer}.it-intl ul{ margin:0;padding-left:18px}#ooLangSw i{ color:#555;font-style:normal}#ooHead{ position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;padding:0 var(--pad);background:#fff;border-bottom:1px solid var(--line)}#ooHead .hd-l,#ooHead .hd-r{ display:flex;align-items:center;gap:14px}#ooHead .hd-r{ justify-content:flex-end}#ooHead .ic{ display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:none;border:0;cursor:pointer;color:var(--ink);padding:0}#ooHead .logo{ margin:0;line-height:0}#ooHead .logo img{ max-height:30px;width:auto}#ooHead .cartWrap #baseMenu ul{ list-style:none;margin:0;padding:0;display:flex}#ooHead .cartWrap #baseMenu li{ margin:0;padding:0}#ooHead .cartWrap #baseMenu a{ display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;font-size:0}#ooHead .cartWrap #baseMenu img{ width:22px;height:22px;filter:brightness(0)}#ooHead .cartWrap #baseMenu li:not(.cart){ display:none}#ooSearch{ position:sticky;top:64px;z-index:49;background:#fff;border-bottom:1px solid var(--line);padding:14px var(--pad)}#ooSearch form{ display:flex;max-width:720px;margin:0 auto;border-bottom:1px solid var(--ink)}#ooSearch input{ flex:1;border:0;outline:0;font-size:16px;padding:10px 4px;background:transparent}#ooSearch button{ border:0;background:none;font-size:20px;cursor:pointer;padding:0 6px}#ooHero{ position:relative;background:#eee}#ooHero .hero-track{ display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}#ooHero .hero-track::-webkit-scrollbar{ display:none}#ooHero .hero-slide{ flex:0 0 100%;scroll-snap-align:start;height:min(78vh,820px)}#ooHero .hero-slide a,#ooHero picture{ display:block;height:100%}#ooHero img{ width:100%;height:100%;object-fit:cover}#ooHero .hero-slide{ position:relative}#ooHero .hero-cap{ position:absolute;left:0;right:0;bottom:56px;text-align:center;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.25);pointer-events:none}#ooHero .hero-cap h2{ font-family:var(--serif);font-weight:600;font-size:40px;margin:0 0 6px}#ooHero .hero-cap p{ font-size:14px;margin:0 0 18px}#ooHero .hero-btns{ display:flex;gap:16px;justify-content:center;pointer-events:auto}#ooHero .hero-btns a{ min-width:108px;padding:11px 20px;font-size:12px;letter-spacing:.12em;text-shadow:none}#ooHero .hero-btns .b1{ background:#fff;color:var(--ink)}#ooHero .hero-btns .b2{ border:1px solid #fff;color:#fff}#ooHero .hero-nav{ position:absolute;left:var(--pad);bottom:22px;display:flex;gap:8px}#ooHero .hero-nav button{ width:36px;height:36px;border:0;background:#fff;color:var(--ink);font-size:20px;line-height:1;cursor:pointer}#ooHero:not(.multi) .hero-nav{ display:none}.ooSec{ padding:56px var(--pad) 8px}.ooSec__head{ display:flex;align-items:baseline;justify-content:space-between;margin:0 0 20px}.ooSec__label{ font-family:var(--serif);font-weight:600;font-size:30px;letter-spacing:.005em;margin:0}.ooSec__more{ font-size:12px;letter-spacing:.12em;text-decoration:underline;text-underline-offset:4px}.ooGrid{ display:grid;grid-template-columns:repeat(4,1fr);gap:36px 16px}.item-box{ position:relative;min-width:0}.item-box a{ display:block}.item-thumb-wrap{ position:relative;aspect-ratio:1/1;background:#fff;overflow:hidden}.item-thumb-wrap img{ width:100%;height:100%;object-fit:contain;transition:opacity .35s}.item-thumb-wrap .img2{ position:absolute;inset:0;opacity:0;background:#fff}@media (hover:hover){ .item-box:hover .img2{ opacity:1}}@media (hover:none){ .item-thumb-wrap .img2{ display:none}}.item-meta{ padding:12px 2px 0}.item-meta .ooBrand{ font-family:var(--serif);font-weight:700;font-size:12px;letter-spacing:.05em}.item-meta .ooBrand[data-bk]{ display:inline-block;cursor:pointer;border-bottom:1px solid currentColor;padding-bottom:1px;margin-bottom:4px}.item-meta .ooBrand[data-bk]:hover{ opacity:.6}.item-meta .item-title{ font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.35;margin-top:2px}.item-meta .item-price{ font-size:13px;margin-top:5px}.item-meta .properprice{ text-decoration:line-through;color:var(--sub);margin-right:6px}.item-box .soldout,.item-box .waitingForSale{ display:inline-block;margin-top:5px;font-size:11px;letter-spacing:.08em;color:var(--sub)}.item-box.isSold .item-thumb-wrap{ opacity:.45}.item-box.isSold .img2{ display:none!important}.item-box.isSold .item-price{ display:none}.listWrap{ padding:0 var(--pad) 40px}.listWrap.isTop{ display:none}.pageHead{ padding:48px var(--pad) 22px}.pageHead h2{ font-size:34px;margin:0}#moreItems{ text-align:center;margin:40px 0 10px}.btnLine{ display:inline-block;border:1px solid var(--ink);padding:12px 34px;font-size:12px;letter-spacing:.14em;background:#fff}.notfound{ padding:40px 0;color:var(--sub)}.ooSec.slide .ooGrid{ display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}.ooSec.slide .ooGrid::-webkit-scrollbar{ display:none}.ooSec.slide .ooGrid>.item-box{ flex:0 0 calc((100% - 64px)/4.4);scroll-snap-align:start}.ooSec__nav{ display:flex;align-items:center;gap:6px}.ooSec__nav button{ width:34px;height:34px;border:1px solid var(--line);background:#fff;font-size:18px;line-height:1;cursor:pointer;color:var(--ink)}.ooSec__nav button:disabled{ opacity:.3;cursor:default}.ooSec__head .right{ display:flex;align-items:center;gap:16px}#ooSizeBar{ display:flex;align-items:center;gap:26px;margin:36px var(--pad) 0;padding:14px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow-x:auto;scrollbar-width:none}#ooSizeBar::-webkit-scrollbar{ display:none}#ooSizeBar .hd{ flex:0 0 auto;line-height:1.35}#ooSizeBar .hd b{ display:block;font-family:var(--serif);font-size:18px;font-weight:700}#ooSizeBar .hd span{ font-size:11px;color:var(--sub);letter-spacing:.08em}#ooSizeBar .sz{ display:flex;gap:4px;flex:1 1 auto}#ooSizeBar .sz button{ flex:0 0 auto;min-width:44px;height:40px;padding:0 6px;border:1px solid transparent;background:none;cursor:pointer;font-size:16px;white-space:nowrap}#ooSizeBar .sz button.on{ border-color:var(--ink)}#ooSizeBar .x{ flex:0 0 auto;border:0;background:none;font-size:12px;letter-spacing:.1em;text-decoration:underline;cursor:pointer;color:var(--sub)}#ooBrandTabs{ display:flex;justify-content:center;gap:34px;margin:44px var(--pad) 0;overflow-x:auto;scrollbar-width:none}#ooBrandTabs::-webkit-scrollbar{ display:none}#ooBrandTabs button{ flex:0 0 auto;border:0;border-bottom:2px solid transparent;background:none;padding:6px 2px;cursor:pointer;font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.04em;color:#999;white-space:nowrap}#ooBrandTabs button.on{ color:var(--ink);border-bottom-color:var(--ink)}#ooBrandTabs+#ooSizeBar{ margin-top:18px}#ooSeries{ margin:0 var(--pad) 28px}#ooSeries .hd{ margin:0 0 12px;font-size:13px;letter-spacing:.04em}#ooSeries .hd b{ font-weight:700;margin-right:12px;letter-spacing:.06em}#ooSeries .row{ display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}#ooSeries .row::-webkit-scrollbar{ display:none}#ooSeries a{ flex:0 0 120px;color:var(--ink);text-decoration:none;text-align:center;font-size:13px;line-height:1.3}#ooSeries .im{ display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#fff;border:1px solid #ddd;padding:6px;box-sizing:border-box}#ooSeries .im img{ width:100%;height:100%;object-fit:contain;display:block}#ooSeries .all{ font-size:13px;font-weight:700;letter-spacing:.12em;color:#555}#ooSeries .nm{ display:block;margin:8px 4px 0;padding-bottom:7px;border-bottom:3px solid transparent;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}#ooSeries a.on .im{ border-color:var(--ink)}#ooSeries a.on .nm{ border-bottom-color:#777;font-weight:700}#ooSeries a:hover .im{ border-color:#999}.it-colors{ margin:6px 0 22px;padding-top:20px;border-top:1px solid var(--line)}.it-colors .hd{ margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.04em}.it-colors .hd span{ color:var(--sub);font-weight:400;margin-left:8px}.it-colors .row{ display:flex;flex-wrap:wrap;gap:10px}.it-colors a{ flex:0 0 92px;color:var(--ink);text-decoration:none;font-size:12px;line-height:1.3;text-align:center}.it-colors .im{ display:block;aspect-ratio:4/3;background:#fff;border:1px solid #ddd;padding:6px;box-sizing:border-box}.it-colors .im img{ width:100%;height:100%;object-fit:contain;display:block}.it-colors a:hover .im{ border-color:#999}.it-colors a.cur .im{ border:2px solid var(--ink);padding:5px}.it-colors a.cur .nm{ font-weight:700}.it-colors .nm{ display:block;margin-top:6px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.it-colors a.sold .im img,.it-colors a.sold .nm{ opacity:.45}.it-colors .so{ display:block;color:var(--sub);font-size:10px;letter-spacing:.08em}.ooFeat{ display:grid;grid-template-columns:1fr 1fr;margin:64px 0 8px;background:#3a3a3a;color:#fff}.ooFeat .ph{ background:#ccc center/cover no-repeat;min-height:640px}.ooFeat .pn{ display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px}.ooFeat h3{ font-family:var(--serif);font-weight:600;font-size:38px;margin:0 0 10px}.ooFeat .sb{ font-size:13px;margin:0 0 30px;opacity:.9}.ooFeat .th{ display:block;width:170px;height:170px;background:#f3f1ec center/cover no-repeat;margin-bottom:18px}.ooFeat .br{ font-family:var(--serif);font-size:12px;font-weight:700;letter-spacing:.06em}.ooFeat .nm{ font-family:var(--serif);font-size:17px;margin:4px 0}.ooFeat .pr{ font-size:13px;margin-bottom:18px}.ooFeat .bt{ background:#fff;color:var(--ink);padding:12px 22px;font-size:11px;letter-spacing:.14em}.ooIG .ooGrid{ grid-template-columns:repeat(6,1fr);gap:8px}.ooIG figure{ margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--soft)}.ooIG img{ width:100%;height:100%;object-fit:cover}#ooItem{ padding:28px var(--pad) 40px}.it-grid{ display:grid;grid-template-columns:minmax(0,1.75fr) minmax(320px,1fr);gap:48px;align-items:start}.it-gallery{ display:grid;grid-template-columns:1fr 1fr;gap:8px}.it-gallery figure{ margin:0;background:#fff;aspect-ratio:1/1;overflow:hidden}.it-gallery img{ width:100%;height:100%;object-fit:contain}.it-gallery figure:first-child img{ object-fit:contain}.it-dots{ display:none}.it-sticky{ position:sticky;top:88px}.ooItBrand{ display:block;font-family:var(--serif);font-weight:700;font-size:13px;letter-spacing:.06em;margin-bottom:6px}a.ooItBrand{ display:inline-block;color:var(--ink);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}.itemTitle{ font-size:30px;line-height:1.2;margin:0 0 10px}.priceBox #price p{ margin:0;font-size:18px}.priceBox .tax{ font-size:11px;color:var(--sub);margin-left:6px}.priceBox .properprice{ text-decoration:line-through;color:var(--sub);margin-right:8px}.stockStatus{ margin:10px 0}.stockStatus .soldout,.stockStatus .comingSoon{ display:inline-block;border:1px solid var(--ink);padding:4px 10px;font-size:11px;letter-spacing:.1em}.it-bnpl{ margin:16px 0 0}.it-attention{ font-size:12px;color:#333;margin:14px 0}.it-form{ margin:18px 0 6px}.it-form select{ width:100%;height:44px;border:1px solid #ccc;padding:0 10px;background:#fff;font-size:14px}.it-form .purchaseButton__btn,.it-form button[type=submit]{ width:100%;height:50px;border:1px solid var(--ink)!important;background:#fff!important;color:var(--ink)!important;border-radius:0!important;font-size:13px;letter-spacing:.14em;cursor:pointer;transition:background .2s,color .2s}.it-form .purchaseButton__btn:hover,.it-form button[type=submit]:hover{ background:var(--ink)!important;color:#fff!important}#ooSizeBtns{ display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px}#ooSizeBtns button{ min-width:52px;height:42px;padding:0 10px;border:1px solid #cfcfcf;background:#fff;cursor:pointer;font-size:13px}#ooSizeBtns button.on{ background:var(--ink);color:#fff;border-color:var(--ink)}#ooSizeBtns button.out{ color:#bbb;background:#fafafa;text-decoration:line-through;cursor:not-allowed}.ooSizeLabel{ font-size:12px;letter-spacing:.08em;margin:0 0 6px}select.ooHiddenSel{ position:absolute!important;opacity:0!important;pointer-events:none!important;width:1px!important;height:1px!important}.it-checks{ list-style:none;margin:18px 0;padding:0;font-size:12px}.it-checks li{ padding-left:22px;position:relative;margin:6px 0}.it-checks li::before{ content:"";position:absolute;left:4px;top:4px;width:9px;height:5px;border-left:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(-45deg)}.it-detail{ border-top:1px solid var(--line);padding-top:18px;margin-top:10px;font-size:13px;line-height:1.85;white-space:normal}.it-share{ display:flex;gap:16px;font-size:12px;margin:20px 0 6px;color:var(--sub)}#reportBtn{ margin-top:8px;font-size:11px}.related{ padding-left:0;padding-right:0}.staticPage{ max-width:860px;margin:0 auto;padding:48px var(--pad) 60px;font-size:14px;line-height:1.9}.staticPage h2{ font-size:34px}.notpublic{ padding:80px var(--pad);text-align:center}#ooFoot{ margin-top:72px;border-top:1px solid var(--line);padding:56px var(--pad) 28px}.ft-news{ max-width:520px;margin:0 0 48px}.ft-news h3{ font-size:28px;margin:0 0 6px}.ft-news p{ color:var(--sub);margin:0 0 14px}.ft-cols{ display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.ft-col h4{ font-size:11px;letter-spacing:.14em;margin:0 0 12px}.ft-col ul{ list-style:none;margin:0;padding:0}.ft-col li{ margin:6px 0;font-size:13px}.ft-bottom{ display:flex;justify-content:space-between;align-items:center;margin-top:40px;font-size:11px;color:var(--sub)}.ft-bottom address{ font-style:normal}#ooDrawer{ position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.35)}#ooDrawer .dr-panel{ position:absolute;left:0;top:0;bottom:0;width:min(380px,86vw);background:#fff;overflow-y:auto;padding:22px 26px}#ooDrawer .dr-close{ border:0;background:none;font-size:28px;line-height:1;cursor:pointer;padding:0}#ooDrawer .dr-nav{ margin-top:18px}#ooDrawer .dr-nav a{ display:block;padding:10px 0;font-family:var(--serif);font-weight:600;font-size:19px;border-bottom:1px solid var(--line)}#ooDrawer .dr-sub a{ font-family:var(--sans);font-weight:400;font-size:13px;padding:7px 0 7px 14px;border-bottom:0}#ooDrawer .dr-links a{ font-family:var(--sans);font-size:13px;font-weight:400;border-bottom:0;padding:7px 0}#ooDrawer .dr-links{ margin-top:20px}#ooPop{ position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.5)}#ooPop .card{ display:flex;width:min(720px,92vw);background:#fff;overflow:hidden}#ooPop .side{ flex:0 0 46%;background:#ddd center/cover no-repeat;min-height:380px}#ooPop .body{ flex:1;padding:40px 30px;position:relative}#ooPop h2{ font-family:var(--serif);font-size:38px;margin:0 0 8px}#ooPop p{ font-size:13px;color:#333}#ooPop input{ width:100%;height:44px;border:1px solid #bbb;padding:0 12px;margin:10px 0}#ooPop .go{ width:100%;height:46px;border:0;background:var(--ink);color:#fff;letter-spacing:.12em;cursor:pointer}#ooPop .no{ display:block;margin:12px auto 0;border:0;background:none;color:var(--sub);text-decoration:underline;cursor:pointer;font-size:12px}#ooPop .x{ position:absolute;right:12px;top:8px;border:0;background:none;font-size:24px;cursor:pointer}#ooPop .code{ font-size:24px;font-weight:700;letter-spacing:.12em;border:1px dashed var(--ink);padding:10px;text-align:center;margin:10px 0}@media(max-width:760px){ :root{ --pad:16px}#ooBar .msg{ padding:0 86px 0 14px;justify-content:flex-start;font-size:10px}#ooHead{ height:56px;padding:0 10px}#ooHead .hd-l,#ooHead .hd-r{ gap:2px}#ooHead .logo img{ max-height:24px}#ooSearch{ top:56px}#ooHero .hero-slide{ height:72vh}#ooHero .hero-cap{ bottom:40px}#ooHero .hero-cap h2{ font-size:30px}.ooSec{ padding:40px var(--pad) 4px}.ooSec__label{ font-size:25px}.ooGrid{ grid-template-columns:repeat(2,1fr);gap:26px 12px}.ooSec.slide .ooGrid{ gap:12px}.ooSec.slide .ooGrid>.item-box{ flex:0 0 calc((100% - 12px)/2.2)}.ooSec__nav{ display:none}.ooFeat{ grid-template-columns:1fr;margin-top:44px}.ooFeat .ph{ min-height:440px}.ooFeat h3{ font-size:30px}.ooIG .ooGrid{ grid-template-columns:repeat(3,1fr)}#ooSizeBar{ margin:24px var(--pad) 0;gap:14px}#ooBrandTabs{ gap:20px;margin-top:30px}#ooBrandTabs button{ font-size:17px}#ooSeries a{ flex-basis:96px;font-size:12px}#ooSeries{ margin-bottom:22px}.it-colors .row{ display:grid;grid-template-columns:repeat(4,1fr);gap:8px}#ooSizeBar .hd b{ font-size:15px}#ooItem{ padding:0 0 30px}.it-grid{ grid-template-columns:1fr;gap:18px}.it-gallery{ display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:0;scrollbar-width:none}.it-gallery::-webkit-scrollbar{ display:none}.it-gallery figure{ flex:0 0 100%;scroll-snap-align:start}.it-gallery figure img{ object-fit:contain}.it-dots{ display:flex;justify-content:center;gap:6px;margin-top:10px}.it-dots i{ width:6px;height:6px;border-radius:50%;background:#ccc}.it-dots i.on{ background:var(--ink)}.it-info{ padding:0 var(--pad)}.it-sticky{ position:static}.itemTitle{ font-size:25px}.ft-cols{ grid-template-columns:1fr 1fr}.ft-bottom{ flex-direction:column;gap:12px;align-items:flex-start}#ooPop .side{ display:none}}.it-coupon{ font-size:12px;line-height:1.7;color:#555;background:#f6f6f4;padding:10px 12px;margin:0 0 14px}#x_startMessenger{ left:auto!important;right:14px!important;bottom:16px!important;width:48px!important;min-width:0!important;height:48px!important;padding:0!important;border-radius:50%!important;justify-content:center!important}#x_startMessenger .msg_startButton__text{ display:none!important}#x_startMessenger{ transition:opacity .2s}body.ooHideChat #x_startMessenger{ opacity:0!important;pointer-events:none!important}#ooShops{ padding-bottom:40px}.ooShops__sub{ font-size:12px;letter-spacing:.08em;color:var(--sub)}.ooShops__lead{ margin:-8px 0 16px;font-size:13px;color:var(--sub);line-height:1.7}.ooShops__row{ display:flex;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding-bottom:6px;scrollbar-width:none}.ooShops__row::-webkit-scrollbar{ display:none}.ooShop{ flex:0 0 auto;width:78%;max-width:300px;scroll-snap-align:start;border:1px solid var(--line);background:#fff;box-sizing:border-box}@media(min-width:900px){ .ooShops__row{ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}.ooShop{ width:auto;max-width:none}}.ooShop .ph{ aspect-ratio:4/3;background:var(--soft) center/cover no-repeat}.ooShop .bd{ padding:14px 14px 16px}.ooShop .ar{ margin:0;font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--sub)}.ooShop .nm{ margin:4px 0 10px;font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.3}.ooShop dl{ margin:0;font-size:12px;line-height:1.65}.ooShop dt{ float:left;clear:left;width:5.2em;color:var(--sub)}.ooShop dd{ margin:0 0 3px 5.2em}.ooShop dd a{ color:var(--ink)}.ooShop .bt{ display:flex;gap:8px;margin-top:12px}.ooShop .bt a{ flex:1;display:flex;align-items:center;justify-content:center;padding:9px 4px;border:1px solid var(--ink);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.06em;text-decoration:none}.ooShops__note{ margin:10px 0 0;font-size:11px;line-height:1.6;color:var(--sub)}.ooShop{ display:flex;flex-direction:column}.ooShop .bd{ flex:1;display:flex;flex-direction:column}.ooShop .bt{ margin-top:auto;padding-top:12px}@media(max-width:899px){ .ooShops__row{ gap:10px}.ooShop{ width:calc((100% - 10px) * .72);max-width:280px}.ooShop .bd{ padding:11px 11px 12px}.ooShop .ar{ font-size:9px}.ooShop .nm{ font-size:16px;margin:3px 0 8px}.ooShop dl{ font-size:11px;line-height:1.55}.ooShop dt{ width:4.6em}.ooShop dd{ margin-left:4.6em}.ooShop .bt{ gap:6px;padding-top:10px}.ooShop .bt a{ padding:8px 2px;font-size:10px}}html[data-oolang="ar"] body *{ unicode-bidi:plaintext}html[data-oolang="ar"] .it-intl,html[data-oolang="ar"] .it-checks,html[data-oolang="ar"] .it-colors .hd,html[data-oolang="ar"] .ft-col{ direction:rtl}html[data-oolang="ar"] .it-intl ul{ padding-left:0;padding-right:18px}html[data-oolang="ar"] .it-checks li{ padding-left:0;padding-right:22px}html[data-oolang="ar"] .it-checks li::before{ left:auto;right:4px}html[data-oolang="ar"] .it-colors .hd span{ margin-left:0;margin-right:8px}html[data-oolang="ar"] a,html[data-oolang="ar"] span,html[data-oolang="ar"] b,html[data-oolang="ar"] strong,html[data-oolang="ar"] em,html[data-oolang="ar"] i,html[data-oolang="ar"] small,html[data-oolang="ar"] br{ unicode-bidi:normal}html[data-oolang="ar"] .ft-col li,html[data-oolang="ar"] .ft-col h4{ unicode-bidi:isolate}html[data-oolang="ar"] #price p,html[data-oolang="ar"] .discounted{ direction:ltr;unicode-bidi:isolate}#ooHero.ooLookWait .hero-track{ visibility:hidden}#ooHero .hero-slide.lk{ height:min(76vh,760px)}#ooHero .hero-slide.lk img{ width:100%;height:100%;object-fit:cover}#ooHero .hero-slide.lk a{ position:relative}#ooHero .lkCap{ position:absolute;left:var(--pad);bottom:84px;max-width:520px;color:#fff;text-align:left;text-shadow:0 1px 14px rgba(0,0,0,.35)}#ooHero .hero-slide.lk a::after{ content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,0));pointer-events:none}#ooHero .lkCap{ z-index:1}#ooHero .lkCap .lb{ display:block;font-size:11px;letter-spacing:.22em;margin:0 0 10px;opacity:.9}#ooHero .lkCap h2{ font-family:var(--serif);font-weight:500;font-size:56px;line-height:1.02;margin:0 0 10px}#ooHero .lkCap p{ font-size:14px;margin:0 0 18px}#ooHero .lkCap .go{ display:inline-block;font-size:12px;letter-spacing:.12em;border-bottom:1px solid #fff;padding-bottom:3px}.ooTicker{ background:#141312;color:#fff;overflow:hidden;white-space:nowrap;border-bottom:1px solid #141312}.ooTicker .mv{ display:inline-block;padding:11px 0;animation:ooTk 38s linear infinite;font-size:12px;letter-spacing:.14em}.ooTicker a{ margin:0 18px}.ooTicker i{ font-style:normal;color:#00AEC7}@keyframes ooTk{ from{ transform:translateX(0)}to{ transform:translateX(-50%)}}.ooPcNav{ display:none}@media(min-width:900px){ .ooPcNav{ display:flex;justify-content:center;gap:30px;padding:12px var(--pad);border-bottom:1px solid var(--line);background:#fff;font-size:12px;letter-spacing:.12em}.ooPcNav a{ color:var(--ink);padding:2px 0;border-bottom:1px solid transparent}.ooPcNav a:hover{ border-bottom-color:var(--ink)}}.ooBrands{ padding:64px var(--pad) 16px}.ooBrands .ooSec__label{ margin:0 0 22px}.ooBrands .g{ display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto auto;gap:22px 22px}.ooBrands .b{ display:block;color:var(--ink)}.ooBrands .b0{ grid-row:1/3}.ooBrands .ph{ display:block;overflow:hidden;background:var(--soft)}.ooBrands .b0 .ph{ aspect-ratio:4/5}.ooBrands .b1 .ph,.ooBrands .b2 .ph{ aspect-ratio:16/10}.ooBrands .ph img{ width:100%;height:100%;object-fit:cover;transition:transform .6s}.ooBrands .b:hover .ph img{ transform:scale(1.03)}.ooBrands .nm{ display:block;font-family:var(--serif);font-weight:600;font-size:30px;margin:14px 0 4px}.ooBrands .b0 .nm{ font-size:40px}.ooBrands .tx{ display:block;font-size:12px;color:var(--sub);line-height:1.8;max-width:440px}.ooBan{ display:grid;grid-template-columns:7fr 5fr;gap:0;margin:56px 0 8px;background:var(--soft)}.ooBan.rev{ grid-template-columns:5fr 7fr}.ooBan.rev .big{ order:2}.ooBan .big{ display:block;height:min(760px,56vw);overflow:hidden}.ooBan .big img{ width:100%;height:100%;object-fit:cover}.ooBan .side{ display:flex;flex-direction:column;justify-content:space-between;padding:44px 44px 40px}.ooBan .sm{ display:block;width:46%;max-width:240px;aspect-ratio:4/5;overflow:hidden}.ooBan .sm img{ width:100%;height:100%;object-fit:cover}.ooBan .tx .lb{ display:block;font-size:11px;letter-spacing:.22em;color:var(--sub);margin:0 0 10px}.ooBan .tx h3{ font-family:var(--serif);font-weight:500;font-size:52px;line-height:1.02;margin:0 0 14px}.ooBan .tx p{ font-size:13px;line-height:1.9;margin:0 0 20px;max-width:420px}.ooBan .tx .go{ font-size:12px;letter-spacing:.12em;border-bottom:1px solid var(--ink);padding-bottom:3px}@media(max-width:760px){ #ooHero .hero-slide.lk{ height:auto;aspect-ratio:4/5}#ooHero .lkCap{ left:20px;right:20px;bottom:80px}#ooHero .lkCap h2{ font-size:38px}.ooTicker .mv{ padding:9px 0;font-size:11px}.ooBrands{ padding:44px 16px 8px}.ooBrands .g{ grid-template-columns:1fr 1fr;gap:18px 12px}.ooBrands .b0{ grid-row:auto;grid-column:1/3}.ooBrands .b1 .ph,.ooBrands .b2 .ph{ aspect-ratio:1/1}.ooBrands .nm{ font-size:22px;margin:10px 0 2px}.ooBrands .b0 .nm{ font-size:30px}.ooBrands .tx{ font-size:11px}.ooBan,.ooBan.rev{ grid-template-columns:1fr;margin:40px 0 4px}.ooBan.rev .big{ order:0}.ooBan .big{ height:auto;aspect-ratio:4/5}.ooBan .side{ flex-direction:row;align-items:flex-end;gap:16px;padding:18px 16px 26px}.ooBan .sm{ width:38%;flex:0 0 38%}.ooBan .tx h3{ font-size:32px;margin:0 0 8px}.ooBan .tx p{ font-size:12px;line-height:1.8;margin:0 0 12px}}#ooBrandTabs.lkTabs{ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;justify-content:stretch;margin:44px var(--pad) 0}#ooBrandTabs.lkTabs button{ display:block;padding:0 0 10px;border:0;border-bottom:2px solid transparent;font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:.14em;color:#888;text-align:left;white-space:normal}#ooBrandTabs.lkTabs button .ph{ display:block;aspect-ratio:4/3;overflow:hidden;margin:0 0 10px;background:var(--soft)}#ooBrandTabs.lkTabs button img{ width:100%;height:100%;object-fit:cover;filter:grayscale(.55) brightness(.92);transition:filter .3s,transform .5s}#ooBrandTabs.lkTabs button.on{ color:var(--ink);border-bottom-color:var(--ink)}#ooBrandTabs.lkTabs button.on img,#ooBrandTabs.lkTabs button:hover img{ filter:none}#ooBrandTabs.lkTabs button:hover img{ transform:scale(1.03)}.ooRank .ooGrid{ counter-reset:ooR}.ooRank .item-box{ counter-increment:ooR;position:relative}.ooRank .item-box::before{ content:counter(ooR);position:absolute;left:4px;top:0;z-index:3;font-family:var(--serif);font-size:34px;font-weight:500;line-height:1;color:var(--ink)}.ooBan.feat .big{ position:relative}.ooBan.feat .badge{ position:absolute;left:24px;top:24px;background:#141312;color:#fff;font-size:11px;letter-spacing:.2em;padding:7px 12px}.ooBan.feat ul{ margin:0 0 20px;padding:0;list-style:none;font-size:13px;line-height:1.9;max-width:440px}.ooBan.feat li{ padding:8px 0;border-top:1px solid var(--line)}.ooBan.feat li:last-child{ border-bottom:1px solid var(--line)}.lkHead{ display:flex;align-items:baseline;gap:16px;margin:0 0 22px}.lkHead .sub{ font-size:12px;color:var(--sub);letter-spacing:.06em}.lkHead .ooSec__more{ margin-left:auto}.ooTiles{ padding:64px var(--pad) 8px}.ooTiles .g{ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.ooTiles .t{ display:block;color:var(--ink)}.ooTiles .t0{ grid-column:span 2;grid-row:span 2}.ooTiles .ph{ display:block;aspect-ratio:1/1;background:#f3f2ef;overflow:hidden}.ooTiles .t0 .ph{ aspect-ratio:auto;height:calc(100% - 64px)}.ooTiles .ph img{ width:100%;height:100%;object-fit:contain;padding:8%;transition:transform .5s}.ooTiles .t:hover .ph img{ transform:scale(1.05)}.ooTiles .nm{ display:block;font-family:var(--serif);font-weight:600;font-size:22px;margin:10px 0 0}.ooTiles .t0 .nm{ font-size:34px}.ooTiles .tx{ display:block;font-size:11px;color:var(--sub)}.ooStyle{ padding:64px var(--pad) 8px}.ooStyle .g{ display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:auto auto;gap:12px}.ooStyle .m{ position:relative;display:block;overflow:hidden;aspect-ratio:4/5;background:var(--soft)}.ooStyle .m0{ grid-row:1/3;aspect-ratio:auto}.ooStyle .m img{ width:100%;height:100%;object-fit:cover}.ooStyle .cap{ position:absolute;left:14px;bottom:12px;color:#fff;font-size:11px;letter-spacing:.14em;text-shadow:0 1px 8px rgba(0,0,0,.4)}@media(max-width:760px){ #ooBrandTabs.lkTabs{ display:flex;gap:10px;overflow-x:auto;margin:30px 16px 0}#ooBrandTabs.lkTabs button{ flex:0 0 40%;font-size:11px}.ooRank .item-box::before{ font-size:28px}.ooBan.feat .badge{ left:14px;top:14px}.ooBan.feat .side{ flex-direction:column;align-items:stretch}.ooBan.feat .sm{ display:none}.ooTiles,.ooStyle{ padding:44px 16px 4px}.lkHead{ flex-wrap:wrap;gap:4px 12px}.ooTiles .g{ grid-template-columns:1fr 1fr;gap:12px}.ooTiles .t0{ grid-column:1/3;grid-row:auto}.ooTiles .t0 .ph{ aspect-ratio:16/10;height:auto}.ooTiles .nm{ font-size:18px}.ooTiles .t0 .nm{ font-size:26px}.ooStyle .g{ grid-template-columns:1fr 1fr;gap:8px}.ooStyle .m0{ grid-column:1/3;grid-row:auto;aspect-ratio:4/5}}.ooBlog{ padding:64px var(--pad) 8px}.ooBlog .lkHead{ margin:0 0 18px}.ooBlog .bt{ display:flex;gap:26px;margin:0 0 18px;overflow-x:auto;scrollbar-width:none}.ooBlog .bt button{ flex:0 0 auto;border:0;border-bottom:2px solid transparent;background:none;padding:4px 2px 6px;font-size:14px;color:#999;cursor:pointer}.ooBlog .bt button.on{ color:var(--ink);font-weight:600;border-bottom-color:var(--ink)}.ooBlog .g{ display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}.ooBlog .g::-webkit-scrollbar{ display:none}.ooBlog .p{ flex:0 0 calc((100% - 16px*3.5)/4.3);scroll-snap-align:start;display:block;color:var(--ink)}.ooBlog .ph{ display:block;aspect-ratio:1/1;overflow:hidden;background:var(--soft)}.ooBlog .ph img{ width:100%;height:100%;object-fit:cover;transition:transform .5s}.ooBlog .p:hover .ph img{ transform:scale(1.03)}.ooBlog .dt{ display:block;font-size:11px;color:var(--sub);margin:12px 0 4px;letter-spacing:.02em}.ooBlog .tt{ display:block;font-size:13px;line-height:1.6}.ooBlog .none{ font-size:13px;color:var(--sub);padding:30px 0}@media(max-width:760px){ .ooBlog{ padding:44px 16px 4px}.ooBlog .p{ flex:0 0 76%}.ooBlog .bt{ gap:20px}}#ooHero .lkCap .pr{ display:block;font-size:13px;letter-spacing:.06em;margin:-8px 0 16px}.ooBan .tx .pr{ display:block;font-size:13px;letter-spacing:.04em;margin:-8px 0 18px}.ooTiles .pr{ display:block;font-size:12px;color:var(--sub);margin-top:2px}body{ font-family:var(--sans)}.serif,.ooSec__label,#ooHero .lkCap h2,.ooBan .tx h3,.ooBrands .nm,.ooTiles .nm,#ooHero .hero-cap h2,.ooFeat h3,#ooPop h2{ font-family:var(--serif);font-weight:700;letter-spacing:-.02em}.ooSec__label{ font-size:36px;line-height:.85;text-transform:uppercase}#ooHero .lkCap h2{ font-size:48px;line-height:.9;text-transform:uppercase}.ooBan .tx h3{ font-size:36px;line-height:.9;text-transform:uppercase}.ooBrands .nm{ font-size:27px;letter-spacing:.02em;text-transform:none}.ooBrands .b0 .nm{ font-size:36px}.ooBrands .tx{ font-family:var(--sans);font-size:10px;line-height:1.75;color:#4a4a4a;letter-spacing:.01em}.ooTiles .nm{ font-size:16px;letter-spacing:.02em;text-transform:uppercase}.ooTiles .t0 .nm{ font-size:27px}.ooRank .item-box::before{ content:counter(ooR);left:6px;top:6px;width:28px;height:28px;border-radius:50%;background:#00AEC7;color:#fff;font-family:var(--sans);font-size:14px;font-weight:700;line-height:28px;text-align:center}.item-meta .ooBrand{ font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:normal;text-decoration:underline;text-underline-offset:3px;text-transform:none}.item-meta .item-title{ font-family:var(--serif);font-weight:600;font-size:12px;line-height:1.25;text-transform:uppercase;letter-spacing:.04em}.item-meta .item-price{ font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.02em}.ooSec__more{ font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}#ooSizeBar .hd b{ font-family:var(--sans);font-weight:700}#ooDrawer .dr-nav a,.ooShop .nm,.ooItBrand{ font-family:var(--serif);font-weight:700;letter-spacing:-.01em}.ooPcNav{ font-family:var(--serif);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.ooTicker{ font-family:var(--sans);font-weight:400;text-transform:uppercase}.ooTicker .mv{ font-size:10px;letter-spacing:.1em}.lkCap .lb,.ooBan .tx .lb{ font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.ooBan .tx .lb{ color:#777}#ooBrandTabs.lkTabs button{ font-family:var(--sans);font-size:14px;font-weight:400;letter-spacing:.02em;text-transform:none;color:#888}#ooBrandTabs.lkTabs button.on{ font-weight:700;color:var(--ink)}.ooBlog .bt button{ font-family:var(--sans);font-size:14px;letter-spacing:.02em;color:#888}.ooBlog .bt button.on{ font-weight:700;color:var(--ink)}.ooBlog .dt{ font-family:var(--sans);font-size:11px;letter-spacing:.04em;color:#999}.ooBlog .tt{ font-family:var(--sans);font-size:13px;line-height:1.5;font-weight:400}.ooBan .tx p,.ooBan.feat li{ font-family:var(--sans)}.ooBan.feat .tx h3{ text-transform:none}@media(max-width:760px){ .ooSec__label{ font-size:21px}#ooHero .lkCap h2{ font-size:30px}.ooBan .tx h3{ font-size:24px}.ooBrands .nm{ font-size:16px}.ooBrands .b0 .nm{ font-size:22px}.ooTiles .nm{ font-size:13px}.ooTiles .t0 .nm{ font-size:20px}.ooRank .item-box::before{ width:24px;height:24px;line-height:24px;font-size:12px}}@media(max-width:760px){ .ooTiles .g{ display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:16px;scrollbar-width:none;margin:0 -16px;padding:0 16px 6px}.ooTiles .g::-webkit-scrollbar{ display:none}.ooTiles .t,.ooTiles .t0{ flex:0 0 42%;scroll-snap-align:start;grid-column:auto;grid-row:auto}.ooTiles .t0 .ph{ aspect-ratio:1/1;height:auto}.ooTiles .t0 .nm{ font-size:13px}}
+</style>
+</head>
+<body id="{block:IndexPage}{block:NoIndexPageCategory}{block:NoIndexPageSearch}Top{/block:NoIndexPageSearch}{/block:NoIndexPageCategory}{block:IndexPageCategory}Category{/block:IndexPageCategory}{block:IndexPageSearch}Search{/block:IndexPageSearch}{/block:IndexPage}{block:ItemPage}Item{/block:ItemPage}{block:AboutPage}About{/block:AboutPage}{block:ContactPage}Contact{/block:ContactPage}{block:PrivacyPage}Privacy{/block:PrivacyPage}{block:LawPage}Law{/block:LawPage}{block:BlogPage}Blog{/block:BlogPage}Page" class="oo2">
+{block:AppsInformationBanner}{AppsInformationBannerTag}{/block:AppsInformationBanner}
+<div id="ooConfig" hidden><span data-k="bar1">{block:text-OoBar1}{text:OoBar1}{/block:text-OoBar1}</span><span data-k="bar2">{block:text-OoBar2}{text:OoBar2}{/block:text-OoBar2}</span><span data-k="bar3">{block:text-OoBar3}{text:OoBar3}{/block:text-OoBar3}</span><span data-k="bestpin">{block:text-OoBestPin}{text:OoBestPin}{/block:text-OoBestPin}</span><span data-k="popup">{block:if-OoPopup}1{/block:if-OoPopup}</span><span data-k="popupcode">{block:text-OoPopupCode}{text:OoPopupCode}{/block:text-OoPopupCode}</span><span data-k="sections">{block:text-OoSections}{text:OoSections}{/block:text-OoSections}</span><span data-k="sizefilter">{block:if-OoSizeFilter}1{/block:if-OoSizeFilter}</span><span data-k="ig">{block:if-OoIgSection}1{/block:if-OoIgSection}</span><span data-k="extradict">{block:text-OoExtraDict}{text:OoExtraDict}{/block:text-OoExtraDict}</span><span data-k="featafter">{block:text-FeatAfter}{text:FeatAfter}{/block:text-FeatAfter}</span><span data-k="shopurl">{ShopURL}</span></div>
+<div id="ooBar"></div>
+<header id="ooHead">
+  <div class="hd-l">
+    <button type="button" class="ic" id="ooMenuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+    {block:AppsSearch}<button type="button" class="ic" id="ooSearchBtn" aria-label="Search"><svg viewBox="0 0 24 24" width="21" height="21"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="1.6"/></svg></button>{/block:AppsSearch}
+  </div>
+  <div class="hd-c"><h1 class="logo"><a href="{IndexPageURL}">{LogoTag}</a></h1></div>
+  <div class="hd-r">
+    {block:AppsMembership}<a class="ic" href="{MembershipMyPageURL}" aria-label="Account"><svg viewBox="0 0 24 24" width="21" height="21"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></a>{/block:AppsMembership}
+    <div class="cartWrap" title="Cart">{BASEMenuTag}</div>
+  </div>
+</header>
+{block:AppsSearch}
+<div id="ooSearch" hidden>
+  <form role="search" action="{SearchPageURL}" method="get"><input type="search" name="q" value="{IndexPageSearch}" placeholder="Search"><button type="submit" aria-label="Search">→</button></form>
+</div>
+{/block:AppsSearch}
+<main id="ooMain">
+{block:ShopPublic}
+{block:IndexPage}
+<span id="max_page" hidden>{MaxPageNumber}</span><span id="next_page" hidden>{NextPageNumber}</span>
+{block:NoIndexPageSearch}{block:NoIndexPageCategory}
+<section id="ooHero" aria-label="Main visual">
+  <div class="hero-track">
+    {block:not_image-Hero1}<div class="hero-slide"><a href="https://oldorder.theshop.jp/categories/7506357"><img src="https://baseec-img-mng.akamaized.net/images/shop_front/oldorder-theshop-jp/650c79105acfd0e58171afdd5384db68.png" alt="{ShopName}"></a></div><div class="hero-slide"><a href="https://oldorder.theshop.jp/items/128370803"><img src="https://baseec-img-mng.akamaized.net/images/shop_front/oldorder-theshop-jp/8ed1de7a35487ecb187362b4f3767925.png" alt="{ShopName}" loading="lazy"></a></div><div class="hero-slide"><a href="https://oldorder.theshop.jp/items/146114077"><img src="https://baseec-img-mng.akamaized.net/images/shop_front/oldorder-theshop-jp/82a95d497582ee755dba3d6b32a989c8.png" alt="{ShopName}" loading="lazy"></a></div>{/block:not_image-Hero1}
+    {block:image-Hero1}<div class="hero-slide">{block:text-Hero1URL}<a href="{text:Hero1URL}">{/block:text-Hero1URL}<picture>{block:image-SpHero1}<source media="(max-width:760px)" srcset="{image:SpHero1}">{/block:image-SpHero1}<img src="{image:Hero1}" alt="{ShopName}"></picture>{block:text-Hero1URL}</a>{/block:text-Hero1URL}{block:text-Hero1Title}<div class="hero-cap"><h2>{text:Hero1Title}</h2>{block:text-Hero1Sub}<p>{text:Hero1Sub}</p>{/block:text-Hero1Sub}<div class="hero-btns">{block:text-HeroBtn1}<a class="b1" href="{text:HeroBtn1URL}">{text:HeroBtn1}</a>{/block:text-HeroBtn1}{block:text-HeroBtn2}<a class="b2" href="{text:HeroBtn2URL}">{text:HeroBtn2}</a>{/block:text-HeroBtn2}</div></div>{/block:text-Hero1Title}</div>{/block:image-Hero1}
+    {block:image-Hero2}<div class="hero-slide">{block:text-Hero2URL}<a href="{text:Hero2URL}">{/block:text-Hero2URL}<picture>{block:image-SpHero2}<source media="(max-width:760px)" srcset="{image:SpHero2}">{/block:image-SpHero2}<img src="{image:Hero2}" alt="{ShopName}" loading="lazy"></picture>{block:text-Hero2URL}</a>{/block:text-Hero2URL}{block:text-Hero2Title}<div class="hero-cap"><h2>{text:Hero2Title}</h2>{block:text-Hero2Sub}<p>{text:Hero2Sub}</p>{/block:text-Hero2Sub}<div class="hero-btns">{block:text-HeroBtn1}<a class="b1" href="{text:HeroBtn1URL}">{text:HeroBtn1}</a>{/block:text-HeroBtn1}{block:text-HeroBtn2}<a class="b2" href="{text:HeroBtn2URL}">{text:HeroBtn2}</a>{/block:text-HeroBtn2}</div></div>{/block:text-Hero2Title}</div>{/block:image-Hero2}
+    {block:image-Hero3}<div class="hero-slide">{block:text-Hero3URL}<a href="{text:Hero3URL}">{/block:text-Hero3URL}<picture>{block:image-SpHero3}<source media="(max-width:760px)" srcset="{image:SpHero3}">{/block:image-SpHero3}<img src="{image:Hero3}" alt="{ShopName}" loading="lazy"></picture>{block:text-Hero3URL}</a>{/block:text-Hero3URL}{block:text-Hero3Title}<div class="hero-cap"><h2>{text:Hero3Title}</h2>{block:text-Hero3Sub}<p>{text:Hero3Sub}</p>{/block:text-Hero3Sub}<div class="hero-btns">{block:text-HeroBtn1}<a class="b1" href="{text:HeroBtn1URL}">{text:HeroBtn1}</a>{/block:text-HeroBtn1}{block:text-HeroBtn2}<a class="b2" href="{text:HeroBtn2URL}">{text:HeroBtn2}</a>{/block:text-HeroBtn2}</div></div>{/block:text-Hero3Title}</div>{/block:image-Hero3}
+    {block:image-Hero4}<div class="hero-slide">{block:text-Hero4URL}<a href="{text:Hero4URL}">{/block:text-Hero4URL}<picture>{block:image-SpHero4}<source media="(max-width:760px)" srcset="{image:SpHero4}">{/block:image-SpHero4}<img src="{image:Hero4}" alt="{ShopName}" loading="lazy"></picture>{block:text-Hero4URL}</a>{/block:text-Hero4URL}{block:text-Hero4Title}<div class="hero-cap"><h2>{text:Hero4Title}</h2>{block:text-Hero4Sub}<p>{text:Hero4Sub}</p>{/block:text-Hero4Sub}<div class="hero-btns">{block:text-HeroBtn1}<a class="b1" href="{text:HeroBtn1URL}">{text:HeroBtn1}</a>{/block:text-HeroBtn1}{block:text-HeroBtn2}<a class="b2" href="{text:HeroBtn2URL}">{text:HeroBtn2}</a>{/block:text-HeroBtn2}</div></div>{/block:text-Hero4Title}</div>{/block:image-Hero4}
+  </div>
+  <div class="hero-nav"><button type="button" class="hero-prev" aria-label="Previous">‹</button><button type="button" class="hero-next" aria-label="Next">›</button></div>
+</section>
+{block:image-FeatImg}
+<template id="ooFeatTpl"><section class="ooFeat"><div class="ph" style="background-image:url({image:FeatImg})"></div><div class="pn"><h3>✦ {text:FeatTitle} ✦</h3><p class="sb">{text:FeatSub}</p>{block:image-FeatThumb}<a href="{text:FeatURL}" class="th" style="background-image:url({image:FeatThumb})"></a>{/block:image-FeatThumb}<div class="br">OLD ORDER</div><div class="nm">{text:FeatName}</div><div class="pr">{text:FeatPrice}</div><a class="bt" href="{text:FeatURL}" data-i18n="shopProduct">SHOP PRODUCT</a></div></section></template>
+{/block:image-FeatImg}
+<div id="ooSections"></div>
+<section id="ooShops" class="ooSec" hidden></section>
+{/block:NoIndexPageCategory}{/block:NoIndexPageSearch}
+{block:IndexPageCategory}<div class="pageHead"><h2 class="serif">{IndexPageCategory}</h2></div>{/block:IndexPageCategory}
+{block:IndexPageSearch}<div class="pageHead"><h2 class="serif">“{IndexPageSearch}”</h2></div>{/block:IndexPageSearch}
+<div class="listWrap{block:NoIndexPageSearch}{block:NoIndexPageCategory} isTop{/block:NoIndexPageCategory}{/block:NoIndexPageSearch}">
+{block:HasItems}
+<div id="itemthumbs" class="ooGrid">
+{block:Items}
+<div class="item-box">
+  <a href="{ItemPageURL}" title="{ItemTitle}">
+    <div class="item-thumb-wrap"><span class="item-img__primary"><img src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}" loading="lazy"></span>{block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}</div>
+    <div class="item-meta">
+      <div class="item-title">{ItemTitle}</div>
+      {block:HasItemStock}
+        {block:NoItemProperPrice}<div class="item-price">{ItemPrice}</div>{/block:NoItemProperPrice}
+        {block:HasItemProperPrice}<div class="item-price"><span class="properprice">{ItemProperPrice}</span> <span class="discountprice">{ItemPrice}</span></div>{/block:HasItemProperPrice}
+        {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+        {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+      {/block:HasItemStock}
+      {block:NoItemStock}
+        <div class="item-price">{ItemPrice}</div>
+        {block:ItemNowOnSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemNowOnSale}
+        {block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}
+        {block:ItemWaitingForSale}<span class="waitingForSale">COMING SOON</span>{/block:ItemWaitingForSale}
+      {/block:NoItemStock}
+    </div>
+  </a>
+</div>
+{/block:Items}
+</div>
+<div id="moreItems"><a href="#" class="btnLine" data-i18n="viewMore">VIEW MORE</a></div>
+<div id="loadItemsParams" data-url="{LoadItemsPageURL}" data-url-params="{LoadItemsPageURLParams}"></div>
+{/block:HasItems}
+{block:NoItems}
+<div class="notfound"><p data-i18n="noProducts">No products found.</p>{block:AppsItemCategory}<div class="catIndex">{AppsItemCategoryCategoriesTag}</div>{/block:AppsItemCategory}</div>
+{/block:NoItems}
+</div>
+{/block:IndexPage}
+{block:ItemPage}
+<div id="ooItem">
+{IllegalReportMessageTag}
+<div class="it-grid">
+  <div class="it-photos">
+    {block:AppsItemLabel}{AppsItemLabelTag}{/block:AppsItemLabel}
+    <div class="it-gallery">
+      <figure><img src="{block:ItemImage1}{ItemImage1URL-1280}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}"></figure>
+      {block:ItemImage2}<figure><img src="{ItemImage2URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage2}
+      {block:ItemImage3}<figure><img src="{ItemImage3URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage3}
+      {block:ItemImage4}<figure><img src="{ItemImage4URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage4}
+      {block:ItemImage5}<figure><img src="{ItemImage5URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage5}
+      {block:ItemImage6}<figure><img src="{ItemImage6URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage6}
+      {block:ItemImage7}<figure><img src="{ItemImage7URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage7}
+      {block:ItemImage8}<figure><img src="{ItemImage8URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage8}
+      {block:ItemImage9}<figure><img src="{ItemImage9URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage9}
+      {block:ItemImage10}<figure><img src="{ItemImage10URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage10}
+      {block:ItemImage11}<figure><img src="{ItemImage11URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage11}
+      {block:ItemImage12}<figure><img src="{ItemImage12URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage12}
+      {block:ItemImage13}<figure><img src="{ItemImage13URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage13}
+      {block:ItemImage14}<figure><img src="{ItemImage14URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage14}
+      {block:ItemImage15}<figure><img src="{ItemImage15URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage15}
+      {block:ItemImage16}<figure><img src="{ItemImage16URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage16}
+      {block:ItemImage17}<figure><img src="{ItemImage17URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage17}
+      {block:ItemImage18}<figure><img src="{ItemImage18URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage18}
+      {block:ItemImage19}<figure><img src="{ItemImage19URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage19}
+      {block:ItemImage20}<figure><img src="{ItemImage20URL-1280}" alt="{ItemTitle}" loading="lazy"></figure>{/block:ItemImage20}
+    </div>
+    <div class="it-dots" aria-hidden="true"></div>
+  </div>
+  <div class="it-info">
+    <div class="it-sticky">
+      <h1 class="itemTitle serif">{ItemTitle}{block:ItemDigitalContent}<span class="filename">{ItemDigitalContent}</span>{/block:ItemDigitalContent}</h1>
+      {block:NoSubscriptionInitialPrice}
+      <div class="priceBox">
+        {block:NoItemProperPrice}<div id="price"><p>{ItemPrice}<span class="tax">{lang:IncludedTax}</span></p></div>{/block:NoItemProperPrice}
+        {block:HasItemProperPrice}<div class="discounted"><span class="properprice">{ItemProperPrice}</span><span class="discountrate">{ItemDiscountRate}</span></div><div id="price" class="discountprice"><p>{ItemPrice}<span class="tax">{lang:IncludedTax}</span></p></div>{/block:HasItemProperPrice}
+      </div>
+      {/block:NoSubscriptionInitialPrice}
+      {block:HasSubscriptionInitialPrice}
+      <div class="priceBox"><div class="sub">{lang:SubscriptionInitialPrice}</div><div id="price"><p>{SubscriptionInitialPrice}<span class="tax">{lang:IncludedTax}</span></p></div><div class="sub">{lang:SubscriptionRepeatPrice} {SubscriptionRepeatPrice}</div></div>
+      {/block:HasSubscriptionInitialPrice}
+      {block:NoItemStock}<div class="stockStatus"><span class="soldout">SOLD OUT</span></div>{/block:NoItemStock}
+      {block:HasItemStock}{block:ItemWaitingForSale}<div class="stockStatus"><span class="comingSoon">COMING SOON</span></div>{/block:ItemWaitingForSale}{block:ItemEndOfSale}<div class="stockStatus"><span class="soldout">SOLD OUT</span></div>{/block:ItemEndOfSale}{/block:HasItemStock}
+      <div class="it-bnpl">{ItemBnplBannerTag}</div>
+      <div class="it-attention">{ItemAttentionTag}</div>
+      <div class="it-intl" hidden></div>
+      {block:PurchaseForm}
+      <div class="it-form">
+        {ItemSelectTag}
+        {AppsAgeVerificationWarningTag}
+        {block:ItemCommunityLimited}{CommunityPurchaseButton}{/block:ItemCommunityLimited}
+        {PurchaseButton}
+      </div>
+      {/block:PurchaseForm}
+      <ul class="it-checks"><li data-i18n="chkDays">Usually ships within 1–3 business days (excluding weekends and Japanese holidays; up to 7 business days in busy periods)</li><li data-i18n="chk2">Free shipping within Japan on orders over ¥30,000</li><li data-i18n="chk3">Secure online payment</li></ul>
+      <p class="it-coupon" hidden data-i18n="couponTip"></p>
+      <div class="it-detail"><div id="item_detail">{ItemDetail}</div></div>
+      {block:AppsItemDetailCustom}<section class="ItemDetailApp">{AdditionalItemDetail}{AdditionalItemDetailDefaultCssAndJs}</section>{/block:AppsItemDetailCustom}
+      <div class="it-share"><a href="https://twitter.com/intent/tweet?url={ItemRedirectUrl}" target="_blank" rel="noopener">X</a><a href="https://www.facebook.com/sharer/sharer.php?u={ItemRedirectUrl}" target="_blank" rel="noopener">Facebook</a><a href="https://social-plugins.line.me/lineit/share?url={ItemRedirectUrl}" target="_blank" rel="noopener">LINE</a></div>
+      <div id="reportBtn">{IllegalReportTag}</div>
+    </div>
+  </div>
+</div>
+{block:HasRelatedItems}
+<section class="ooSec related"><h2 class="ooSec__label" data-i18n="mayLike">You may also like</h2><div class="ooGrid">
+{block:RelatedItems}<div class="item-box"><a href="{RelatedItemPageURL}"><div class="item-thumb-wrap"><span class="item-img__primary"><img src="{RelatedItemImageURL-640}" alt="{RelatedItemTitle}" loading="lazy"></span></div><div class="item-meta"><div class="item-title">{RelatedItemTitle}</div><div class="item-price">{RelatedItemPrice}</div></div></a></div>{/block:RelatedItems}
+</div></section>
+{/block:HasRelatedItems}
+{block:AppsReview}<div id="reviews">{AppsReviewTag}</div>{/block:AppsReview}
+</div>
+{/block:ItemPage}
+{/block:ShopPublic}
+{block:NotShopPublic}<div class="notpublic"><p>{lang:NotShopPublicMessage}</p></div>{/block:NotShopPublic}
+{block:AboutPage}
+<div class="staticPage" id="about"><h2 class="serif">About</h2><div class="intro">{ShopIntroduction}</div></div>
+{/block:AboutPage}
+{block:ContactPage}<div class="staticPage" id="contact">{PageContents}</div>{/block:ContactPage}
+{block:PrivacyPage}<div class="staticPage" id="privacy">{PageContents}</div>{/block:PrivacyPage}
+{block:LawPage}<div class="staticPage" id="law">{PageContents}</div>{/block:LawPage}
+{block:BlogPage}<div class="staticPage" id="blog">{PageContents}</div>{/block:BlogPage}
+{block:CommunityPage}<div class="staticPage" id="community">{PageContents}</div>{/block:CommunityPage}
+{block:MembershipPage}<div class="staticPage">{PageContents}</div>{/block:MembershipPage}
+{block:MembershipMyPage}<div class="staticPage">{PageContents}</div>{/block:MembershipMyPage}
+{block:MembershipLoginPage}<div class="staticPage">{PageContents}</div>{/block:MembershipLoginPage}
+</main>
+<input id="base_url" type="hidden" value="{ShopURL}">
+<footer id="ooFoot">
+  {block:AppsMailMagazine}
+  <div class="ft-news"><h3 class="serif" data-i18n="newsTitle">Newsletter</h3><p data-i18n="newsText">Be the first to know about new drops and restocks.</p>{MailMagazineSubscribeTag}</div>
+  {/block:AppsMailMagazine}
+  <div class="ft-cols">
+    <div class="ft-col"><h4 data-i18n="ftShop">SHOP</h4><ul><li><a href="{IndexPageURL}">Home</a></li>{block:AppsSearch}<li><a href="{SearchPageURL}">Search</a></li>{/block:AppsSearch}{block:AppsBlog}<li><a href="{BlogPageURL}">Blog</a></li>{/block:AppsBlog}</ul></div>
+    <div class="ft-col"><h4 data-i18n="ftInfo">INFORMATION</h4><ul><li><a href="{AboutPageURL}">About</a></li><li><a href="{ContactPageURL}">Contact</a></li><li><a href="{PrivacyPageURL}">{lang:Privacy}</a></li><li><a href="{LawPageURL}">{lang:Law}</a></li><li><a href="https://oldorder.jp/" target="_blank" rel="noopener" data-i18n="ftJpStore">日本のお客さまへ：公式オンラインストア（oldorder.jp）</a></li>{block:AppsMembership}<li><a href="https://thebase.com/pages/shop_membership_term">Membership Terms</a></li>{/block:AppsMembership}</ul></div>
+    <div class="ft-col"><h4 data-i18n="ftFollow">FOLLOW</h4><ul>{block:ShopInstagramId}<li><a href="https://instagram.com/{ShopInstagramId}" target="_blank" rel="noopener">Instagram</a></li>{/block:ShopInstagramId}{block:ShopTwitterId}<li><a href="https://twitter.com/{ShopTwitterId}" target="_blank" rel="noopener">X</a></li>{/block:ShopTwitterId}{block:ShopTiktokId}<li><a href="https://tiktok.com/@{ShopTiktokId}" target="_blank" rel="noopener">TikTok</a></li>{/block:ShopTiktokId}{block:ShopLineId}<li><a href="https://line.me/R/ti/p/@{ShopLineId}" target="_blank" rel="noopener">LINE</a></li>{/block:ShopLineId}</ul></div>
+    <div class="ft-col" id="ooFootLang"></div>
+  </div>
+  <div class="ft-bottom">{block:AppsI18n}<div class="langSelect">{AppsI18nTag}</div>{/block:AppsI18n}<address>© {ShopName}</address></div>
+</footer>
+<div id="ooDrawer" hidden>
+  <div class="dr-panel">
+    <button type="button" class="dr-close" aria-label="Close">×</button>
+    <nav class="dr-nav">
+      <a href="{IndexPageURL}" class="dr-top">HOME</a>
+      {block:AppsItemCategory}<div class="dr-cats">{block:AppsItemCategoryCategories}<a href="{AppsItemCategoryCategoryPageURL}">{AppsItemCategoryCategoryName}</a>{block:HasAppsItemCategoryMediumCategories}<div class="dr-sub">{block:AppsItemCategoryMediumCategories}<a href="{AppsItemCategoryMediumCategoryPageURL}">{AppsItemCategoryMediumCategoryName}</a>{/block:AppsItemCategoryMediumCategories}</div>{/block:HasAppsItemCategoryMediumCategories}{/block:AppsItemCategoryCategories}</div>{/block:AppsItemCategory}
+      <div class="dr-links"><a href="{AboutPageURL}">About</a><a href="{ContactPageURL}">Contact</a>{block:AppsMembership}<a href="{MembershipMyPageURL}">My Page</a>{/block:AppsMembership}</div>
+    </nav>
+  </div>
+</div>
+<script>
+(function(){
+'use strict';
+var ASSET='https://omt-inc.com/assets/oldorder/';
+var cfg={};
+var cEl=document.getElementById('ooConfig');
+if(cEl){Array.prototype.forEach.call(cEl.querySelectorAll('[data-k]'),function(s){cfg[s.getAttribute('data-k')]=(s.textContent||'').trim();});}
+function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+var PAGE=document.body.id;
+
+/* ==== 言語: 日本語/English/繁體中文/한국어/العربية。ブラウザの言語で決め、選んだら記憶する(2026-10 窓口決定。アラビア語は2026-10-30 会長の依頼で追加) ==== */
+var I18N={
+langs:[{k:'ja',n:'日本語'},{k:'en',n:'English'},{k:'zh',n:'繁體中文'},{k:'ko',n:'한국어'},{k:'ar',n:'العربية'}],
+ui:{
+barFirst:{ja:'初回購入 ¥500 OFF — クーポンコード「oldorder001」',en:'FIRST ORDER ¥500 OFF — CODE "oldorder001"',zh:'首次購物折抵 ¥500 — 優惠碼「oldorder001」',ko:'첫 구매 ¥500 할인 — 쿠폰 코드 "oldorder001"',ar:'خصم ¥500 على طلبك الأول — الرمز "oldorder001"'},
+barShip:{ja:'送料 全国一律 ¥1,100・¥30,000以上で無料',en:'SHIPS WORLDWIDE',zh:'寄送全球',ko:'전 세계 배송',ar:'شحن إلى جميع أنحاء العالم'},
+barOfficial:{ja:'OLD ORDER 公式オンラインストア',en:'LIVING IN JAPAN? VISIT OLDORDER.JP →',zh:'OLD ORDER 官方線上商店',ko:'OLD ORDER 공식 온라인 스토어',ar:'متجر OLD ORDER الرسمي على الإنترنت'},
+lang:{ja:'言語',en:'Language',zh:'語言',ko:'언어',ar:'اللغة'},
+selectSize:{ja:'サイズで探す',en:'Select Your Size',zh:'依尺寸搜尋',ko:'사이즈로 찾기',ar:'ابحث حسب المقاس'},
+results:{ja:'件',en:' RESULTS',zh:' 件商品',ko:'개 상품',ar:' منتج'},
+clear:{ja:'クリア',en:'CLEAR',zh:'清除',ko:'초기화',ar:'مسح'},
+allBrands:{ja:'すべて',en:'ALL',zh:'全部',ko:'전체',ar:'الكل'},
+otherColors:{ja:'ほかのカラー',en:'Other Colors',zh:'其他顏色',ko:'다른 컬러',ar:'ألوان أخرى'},
+pickSeries:{ja:'シリーズから選ぶ',en:'Shop by Series',zh:'依系列選購',ko:'시리즈별 보기',ar:'تسوّق حسب السلسلة'},
+colorsCount:{ja:'全%n色',en:'%n colors',zh:'共 %n 色',ko:'총 %n색',ar:'عدد الألوان: %n'},
+shopsTitle:{ja:'Shop List',en:'Shop List',zh:'Shop List',ko:'Shop List',ar:'Shop List'},
+shopsSub:{ja:'店舗一覧',en:'Our stores in Japan',zh:'日本門市一覽',ko:'일본 매장 안내',ar:'متاجرنا في اليابان'},
+shopsLead:{ja:'OLD ORDER の直営店。実際に履いて、サイズや色をお確かめいただけます。',en:'Visit our stores in Japan to try on sizes and see colors in person.',zh:'歡迎到日本的直營門市試穿，親自確認尺寸與顏色。',ko:'일본 직영 매장에서 사이즈와 컬러를 직접 신어 보고 확인하실 수 있습니다.',ar:'تفضّل بزيارة متاجرنا في اليابان لتجربة المقاسات ورؤية الألوان على الطبيعة.'},
+shopsNote:{ja:'※営業時間・定休日は変わることがあります。最新は各店のInstagramをご確認ください。',en:'*Opening hours may change. Please check each store’s Instagram for the latest information.',zh:'※營業時間可能會變動，最新資訊請見各門市的 Instagram。',ko:'※영업시간은 변경될 수 있습니다. 최신 정보는 각 매장 Instagram에서 확인해 주세요.',ar:'*قد تتغير ساعات العمل. يُرجى مراجعة حساب Instagram الخاص بكل متجر للاطلاع على أحدث المعلومات.'},
+shopAddr:{ja:'住所',en:'Address',zh:'地址',ko:'주소',ar:'العنوان'},
+shopHours:{ja:'営業時間',en:'Hours',zh:'營業時間',ko:'영업시간',ar:'ساعات العمل'},
+shopTel:{ja:'電話',en:'Phone',zh:'電話',ko:'전화',ar:'الهاتف'},
+shopMap:{ja:'地図を見る',en:'Map',zh:'地圖',ko:'지도',ar:'الخريطة'},
+viewAll:{ja:'すべてを見る',en:'VIEW ALL',zh:'查看全部',ko:'전체 보기',ar:'عرض الكل'},
+viewMore:{ja:'もっと見る',en:'VIEW MORE',zh:'查看更多',ko:'더 보기',ar:'عرض المزيد'},
+soldOut:{ja:'SOLD OUT',en:'SOLD OUT',zh:'已售完',ko:'품절',ar:'نفدت الكمية'},
+size:{ja:'サイズ',en:'SIZE',zh:'尺寸',ko:'사이즈',ar:'المقاس'},
+shopProduct:{ja:'商品を見る',en:'SHOP PRODUCT',zh:'查看商品',ko:'상품 보기',ar:'عرض المنتج'},
+mayLike:{ja:'おすすめの商品',en:'You may also like',zh:'你可能也會喜歡',ko:'추천 상품',ar:'قد يعجبك أيضًا'},
+igTitle:{ja:'Instagram',en:'Follow Us On Instagram',zh:'追蹤我們的 Instagram',ko:'Instagram 팔로우하기',ar:'تابعنا على Instagram'},
+chkDaysOv:{ja:'海外倉庫から発送のため、お届けまで10営業日前後かかる場合があります',en:'Ships from our overseas warehouse. Delivery may take around 10 business days.',zh:'由海外倉庫出貨，送達約需 10 個工作天左右。',ko:'해외 창고에서 발송되어 도착까지 약 10영업일 정도 걸릴 수 있습니다.',ar:'يُشحن من مستودعنا في الخارج، وقد يستغرق التوصيل نحو 10 أيام عمل.'},
+ovLine:{ja:'',en:'* As this item ships from our overseas warehouse, delivery may take around 10 business days.',zh:'※ 本商品由海外倉庫出貨，送達約需 10 個工作天左右。',ko:'※ 해외 창고에서 발송되어 도착까지 약 10영업일 정도 걸릴 수 있습니다.',ar:'* نظرًا لأن هذا المنتج يُشحن من مستودعنا في الخارج، قد يستغرق التوصيل نحو 10 أيام عمل.'},
+stockLine:{ja:'',en:'* Our stock is shared with stores around the world, so an item may sell out before your order goes through. Thank you for your understanding.',zh:'※ 本店庫存與全球各銷售通路共用，可能因時間差而售罄，敬請見諒。',ko:'※ 재고는 전 세계 판매처와 공유되고 있어, 주문 시점에 따라 품절될 수 있습니다. 양해 부탁드립니다.',ar:'* مخزوننا مشترك مع متاجر حول العالم، لذا قد تنفد الكمية قبل إتمام طلبك. نشكر لك تفهّمك.'},
+chkDays:{ja:'通常1〜3営業日以内に発送します（土日祝を除く・混み合う時期は最大7営業日）',en:'Usually ships within 1–3 business days (excluding weekends and Japanese holidays; up to 7 business days in busy periods)',zh:'通常於 1〜3 個工作天內出貨（週末及日本國定假日除外；繁忙期最多 7 個工作天）',ko:'보통 1~3영업일 이내 발송 (주말·일본 공휴일 제외, 혼잡 시기에는 최대 7영업일)',ar:'يُشحن عادةً خلال 1–3 أيام عمل (باستثناء عطلات نهاية الأسبوع والعطلات الرسمية في اليابان، وحتى 7 أيام عمل في فترات الذروة)'},
+couponTip:{ja:'クーポンは1回のご注文に1枚まで（ほかのクーポンとの併用はできません）。¥10,000をこえるお買い物なら、5%OFFのクーポンの方が初回¥500OFFよりお得です。',en:'',zh:'',ko:'',ar:''},
+chk2:{ja:'¥30,000以上のお買い物で送料無料',en:'Free shipping within Japan on orders over ¥30,000',zh:'日本國內滿 ¥30,000 免運費',ko:'일본 국내 ¥30,000 이상 구매 시 무료 배송',ar:'شحن مجاني داخل اليابان للطلبات التي تزيد على ¥30,000'},
+chk3:{ja:'安全なお支払い',en:'Secure online payment',zh:'安全的線上付款',ko:'안전한 온라인 결제',ar:'دفع آمن عبر الإنترنت'},
+newsTitle:{ja:'ニュースレター',en:'Newsletter',zh:'電子報',ko:'뉴스레터',ar:'النشرة البريدية'},
+newsText:{ja:'新作・再入荷のお知らせをお届けします。',en:'Be the first to know about new drops and restocks.',zh:'搶先收到新品與補貨的消息。',ko:'신상품·재입고 소식을 가장 먼저 받아보세요.',ar:'كن أول من يعرف بالإصدارات الجديدة وعودة المنتجات إلى المخزون.'},
+ftShop:{ja:'SHOP',en:'SHOP',zh:'商店',ko:'쇼핑',ar:'تسوّق'},
+ftInfo:{ja:'INFORMATION',en:'INFORMATION',zh:'資訊',ko:'안내',ar:'معلومات'},
+ftJpStore:{ja:'日本のお客さまへ：公式オンラインストア（oldorder.jp）',en:'Living in Japan? Our official store: oldorder.jp',zh:'日本境內的顧客：官方線上商店 oldorder.jp',ko:'일본 거주 고객님: 공식 온라인 스토어 oldorder.jp',ar:'تقيم في اليابان؟ متجرنا الرسمي: oldorder.jp'},
+ftFollow:{ja:'FOLLOW',en:'FOLLOW',zh:'追蹤我們',ko:'팔로우',ar:'تابعنا'},
+noProducts:{ja:'商品が見つかりませんでした。',en:'No products found.',zh:'找不到商品。',ko:'상품을 찾을 수 없습니다.',ar:'لم يتم العثور على منتجات.'},
+searchPh:{ja:'キーワードで探す',en:'Search',zh:'搜尋',ko:'검색',ar:'بحث'},
+intlTitle:{ja:'',en:'Shopping from outside Japan',zh:'從日本以外地區購買',ko:'일본 외 지역에서 구매하시는 분께',ar:'التسوّق من خارج اليابان'},
+intl1:{ja:'',en:'International orders are delivered via WANT.JP, BASE’s official international shipping service.',zh:'海外訂單由 BASE 官方國際配送服務「WANT.JP」配送。',ko:'해외 주문은 BASE 공식 해외 배송 서비스 “WANT.JP”를 통해 배송됩니다.',ar:'تُوصَل الطلبات الدولية عبر WANT.JP، خدمة الشحن الدولي الرسمية من BASE.'},
+intl2:{ja:'',en:'Just add to cart — an international cart appears automatically, and the shipping cost to your country is shown at checkout.',zh:'直接加入購物車即可，系統會自動顯示國際購物車，寄往您所在國家的運費會在結帳時顯示。',ko:'장바구니에 담으면 해외용 장바구니가 자동으로 표시되며, 고객님 국가까지의 배송비는 결제 화면에 표시됩니다.',ar:'ما عليك سوى الإضافة إلى السلة — ستظهر سلة دولية تلقائيًا، وتُعرض تكلفة الشحن إلى بلدك عند إتمام الشراء.'},
+intl3:{ja:'',en:'Pay with overseas credit cards (VISA / Mastercard / AMEX / JCB / UnionPay and more), PayPal, Apple Pay, Google Pay, Alipay or WeChat Pay.',zh:'可使用海外信用卡（VISA / Mastercard / AMEX / JCB / 銀聯等）、PayPal、Apple Pay、Google Pay、支付寶或微信支付付款。',ko:'해외 신용카드(VISA / Mastercard / AMEX / JCB / UnionPay 등), PayPal, Apple Pay, Google Pay, Alipay, WeChat Pay로 결제할 수 있습니다.',ar:'ادفع ببطاقات الائتمان الدولية (VISA / Mastercard / AMEX / JCB / UnionPay وغيرها) أو PayPal أو Apple Pay أو Google Pay أو Alipay أو WeChat Pay.'},
+intl4:{ja:'',en:'The international cart is in English. Import duties and taxes, if any, are paid by the customer.',zh:'國際購物車為英文介面。如有進口關稅及稅金，由購買者負擔。',ko:'해외용 장바구니는 영어로 표시됩니다. 수입 관세 및 세금이 발생하는 경우 구매자가 부담합니다.',ar:'السلة الدولية باللغة الإنجليزية. يتحمّل العميل رسوم الاستيراد والضرائب إن وُجدت.'},
+wantLink:{ja:'海外送料を見る',en:'International shipping info',zh:'國際運費說明',ko:'해외 배송 안내',ar:'معلومات الشحن الدولي'},
+wantH:{ja:'WORLDWIDE SHOPPING — WANT.JP',en:'WORLDWIDE SHOPPING — WANT.JP',zh:'WORLDWIDE SHOPPING — WANT.JP',ko:'WORLDWIDE SHOPPING — WANT.JP',ar:'WORLDWIDE SHOPPING — WANT.JP'},
+wantP1:{ja:'当店の商品は海外配送に対応しています。海外への発送はBASE公式の海外配送サービス「WANT.JP」が代行します。',en:'This shop ships worldwide via WANT.JP, BASE’s official international shipping service.',zh:'本店商品可寄送至海外，海外配送由 BASE 官方國際配送服務「WANT.JP」代為處理。',ko:'저희 상품은 해외 배송이 가능합니다. 해외 발송은 BASE 공식 해외 배송 서비스 “WANT.JP”가 대행합니다.',ar:'يشحن هذا المتجر إلى جميع أنحاء العالم عبر WANT.JP، خدمة الشحن الدولي الرسمية من BASE.'},
+wantP2:{ja:'海外のお客様は、そのままカートに入れてご購入手続きへお進みください。海外向けカート(英語)が自動で表示され、お住まいの国・地域までの送料は購入手続き画面で自動計算・表示されます。海外のクレジットカード・PayPal・Alipayなどでお支払いいただけます。',en:'Simply add items to your cart and proceed to checkout — an English cart will appear automatically, and the exact shipping cost to your country will be shown at checkout. You can pay with overseas credit cards, PayPal, Alipay and more. Your order is forwarded from want.jp’s warehouse in Japan.',zh:'請直接將商品加入購物車並進行結帳，系統會自動顯示英文的國際購物車，寄往您所在國家或地區的運費會在結帳畫面自動計算並顯示。可使用海外信用卡、PayPal、支付寶等付款。商品將由 want.jp 位於日本的倉庫寄出。',ko:'상품을 장바구니에 담고 결제를 진행해 주세요. 영어로 된 해외용 장바구니가 자동으로 표시되며, 고객님 국가·지역까지의 배송비는 결제 화면에서 자동 계산되어 표시됩니다. 해외 신용카드, PayPal, Alipay 등으로 결제할 수 있습니다. 주문 상품은 일본에 있는 want.jp 창고에서 발송됩니다.',ar:'ما عليك سوى إضافة المنتجات إلى السلة والمتابعة لإتمام الشراء — ستظهر سلة باللغة الإنجليزية تلقائيًا، وستُعرض تكلفة الشحن الدقيقة إلى بلدك عند الدفع. يمكنك الدفع ببطاقات الائتمان الدولية وPayPal وAlipay وغيرها. يُرسَل طلبك من مستودع want.jp في اليابان.'},
+wantClose:{ja:'閉じる',en:'Close',zh:'關閉',ko:'닫기',ar:'إغلاق'},
+popH:{ja:'5% OFF',en:'GET 5% OFF',zh:'領取 5% 折扣',ko:'5% 할인 받기',ar:'احصل على خصم 5%'},
+popP:{ja:'メールマガジンに登録すると、初回のお買い物が5%OFFになるクーポンをお渡しします。',en:'Sign up for our newsletter and get 5% off your first order.',zh:'訂閱電子報，即可獲得首次購物 5% 折扣優惠碼。',ko:'뉴스레터를 구독하시면 첫 구매 5% 할인 쿠폰을 드립니다.',ar:'اشترك في نشرتنا البريدية واحصل على خصم 5% على طلبك الأول.'},
+popPh:{ja:'メールアドレス',en:'Email',zh:'電子郵件',ko:'이메일',ar:'البريد الإلكتروني'},
+popGo:{ja:'登録する',en:'CONTINUE',zh:'訂閱',ko:'구독하기',ar:'متابعة'},
+popNo:{ja:'今はしない',en:'No thanks',zh:'不用了',ko:'괜찮습니다',ar:'لا، شكرًا'},
+popWh:{ja:'ご登録ありがとうございます',en:'WELCOME!',zh:'感謝您的訂閱',ko:'구독해 주셔서 감사합니다',ar:'أهلًا بك!'},
+popWp:{ja:'お会計のときにこのコードを入力してください：',en:'Use this code at checkout:',zh:'結帳時請輸入以下優惠碼：',ko:'결제 시 아래 코드를 입력해 주세요:',ar:'استخدم هذا الرمز عند الدفع:'},
+popWn:{ja:'確認メールをお送りしました。',en:'A confirmation email is on its way.',zh:'確認信已寄出。',ko:'확인 메일을 보내드렸습니다.',ar:'أرسلنا إليك رسالة تأكيد عبر البريد الإلكتروني.'},
+popDone:{ja:'閉じる',en:'DONE',zh:'關閉',ko:'닫기',ar:'تم'}
+},
+en2:{
+zh:{'MENU':'選單','CART':'購物車','View Cart':'查看購物車','CATEGORY':'分類','SHOP GUIDE':'購物指南','LATEST BLOG POSTS':'最新文章','BLOG':'部落格','NEWS':'最新消息','HOME':'首頁','Privacy Policy':'隱私權政策','Legal Notice':'特定商業交易法標示','Membership Terms':'會員條款','SHIPPING':'運費','PAYMENT METHODS':'付款方式','BUSINESS DAY CALENDAR':'營業日曆','Flat-rate shipping ¥1,100':'日本國內運費一律 ¥1,100','Free shipping on orders over ¥5,000':'滿 ¥5,000 免運費','Free shipping on orders over ¥30,000':'滿 ¥30,000 免運費','Free shipping over ¥30,000':'滿 ¥30,000 免運費','Shipping details':'運費詳情','Payment details':'付款方式詳情','The following payment methods are available.':'可使用以下付款方式。','Credit Card':'信用卡','Bank Transfer':'銀行轉帳','Carrier Billing':'電信帳單付款','Convenience Store / Pay-easy':'便利商店 / Pay-easy','PAY ID (Pay Later)':'PAY ID（後付）','PAGE TOP':'回到頂部','VIEW MORE':'查看更多','RECOMMENDED FOR YOU':'為你推薦','ON SALE':'特價商品','RECENTLY VIEWED':'最近瀏覽','MY PAGE':'我的頁面','My Page / Login':'我的頁面 / 登入','Login':'登入','MEMBERSHIP':'會員','COMMUNITY':'社群','ABOUT':'關於我們','ABOUT US':'關於我們','STORES':'門市','FAQ':'常見問題','Address':'地址','Hours':'營業時間','Closed':'公休日','Sanrio Collab':'Sanrio 聯名','Disney Collab':'Disney 聯名','SUBSCRIBE':'訂閱','Search':'搜尋','tax incl.':'含稅','(tax incl.)':'（含稅）','LINE Official':'LINE 官方帳號','Today':'今天','POPULAR KEYWORDS':'熱門關鍵字','Gift wrapping is not available.':'不提供禮品包裝。','BROWSE BY CATEGORY':'依分類瀏覽','No products found.':'找不到商品。','Chat with us':'聯絡我們','Type a message':'輸入訊息','Send':'傳送','Send image':'傳送圖片','Sanrio':'Sanrio','SEARCH':'搜尋','Size':'尺寸','Qty':'數量','Report':'檢舉','Shop Reviews':'商店評價','All':'全部','See international shipping rates':'查看國際運費','Details':'詳情','Shipping: ':'運費：','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.':'2019 年誕生的高端球鞋品牌，源自對街頭文化與滑板的敬意。','Flat-rate shipping ¥1,100 — free shipping on orders over ¥30,000.':'日本國內運費一律 ¥1,100，滿 ¥30,000 免運費。','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.':'感謝您的來信。為了順利協助您，詢問時請附上訂單編號。非營業時間收到的訊息將於下一個營業日回覆。營業時間：週一至週五 10:00–18:30（日本時間）。','This item ships worldwide.':'本商品可寄送至海外。','Free shipping within Japan on orders over ¥30,000.':'日本國內滿 ¥30,000 免運費。','Add to Cart':'加入購物車','カートに入れる':'加入購物車','ADD TO CART':'加入購物車','SOLD OUT':'已售完','COMING SOON':'即將上市','VIEW ALL':'查看全部'},
+ko:{'MENU':'메뉴','CART':'장바구니','View Cart':'장바구니 보기','CATEGORY':'카테고리','SHOP GUIDE':'쇼핑 가이드','LATEST BLOG POSTS':'최신 블로그','BLOG':'블로그','NEWS':'공지사항','HOME':'홈','Privacy Policy':'개인정보처리방침','Legal Notice':'특정상거래법 표기','Membership Terms':'회원 약관','SHIPPING':'배송비','PAYMENT METHODS':'결제 방법','BUSINESS DAY CALENDAR':'영업일 캘린더','Flat-rate shipping ¥1,100':'일본 국내 배송비 일률 ¥1,100','Free shipping on orders over ¥5,000':'¥5,000 이상 무료 배송','Free shipping on orders over ¥30,000':'¥30,000 이상 무료 배송','Free shipping over ¥30,000':'¥30,000 이상 무료 배송','Shipping details':'배송비 자세히','Payment details':'결제 방법 자세히','The following payment methods are available.':'다음 결제 방법을 이용할 수 있습니다.','Credit Card':'신용카드','Bank Transfer':'계좌이체','Carrier Billing':'휴대폰 결제','Convenience Store / Pay-easy':'편의점 / Pay-easy','PAY ID (Pay Later)':'PAY ID (후불 결제)','PAGE TOP':'맨 위로','VIEW MORE':'더 보기','RECOMMENDED FOR YOU':'추천 상품','ON SALE':'세일 상품','RECENTLY VIEWED':'최근 본 상품','MY PAGE':'마이페이지','My Page / Login':'마이페이지 / 로그인','Login':'로그인','MEMBERSHIP':'멤버십','COMMUNITY':'커뮤니티','ABOUT':'소개','ABOUT US':'회사 소개','STORES':'매장','FAQ':'자주 묻는 질문','Address':'주소','Hours':'영업시간','Closed':'휴무일','Sanrio Collab':'Sanrio 콜라보','Disney Collab':'Disney 콜라보','SUBSCRIBE':'구독','Search':'검색','tax incl.':'세금 포함','(tax incl.)':'(세금 포함)','LINE Official':'LINE 공식 계정','Today':'오늘','POPULAR KEYWORDS':'인기 검색어','Gift wrapping is not available.':'선물 포장은 제공하지 않습니다.','BROWSE BY CATEGORY':'카테고리별 보기','No products found.':'상품을 찾을 수 없습니다.','Chat with us':'문의하기','Type a message':'메시지 입력','Send':'보내기','Send image':'이미지 보내기','Sanrio':'Sanrio','SEARCH':'검색','Size':'사이즈','Qty':'수량','Report':'신고','Shop Reviews':'상점 리뷰','All':'전체','See international shipping rates':'해외 배송비 보기','Details':'자세히','Shipping: ':'배송비: ','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.':'스트리트 문화와 스케이트보드에 대한 존중에서 탄생한 2019년 런칭 하이엔드 스니커 브랜드.','Flat-rate shipping ¥1,100 — free shipping on orders over ¥30,000.':'일본 국내 배송비 일률 ¥1,100, ¥30,000 이상 무료 배송.','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.':'문의해 주셔서 감사합니다. 원활한 안내를 위해 주문 번호를 함께 적어 주세요. 영업시간 외에 받은 메시지는 다음 영업일에 답변드립니다. 영업시간: 월–금 10:00–18:30 (일본 시간).','This item ships worldwide.':'이 상품은 해외 배송이 가능합니다.','Free shipping within Japan on orders over ¥30,000.':'일본 국내 ¥30,000 이상 무료 배송.','Add to Cart':'장바구니에 담기','カートに入れる':'장바구니에 담기','ADD TO CART':'장바구니에 담기','SOLD OUT':'품절','COMING SOON':'출시 예정','VIEW ALL':'전체 보기'},
+ar:{'MENU':'القائمة','CART':'السلة','View Cart':'عرض السلة','CATEGORY':'الفئات','SHOP GUIDE':'دليل التسوّق','LATEST BLOG POSTS':'أحدث المقالات','BLOG':'المدونة','NEWS':'الأخبار','HOME':'الرئيسية','Privacy Policy':'سياسة الخصوصية','Legal Notice':'الإشعار القانوني','Membership Terms':'شروط العضوية','SHIPPING':'الشحن','PAYMENT METHODS':'طرق الدفع','BUSINESS DAY CALENDAR':'تقويم أيام العمل','Flat-rate shipping ¥1,100':'شحن داخل اليابان بسعر موحد ¥1,100','Free shipping on orders over ¥5,000':'شحن مجاني للطلبات التي تزيد على ¥5,000','Free shipping on orders over ¥30,000':'شحن مجاني للطلبات التي تزيد على ¥30,000','Free shipping over ¥30,000':'شحن مجاني للطلبات التي تزيد على ¥30,000','Shipping details':'تفاصيل الشحن','Payment details':'تفاصيل الدفع','The following payment methods are available.':'تتوفر طرق الدفع التالية.','Credit Card':'بطاقة ائتمان','Bank Transfer':'تحويل بنكي','Carrier Billing':'الدفع عبر فاتورة الجوال','Convenience Store / Pay-easy':'المتاجر الصغيرة / Pay-easy','PAY ID (Pay Later)':'PAY ID (ادفع لاحقًا)','PAGE TOP':'إلى الأعلى','VIEW MORE':'عرض المزيد','RECOMMENDED FOR YOU':'مقترحات لك','ON SALE':'تخفيضات','RECENTLY VIEWED':'شوهدت مؤخرًا','MY PAGE':'صفحتي','My Page / Login':'صفحتي / تسجيل الدخول','Login':'تسجيل الدخول','MEMBERSHIP':'العضوية','COMMUNITY':'المجتمع','ABOUT':'من نحن','ABOUT US':'من نحن','STORES':'المتاجر','FAQ':'الأسئلة الشائعة','Address':'العنوان','Hours':'ساعات العمل','Closed':'أيام الإغلاق','Sanrio Collab':'تعاون مع Sanrio','Disney Collab':'تعاون مع Disney','SUBSCRIBE':'اشترك','Search':'بحث','tax incl.':'شامل الضريبة','(tax incl.)':'(شامل الضريبة)','LINE Official':'حساب LINE الرسمي','Today':'اليوم','POPULAR KEYWORDS':'كلمات بحث شائعة','Gift wrapping is not available.':'تغليف الهدايا غير متاح.','BROWSE BY CATEGORY':'تصفّح حسب الفئة','No products found.':'لم يتم العثور على منتجات.','Chat with us':'تواصل معنا','Type a message':'اكتب رسالة','Send':'إرسال','Send image':'إرسال صورة','Sanrio':'Sanrio','SEARCH':'بحث','Size':'المقاس','Qty':'الكمية','Report':'إبلاغ','Shop Reviews':'تقييمات المتجر','All':'الكل','See international shipping rates':'عرض أسعار الشحن الدولي','Details':'التفاصيل','Shipping: ':'الشحن: ','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.':'علامة أحذية رياضية فاخرة انطلقت عام 2019، وُلدت من التقدير لثقافة الشارع ورياضة التزلج على اللوح.','Flat-rate shipping ¥1,100 — free shipping on orders over ¥30,000.':'شحن داخل اليابان بسعر موحد ¥1,100 — وشحن مجاني للطلبات التي تزيد على ¥30,000.','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.':'شكرًا لتواصلك معنا. لنتمكن من مساعدتك بسهولة، يُرجى ذكر رقم طلبك في استفسارك. سنرد على الرسائل الواردة خارج ساعات العمل ابتداءً من يوم العمل التالي. أيام العمل: من الاثنين إلى الجمعة 10:00–18:30 بتوقيت اليابان.','This item ships worldwide.':'يُشحن هذا المنتج إلى جميع أنحاء العالم.','Free shipping within Japan on orders over ¥30,000.':'شحن مجاني داخل اليابان للطلبات التي تزيد على ¥30,000.','Add to Cart':'أضف إلى السلة','カートに入れる':'أضف إلى السلة','ADD TO CART':'أضف إلى السلة','SOLD OUT':'نفدت الكمية','COMING SOON':'قريبًا','VIEW ALL':'عرض الكل'}
+}
+};
+var LANGS=(I18N.langs||[]).map(function(x){return x.k;});
+var L=store('ooLang');
+if(LANGS.indexOf(L)<0){var ls=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];var b0=String(ls[0]||'').toLowerCase();L=/^ja\b/.test(b0)?'ja':/^zh\b/.test(b0)?'zh':/^ko\b/.test(b0)?'ko':/^ar\b/.test(b0)?'ar':'en';}
+var EN=L!=='ja';
+function T(k){var u=(I18N.ui||{})[k];return u?(u[L]!=null?u[L]:u.en):'';}
+document.documentElement.setAttribute('lang',{ja:'ja',en:'en',zh:'zh-Hant',ko:'ko',ar:'ar'}[L]);
+document.documentElement.setAttribute('data-oolang',L);
+$$('[data-i18n]').forEach(function(e){var v=T(e.getAttribute('data-i18n'));if(v)e.textContent=v;});
+
+/* ==== 一番上の黒い帯 + 言語の切り替え ==== */
+(function(){
+var bar=$('#ooBar');if(!bar)return;
+var msgs=[];
+['bar1','bar2','bar3'].forEach(function(k){if(cfg[k])msgs.push({t:cfg[k]});});
+/* 割引(初回¥500OFF)の文は日本語の人だけ。海外のお客さまは「かんたん海外販売」経由でクーポンが使えないため(BASEの決まり・2026-10-13 窓口判断 案A) */
+if(!msgs.length){msgs=(L==='ja'?[{t:T('barFirst')}]:[]).concat([{t:T('barShip')},{t:T('barOfficial'),u:L==='en'?'https://oldorder.jp':''}]);}
+var h='';
+msgs.forEach(function(m,i){h+='<div class="msg'+(i?'':' on')+'">'+(m.u?'<a href="'+esc(m.u)+'" target="_blank" rel="noopener">'+esc(m.t)+'</a>':'<span>'+esc(m.t)+'</span>')+'</div>';});
+var cur=(I18N.langs||[]).filter(function(x){return x.k===L;})[0];
+h+='<div id="ooLangSw"><button type="button" class="cur" aria-haspopup="true">'+esc(cur?cur.n:L)+' ▾</button><ul hidden>'+(I18N.langs||[]).map(function(x){return '<li><button type="button" data-l="'+x.k+'"'+(x.k===L?' class="on"':'')+'>'+esc(x.n)+'</button></li>';}).join('')+'</ul></div>';
+bar.innerHTML=h;
+var sw=$('#ooLangSw',bar),ul=$('ul',sw);
+$('.cur',sw).addEventListener('click',function(e){e.stopPropagation();ul.hidden=!ul.hidden;});
+document.addEventListener('click',function(){ul.hidden=true;});
+function setLang(l){if(l===L)return;store('ooLang',l);location.reload();}
+$$('button[data-l]',sw).forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-l'));});});
+/* 下の部分にも公式と同じ「言語」の一覧 */
+var fl=$('#ooFootLang');
+if(fl){fl.innerHTML='<h4>'+esc(T('lang'))+'</h4><ul>'+(I18N.langs||[]).map(function(x){return '<li><button type="button" data-l="'+x.k+'"'+(x.k===L?' class="on"':'')+'>'+esc(x.n)+'</button></li>';}).join('')+'</ul>';$$('button[data-l]',fl).forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-l'));});});}
+var it=$$('.msg',bar),x=0;
+if(it.length>1)setInterval(function(){it[x].classList.remove('on');x=(x+1)%it.length;it[x].classList.add('on');},4000);
+})();
+
+/* ==== 契約の終わったコラボのカテゴリ(Disney 6861121・Sanrio 6384968)は、メニューと空のページのカテゴリ一覧から外す。
+   「シリーズから選ぶ」もメニューから作るので一緒に消える。カテゴリ自体はBASEに残す(2026-11-08 会長OK・ライセンスは10/31まで) ==== */
+(function(){var re=/\/categories\/(6861121|6384968)(?:[\/?#]|$)/;
+$$('#ooDrawer .dr-cats a,.catIndex a').forEach(function(a){if(!re.test(a.getAttribute('href')||''))return;var li=a.closest('li');(li&&li.closest('.catIndex')?li:a).remove();});})();
+
+/* ==== メニュー・検索 ==== */
+(function(){
+var dr=$('#ooDrawer'),mb=$('#ooMenuBtn');
+if(dr&&mb){mb.addEventListener('click',function(){dr.hidden=false;});dr.addEventListener('click',function(e){if(e.target===dr||e.target.classList.contains('dr-close'))dr.hidden=true;});}
+var sb=$('#ooSearchBtn'),sf=$('#ooSearch');
+if(sb&&sf){sb.addEventListener('click',function(){sf.hidden=!sf.hidden;if(!sf.hidden){var i=$('input',sf);if(i)i.focus();}});}
+})();
+
+/* ==== トップの大きな写真(全面に1枚ずつ・自動で送る) ==== */
+/* 写真の見せ方の設定(look.json)で写真を入れ替えたときにも、もう一度動かせるように関数にしておく */
+function initHero(){
+var hero=$('#ooHero');if(!hero)return;
+if(hero.__stop)hero.__stop();
+var tr=$('.hero-track',hero),sl=$$('.hero-slide',hero);
+if(!sl.length){hero.hidden=true;return;}
+if(sl.length<2)return;
+hero.classList.add('multi');
+function go(d){var w=tr.clientWidth;var i=Math.round(tr.scrollLeft/w);var n=(i+d+sl.length)%sl.length;tr.scrollTo({left:n*w,behavior:'smooth'});}
+$('.hero-prev',hero).addEventListener('click',function(){go(-1);stop();});
+$('.hero-next',hero).addEventListener('click',function(){go(1);stop();});
+var t=setInterval(function(){go(1);},5500);
+function stop(){clearInterval(t);}
+hero.__stop=stop;
+tr.addEventListener('touchstart',stop,{passive:true});
+}
+initHero();
+
+/* ==== 商品カードの共通処理(ブランド名・売り切れ) ==== */
+function brandOf(title){var m=String(title).match(/^\s*【([^】]+)】\s*/);var b=m?m[1]:'OLD ORDER';if(/^OLD ?ORDER$/i.test(b))b='OLD ORDER';return {brand:b,name:String(title).replace(/^\s*【[^】]+】\s*/,'')};}
+/* ブランド・型の比べ方: 大文字にして英数字だけ残す(OLDORDER と OLD ORDER、Paris boots と Paris Boots を同じに扱う) */
+function keyOf(s){return String(s||'').toUpperCase().replace(/[^A-Z0-9]/g,'');}
+/* ブランドごとの商品まとめ(BASEのカテゴリ。全商品が入っているのを 2026-10-06 に確認: OLD ORDER 137点・Ocai 44点・BBiMP 28点) */
+var BRAND_CAT={OLDORDER:6372097,OCAI:6372098,BBIMP:6372099};
+function decorate(box){
+if(box.getAttribute('data-oo'))return;box.setAttribute('data-oo','1');
+var t=$('.item-title',box);if(t){var bn=brandOf(t.textContent.trim());var bk=keyOf(bn.brand);t.textContent=bn.name;box.setAttribute('data-brand',bk);var br=document.createElement('div');br.className='ooBrand';br.textContent=bn.brand;if(BRAND_CAT[bk]){br.setAttribute('data-bk',bk);br.setAttribute('role','link');}t.parentNode.insertBefore(br,t);}
+if($('.soldout',box))box.classList.add('isSold');
+}
+$$('.item-box').forEach(decorate);
+/* 商品カードのブランド名を押したら、商品ページではなくそのブランドの商品まとめへ(カード全体がリンクなので、先に受け取って止める) */
+document.addEventListener('click',function(e){var el=e.target&&e.target.closest&&e.target.closest('.ooBrand[data-bk]');if(!el)return;e.preventDefault();e.stopPropagation();location.href=SHOP+'categories/'+BRAND_CAT[el.getAttribute('data-bk')];},true);
+
+/* ==== トップ: 商品の列(カテゴリごと)・売り切れは後ろへ ==== */
+var SECTIONS=[
+{label:'Best Sellers',id:7346651},{label:'New Arrivals',id:7346655},{label:'Turbo GT',id:6372100},{label:'Turbo S',id:6401864},{label:'Turbo Lite',id:6372101},{label:'Turbo Urban',id:6843536},{label:'Turbo 2000',id:7077795},{label:'ŌBOOT',id:6372102},{label:'Canvas',id:6372103},{label:'Skater 001',id:6372104},{label:'Smilō',id:6372105},{label:'ŌBREAD',id:6673166},{label:'ŌGOAL',id:6681184},{label:'Resculpt',id:7050873},{label:'Division',id:7051116},{label:'One Week',id:7270859},{label:'Track',id:7377747},{label:'Sanrio',id:6384968},{label:'Disney',id:6861121},{label:'Ocai',id:6372098},{label:'BBiMP',id:6372099},{label:'Accessory',id:6630103}
+];
+if(cfg.sections){var ps=[];cfg.sections.split(',').forEach(function(p){var a=p.split(':');if(a.length<2)return;var lb=a[0].trim(),id=a[1].trim();if(lb&&/^[0-9]+$/.test(id))ps.push({label:lb,id:parseInt(id,10)});});if(ps.length)SECTIONS=ps;}
+/* お店の住所はBASEのShopURLの部品(ooConfigのshopurl)から取る(プレビューでは admin.thebase.com/shop_preview/… になるため) */
+var SHOP=(cfg.shopurl||'/').replace(/\/?$/,'/');
+function fetchDoc(u){return fetch(u,{credentials:'same-origin'}).then(function(r){return r.text();}).then(function(h){return new DOMParser().parseFromString(h,'text/html');});}
+function fetchCat(id){
+return fetchDoc(SHOP+'categories/'+id).then(function(doc){
+var mp=parseInt(((doc.getElementById('max_page')||{}).textContent)||'',10);
+if(!mp){var th=doc.querySelector('#itemthumbs');mp=th?(parseInt(th.getAttribute('data-max-page'),10)||1):1;}
+if(mp>10)mp=10;var rest=[];
+for(var p=2;p<=mp;p++)rest.push(fetchDoc(SHOP+'categories/'+id+'?page='+p).catch(function(){return null;}));
+return Promise.all(rest).then(function(r){return [doc].concat(r.filter(Boolean));});
+});
+}
+/* 横スライドの写真は、画面(横の見える範囲も含む)に近づいてから読み込む。最初に何十枚も取りに行かない 2026-10-06 */
+var lazyIO=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var im=e.target;lazyIO.unobserve(im);if(im.getAttribute('data-src')){im.src=im.getAttribute('data-src');im.removeAttribute('data-src');}});},{rootMargin:'300px 200px'}):null;
+function lazyImg(box){if(!lazyIO)return;$$('.item-img__primary img',box).forEach(function(im){var u=im.getAttribute('src');if(!u)return;im.setAttribute('data-src',u);im.removeAttribute('src');lazyIO.observe(im);});}
+/* ==== トップ: 店舗一覧(SHOP LIST)。ALUDEのトップと同じ形(2026-10-29 会長)。スマホは横にすべらせるカード、パソコンは4列
+   元: oldorder.jp/pages/shoplist(店名・電話・住所・営業時間)＋OMTホームページの店の写真(omt-inc.com/assets)。
+   インスタ: 裏原宿店は @oldorder.urahara(会長 10/29)。営業時間は変わりやすいので、下に「最新は各店のInstagram」を必ず出す */
+var OO_SHOPS=[
+{area:'TOKYO',name:{ja:'東京原宿店',en:'Tokyo Harajuku'},zip:'150-0001',addr:{ja:'東京都渋谷区神宮前4-31-11 1・2F',en:'1-2F, 4-31-11 Jingumae, Shibuya-ku, Tokyo'},hours:{ja:'12:00〜20:00',en:'12:00–20:00'},tel:'03-6455-5303',ig:'oldorder.tokyo',img:'https://oldorder.jp/cdn/shop/files/4a5bf3badc0a0e766cfd7594009d4880.jpg?v=1769500274&width=600'},/* 原宿店の写真は oldorder.jp の SHOP LIST のもの(OMTの写真は店内に「OSAKA Opening Review」が写っていたため使わない・10/29 窓口) */
+{area:'TOKYO',name:{ja:'東京裏原宿店',en:'Tokyo Urahara'},zip:'150-0001',addr:{ja:'東京都渋谷区神宮前3-20-6 1F',en:'1F, 3-20-6 Jingumae, Shibuya-ku, Tokyo'},hours:{ja:'12:00〜20:00',en:'12:00–20:00'},tel:'03-4332-1404',ig:'oldorder.urahara',img:'https://omt-inc.com/assets/shop-oldorder-urahara.jpg'},
+{area:'OSAKA',name:{ja:'大阪南堀江店',en:'Osaka Minamihorie'},zip:'550-0015',addr:{ja:'大阪府大阪市西区南堀江1-10-3 グランクレール南堀江 1・2F',en:'1-2F Grand Clair Minamihorie, 1-10-3 Minamihorie, Nishi-ku, Osaka'},hours:{ja:'12:00〜20:00',en:'12:00–20:00'},tel:'06-6567-9552',ig:'oldorder.osaka',img:'https://omt-inc.com/assets/shop-oldorder-osaka.jpg'},
+{area:'NAGOYA',name:{ja:'名古屋PARCO店',en:'Nagoya PARCO'},zip:'460-0008',addr:{ja:'愛知県名古屋市中区栄3-29-1 名古屋PARCO 西館6F',en:'6F West Bldg, Nagoya PARCO, 3-29-1 Sakae, Naka-ku, Nagoya, Aichi'},hours:{ja:'10:00〜20:00（名古屋PARCOの営業時間に準じます）',en:'10:00–20:00 (same as Nagoya PARCO)'},tel:'052-228-6110',ig:'oldorder.nagoya',img:'https://omt-inc.com/assets/shop-oldorder-nagoya.jpg'}];
+if(PAGE==='TopPage'){(function(){var box=$('#ooShops');if(!box)return;
+var lj=L==='ja';function v(o){return lj?o.ja:o.en;}
+var h='<div class="ooSec__head"><h2 class="ooSec__label">'+esc(T('shopsTitle'))+'</h2><span class="ooShops__sub">'+esc(T('shopsSub'))+'</span></div><p class="ooShops__lead">'+esc(T('shopsLead'))+'</p><div class="ooShops__row">';
+OO_SHOPS.forEach(function(s){var nm='OLD ORDER '+v(s.name);var ad=lj?('〒'+s.zip+' '+s.addr.ja):(s.addr.en+' '+s.zip+', Japan');
+var map='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('OLD ORDER '+s.name.ja+' '+s.addr.ja);
+h+='<div class="ooShop"><div class="ph" style="background-image:url('+esc(s.img)+')" role="img" aria-label="'+esc(nm)+'"></div><div class="bd"><p class="ar">'+esc(s.area)+'</p><h3 class="nm">'+esc(nm)+'</h3><dl>'
++'<dt>'+esc(T('shopAddr'))+'</dt><dd>'+esc(ad)+'</dd><dt>'+esc(T('shopHours'))+'</dt><dd>'+esc(v(s.hours))+'</dd><dt>'+esc(T('shopTel'))+'</dt><dd><a href="tel:'+esc(s.tel.replace(/-/g,''))+'">'+esc(lj?s.tel:'+81 '+s.tel.replace(/^0/,''))+'</a></dd></dl>'
++'<div class="bt"><a href="'+esc(map)+'" target="_blank" rel="noopener">'+esc(T('shopMap'))+'</a><a href="https://www.instagram.com/'+esc(s.ig)+'/" target="_blank" rel="noopener">Instagram</a></div></div></div>';});
+h+='</div><p class="ooShops__note">'+esc(T('shopsNote'))+'</p>';box.innerHTML=h;box.hidden=false;})();}
+var sectionsReady=Promise.resolve();
+if(PAGE==='TopPage'){
+var host=$('#ooSections');
+if(host){
+var secs=SECTIONS.map(function(s){
+var el=document.createElement('section');el.className='ooSec slide';el.setAttribute('data-cat',s.id);
+el.innerHTML='<div class="ooSec__head"><h2 class="ooSec__label">'+esc(s.label)+'</h2><div class="right"><a class="ooSec__more" href="'+SHOP+'categories/'+s.id+'">'+esc(T('viewAll'))+'</a><div class="ooSec__nav"><button type="button" class="pv" aria-label="Previous">‹</button><button type="button" class="nx" aria-label="Next">›</button></div></div></div><div class="ooGrid"></div>';
+/* 横にすべらせる矢印(1画面ぶん送る) */
+(function(){var g=$('.ooGrid',el),pv=$('.pv',el),nx=$('.nx',el);function upd(){pv.disabled=g.scrollLeft<=4;nx.disabled=g.scrollLeft+g.clientWidth>=g.scrollWidth-4;}pv.addEventListener('click',function(){g.scrollBy({left:-g.clientWidth*0.9,behavior:'smooth'});});nx.addEventListener('click',function(){g.scrollBy({left:g.clientWidth*0.9,behavior:'smooth'});});g.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);el.__upd=upd;})();
+host.appendChild(el);return {s:s,el:el};
+});
+var fa=parseInt(cfg.featafter||'1',10)||1;var tpl=$('#ooFeatTpl');
+if(tpl&&secs[fa-1]){var fx=tpl.content.cloneNode(true);secs[fa-1].el.parentNode.insertBefore(fx,secs[fa-1].el.nextSibling);}
+sectionsReady=Promise.all(secs.map(function(o){
+return fetchCat(o.s.id).then(function(docs){
+var grid=$('.ooGrid',o.el),ok=[],sold=[];
+docs.forEach(function(d){$$('#itemthumbs .item-box',d).forEach(function(b){var n=document.importNode(b,true);decorate(n);(n.classList.contains('isSold')?sold:ok).push(n);});});
+/* Best Sellersの列だけ: BASEで売れた数の多い順に先頭へ(2026-10-22・BASEの注文 4/1〜10/22 で数えた順。設定欄 OoBestPin で変えられる。売り切れは今までどおり後ろ) */
+if(o.s.id===7346651&&cfg.bestpin!=='0'){var pin=(cfg.bestpin||'96657059,96655538,96659234,105389260,155476260,128370567').split(',').map(function(x){return x.trim();});
+var rank=function(n){var a=n.querySelector('a[href*="/items/"]');var m=a&&a.getAttribute('href').match(/items\/(\d+)/);var i=m?pin.indexOf(m[1]):-1;return i<0?999:i;};
+ok=ok.map(function(n,i){return {n:n,r:rank(n),i:i};}).sort(function(a,b){return a.r-b.r||a.i-b.i;}).map(function(x){return x.n;});}
+ok.concat(sold).forEach(function(n){lazyImg(n);grid.appendChild(n);});
+if(!ok.length&&!sold.length)o.el.hidden=true;
+if(o.el.__upd)setTimeout(o.el.__upd,50);
+}).catch(function(){o.el.hidden=true;});
+}));
+}
+}
+
+/* ==== 写真の見せ方(2026-11-12 会長「BASEのデザインがダサい・画像をもっと」)。
+置き場の look.json に書いた写真と文で、上の大きな写真・流れる帯・パソコンのメニュー・ブランドの3枚・列の間の写真を出す。
+look.json が無い/読めないときは何もしない(今までどおりの見た目)。文は {ja:..,en:..} で、日本語以外は en を使う ==== */
+(function(){
+if(PAGE!=='TopPage')return;
+var hero=$('#ooHero');if(hero)hero.classList.add('ooLookWait');
+var done=function(){if(hero)hero.classList.remove('ooLookWait');};
+setTimeout(done,1500);
+function tx(v){if(v==null)return '';if(typeof v==='string')return v;return L==='ja'?(v.ja||v.en||''):(v.en||v.ja||'');}
+function img(n){return /^https?:/.test(n)?n:ASSET+n;}
+function prS(o){var c=o.pcat||((String(o.u||'').match(/categories\/(\d+)/)||[])[1]);return c?'<span class="pr" data-pc="'+esc(c)+'"'+(o.pk?' data-pk="'+esc(o.pk)+'"':'')+' hidden></span>':'';}
+function href(u){return /^https?:/.test(u)?u:SHOP+String(u||'').replace(/^\//,'');}
+fetch(ASSET+'look.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(lk){
+if(!lk){done();return;}
+document.body.classList.add('ooLook');
+/* 上の大きな写真: パソコンは2枚並べ、スマホは縦長1枚。文は左下 */
+if(hero&&lk.hero&&lk.hero.length){
+var h='';lk.hero.forEach(function(s){h+='<div class="hero-slide lk"><a href="'+esc(href(s.url))+'"><picture><source media="(max-width:760px)" srcset="'+esc(img(s.sp))+'"><img src="'+esc(img(s.pc))+'" alt="'+esc(tx(s.title))+'"></picture><div class="lkCap"><span class="lb">'+esc(tx(s.label))+'</span><h2>'+esc(tx(s.title))+'</h2>'+(s.sub?'<p>'+esc(tx(s.sub))+'</p>':'')+(s.pcat?prS(s):'')+'<span class="go">'+esc(tx(s.more))+'</span></div></a></div>';});
+$('.hero-track',hero).innerHTML=h;initHero();
+}
+done();
+/* 流れる帯(大きな写真のすぐ下) */
+if(hero&&lk.ticker&&lk.ticker.length){
+var tk=document.createElement('div');tk.className='ooTicker';
+var one=lk.ticker.map(function(t){return '<a href="'+esc(href(t.u))+'">'+esc(tx(t.t))+'</a>';}).join('<i>／</i>')+'<i>／</i>';
+tk.innerHTML='<div class="mv">'+one+one+one+one+'</div>';hero.parentNode.insertBefore(tk,hero.nextSibling);
+}
+/* パソコンのメニュー(ロゴの下に1列) */
+var head=$('#ooHead');
+if(head&&lk.nav&&lk.nav.length){
+var nv=document.createElement('nav');nv.className='ooPcNav';nv.setAttribute('aria-label','Menu');
+nv.innerHTML=lk.nav.map(function(t){return '<a href="'+esc(href(t.u))+'">'+esc(tx(t.t))+'</a>';}).join('');
+head.parentNode.insertBefore(nv,head.nextSibling);
+}
+/* ブランドの3枚: 1枚目を大きく、残り2枚を小さく */
+function at(id){return $('#ooSections .ooSec[data-cat="'+id+'"]');}
+if(lk.brands&&lk.brands.items&&lk.brands.items.length){
+var bw=document.createElement('section');bw.className='ooBrands';
+bw.innerHTML=(lk.brands.title?'<h2 class="ooSec__label">'+esc(tx(lk.brands.title))+'</h2>':'')+'<div class="g">'+lk.brands.items.map(function(b,i){return '<a class="b b'+i+'" href="'+esc(href(b.u))+'"><span class="ph"><img src="'+esc(img(b.img))+'" alt="'+esc(b.name)+'" loading="lazy"></span><span class="nm">'+esc(b.name)+'</span><span class="tx">'+esc(tx(b.text))+'</span></a>';}).join('')+'</div>';
+var ba=at(lk.brands.after);if(ba)ba.parentNode.insertBefore(bw,ba.nextSibling);else{var hs=$('#ooSections');if(hs)hs.insertBefore(bw,hs.firstChild);}
+}
+/* 列の間の写真: 大きい写真＋小さい写真＋短い文。左右を交互に */
+(lk.banners||[]).forEach(function(b,i){
+var to=at(b.before);if(!to)return;
+var s=document.createElement('section');s.className='ooBan'+(i%2?' rev':'');
+s.innerHTML='<a class="big" href="'+esc(href(b.u))+'"><img src="'+esc(img(b.l))+'" alt="'+esc(tx(b.title))+'" loading="lazy"></a><div class="side">'+(b.s?'<a class="sm" href="'+esc(href(b.u))+'"><img src="'+esc(img(b.s))+'" alt="" loading="lazy"></a>':'')+'<div class="tx"><span class="lb">'+esc(tx(b.label))+'</span><h3>'+esc(tx(b.title))+'</h3><p>'+esc(tx(b.text))+'</p>'+(b.pcat?prS(b):'')+'<a class="go" href="'+esc(href(b.u))+'">'+esc(tx(b.more))+'</a></div></div>';
+to.parentNode.insertBefore(s,to);
+});
+/* 売れ筋の列に順位の数字 */
+if(lk.rank){var rk=at(lk.rank);if(rk)rk.classList.add('ooRank');}
+/* ブランドの切りかえ(すべて/OLD ORDER/Ocai/BBiMP)を写真つきに(会長 11/12「シンプルすぎる」)。切りかえは後から作られるので、できるまで待つ */
+if(lk.tabs){var tries=0;(function tb(){var w=$('#ooBrandTabs');if(!w){if(tries++<40)setTimeout(tb,250);return;}
+w.classList.add('lkTabs');$$('button',w).forEach(function(b){var im=lk.tabs[b.getAttribute('data-b')||'all'];if(!im||b.querySelector('img'))return;var n=b.textContent;b.innerHTML='<span class="ph"><img src="'+esc(img(im))+'" alt=""></span><span class="nm">'+esc(n)+'</span>';});})();}
+/* 下のほうの段(会長 11/12「下のほうにも項目を増やして写真を」): feature=写真2枚＋文 / tiles=型ごとの入口 / mosaic=はいている写真 */
+function place(el,k){
+if(k.before==='shops'){var sh=$('#ooShops');if(sh){sh.parentNode.insertBefore(el,sh);return;}}
+if(k.after==='brands'){var br=$('.ooBrands');if(br){br.parentNode.insertBefore(el,br.nextSibling);return;}}
+var to=k.before?at(k.before):null;if(to){to.parentNode.insertBefore(el,to);return;}
+var af=k.after?at(k.after):null;if(af){af.parentNode.insertBefore(el,af.nextSibling);return;}
+var hs=$('#ooSections');if(hs)hs.appendChild(el);
+}
+function lkHead(k){return '<div class="lkHead"><h2 class="ooSec__label">'+esc(tx(k.title))+'</h2>'+(k.sub?'<span class="sub">'+esc(tx(k.sub))+'</span>':'')+(k.u&&k.more?'<a class="ooSec__more" href="'+esc(href(k.u))+'">'+esc(tx(k.more))+'</a>':'')+'</div>';}
+(lk.blocks||[]).forEach(function(k){
+var el=document.createElement('section'),h='';
+if(k.type==='feature'){
+el.className='ooBan feat'+(k.rev?' rev':'');
+var li=(k.list||[]).map(function(x){return '<li>'+esc(tx(x))+'</li>';}).join('');
+h='<a class="big" href="'+esc(href(k.u))+'"><img src="'+esc(img(k.l))+'" alt="'+esc(tx(k.title))+'" loading="lazy">'+(k.badge?'<span class="badge">'+esc(tx(k.badge))+'</span>':'')+'</a><div class="side">'+(k.s?'<a class="sm" href="'+esc(href(k.u))+'"><img src="'+esc(img(k.s))+'" alt="" loading="lazy"></a>':'')+'<div class="tx"><span class="lb">'+esc(tx(k.label))+'</span><h3>'+esc(tx(k.title))+'</h3>'+(k.text?'<p>'+esc(tx(k.text))+'</p>':'')+(li?'<ul>'+li+'</ul>':'')+(k.more?'<a class="go" href="'+esc(href(k.u))+'">'+esc(tx(k.more))+'</a>':'')+'</div></div>';
+}else if(k.type==='tiles'){
+el.className='ooTiles';
+h=lkHead(k)+'<div class="g">'+(k.items||[]).map(function(t,i){return '<a class="t t'+i+'" href="'+esc(href(t.u))+'"><span class="ph"><img src="'+esc(img(t.img))+'" alt="'+esc(t.name)+'" loading="lazy"></span><span class="nm">'+esc(t.name)+'</span>'+prS(t)+(t.text?'<span class="tx">'+esc(tx(t.text))+'</span>':'')+'</a>';}).join('')+'</div>';
+}else if(k.type==='mosaic'){
+el.className='ooStyle';
+h=lkHead(k)+'<div class="g">'+(k.items||[]).map(function(t,i){var tag=t.u?'a':'span';return '<'+tag+' class="m m'+i+'"'+(t.u?' href="'+esc(href(t.u))+'"':'')+'><img src="'+esc(img(t.img))+'" alt="" loading="lazy">'+(t.cap?'<span class="cap">'+esc(tx(t.cap))+'</span>':'')+'</'+tag+'>';}).join('')+'</div>';
+}else if(k.type==='blog'){
+/* ブログ(会長 11/12「ブログどこ行った？」「oldorder.jp と同じ形に」)。BASE のブログ一覧から読む＝ブログを書けばトップにも出る。
+   見出し BLOG＋VISIT BLOG →、すべて/発売情報/イベント情報 の切りかえ(BASE のブログに種類は無いので題名の言葉で分ける)、正方形の写真＋日付＋題名を横にすべらせる */
+el.className='ooBlog';el.hidden=true;
+var tabs=k.tabs||[{n:{ja:'すべて',en:'All'},kw:[]}];
+el.innerHTML='<div class="lkHead"><h2 class="ooSec__label">'+esc(tx(k.title))+'</h2><a class="ooSec__more" href="'+esc(href(k.u))+'">'+esc(tx(k.more))+'</a></div><div class="bt">'+tabs.map(function(t,i){return '<button type="button" data-i="'+i+'"'+(i?'':' class="on"')+'>'+esc(tx(t.n))+'</button>';}).join('')+'</div><div class="g"></div><p class="none" hidden>'+esc(tx(k.none))+'</p>';
+place(el,k);
+fetchDoc(SHOP+'blog').then(function(doc){
+var ps=$$('.blog_inner',doc).map(function(b){var a=$('.blog_title a',b),im=$('.blog_head_image img',b),dt=$('.publish_date',b);return a?{u:a.getAttribute('href'),t:a.textContent.trim(),img:im?im.getAttribute('src'):'',d:dt?(dt.getAttribute('content')||dt.textContent).trim():''}:null;}).filter(Boolean);
+ps.sort(function(a,b){return a.d<b.d?1:a.d>b.d?-1:0;});ps=ps.slice(0,k.max||10);if(!ps.length)return;
+var g=$('.g',el),no=$('.none',el);
+function show(i){var kw=(tabs[i].kw||[]).map(function(x){return x.toUpperCase();});var list=ps.filter(function(p){var T2=p.t.toUpperCase();return !kw.length||kw.some(function(w){return T2.indexOf(w)>=0;});});
+g.innerHTML=list.map(function(p){return '<a class="p" href="'+esc(p.u)+'"><span class="ph">'+(p.img?'<img src="'+esc(p.img)+'" alt="" loading="lazy">':'')+'</span><span class="dt">'+esc(p.d.slice(0,10).replace(/[\/-]/g,'.'))+'</span><span class="tt">'+esc(p.t)+'</span></a>';}).join('');
+g.scrollLeft=0;no.hidden=!!list.length;}
+$$('.bt button',el).forEach(function(b){b.addEventListener('click',function(){$$('.bt button',el).forEach(function(x){x.classList.toggle('on',x===b);});show(+b.getAttribute('data-i'));});});
+show(0);el.hidden=false;
+}).catch(function(){});
+return;
+}else return;
+el.innerHTML=h;place(el,k);
+});
+/* 値段: 下の商品の列を読みこみ終わったら、その型でいちばん安い値段(売り切れを除く)を出す(会長 11/12)。手で書かないので値段が変わっても直さなくてよい */
+sectionsReady.then(function(){$$('.pr[data-pc]').forEach(function(e){var sec=at(e.getAttribute('data-pc')),kw=(e.getAttribute('data-pk')||'').toUpperCase(),m=0;if(!sec)return;
+$$('.item-box',sec).forEach(function(b){if(b.classList.contains('isSold'))return;var t=($('.item-title',b)||{}).textContent||'';if(kw&&t.toUpperCase().indexOf(kw)<0)return;var v=parseInt((($('.item-price',b)||{}).textContent||'').replace(/[^0-9]/g,''),10);if(v&&(!m||v<m))m=v;});
+if(m){e.textContent='¥'+m.toLocaleString('ja-JP')+(L==='ja'?' 〜（税込）':'~');e.hidden=false;}});});
+}).catch(done);
+})();
+
+/* ==== 写真に乗せると2枚目・サイズで絞り込む帯 ==== */
+var sizesP=fetch(ASSET+'sizes.json').then(function(r){return r.json();}).catch(function(){return null;});
+function pathOf(h){var m=String(h||'').match(/\/items\/\d+/);return m?m[0]:String(h||'');}
+Promise.all([sizesP,sectionsReady]).then(function(a){
+var d=a[0];
+/* 2枚目はマウスのある端末で、写真に乗せたときだけ作る(スマホでは読み込まない 2026-10-06) */
+if(d&&d.img2&&window.matchMedia&&matchMedia('(hover:hover)').matches)document.addEventListener('mouseover',function(e){var b=e.target&&e.target.closest&&e.target.closest('.item-box');if(!b||b.__i2||b.classList.contains('isSold'))return;b.__i2=1;var l=$('a',b);var u=d.img2[pathOf(l&&l.getAttribute('href'))];var w=$('.item-thumb-wrap',b);if(u&&w&&!$('.img2',b)){var im=document.createElement('img');im.className='img2';im.alt='';im.src=u.replace(/&amp;/g,'&');w.appendChild(im);}},{passive:true});
+if(PAGE!=='TopPage')return;
+var host=$('#ooSections');if(!host)return;
+/* ブランドのタブ(すべて / OLD ORDER / Ocai / BBiMP)。サイズの絞り込みと一緒に効く */
+var BRANDS=[{k:'',n:T('allBrands')},{k:'OLDORDER',n:'OLD ORDER'},{k:'OCAI',n:'Ocai'},{k:'BBIMP',n:'BBiMP'}];
+var brand='';
+var tabs=document.createElement('div');tabs.id='ooBrandTabs';
+tabs.innerHTML=BRANDS.map(function(b,i){return '<button type="button" data-b="'+b.k+'"'+(i?'':' class="on"')+'>'+esc(b.n)+'</button>';}).join('');
+host.parentNode.insertBefore(tabs,host);
+var useSize=!!d&&cfg.sizefilter!=='';
+var map=null,sel={},bar=null;
+if(useSize){
+var any=d.sizes.some(function(s){return (d.instock[s]||[]).length;});
+map=any?d.instock:d.exists;
+bar=document.createElement('div');bar.id='ooSizeBar';
+bar.innerHTML='<div class="hd"><b>'+esc(T('selectSize'))+'</b><span id="ooSBcount"></span></div><div class="sz">'+d.sizes.map(function(s){return '<button type="button" data-s="'+esc(s)+'">'+esc(s)+'</button>';}).join('')+'</div><button type="button" class="x">'+esc(T('clear'))+'</button>';
+host.parentNode.insertBefore(bar,host);
+}
+function apply(){
+var act=Object.keys(sel).filter(function(k){return sel[k];});var allow=null;
+if(act.length){allow={};act.forEach(function(s){(map[s]||[]).forEach(function(h){allow[h]=1;});});}
+var vis={};
+$$('.item-box',host).forEach(function(b){var h=pathOf(($('a',b)||{}).getAttribute&&$('a',b).getAttribute('href'));var show=(!allow||!!allow[h])&&(!brand||b.getAttribute('data-brand')===brand);b.style.display=show?'':'none';if(show&&h)vis[h]=1;});
+$$('.ooSec',host).forEach(function(s){var n=$$('.item-box',s).filter(function(b){return b.style.display!=='none';}).length;s.style.display=n?'':'none';var g=$('.ooGrid',s);if(g&&s.classList.contains('slide'))g.scrollLeft=0;if(s.__upd)s.__upd();});
+/* 写真＋濃い面のかたまりは「すべて」のときだけ出す */
+$$('.ooFeat',host.parentNode).forEach(function(f){f.style.display=brand?'none':'';});
+var c=$('#ooSBcount');if(c)c.textContent=Object.keys(vis).length+T('results');
+}
+$$('button',tabs).forEach(function(b){b.addEventListener('click',function(){brand=b.getAttribute('data-b');$$('button',tabs).forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+if(bar){
+$$('.sz button',bar).forEach(function(b){b.addEventListener('click',function(){var s=b.getAttribute('data-s');sel[s]=!sel[s];b.classList.toggle('on',!!sel[s]);apply();});});
+$('.x',bar).addEventListener('click',function(){sel={};$$('.sz button',bar).forEach(function(b){b.classList.remove('on');});apply();});
+}
+apply();
+
+});
+
+/* ==== Instagram ==== */
+if(PAGE==='TopPage'&&cfg.ig!==''){
+sectionsReady.then(function(){return fetch(ASSET+'ig.json').then(function(r){return r.json();});}).then(function(d){
+if(!d||!d.posts||!d.posts.length)return;var host=$('#ooSections');if(!host)return;
+var s=document.createElement('section');s.className='ooSec ooIG';
+s.innerHTML='<div class="ooSec__head"><h2 class="ooSec__label">'+esc(T('igTitle'))+'</h2><a class="ooSec__more" href="https://instagram.com/'+esc(d.username||'')+'" target="_blank" rel="noopener">@'+esc(d.username||'')+'</a></div><div class="ooGrid">'+d.posts.slice(0,12).map(function(p){return '<a href="'+esc(p.link)+'" target="_blank" rel="noopener"><figure><img src="'+esc(p.img)+'" alt="" loading="lazy"></figure></a>';}).join('')+'</div>';
+host.appendChild(s);
+}).catch(function(){});
+}
+
+/* ==== もっと見る(カテゴリ・検索) ==== */
+(function(){
+var mi=$('#moreItems');if(!mi)return;
+var mp=parseInt(($('#max_page')||{}).textContent,10)||1,np=parseInt(($('#next_page')||{}).textContent,10)||2;
+var pr=$('#loadItemsParams');var busy=false;
+if(mp<np||!pr){mi.hidden=true;return;}
+$('a',mi).addEventListener('click',function(e){
+e.preventDefault();if(busy)return;busy=true;
+fetch(pr.getAttribute('data-url')+np+pr.getAttribute('data-url-params'),{credentials:'same-origin'}).then(function(r){return r.text();}).then(function(h){
+var tmp=document.createElement('div');tmp.innerHTML=h;var g=$('#itemthumbs');
+$$('.item-box',tmp).forEach(function(b){decorate(b);g.appendChild(b);});
+np++;busy=false;if(mp<np)mi.hidden=true;
+}).catch(function(){busy=false;});
+});
+})();
+
+/* ==== 商品ページ: ブランド名を分ける・四角いサイズボタン・スマホの写真の点 ==== */
+if(PAGE==='ItemPage'){
+(function(){
+var t=$('#ooItem .itemTitle');
+if(t){var tw=document.createTreeWalker(t,NodeFilter.SHOW_TEXT,null,false),n;while((n=tw.nextNode())){var m=n.nodeValue.match(/^\s*【([^】]+)】\s*/);if(m){var b=/^OLD ?ORDER$/i.test(m[1])?'OLD ORDER':m[1];n.nodeValue=n.nodeValue.replace(m[0],'');var bk=keyOf(b);var sp=document.createElement(BRAND_CAT[bk]?'a':'span');sp.className='ooItBrand';sp.textContent=b;if(BRAND_CAT[bk])sp.href=SHOP+'categories/'+BRAND_CAT[bk];t.parentNode.insertBefore(sp,t);break;}}}
+function build(){
+if($('#ooSizeBtns'))return true;
+var sels=$$('#ooItem select#valiationSelect');if(!sels.length)return false;
+var sel=null;sels.forEach(function(s){if(s.getAttribute('data-display-stock')!==null&&s.offsetParent!==null)sel=s;});
+if(!sel)sels.forEach(function(s){if(!sel&&s.offsetParent!==null)sel=s;});
+if(!sel)return false;
+var box=document.createElement('div');box.id='ooSizeBtns';
+var lab=document.createElement('div');lab.className='ooSizeLabel';lab.textContent=T('size');
+Array.prototype.forEach.call(sel.options,function(o){
+if(!o.value)return;
+var txt=o.textContent.replace(/^(在庫なし|残り\d+点|Sold out)[:：]\s*/i,'').trim();
+var st=o.getAttribute('data-stock');var out=(st!==null&&parseInt(st,10)===0)||/在庫なし|sold out/i.test(o.textContent);
+var b=document.createElement('button');b.type='button';b.textContent=txt;if(out)b.className='out';
+if(o.selected&&!out)b.classList.add('on');
+b.addEventListener('click',function(){if(out)return;sel.value=o.value;sel.dispatchEvent(new Event('change',{bubbles:true}));$$('button',box).forEach(function(x){x.classList.remove('on');});b.classList.add('on');});
+box.appendChild(b);
+});
+sel.parentNode.insertBefore(lab,sel);sel.parentNode.insertBefore(box,sel);sel.classList.add('ooHiddenSel');
+/* BASEはサイズ欄を旧型(v1)と新型(v2)の2つ出す。ボタンに使った方の型だけ残し、もう片方の型は隠す */
+var wrap=sel.closest('.purchaseElement');var ver=wrap&&wrap.getAttribute('data-target-version');
+if(ver){$$('#ooItem .purchaseElement[data-target-version]').forEach(function(w){if(w.getAttribute('data-target-version')!==ver)w.style.display='none';});}
+if(wrap){Array.prototype.forEach.call(wrap.childNodes,function(n){if(n===sel||n===box||n===lab)return;if(n.nodeType===3){n.nodeValue='';}else if(n.nodeType===1&&!n.contains(sel)){n.style.display='none';}});}
+return true;
+}
+if(!build()){var k=0;var iv=setInterval(function(){if(build()||++k>20)clearInterval(iv);},250);}
+var g=$('.it-gallery'),dots=$('.it-dots');
+if(g&&dots){var f=$$('figure',g);if(f.length>1){dots.innerHTML=f.map(function(_,i){return '<i'+(i?'':' class="on"')+'></i>';}).join('');g.addEventListener('scroll',function(){var i=Math.round(g.scrollLeft/g.clientWidth);$$('i',dots).forEach(function(d,j){d.classList.toggle('on',i===j);});},{passive:true});}}
+})();
+}
+/* ブランド・シリーズのページ: 上に「シリーズから選ぶ」の小さな写真の並び(oldorder.jp と同じ形)。
+   並びはメニュー(#ooDrawer の .dr-cats = BASEのカテゴリの親子)から作るので、シリーズが増えても自動で入る。写真は毎朝の索引(sizes.json の catImg) */
+if(PAGE==='CategoryPage'){(function(){
+function idOf(h){return (String(h||'').match(/\/categories\/(\d+)/)||[])[1]||'';}
+var cur=idOf(location.pathname);var dr=$('#ooDrawer .dr-cats');if(!cur||!dr)return;
+var ns=Array.prototype.slice.call(dr.children),par=null,kids=[];
+for(var i=0;i<ns.length;i++){var n=ns[i],sub=ns[i+1];if(n.tagName!=='A'||!sub||!sub.classList.contains('dr-sub'))continue;var ks=$$('a',sub);if(idOf(n.getAttribute('href'))===cur||ks.some(function(k){return idOf(k.getAttribute('href'))===cur;})){par=n;kids=ks;break;}}
+if(!par||!kids.length)return;
+var pid=idOf(par.getAttribute('href'));var bn=brandOf('【'+par.textContent.trim()+'】').brand;if(keyOf(bn)==='BBIMP')bn='BBiMP';
+var box=document.createElement('div');box.id='ooSeries';
+var tiles=[{id:pid,h:par.getAttribute('href'),n:T('allBrands'),all:true}].concat(kids.map(function(k){return {id:idOf(k.getAttribute('href')),h:k.getAttribute('href'),n:k.textContent.trim()};}));
+box.innerHTML='<p class="hd"><b>'+esc(bn)+'</b>'+esc(T('pickSeries'))+'</p><div class="row">'+tiles.map(function(t){return '<a href="'+esc(t.h)+'" data-c="'+t.id+'"'+(t.id===cur?' class="on" aria-current="page"':'')+'><span class="im">'+(t.all?'<span class="all">ALL</span>':'')+'</span><span class="nm">'+esc(t.n)+'</span></a>';}).join('')+'</div>';
+var head=$('.pageHead');if(head)head.parentNode.insertBefore(box,head.nextSibling);else return;
+var row=$('.row',box),on=$('a.on',box);if(on&&on.offsetLeft>row.clientWidth*0.6)row.scrollLeft=on.offsetLeft-16;
+sizesP.then(function(d){var ci=d&&d.catImg;if(!ci)return;$$('a[data-c]',box).forEach(function(a){if($('.all',a))return;var u=ci[a.getAttribute('data-c')];if(u)$('.im',a).innerHTML='<img src="'+esc(u)+'" alt="" loading="lazy">';});});
+})();}
+/* 商品ページ: 同じ型のほかのカラー(サイズのすぐ上。oldorder.jp のShopifyと同じ形)。毎朝のサイズ索引(sizes.json の items)から、ブランドと「/」の前の型名が同じ商品を並べる。
+   いま見ている色は太い枠と太字、売り切れは後ろでうすく。写真は枠に全部収める。BASEの検索はすぐ回数制限(429)になるので使わない */
+if(PAGE==='ItemPage'){sizesP.then(function(d){
+var all=d&&d.items;if(!all)return;
+var here=pathOf(location.pathname);
+function split(t){var bn=brandOf(t);var i=bn.name.lastIndexOf('/');return {b:keyOf(bn.brand),m:keyOf(i>0?bn.name.slice(0,i):bn.name),c:(i>0?bn.name.slice(i+1):bn.name).trim(),name:bn.name};}
+var me=all[here]?split(all[here][0]):null;
+if(!me){var h1=$('#ooItem .itemTitle'),br=$('#ooItem .ooItBrand');if(h1)me=split((br?'【'+br.textContent+'】':'')+h1.textContent.trim());}
+if(!me||!me.m)return;
+var ok=[],sold=[];
+Object.keys(all).forEach(function(p){var x=split(all[p][0]);if(x.b!==me.b||x.m!==me.m)return;var o={p:p,c:x.c,img:all[p][1],sold:!!all[p][2]};(o.sold&&p!==here?sold:ok).push(o);});
+var list=ok.concat(sold);if(list.length<2)return;
+var box=document.createElement('div');box.className='it-colors';
+box.innerHTML='<p class="hd">'+esc(T('otherColors'))+'<span>'+esc(T('colorsCount').replace('%n',list.length))+'</span></p><div class="row">'+list.map(function(o){var cur=o.p===here;return '<a href="'+SHOP.replace(/\/$/,'')+o.p+'" class="'+(cur?'cur':'')+(o.sold?' sold':'')+'"'+(cur?' aria-current="page"':'')+' title="'+esc(o.c)+'"><span class="im"><img src="'+esc(o.img)+'" alt="'+esc(o.c)+'" loading="lazy"></span><span class="nm">'+esc(o.c)+'</span>'+(o.sold?'<span class="so">'+esc(T('soldOut'))+'</span>':'')+'</a>';}).join('')+'</div>';
+var at=$('#ooItem .it-form')||$('#ooItem .it-checks');if(at)at.parentNode.insertBefore(box,at);
+});}
+/* 商品ページ: カートの前に、送料・関税・カートの言語の案内を各国語で(日本語のときは出さない) */
+if(PAGE==='ItemPage'&&L!=='ja'){var ib=$('.it-intl');if(ib){ib.innerHTML='<p class="t">'+esc(T('intlTitle'))+'</p><ul><li>'+esc(T('intl1'))+'</li><li>'+esc(T('intl2'))+'</li><li>'+esc(T('intl3'))+'</li><li>'+esc(T('intl4'))+'</li></ul>';ib.hidden=false;}}
+/* 商品ページ: 商品説明の各国語版(毎晩の自動翻訳で desc_<言語>.json に用意。無ければ今の説明のまま) */
+/* 商品ページ: サイズのボタンが画面に見えている間だけ、BASEの「ショップに質問する」の丸を隠す(右下の丸が一番右のサイズにかかるため・2026-10-22 窓口判断)。下へ動かせばまた出る */
+/* BASEがサイズの入れ物をあとから作り直すので、最初に見つけた物を見張る形では動かなかった(10/29 本番)。
+   画面を動かすたび・大きさが変わるたびに、その時のサイズの入れ物が画面に入っているかを調べる */
+if(PAGE==='ItemPage'){(function(){var busy=false;
+function chk(){busy=false;var sz=document.getElementById('variationSelectWrap'),on=false;if(sz){var r=sz.getBoundingClientRect();on=r.height>0&&r.bottom>0&&r.top<window.innerHeight;}document.body.classList.toggle('ooHideChat',on);}
+function req(){if(busy)return;busy=true;(window.requestAnimationFrame||setTimeout)(chk,16);}
+window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);window.addEventListener('load',req);
+[300,1000,2500,5000].forEach(function(t){setTimeout(req,t);});})();}
+/* 商品ページ: クーポンの使い方の1行は日本語の人だけ(かんたん海外販売ではクーポンが使えないため・2026-10-22) */
+if(PAGE==='ItemPage'&&L==='ja'){var ctip=$('.it-coupon');if(ctip&&ctip.textContent)ctip.hidden=false;}
+/* 商品ページ: 説明の頭に「※海外倉庫から発送しているため…」が入っている商品は、チェック欄の日数を海外倉庫の日数にする。
+   入っていない商品(日本限定・HAPPY BAG)は今の日数のまま。英語の画面では説明のその一文を英語にする(2026-10-29 会長・窓口)。
+   すぐ次の行の「※在庫は世界中の売り場と共有…」も英語にする(2026-10-30 会長) */
+if(PAGE==='ItemPage'){(function(){var el=$('#item_detail');if(!el||el.textContent.indexOf('海外倉庫から発送')<0)return;
+var li=$('.it-checks [data-i18n="chkDays"]');if(li){li.setAttribute('data-i18n','chkDaysOv');li.textContent=T('chkDaysOv');}
+if(L==='ja')return;var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n,ov=0,st=0;while((n=w.nextNode())&&!(ov&&st)){
+if(!ov&&n.nodeValue.indexOf('※海外倉庫から発送しているため')>=0){n.nodeValue=T('ovLine');ov=1;}
+else if(!st&&n.nodeValue.indexOf('※在庫は世界中の売り場と共有')>=0){n.nodeValue=T('stockLine');st=1;}}})();}
+/* 商品ページ: 日本語の画面では、商品説明の決まった英文(見出し・注意書き・返品・スタッフの着用サイズ)を日本語に置きかえる。
+   BASEの説明は英語で入っているため。英語の画面ではそのまま(2026-10-22 窓口依頼・会長「検証係をつけて直してよい」) */
+if(PAGE==='ItemPage'&&L==='ja'){(function(){
+var el=$('#item_detail');if(!el)return;
+var S={
+'Please allow for slight differences in color between the product photos and the actual item due to your display settings.':'お使いの画面の設定により、写真と実物の色が少しちがって見える場合があります。',
+'These items are also sold in our physical stores. Stock may become unavailable depending on timing.':'実店舗でも販売しているため、タイミングにより品切れになる場合があります。',
+'Once an order is confirmed, we are unable to accept cancellations, returns, or changes to size or quantity, except in the case of a defective item.':'ご注文の確定後は、不良品の場合をのぞき、キャンセル・返品・サイズや数量の変更はお受けできません。',
+'If your item arrives defective or incorrect, we will arrange an exchange. Please contact us through the Contact form on this site. If no replacement stock is available, we will issue a refund instead.':'不良品やちがう商品が届いた場合は、交換いたします。このサイトのお問い合わせフォームからご連絡ください。交換できる在庫が無い場合は、返金いたします。',
+'Please note that shoe boxes are packaging and not part of the product itself. We cannot accept returns or exchanges for damaged shoe boxes.':'靴の箱は梱包材で、商品にはふくまれません。箱の傷みによる返品・交換はお受けできません。',
+'This is a shoe accessory. Shoes are not included.':'靴のアクセサリーです。靴は付きません。',
+'A pair of ribbon clips (2 pieces) for the OCAI "SMILE" sneakers.':'Ocai「SMILE」スニーカー用のリボンクリップ（2個1組）です。',
+'The sneakers are not included.':'スニーカーは付きません。',
+'Please see the product page for the Ocai Smile CANVAS to purchase the sneakers.':'スニーカーは Ocai Smile CANVAS の商品ページからお買い求めください。',
+'Mesh upper':'アッパー：メッシュ',
+'Canvas / High top':'キャンバス / ハイカット',
+'Chunky sole, approx. 6.5cm':'厚底ソール（約6.5cm）',
+'Staff / Usual / Wears / Comment':'スタッフ / ふだんのサイズ / 着用サイズ / ひとこと',
+'* This table was measured on the previous version. The current model fits best one size up from your usual size.':'※この表は以前の仕様で測ったものです。今の商品は、ふだんよりワンサイズ大きめがちょうどです。'};
+var HD={'SIZE':'サイズ','COLOR':'カラー','STAFF FIT':'スタッフの着用サイズ','NOTE':'ご注意','NOTICE':'在庫について','RETURNS & EXCHANGES':'返品・交換について','DETAIL':'くわしく'};
+var CM={'runs very large':'かなり大きめ','very roomy fit':'かなりゆったり','roomy fit':'ゆったり','roomy fit・':'ゆったり','roomy fit・about 2 fingers of room':'ゆったり・指2本ぶんの余裕','0.5runs large':'0.5サイズ大きめ'};
+function tr(s){var t=s.trim();if(!t)return s;
+if(S[t])return s.replace(t,S[t]);
+var m=t.match(/^■\s*(.+)$/);if(m&&HD[m[1].trim()])return s.replace(t,'■ '+HD[m[1].trim()]);
+m=t.match(/^([*※]\s*)?Sole height[:：]\s*([0-9.]+)\s*cm.*$/i);if(m)return s.replace(t,(m[1]?'※':'')+'ソールの高さ：'+m[2]+'cm');
+m=t.match(/^(Women|Men)(\s.*)$/);if(m){var p=(m[1]==='Women'?'女性':'男性')+m[2];var i=p.lastIndexOf('/');if(i>=0){var c=p.slice(i+1).trim();if(CM[c])p=p.slice(0,i+1)+' '+CM[c];}return s.replace(t,p);}
+return s;}
+var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n,list=[];while((n=w.nextNode()))list.push(n);
+list.forEach(function(x){var v=tr(x.nodeValue);if(v!==x.nodeValue)x.nodeValue=v;});
+})();}
+if(PAGE==='ItemPage'&&(L==='zh'||L==='ko')){fetch(ASSET+'desc_'+L+'.json').then(function(r){return r.ok?r.json():null;}).then(function(d){var k=pathOf(location.pathname);var v=d&&d[k];var el=$('#item_detail');if(v&&el)el.innerHTML=v;}).catch(function(){});}
+/* 商品ページ:「海外送料を見る」は純正のEMS料金ではなく WANT.JP(かんたん海外販売)の説明を出す(OVERTUREの otws-head.js と同じ作り)。
+   純正は postageOpenInternational のリスナーで料金の窓を開くので、複製して差し替えリスナーを外す */
+if(PAGE==='ItemPage'){(function(){
+var intl=document.getElementById('postageOpenInternational');
+if(!intl||document.getElementById('ooWantOverlay'))return;
+var ov=document.createElement('div');ov.id='ooWantOverlay';
+ov.innerHTML='<div class="box"><button type="button" class="x" aria-label="close">×</button><h3>🌍 '+esc(T('wantH'))+'</h3><p>'+esc(T('wantP1'))+'</p><p>'+esc(T('wantP2'))+'</p>'+(L==='ja'?'<p>'+esc(I18N.ui.wantP1.en)+' '+esc(I18N.ui.wantP2.en)+'</p>':'')+'</div>';
+document.body.appendChild(ov);
+var link=intl.cloneNode(true);link.id='ooWantOpen';link.className='';link.textContent=T('wantLink');
+intl.parentNode.replaceChild(link,intl);
+link.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();ov.classList.add('on');});
+ov.addEventListener('click',function(e){if(e.target===ov||e.target.classList.contains('x'))ov.classList.remove('on');});
+})();}
+/* 日本専用の払い方の案内(PAY IDあと払い)は日本語以外のときは隠す */
+if(EN){var bs=document.createElement('style');bs.textContent='.bnplBanner{display:none!important}';document.head.appendChild(bs);}
+
+/* ==== メール登録の案内(5%OFF) ==== */
+/* メール登録の割引の窓も日本語の人だけ(海外のお客さまはクーポンが使えない・2026-10-13 案A) */
+/* 2026-11-12 会長「5%オフのクーポンの窓はいらん、消して」→ 出さない(設定 OoPopup がオンでも出ない)。クーポン Q9XTUMEK 自体は残す。また出すときは OO_POPUP_OFF を false に */
+var OO_POPUP_OFF=true;
+if(!OO_POPUP_OFF&&PAGE==='TopPage'&&cfg.popup==='1'&&L==='ja'){
+(function(){
+var KEY='ooPop_v1',st=store(KEY)||'';
+if(st==='sub'||st==='close2')return;
+if(st.indexOf('close1:')===0&&Date.now()-parseInt(st.slice(7),10)<3*86400000)return;
+var CODE=cfg.popupcode||'Q9XTUMEK';
+var PT={h:T('popH'),p:T('popP'),ph:T('popPh'),go:T('popGo'),no:T('popNo'),wh:T('popWh'),wp:T('popWp'),wn:T('popWn'),done:T('popDone')};
+var w=document.createElement('div');w.id='ooPop';
+w.innerHTML='<div class="card"><div class="side" style="background-image:url('+ASSET+'brunch-hero.jpg)"></div><div class="body"><button type="button" class="x" aria-label="close">×</button><h2>'+esc(PT.h)+'</h2><p>'+esc(PT.p)+'</p><input type="email" placeholder="'+esc(PT.ph)+'"><button type="button" class="go">'+esc(PT.go)+'</button><button type="button" class="no">'+esc(PT.no)+'</button></div></div>';
+function shut(){var s=store(KEY)||'';store(KEY,s.indexOf('close1:')===0?'close2':'close1:'+Date.now());w.remove();}
+setTimeout(function(){
+document.body.appendChild(w);
+w.addEventListener('click',function(e){if(e.target===w)shut();});
+$('.x',w).addEventListener('click',shut);$('.no',w).addEventListener('click',shut);
+$('.go',w).addEventListener('click',function(){
+var inp=$('input',w),em=inp.value.trim();
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){inp.style.borderColor='#c33';return;}
+try{var c=$('.x_mailMagazineSubscribe')||$('#ooFoot .ft-news');if(c){var fi=$('input[type="email"],input[type="text"]',c),fb=$('button,input[type="submit"]',c);if(fi&&fb){fi.value=em;fi.dispatchEvent(new Event('input',{bubbles:true}));fb.click();}}}catch(e){}
+store(KEY,'sub');
+$('.body',w).innerHTML='<h2>'+esc(PT.wh)+'</h2><p>'+esc(PT.wp)+'</p><div class="code">'+esc(CODE)+'</div><p>'+esc(PT.wn)+'</p><button type="button" class="go">'+esc(PT.done)+'</button>';
+$('.go',w).addEventListener('click',function(){w.remove();});
+});
+},2500);
+})();
+}
+
+/* ==== 日本語以外のとき: BASE本来の日本語の文言を、英語を経由して選んだ言語に言い換える ==== */
+var X=((I18N.en2||{})[L])||{};
+function tl(en){return L==='en'?en:(X[en]!=null?X[en]:en);}
+if(EN){
+var __TD={
+'メニュー':'MENU','カート':'CART','カートを見る':'View Cart',
+'商品カテゴリー':'CATEGORY','ショップガイド':'SHOP GUIDE','新着ブログ記事':'LATEST BLOG POSTS',
+'ブログ':'BLOG','お知らせ':'NEWS','ホーム':'HOME',
+'プライバシーポリシー':'Privacy Policy','特定商取引法に基づく表記':'Legal Notice','会員規約':'Membership Terms',
+'配送料について':'SHIPPING','お支払い方法について':'PAYMENT METHODS','通販営業日カレンダー':'BUSINESS DAY CALENDAR','営業日カレンダー':'BUSINESS DAY CALENDAR',
+'全国一律送料 1,100円':'Flat-rate shipping ¥1,100','お買い物5,000円以上で送料無料':'Free shipping on orders over ¥5,000','お買い物30,000円以上で送料無料':'Free shipping on orders over ¥30,000','30,000円以上で送料無料':'Free shipping over ¥30,000',
+'詳しい送料はこちら':'Shipping details','詳しいお支払方法のご案内':'Payment details',
+'オンラインショップでは以下の決済方法がご利用いただけます。':'The following payment methods are available.',
+'クレジットカード':'Credit Card','銀行振込':'Bank Transfer','キャリア決済':'Carrier Billing',
+'コンビニ決済・Pay-easy':'Convenience Store / Pay-easy','コンビニ・Pay-easy':'Convenience Store / Pay-easy','PAY ID あと払い':'PAY ID (Pay Later)',
+'ページトップへ':'PAGE TOP','もっと見る':'VIEW MORE',
+'こちらの商品もおすすめ':'RECOMMENDED FOR YOU','セール中の商品':'ON SALE','最近見た商品':'RECENTLY VIEWED',
+'マイページ':'MY PAGE','マイページ / ログイン':'My Page / Login','ログイン':'Login',
+'メンバーシップ':'MEMBERSHIP','コミュニティ':'COMMUNITY','私たちについて':'ABOUT',
+'ショップ紹介':'ABOUT US','店舗一覧':'STORES','よくあるご質問':'FAQ',
+'所在地':'Address','営業時間':'Hours','定休日':'Closed',
+'Sanrioコラボ':'Sanrio Collab','Disneyコラボ':'Disney Collab',
+'登録する':'SUBSCRIBE','登録':'SUBSCRIBE','検索':'Search',
+'キーワードで探す':'Search','税込':'tax incl.','(税込)':'(tax incl.)',
+'LINE公式アカウント':'LINE Official','休業日':'Closed','本日':'Today',
+'人気キーワード':'POPULAR KEYWORDS','ギフトラッピングは対応しておりません。':'Gift wrapping is not available.',
+'商品カテゴリーから探す':'BROWSE BY CATEGORY','人気キーワードから探す':'POPULAR KEYWORDS',
+'出品されている商品がありません。':'No products found.','ショップに質問する':'Chat with us','メッセージを入力する':'Type a message','送信':'Send','画像を送信':'Send image','サンリオ':'Sanrio','キーワードで探すから探す':'SEARCH',
+'種類':'Size','数量':'Qty','通報する':'Report','ショップの評価':'Shop Reviews','すべて':'All',
+'海外送料を見る':'See international shipping rates','詳細を見る':'Details','※送料は':'Shipping: ','です。':''
+};
+var __TC=[
+['2019年より','A high-end sneaker brand launched in 2019, born out of respect for street culture and skateboarding.'],
+['全国一律','Flat-rate shipping \u00a51,100 \u2014 free shipping on orders over \u00a530,000.'],
+['お問い合わせありがとうございます','Thank you for contacting us. To help us assist you smoothly, please include your order ID with your inquiry. Messages received outside business hours will be answered from the next business day. Business days: Mon–Fri 10:00–18:30 JST.'],
+['海外配送できる','This item ships worldwide.'],
+['国内送料が無料','Free shipping within Japan on orders over ¥30,000.'],
+['カート','CART']
+];
+/* カートのボタンは「CART」ではなく「ADD TO CART」(oo.js の辞書は『カート』を含む文をCARTにまとめるため、ここで先に決める) */
+__TD['カートに入れる']='ADD TO CART';
+if(cfg.extradict){cfg.extradict.split('|').forEach(function(p){var k=p.indexOf('=');if(k>0){var j=p.slice(0,k).trim(),e=p.slice(k+1).trim();if(j)__TD[j]=e;}});}
+var trAll=function(){
+var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false),n;
+while((n=w.nextNode())){var s=n.nodeValue;if(!s)continue;var t=s.trim();if(!t)continue;
+if(__TD[t]!==undefined){n.nodeValue=s.replace(t,tl(__TD[t]));continue;}if(X[t]!=null){n.nodeValue=s.replace(t,X[t]);continue;}
+var sr=t.match(/^(.+?)の検索結果$/);if(sr){n.nodeValue=(L==='zh'?'「'+sr[1]+'」的搜尋結果':L==='ko'?'"'+sr[1]+'" 검색 결과':L==='ar'?'نتائج البحث عن "'+sr[1]+'"':'Search results for '+sr[1]);continue;}
+for(var i=0;i<__TC.length;i++){if(t.indexOf(__TC[i][0])>-1){n.nodeValue=tl(__TC[i][1]);break;}}}
+$$('input[placeholder],textarea[placeholder]').forEach(function(e){var p=e.getAttribute('placeholder')||'';if(p.indexOf('キーワード')>-1)e.setAttribute('placeholder',T('searchPh'));else if(p.indexOf('メッセージ')>-1)e.setAttribute('placeholder','Type a message');});
+};
+trAll();setTimeout(trAll,1500);
+var tT=null;var ob=new MutationObserver(function(){if(tT)return;tT=setTimeout(function(){tT=null;ob.disconnect();trAll();ob.observe(document.body,{childList:true,subtree:true,characterData:true});},300);});
+ob.observe(document.body,{childList:true,subtree:true,characterData:true});
+}
+})();
+
+</script>
+</body>
+</html>
+{/block:NotLoadItemsPage}
+{block:LoadItemsPage}
+{block:ShopPublic}
+{block:Items}
+<div class="item-box">
+  <a href="{ItemPageURL}" title="{ItemTitle}">
+    <div class="item-thumb-wrap"><span class="item-img__primary"><img src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}" alt="{ItemTitle}" loading="lazy"></span></div>
+    <div class="item-meta">
+      <div class="item-title">{ItemTitle}</div>
+      <div class="item-price">{ItemPrice}</div>
+      {block:NoItemStock}<span class="soldout"><span>SOLD OUT</span></span>{/block:NoItemStock}
+      {block:HasItemStock}{block:ItemEndOfSale}<span class="soldout"><span>SOLD OUT</span></span>{/block:ItemEndOfSale}{/block:HasItemStock}
+    </div>
+  </a>
+</div>
+{/block:Items}
+{/block:ShopPublic}
+{/block:LoadItemsPage}
