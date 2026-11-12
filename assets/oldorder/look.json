@@ -1,0 +1,436 @@
+{
+ "hero": [
+  {
+   "sp": "look-hero1-sp.jpg",
+   "url": "/categories/7077795",
+   "label": "OLD ORDER",
+   "title": "Turbo 2000",
+   "sub": "Snow Black ／ Glacier White",
+   "more": {
+    "ja": "商品を見る",
+    "en": "SHOP NOW"
+   },
+   "pcat": "7077795",
+   "pc": "look-hero1-pc.jpg"
+  },
+  {
+   "sp": "look-hero2-sp.jpg",
+   "url": "/categories/6372098",
+   "label": "Ocai",
+   "title": "X-Runner",
+   "sub": {
+    "ja": "Moon Grey ／ Snowy White ほか 全4色",
+    "en": "Moon Grey / Snowy White and more — 4 colors"
+   },
+   "more": {
+    "ja": "商品を見る",
+    "en": "SHOP NOW"
+   },
+   "pk": "X-Runner",
+   "pcat": "6372098",
+   "pc": "look-hero2-pc.jpg"
+  },
+  {
+   "sp": "look-hero3-sp.jpg",
+   "url": "/categories/7270859",
+   "label": "OLD ORDER",
+   "title": "ONE WEEK",
+   "sub": "Roland Cocoa ／ Wimbledon Mint",
+   "more": {
+    "ja": "商品を見る",
+    "en": "SHOP NOW"
+   },
+   "pcat": "7270859",
+   "pc": "look-hero3-pc.jpg"
+  }
+ ],
+ "ticker": [
+  {
+   "t": "Turbo GT",
+   "u": "/categories/6372100"
+  },
+  {
+   "t": "Turbo 2000",
+   "u": "/categories/7077795"
+  },
+  {
+   "t": "ONE WEEK",
+   "u": "/categories/7270859"
+  },
+  {
+   "t": "Ocai X-Runner",
+   "u": "/categories/6372098"
+  },
+  {
+   "t": "BBiMP QBoots",
+   "u": "/categories/6372099"
+  },
+  {
+   "t": {
+    "ja": "ランキング",
+    "en": "BEST SELLERS"
+   },
+   "u": "/categories/7346651"
+  },
+  {
+   "t": {
+    "ja": "新着",
+    "en": "NEW ARRIVALS"
+   },
+   "u": "/categories/7346655"
+  }
+ ],
+ "nav": [
+  {
+   "t": {
+    "ja": "新着",
+    "en": "NEW"
+   },
+   "u": "/categories/7346655"
+  },
+  {
+   "t": {
+    "ja": "ランキング",
+    "en": "BEST SELLERS"
+   },
+   "u": "/categories/7346651"
+  },
+  {
+   "t": "OLD ORDER",
+   "u": "/categories/6372097"
+  },
+  {
+   "t": "Ocai",
+   "u": "/categories/6372098"
+  },
+  {
+   "t": "BBiMP",
+   "u": "/categories/6372099"
+  },
+  {
+   "t": "Turbo GT",
+   "u": "/categories/6372100"
+  },
+  {
+   "t": "Turbo 2000",
+   "u": "/categories/7077795"
+  },
+  {
+   "t": "ONE WEEK",
+   "u": "/categories/7270859"
+  },
+  {
+   "t": {
+    "ja": "ブログ",
+    "en": "BLOG"
+   },
+   "u": "/blog"
+  }
+ ],
+ "brands": {
+  "after": 7346651,
+  "title": "Brands",
+  "items": [
+   {
+    "img": "look-brand-oo.jpg",
+    "name": "OLD ORDER",
+    "u": "/categories/6372097",
+    "text": {
+     "ja": "2019年始動。ストリートとスケートへの敬意から生まれた、Z世代のトレンドスニーカー。",
+     "en": "Since 2019. Trend sneakers for Gen Z, born from respect for street and skate culture."
+    }
+   },
+   {
+    "img": "look-brand-ocai.jpg",
+    "name": "Ocai",
+    "u": "/categories/6372098",
+    "text": {
+     "ja": "現代アートの感性でクラシックを再解釈。都市に生きる若者の日常に寄り添うスニーカーブランド。",
+     "en": "Classics reinterpreted through contemporary art, for everyday city life."
+    }
+   },
+   {
+    "img": "look-brand-bbimp.jpg",
+    "name": "BBiMP",
+    "u": "/categories/6372099",
+    "text": {
+     "ja": "2020年東京発。おもちゃ王国の世界観をユーモラスに落とし込む、Z世代のデザイナーズブランド。",
+     "en": "From Tokyo, 2020. A designer brand that brings a playful toy-kingdom world to footwear."
+    }
+   }
+  ]
+ },
+ "banners": [
+  {
+   "before": 7077795,
+   "l": "look-b-2000-l.jpg",
+   "s": "look-b-2000-s.jpg",
+   "u": "/categories/7077795",
+   "label": "OLD ORDER",
+   "title": "Turbo 2000",
+   "text": {
+    "ja": "メッシュに、メタリックのラインを重ねたランナー。Snow Black と Glacier White の2色です。",
+    "en": "A runner layering metallic lines over mesh. Available in Snow Black and Glacier White."
+   },
+   "more": {
+    "ja": "Turbo 2000 を見る",
+    "en": "SHOP TURBO 2000"
+   },
+   "pcat": "7077795"
+  },
+  {
+   "before": 7270859,
+   "l": "look-b-oneweek-l.jpg",
+   "s": "look-b-oneweek-s.jpg",
+   "u": "/categories/7270859",
+   "label": "OLD ORDER",
+   "title": "ONE WEEK",
+   "text": {
+    "ja": "薄いソールの、すっきりした形。Wimbledon Mint・Roland Cocoa をはじめ、全9色です。",
+    "en": "A slim, low-profile silhouette. Nine colors including Wimbledon Mint and Roland Cocoa."
+   },
+   "more": {
+    "ja": "ONE WEEK を見る",
+    "en": "SHOP ONE WEEK"
+   },
+   "pcat": "7270859"
+  },
+  {
+   "before": 6372098,
+   "l": "look-b-ocai-l.jpg",
+   "s": "look-b-ocai-s.jpg",
+   "u": "/categories/6372098",
+   "label": "Ocai",
+   "title": "X-Runner",
+   "text": {
+    "ja": "うねるラインが目を引く Ocai のランナー。Moon Grey・Galaxy Silver・Snowy White・Storm Brown の4色です。",
+    "en": "Ocai's runner with flowing lines. Moon Grey, Galaxy Silver, Snowy White and Storm Brown."
+   },
+   "more": {
+    "ja": "Ocai を見る",
+    "en": "SHOP OCAI"
+   },
+   "pk": "X-Runner",
+   "pcat": "6372098"
+  },
+  {
+   "before": 6372099,
+   "l": "look-b-bbimp-l.jpg",
+   "s": "look-b-bbimp-s.jpg",
+   "u": "/categories/6372099",
+   "label": "BBiMP",
+   "title": "QBoots",
+   "text": {
+    "ja": "丸いつま先と、厚いソール。BBiMP らしい遊び心のあるブーツです。",
+    "en": "A rounded toe on a chunky sole — a playful boot in true BBiMP style."
+   },
+   "more": {
+    "ja": "BBiMP を見る",
+    "en": "SHOP BBIMP"
+   },
+   "pk": "QBoots",
+   "pcat": "6372099"
+  }
+ ],
+ "rank": 7346651,
+ "tabs": {
+  "all": "look-tab-all.jpg",
+  "OLDORDER": "look-tab-oo.jpg",
+  "OCAI": "look-tab-ocai.jpg",
+  "BBIMP": "look-tab-bbimp.jpg"
+ },
+ "blocks": [
+  {
+   "type": "blog",
+   "after": "brands",
+   "title": "BLOG",
+   "u": "/blog",
+   "more": {
+    "ja": "VISIT BLOG →",
+    "en": "VISIT BLOG →"
+   },
+   "max": 10,
+   "none": {
+    "ja": "この種類の記事は、まだありません。",
+    "en": "No posts yet."
+   },
+   "tabs": [
+    {
+     "n": {
+      "ja": "すべて",
+      "en": "All"
+     },
+     "kw": []
+    },
+    {
+     "n": {
+      "ja": "発売情報",
+      "en": "Releases"
+     },
+     "kw": [
+      "NEW ARRIVAL",
+      "RESTOCK",
+      "新作",
+      "再入荷",
+      "発売",
+      "LINEUP"
+     ]
+    },
+    {
+     "n": {
+      "ja": "イベント情報",
+      "en": "Events"
+     },
+     "kw": [
+      "POP-UP",
+      "POPUP",
+      "POP UP",
+      "イベント",
+      "EVENT"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "feature",
+   "before": 7346655,
+   "l": "look-new-l.jpg",
+   "s": "look-new-s.jpg",
+   "u": "/categories/7346655",
+   "badge": "COMING SOON",
+   "label": "NEW ARRIVAL",
+   "title": {
+    "ja": "新作 第一弾",
+    "en": "New Arrival Vol.01"
+   },
+   "text": {
+    "ja": "OLD ORDER・Ocai の新作 18型。オンラインでの販売は 11/16（月）20:00 からです。",
+    "en": "18 new styles from OLD ORDER and Ocai. Online sales start Nov 16, 20:00 JST."
+   },
+   "more": {
+    "ja": "新作を見る",
+    "en": "VIEW NEW ARRIVALS"
+   }
+  },
+  {
+   "type": "tiles",
+   "after": 7346655,
+   "title": "Models",
+   "sub": {
+    "ja": "型から探す",
+    "en": "Shop by model"
+   },
+   "items": [
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/b698fd37b6cbfd54f2e3238ba92a0046.png?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "Turbo GT",
+     "u": "/categories/6372100"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/f8bb5e50f1e68894a2270c631c74a165.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "Turbo 2000",
+     "u": "/categories/7077795"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/38aa329838bbb3885cc70b05db38a4b3.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "Turbo S",
+     "u": "/categories/6401864"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/6a6a875e7828637d72120ee535ea19d8.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "Turbo Lite",
+     "u": "/categories/6372101"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/c41474240fbab1a3963eafc9bee9b03a.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "Turbo Urban",
+     "u": "/categories/6843536"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/04f7fcb849d8c080f3484ba0522a35ca.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "Canvas",
+     "u": "/categories/6372103"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/bc625c4859cba80580231560d92e66d1.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "Skater 001",
+     "u": "/categories/6372104"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/c57f10bc49d94889976c1546ae01a20e.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "ONE WEEK",
+     "u": "/categories/7270859"
+    },
+    {
+     "img": "https://baseec-img-mng.akamaized.net/images/item/origin/913e0307b37690504b3127e79c0460a8.jpg?imformat=generic&q=90&im=Resize,width=800,type=normal",
+     "name": "ŌGOAL",
+     "u": "/categories/6681184"
+    }
+   ]
+  },
+  {
+   "type": "mosaic",
+   "before": 6673166,
+   "title": "Style",
+   "sub": {
+    "ja": "はいたときの写真",
+    "en": "On foot"
+   },
+   "items": [
+    {
+     "img": "look-style-1.jpg",
+     "cap": "Ocai X-Runner",
+     "u": "/categories/6372098"
+    },
+    {
+     "img": "look-style-3.jpg",
+     "cap": "Ocai X-Runner",
+     "u": "/categories/6372098"
+    },
+    {
+     "img": "look-style-5.jpg",
+     "cap": "Ocai",
+     "u": "/categories/6372098"
+    },
+    {
+     "img": "look-style-2.jpg",
+     "cap": "Ocai X-Runner",
+     "u": "/categories/6372098"
+    },
+    {
+     "img": "look-style-4.jpg"
+    }
+   ]
+  },
+  {
+   "type": "feature",
+   "before": "shops",
+   "rev": true,
+   "l": "look-ship.jpg",
+   "u": "/law",
+   "label": "DELIVERY",
+   "title": {
+    "ja": "お届けについて",
+    "en": "Shipping"
+   },
+   "list": [
+    {
+     "ja": "海外倉庫から発送します。ご注文から2週間以内のお届けが目安です（通常10営業日前後）。",
+     "en": "Orders ship from our overseas warehouse. Please allow up to 2 weeks for delivery (usually about 10 business days)."
+    },
+    {
+     "ja": "追跡番号つきでお届けします。",
+     "en": "Every order comes with a tracking number."
+    },
+    {
+     "ja": "在庫は世界中の売り場と共有しているため、行き違いで売り切れとなる場合がございます。",
+     "en": "Stock is shared with stores worldwide, so items may occasionally sell out before your order is confirmed."
+    }
+   ],
+   "more": {
+    "ja": "くわしくは「特定商取引法に基づく表記」へ",
+    "en": "See the Legal Notice for details"
+   }
+  }
+ ]
+}
