@@ -19,7 +19,7 @@
    "label": "Ocai",
    "title": "X-Runner",
    "sub": {
-    "ja": "Moon Grey ／ Snowy White ほか 全4色",
+    "ja": "Moon Grey ／ Snowy White ほか全4色展開",
     "en": "Moon Grey / Snowy White and more — 4 colors"
    },
    "more": {
@@ -169,7 +169,7 @@
    "label": "OLD ORDER",
    "title": "Turbo 2000",
    "text": {
-    "ja": "メッシュに、メタリックのラインを重ねたランナー。Snow Black と Glacier White の2色です。",
+    "ja": "メッシュにメタリックのラインを重ねたランナーモデル。Snow Black／Glacier White の2色展開。",
     "en": "A runner layering metallic lines over mesh. Available in Snow Black and Glacier White."
    },
    "more": {
@@ -186,7 +186,7 @@
    "label": "OLD ORDER",
    "title": "ONE WEEK",
    "text": {
-    "ja": "薄いソールの、すっきりした形。Wimbledon Mint・Roland Cocoa をはじめ、全9色です。",
+    "ja": "薄底ですっきりとしたシルエット。Wimbledon Mint・Roland Cocoa を含む全9色展開。",
     "en": "A slim, low-profile silhouette. Nine colors including Wimbledon Mint and Roland Cocoa."
    },
    "more": {
@@ -203,7 +203,7 @@
    "label": "Ocai",
    "title": "X-Runner",
    "text": {
-    "ja": "うねるラインが目を引く Ocai のランナー。Moon Grey・Galaxy Silver・Snowy White・Storm Brown の4色です。",
+    "ja": "流れるようなラインが特徴の Ocai のランナーモデル。Moon Grey／Galaxy Silver／Snowy White／Storm Brown の全4色展開。",
     "en": "Ocai's runner with flowing lines. Moon Grey, Galaxy Silver, Snowy White and Storm Brown."
    },
    "more": {
@@ -221,7 +221,7 @@
    "label": "BBiMP",
    "title": "QBoots",
    "text": {
-    "ja": "丸いつま先と、厚いソール。BBiMP らしい遊び心のあるブーツです。",
+    "ja": "丸みのあるトゥと厚底ソール。BBiMP らしい遊び心を詰め込んだブーツ。",
     "en": "A rounded toe on a chunky sole — a playful boot in true BBiMP style."
    },
    "more": {
@@ -251,7 +251,7 @@
    },
    "max": 10,
    "none": {
-    "ja": "この種類の記事は、まだありません。",
+    "ja": "該当する記事はまだありません。",
     "en": "No posts yet."
    },
    "tabs": [
@@ -300,11 +300,11 @@
    "badge": "COMING SOON",
    "label": "NEW ARRIVAL",
    "title": {
-    "ja": "新作 第一弾",
+    "ja": "新作 第1弾",
     "en": "New Arrival Vol.01"
    },
    "text": {
-    "ja": "OLD ORDER・Ocai の新作 18型。オンラインでの販売は 11/16（月）20:00 からです。",
+    "ja": "OLD ORDER・Ocai より新作18型が登場。オンライン販売は 11/16（月）20:00 スタート。",
     "en": "18 new styles from OLD ORDER and Ocai. Online sales start Nov 16, 20:00 JST."
    },
    "more": {
@@ -315,9 +315,9 @@
   {
    "type": "tiles",
    "after": 7346655,
-   "title": "Models",
+   "title": "MODELS",
    "sub": {
-    "ja": "型から探す",
+    "ja": "モデルから探す",
     "en": "Shop by model"
    },
    "items": [
@@ -371,34 +371,36 @@
   {
    "type": "mosaic",
    "before": 6673166,
-   "title": "Style",
+   "title": "STYLE",
    "sub": {
-    "ja": "はいたときの写真",
-    "en": "On foot"
+    "ja": "着用画像",
+    "en": "Styling"
    },
    "items": [
     {
-     "img": "look-style-1.jpg",
-     "cap": "Ocai X-Runner",
-     "u": "/categories/6372098"
+     "img": "look-wear-1.jpg",
+     "cap": "CANVAS CHAOS",
+     "u": "/categories/7506357"
     },
     {
-     "img": "look-style-3.jpg",
-     "cap": "Ocai X-Runner",
-     "u": "/categories/6372098"
+     "img": "look-wear-2.jpg",
+     "cap": "CANVAS CHAOS",
+     "u": "/categories/7506357"
     },
     {
-     "img": "look-style-5.jpg",
-     "cap": "Ocai",
-     "u": "/categories/6372098"
+     "img": "look-wear-3.jpg",
+     "cap": "CANVAS CHAOS",
+     "u": "/categories/7506357"
     },
     {
-     "img": "look-style-2.jpg",
-     "cap": "Ocai X-Runner",
-     "u": "/categories/6372098"
+     "img": "look-wear-4.jpg",
+     "cap": "CANVAS CHAOS",
+     "u": "/categories/7506357"
     },
     {
-     "img": "look-style-4.jpg"
+     "img": "look-wear-5.jpg",
+     "cap": "CANVAS CHAOS",
+     "u": "/categories/7506357"
     }
    ]
   },
@@ -410,16 +412,16 @@
    "u": "/law",
    "label": "DELIVERY",
    "title": {
-    "ja": "お届けについて",
+    "ja": "配送について",
     "en": "Shipping"
    },
    "list": [
     {
-     "ja": "海外倉庫から発送します。ご注文から2週間以内のお届けが目安です（通常10営業日前後）。",
+     "ja": "海外倉庫より発送いたします。ご注文から2週間以内のお届けを目安としております（通常10営業日前後）。",
      "en": "Orders ship from our overseas warehouse. Please allow up to 2 weeks for delivery (usually about 10 business days)."
     },
     {
-     "ja": "追跡番号つきでお届けします。",
+     "ja": "全てのご注文に追跡番号をお付けしております。",
      "en": "Every order comes with a tracking number."
     },
     {
@@ -428,7 +430,7 @@
     }
    ],
    "more": {
-    "ja": "くわしくは「特定商取引法に基づく表記」へ",
+    "ja": "詳しくは「特定商取引法に基づく表記」をご確認ください",
     "en": "See the Legal Notice for details"
    }
   }
